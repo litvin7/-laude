@@ -240,7 +240,6 @@
 
   /* ---------- order form ---------- */
   .order { background: var(--surface); border-top: 1px solid var(--line); }
-  .order-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 40px; align-items: start; }
   form { display: grid; gap: 22px; }
   .block { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; background: var(--bg); display: grid; gap: 20px; }
   .block-title { display: flex; align-items: center; gap: 12px; font-family: var(--display); font-weight: 700; font-size: 18px; }
@@ -298,10 +297,7 @@
   .date-info.ok { background: #eaf6ee; color: var(--ok); }
   .date-info.warn { background: #fff3e0; color: #a3600e; }
 
-  .methods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-  .methods .pill span { width: 100%; justify-content: center; border-radius: 14px; padding: 13px 6px; }
 
-  .summary { position: sticky; top: 96px; display: grid; gap: 16px; }
   .sum-card { border-radius: var(--radius); padding: 26px; background: var(--ink); color: #fff; }
   .sum-card h3 { font-family: var(--display); font-size: 18px; margin-bottom: 14px; }
   .sum-line { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,.12); font-size: 15px; }
@@ -370,16 +366,56 @@
   }
   .toast.show { transform: translate(-50%, 0); visibility: visible; }
 
+
+  /* ---------- wizard ---------- */
+  .wizard { max-width: 720px; margin: 0 auto; background: var(--bg); border: 1px solid var(--line); border-radius: 28px; padding: 28px; box-shadow: 0 30px 60px -40px rgba(42,33,29,.35); }
+  .wiz-head { margin-bottom: 26px; }
+  .wiz-steps { list-style: none; margin: 0 0 14px; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .wiz-steps li { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--muted); cursor: default; }
+  .wiz-steps li.done { cursor: pointer; }
+  .wiz-steps b { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; background: var(--surface); border: 1.5px solid var(--line); flex: none; }
+  .wiz-steps li.active { color: var(--ink); }
+  .wiz-steps li.active b { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .wiz-steps li.done b { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+  .wiz-bar { height: 6px; border-radius: 6px; background: var(--line); overflow: hidden; }
+  .wiz-bar i { display: block; height: 100%; width: 25%; background: var(--grad); border-radius: 6px; transition: width .3s ease; }
+  .step-pane { display: grid; gap: 20px; animation: paneIn .35s ease; }
+  @keyframes paneIn { from { opacity: 0; transform: translateX(12px); } }
+  .pane-title { font-family: var(--display); font-size: 22px; margin: 0; }
+  .occ-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .occ-grid .pill span { width: 100%; height: 100%; border-radius: 16px; padding: 14px 12px; font-size: 14px; line-height: 1.25; }
+  .seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .seg .pill span { width: 100%; justify-content: center; border-radius: 14px; padding: 13px 6px; }
+  .wiz-nav { display: flex; gap: 10px; justify-content: space-between; margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .wiz-nav .btn-primary { flex: 1; max-width: 340px; margin-left: auto; }
+  .wiz-nav #wiz-back[hidden] + .btn { margin-left: auto; }
+  .help.center { text-align: center; margin-top: 12px; }
+  .direct-line { text-align: center; margin-top: 22px; color: var(--muted); font-size: 15px; }
+  .direct-line a { color: var(--accent); font-weight: 800; margin: 0 6px; }
+  .sum-card { margin-top: 6px; }
+  @media (max-width: 720px) {
+    .wizard { padding: 20px 16px; border-radius: 22px; margin: 0 -4px; }
+    .wiz-steps span { display: none; }
+    .wiz-steps li { justify-content: center; }
+    .wiz-steps li.active span { display: inline; }
+    .wiz-steps { grid-template-columns: auto auto auto auto; justify-content: space-between; }
+    .occ-grid { grid-template-columns: 1fr 1fr; }
+    .seg .pill span { flex-direction: column; gap: 2px; font-size: 14px; }
+    .pane-title { font-size: 19px; }
+    .wiz-nav { position: sticky; bottom: 76px; background: var(--bg); margin: 20px -16px -20px; padding: 14px 16px; border-radius: 0 0 22px 22px; }
+    .wiz-nav .btn { padding: 15px 18px; }
+    .hide-m { display: none; }
+  }
+
   .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
   .reveal.in { opacity: 1; transform: none; }
 
   @media (max-width: 1000px) {
-    .hero-grid, .order-grid { grid-template-columns: 1fr; }
+    .hero-grid { grid-template-columns: 1fr; }
     .hero-visual { max-width: 320px; margin: 0 auto; width: 100%; }
     .grid-3 { grid-template-columns: 1fr 1fr; }
     .grid-4, .gallery { grid-template-columns: repeat(2, 1fr); }
     .nav-links a:not(.btn) { display: none; }
-    .summary { position: static; }
     section { padding: 80px 0; }
   }
   @media (max-width: 720px) {
@@ -408,11 +444,10 @@
     .final { padding: 56px 20px; border-radius: 28px; }
     .nav-links .btn { padding: 10px 16px; }
     .tg-banner .btn { width: 100%; }
-    .methods .pill span { flex-direction: column; gap: 2px; font-size: 14px; }
   }
   @media (max-width: 400px) {
     .grid-4, .gallery { gap: 10px; }
-    .methods .pill span { font-size: 13px; padding: 12px 4px; }
+    .seg .pill span { font-size: 13px; padding: 12px 4px; }
     .dur-opt b { font-size: 17px; }
     .logo { font-size: 16px; }
   }
@@ -723,20 +758,29 @@
   <!-- ================= ORDER ================= -->
   <section id="order" class="order">
     <div class="wrap">
-      <div class="section-head reveal">
+      <div class="section-head center reveal">
         <span class="eyebrow">📝 Заявка</span>
-        <h2>Расскажите о вас двоих</h2>
-        <p>Заполните форму, и мы свяжемся с вами в удобном мессенджере. Стоимость считается сразу.</p>
+        <h2>Закажите видео за 4 шага</h2>
+        <p>Пара минут, и мы свяжемся с вами в удобном мессенджере.</p>
       </div>
 
-      <div class="order-grid">
+      <div class="wizard" id="wizard">
+        <div class="wiz-head">
+          <ol class="wiz-steps" id="wiz-steps">
+            <li data-go="1"><b>1</b><span>Повод</span></li>
+            <li data-go="2"><b>2</b><span>Имена</span></li>
+            <li data-go="3"><b>3</b><span>Видео</span></li>
+            <li data-go="4"><b>4</b><span>Контакт</span></li>
+          </ol>
+          <div class="wiz-bar"><i id="wiz-bar"></i></div>
+        </div>
+
         <form id="order-form" novalidate>
 
-          <div class="block">
-            <div class="block-title"><i>1</i>Повод и дата</div>
+          <div class="step-pane" data-step="1">
+            <h3 class="pane-title">Какой у вас повод?</h3>
             <div class="field">
-              <span class="label">Какой повод?</span>
-              <div class="pills" id="occasion-pills"></div>
+              <div class="occ-grid" id="occasion-pills"></div>
               <div class="err" data-err="occasion"></div>
             </div>
             <label class="field" id="f-occasion-other" hidden>
@@ -754,95 +798,93 @@
             </label>
             <div class="field">
               <span class="label">Кому видео?</span>
-              <div class="pills">
+              <div class="seg">
                 <label class="pill"><input type="radio" name="recipient" value="Ей"><span>💁‍♀️ Ей</span></label>
                 <label class="pill"><input type="radio" name="recipient" value="Ему"><span>🙋‍♂️ Ему</span></label>
-                <label class="pill"><input type="radio" name="recipient" value="Нам двоим"><span>💑 Нам двоим</span></label>
+                <label class="pill"><input type="radio" name="recipient" value="Нам двоим"><span>💑 Нам</span></label>
               </div>
               <div class="err" data-err="recipient"></div>
             </div>
+          </div>
+
+          <div class="step-pane" data-step="2" hidden>
+            <h3 class="pane-title">Когда и для кого?</h3>
             <label class="field">
               <span>К какой дате нужно видео?</span>
               <input type="date" name="date" id="date-input">
               <div class="date-info" id="date-info"></div>
               <div class="err" data-err="date"></div>
             </label>
-          </div>
-
-          <div class="block">
-            <div class="block-title"><i>2</i>Имена и надпись в видео</div>
             <div class="row">
               <label class="field">
                 <span>Кого поздравляем</span>
-                <input type="text" name="toName" placeholder="Имя или инициалы: Аня / А." maxlength="40">
-                <small>Это имя появится в видео</small>
+                <input type="text" name="toName" placeholder="Аня / А." maxlength="40">
                 <div class="err" data-err="toName"></div>
               </label>
               <label class="field">
                 <span>От кого <span class="opt">(необязательно)</span></span>
-                <input type="text" name="fromName" placeholder="Ваше имя: Макс / М." maxlength="40">
+                <input type="text" name="fromName" placeholder="Макс / М." maxlength="40">
               </label>
             </div>
             <label class="field">
               <span>Надпись в видео <span class="opt">(необязательно)</span></span>
-              <input type="text" name="caption" id="caption" maxlength="40" placeholder="С днём рождения, Аня! / А ♥ М / 3 года вместе">
+              <input type="text" name="caption" id="caption" maxlength="40" placeholder="С днём рождения, Аня! / А ♥ М">
               <small><span id="caption-count">0</span>/40 · коротко, чтобы красиво смотрелось в кадре</small>
             </label>
           </div>
 
-          <div class="block">
-            <div class="block-title"><i>3</i>Видео и сюжет</div>
+          <div class="step-pane" data-step="3" hidden>
+            <h3 class="pane-title">Какое видео делаем?</h3>
             <div class="field">
               <span class="label">Длительность</span>
               <div class="durations" id="durations"></div>
             </div>
+            <label class="toggle" id="t-sub">
+              <input type="checkbox" name="subscribed" id="subscribed">
+              <span><b>🔥 Я подписан(а) на Telegram-канал: −40%</b><small>Скидка на видео. Подписку проверим перед оплатой. <a href="#" data-link="channel">Подписаться ↗</a></small></span>
+            </label>
             <label class="toggle" id="t-own">
               <input type="checkbox" name="ownIdea" id="own-idea">
-              <span><b>✨ Своя история <span id="addon-inline"></span></b><small>Сыграем именно ваш сюжет. Без неё мы сами придумаем красивую сцену под ваш повод.</small></span>
+              <span><b>✨ Своя история <span id="addon-inline"></span></b><small>Сыграем именно ваш сюжет (без скидки). Без неё придумаем красивую сцену сами.</small></span>
             </label>
             <label class="field" id="f-idea" hidden>
               <span>Опишите вашу идею</span>
-              <textarea name="idea" placeholder="Например: мы познакомились в кофейне под дождём, он отдал мне свой зонт. Хочу, чтобы Peep и Peak повторили это, а в конце в небе появилось «Выходи за меня?»"></textarea>
+              <textarea name="idea" placeholder="Например: мы познакомились в кофейне под дождём, он отдал мне свой зонт. Хочу, чтобы Peep и Peak повторили это"></textarea>
               <div class="err" data-err="idea"></div>
             </label>
             <label class="field">
-              <span>Пара слов о вас <span class="opt">(необязательно)</span></span>
-              <textarea name="details" placeholder="Что вы любите, общие увлечения, любимый цвет, что точно должно быть в видео…"></textarea>
-            </label>
-            <label class="toggle" id="t-sub">
-              <input type="checkbox" name="subscribed" id="subscribed">
-              <span><b>🔥 Я подписан(а) на Telegram-канал: −40%</b><small>Скидка на видео (не на «Свою историю»). Подписку проверим перед оплатой. <a href="#" data-link="channel">Подписаться ↗</a></small></span>
+              <span>Пожелания <span class="opt">(необязательно)</span></span>
+              <textarea name="details" rows="3" placeholder="Что вы любите, любимый цвет, что точно должно быть в видео…"></textarea>
             </label>
           </div>
 
-          <div class="block">
-            <div class="block-title"><i>4</i>Как с вами связаться?</div>
-            <div class="methods">
+          <div class="step-pane" data-step="4" hidden>
+            <h3 class="pane-title">Куда вам написать?</h3>
+            <div class="seg">
               <label class="pill"><input type="radio" name="contactMethod" value="instagram"><span>📸 Instagram</span></label>
               <label class="pill"><input type="radio" name="contactMethod" value="telegram"><span>✈️ Telegram</span></label>
               <label class="pill"><input type="radio" name="contactMethod" value="whatsapp"><span>💬 WhatsApp</span></label>
             </div>
             <input type="text" name="contact" id="contact-input" placeholder="Сначала выберите мессенджер" disabled autocomplete="off" aria-label="Ваш ник или номер">
             <div class="err" data-err="contact"></div>
+            <div class="sum-card">
+              <h3>Ваш заказ</h3>
+              <div id="sum-lines"></div>
+              <div class="sum-total"><span>Итого</span><b id="sum-total">$0</b></div>
+              <div class="sum-nudge" id="sum-nudge"></div>
+            </div>
           </div>
 
-          <button class="btn btn-primary" type="submit" id="submit-btn">Отправить заявку →</button>
-          <p class="help" id="form-hint">После отправки текст заявки скопируется и откроется наш директ: просто вставьте и отправьте.</p>
+          <div class="wiz-nav">
+            <button type="button" class="btn btn-ghost" id="wiz-back" aria-label="Назад">←<span class="hide-m">&nbsp;Назад</span></button>
+            <button type="button" class="btn btn-primary" id="wiz-next">Далее →</button>
+            <button type="submit" class="btn btn-primary" id="submit-btn" hidden>Отправить заявку →</button>
+          </div>
+          <p class="help center" id="form-hint" hidden>После отправки текст заявки скопируется и откроется наш директ: просто вставьте и отправьте.</p>
         </form>
-
-        <aside class="summary">
-          <div class="sum-card">
-            <h3>Ваш заказ</h3>
-            <div id="sum-lines"></div>
-            <div class="sum-total"><span>Итого</span><b id="sum-total">$0</b></div>
-            <div class="sum-nudge" id="sum-nudge"></div>
-          </div>
-          <div class="direct-box">
-            <p>Не хотите заполнять форму? Напишите нам напрямую:</p>
-            <div id="direct-links" style="display:grid;gap:8px"></div>
-          </div>
-        </aside>
       </div>
+
+      <p class="direct-line">Не хотите заполнять? <span id="direct-links"></span></p>
     </div>
   </section>
 
@@ -989,7 +1031,7 @@
   $("#float-contact").innerHTML = directs.map((d) =>
     `<a class="fab ${d.cls}" href="${d.href}" target="_blank" rel="noopener"><i>${d.icon}</i>${d.label}</a>`).join("");
   $("#direct-links").innerHTML = directs.map((d) =>
-    `<a href="${d.href}" target="_blank" rel="noopener">${d.icon} ${d.label} ↗</a>`).join("");
+    `<a href="${d.href}" target="_blank" rel="noopener">${d.icon} ${d.label}</a>`).join("");
 
   /* ---------- hero: name in the sky ---------- */
   (() => {
@@ -1060,6 +1102,7 @@
     r.checked = true;
     clearErr("occasion");
     onOccasion();
+    goStep(1);
     $("#order").scrollIntoView({ behavior: "smooth" });
   }));
   $$("[data-pick-plan]").forEach((b) => b.addEventListener("click", () => {
@@ -1175,26 +1218,75 @@
     clearErr(e.target.name === "contactMethod" ? "contact" : e.target.name);
   });
 
-  function validate() {
-    const errs = [];
-    const add = (n, m) => { showErr(n, m); errs.push(n); };
+  const STEP_FIELDS = {
+    1: ["occasion", "occasionOther", "recipient"],
+    2: ["date", "toName"],
+    3: ["idea"],
+    4: ["contact"],
+  };
+  function checks() {
+    const errs = {};
     const o = occById(F("occasion").value);
-    if (!o) add("occasion", "Выберите повод");
-    else if (o.extra === "other" && !F("occasionOther").value.trim()) add("occasionOther", "Напишите, какой у вас повод");
-    if (!F("recipient").value) add("recipient", "Выберите, кому видео");
+    if (!o) errs.occasion = "Выберите повод";
+    else if (o.extra === "other" && !F("occasionOther").value.trim()) errs.occasionOther = "Напишите, какой у вас повод";
+    if (!F("recipient").value) errs.recipient = "Выберите, кому видео";
     const n = daysUntil(F("date").value);
-    if (n === null) add("date", "Укажите дату, к которой нужно видео");
-    else if (n < 0) add("date", "Эта дата уже прошла, выберите будущую");
-    if (!F("toName").value.trim()) add("toName", "Напишите имя или инициалы");
-    if ($("#own-idea").checked && F("idea").value.trim().length < 10) add("idea", "Опишите идею хотя бы в паре предложений");
+    if (n === null) errs.date = "Укажите дату, к которой нужно видео";
+    else if (n < 0) errs.date = "Эта дата уже прошла, выберите будущую";
+    if (!F("toName").value.trim()) errs.toName = "Напишите имя или инициалы";
+    if ($("#own-idea").checked && F("idea").value.trim().length < 10) errs.idea = "Опишите идею хотя бы в паре предложений";
     const m = METHODS[F("contactMethod").value];
-    if (!m) add("contact", "Выберите мессенджер для связи");
-    else if (!m.test(contactInput.value.trim())) add("contact", m.err);
-    if (errs.length) {
-      $(`[data-err="${errs[0]}"]`).closest(".field, .block").scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-    return !errs.length;
+    if (!m) errs.contact = "Выберите мессенджер для связи";
+    else if (!m.test(contactInput.value.trim())) errs.contact = m.err;
+    return errs;
   }
+  function validateStep(n) {
+    const errs = checks();
+    const bad = STEP_FIELDS[n].filter((f) => errs[f]);
+    bad.forEach((f) => showErr(f, errs[f]));
+    if (bad.length) $(`[data-err="${bad[0]}"]`).closest(".field, .step-pane").scrollIntoView({ behavior: "smooth", block: "center" });
+    return !bad.length;
+  }
+  function validate() {
+    for (let n = 1; n <= 4; n++) {
+      if (!validateStep(n)) { goStep(n); validateStep(n); return false; }
+    }
+    return true;
+  }
+
+  // wizard navigation
+  let step = 1;
+  let maxStep = 1;
+  function goStep(n) {
+    step = n;
+    maxStep = Math.max(maxStep, n);
+    $$(".step-pane").forEach((p) => (p.hidden = Number(p.dataset.step) !== n));
+    $$("#wiz-steps li").forEach((li) => {
+      const k = Number(li.dataset.go);
+      li.classList.toggle("active", k === n);
+      li.classList.toggle("done", k < n || (k <= maxStep && k !== n));
+    });
+    $("#wiz-bar").style.width = `${n * 25}%`;
+    $("#wiz-back").hidden = n === 1;
+    $("#wiz-next").hidden = n === 4;
+    $("#submit-btn").hidden = n !== 4;
+    $("#form-hint").hidden = n !== 4;
+  }
+  function scrollToWizard() {
+    const top = $("#wizard").getBoundingClientRect().top + scrollY - 84;
+    if (Math.abs(scrollY - top) > 40) scrollTo({ top, behavior: "smooth" });
+  }
+  $("#wiz-next").addEventListener("click", () => {
+    if (!validateStep(step)) return;
+    goStep(step + 1);
+    scrollToWizard();
+  });
+  $("#wiz-back").addEventListener("click", () => { goStep(step - 1); scrollToWizard(); });
+  $$("#wiz-steps li").forEach((li) => li.addEventListener("click", () => {
+    const k = Number(li.dataset.go);
+    if (k < step || k <= maxStep) { goStep(k); scrollToWizard(); }
+  }));
+  goStep(1);
 
   function buildText() {
     const c = calc();
@@ -1240,6 +1332,7 @@
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    if (step < 4) { $("#wiz-next").click(); return; }
     if (!validate()) { toast("Проверьте выделенные поля 👆"); return; }
     const text = buildText();
     const total = calc().total;
@@ -1259,6 +1352,7 @@
         contactInput.placeholder = "Сначала выберите мессенджер";
         $("#caption-count").textContent = "0";
         onOccasion(); onDate();
+        maxStep = 1; goStep(1);
         trackLead(total);
         toast("Заявка отправлена! Скоро напишем вам 🤎");
         return;

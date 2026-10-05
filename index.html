@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Капибары поздравляют — именные видео для двоих</title>
-<meta name="description" content="Именные ИИ-видео с парой капибар: поздравления с днём рождения, годовщиной и другими праздниками. Ваша история, ваши инициалы — прямо в видео.">
+<title>Peep &amp; Peak — personalized capybara love videos</title>
+<meta name="description" content="Personalized AI videos starring Peep &amp; Peak, a capybara couple: birthdays, anniversaries, love confessions and proposals. Your names right inside the scene.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -107,6 +107,7 @@
 
   /* cards */
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 760px; }
   .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
   .card {
     background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
@@ -228,6 +229,7 @@
   @media (max-width: 960px) {
     .hero-grid, .about-grid, .order-grid { grid-template-columns: 1fr; gap: 40px; }
     .grid-3 { grid-template-columns: 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
     .grid-4, .gallery { grid-template-columns: repeat(2, 1fr); }
     .nav-links a:not(.btn) { display: none; }
     section { padding: 72px 0; }
@@ -245,11 +247,41 @@
     *, *::before, *::after { animation: none !important; transition: none !important; }
     .reveal { opacity: 1; transform: none; }
   }
+
+  /* promo + prices */
+  .promo {
+    display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+    background: var(--accent-soft); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 28px;
+  }
+  .promo p { flex: 1 1 260px; font-weight: 600; }
+  .promo .btn { padding: 12px 20px; font-size: 15px; }
+  .price s { color: var(--muted); font-size: 22px; font-weight: 600; margin-right: 6px; }
+  .addon { margin-top: 20px; text-align: center; color: var(--muted); }
+  .addon b { color: var(--ink); }
+  .addon s { margin: 0 4px; }
+
+  /* contact method picker */
+  fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 8px; }
+  legend { font-size: 14px; font-weight: 600; margin-bottom: 6px; padding: 0; }
+  .methods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .method input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .method span {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 12px 10px; border: 1.5px solid var(--line); border-radius: 14px;
+    background: var(--bg); font-weight: 600; font-size: 15px; cursor: pointer;
+    transition: border-color .15s, background .15s;
+  }
+  .method input:checked + span { border-color: var(--accent); background: var(--accent-soft); }
+  .method input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .method { display: block; }
+  .err { color: #b4443c; font-size: 13px; font-weight: 600; min-height: 1em; }
+  @media (max-width: 400px) { .method span { font-size: 13px; padding: 12px 6px; } }
 </style>
 </head>
 <body>
 
-<!-- Капибары: переиспользуемые SVG-символы -->
+
+<!-- Capybara SVG symbols -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="capy" viewBox="0 0 200 170">
@@ -278,13 +310,13 @@
 
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
-    <a href="#top" class="logo"><span class="logo-dot">🤎</span><span data-brand>Капибары поздравляют</span></a>
+    <a href="#top" class="logo"><span class="logo-dot">🤎</span><span data-brand>Peep &amp; Peak</span></a>
     <nav class="nav-links">
-      <a href="#how">Как это работает</a>
-      <a href="#examples">Примеры</a>
-      <a href="#pricing">Цены</a>
-      <a href="#faq">Вопросы</a>
-      <a href="#order" class="btn btn-primary">Заказать</a>
+      <a href="#how">How it works</a>
+      <a href="#examples">Examples</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#order" class="btn btn-primary">Order</a>
     </nav>
   </div>
 </header>
@@ -295,20 +327,20 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="reveal">
-        <span class="eyebrow">Именные видео-поздравления</span>
-        <h1>Ваша история любви в&nbsp;исполнении <em>двух капибар</em></h1>
-        <p class="lead">Он всегда о ней заботится, она всегда рядом. Миллионы пар узнают в них себя. Теперь наши капибары разыграют <b>именно вашу</b> историю: с вашими инициалами, датами и любимыми моментами.</p>
+        <span class="eyebrow">Personalized video greetings</span>
+        <h1>Your love story, starring <em>Peep &amp; Peak</em></h1>
+        <p class="lead">Their name in the sky… or anywhere you dream ☁️⭐ Our two capybaras will turn <b>your</b> story into a little film, with your names, dates and favorite moments right inside the scene.</p>
         <div class="hero-ctas">
-          <a href="#order" class="btn btn-primary">Заказать поздравление →</a>
-          <a href="#examples" class="btn btn-ghost">Смотреть примеры</a>
+          <a href="#order" class="btn btn-primary">Order your video →</a>
+          <a href="#examples" class="btn btn-ghost">See examples</a>
         </div>
         <div class="hero-note">
-          <span>Уникальный сюжет</span>
-          <span>Инициалы прямо в кадре</span>
-          <span>Готово за 1–3 дня</span>
+          <span>Made just for you two</span>
+          <span>Names inside the scene</span>
+          <span>From $47</span>
         </div>
       </div>
-      <div class="hero-art reveal" aria-label="Иллюстрация: пара капибар и сердце">
+      <div class="hero-art reveal" aria-label="Illustration: two capybaras with a heart">
         <div class="sky"></div>
         <svg viewBox="0 0 600 420">
           <g class="heart-beat"><use href="#heart" x="282" y="102" width="36" height="34"/></g>
@@ -320,8 +352,8 @@
             </g>
           </g>
         </svg>
-        <div class="tag tag-1">🎂 С днём рождения, А + М</div>
-        <div class="tag tag-2">💍 Нам 3 года!</div>
+        <div class="tag tag-1">🎂 Happy birthday, A + M</div>
+        <div class="tag tag-2">💍 3 years together!</div>
       </div>
     </div>
   </section>
@@ -330,20 +362,15 @@
   <section class="about">
     <div class="wrap about-grid">
       <div class="reveal">
-        <span class="eyebrow">Знакомьтесь</span>
-        <h2>Он и Она: пара, в которой узнают себя</h2>
-        <p class="lead">Маленькие истории о большой заботе: он укрывает её пледом, приносит любимые вкусняшки и всегда держит зонт над ней, а не над собой. Видео смотрят, сохраняют и пересылают своим половинкам со словами «это мы».</p>
-        <div class="stats">
-          <div class="stat"><b data-stat="followers">10K+</b><span>подписчиков</span></div>
-          <div class="stat"><b data-stat="orders">300+</b><span>поздравлений</span></div>
-          <div class="stat"><b>100%</b><span>уникальные сюжеты</span></div>
-        </div>
+        <span class="eyebrow">Meet the couple</span>
+        <h2>Peep &amp; Peak: the couple everyone sees themselves in</h2>
+        <p class="lead">Tiny stories about big care: he wraps her in a blanket, brings her favorite snacks and always holds the umbrella over her, not himself. Couples watch, save and send them to each other with “this is us”.</p>
       </div>
       <div class="grid-4 reveal" style="grid-template-columns:1fr 1fr">
-        <div class="card"><div class="icon">☂️</div><h3>Забота</h3><p>Он всегда рядом, в дождь и в радость</p></div>
-        <div class="card"><div class="icon">🍰</div><h3>Сюрпризы</h3><p>Торты, цветы и подарки без повода</p></div>
-        <div class="card"><div class="icon">🌅</div><h3>Моменты</h3><p>Закаты, прогулки, первые свидания</p></div>
-        <div class="card"><div class="icon">🤎</div><h3>Нежность</h3><p>То, что хочется переслать любимому</p></div>
+        <div class="card"><div class="icon">☂️</div><h3>Care</h3><p>Always there, in rain and in joy</p></div>
+        <div class="card"><div class="icon">🍰</div><h3>Surprises</h3><p>Cakes, flowers and gifts for no reason</p></div>
+        <div class="card"><div class="icon">🌅</div><h3>Moments</h3><p>Sunsets, walks and first dates</p></div>
+        <div class="card"><div class="icon">🤎</div><h3>Tenderness</h3><p>The kind of video you send to your person</p></div>
       </div>
     </div>
   </section>
@@ -352,9 +379,9 @@
   <section id="personal">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Что внутри</span>
-        <h2>Это не шаблон с надписью, а ваш личный фильм</h2>
-        <p>Ваши имена и детали становятся частью сюжета, а не просто текстом поверх видео.</p>
+        <span class="eyebrow">What makes it special</span>
+        <h2>Not a template with a caption: your own little film</h2>
+        <p>Your names and details become part of the story, not just text pasted on top.</p>
       </div>
       <div class="grid-3">
         <div class="card personal-card reveal">
@@ -366,22 +393,22 @@
               <rect x="56" y="48" width="88" height="10" rx="5" fill="#e8a5a5"/>
               <rect x="98" y="26" width="4" height="22" rx="2" fill="#a8754c"/>
               <path d="M100 14 q 6 8 0 12 q -6 -4 0 -12" fill="#f2b84b"/>
-              <text x="100" y="118" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="800" font-size="18" fill="#a8754c">А ♥ М</text>
+              <text x="100" y="118" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="800" font-size="18" fill="#a8754c">A ♥ M</text>
             </svg>
           </div>
-          <div class="txt"><h3>Инициалы на торте</h3><p>Капибары несут праздничный торт, а на нём ваши буквы, выведенные кремом.</p></div>
+          <div class="txt"><h3>Initials on the cake</h3><p>Peep &amp; Peak bring a birthday cake with your letters piped in frosting.</p></div>
         </div>
         <div class="card personal-card reveal">
           <div class="vis" style="background:#eef1f8">
             <svg viewBox="0 0 200 150" aria-hidden="true">
               <circle cx="40" cy="30" r="2" fill="#a8754c"/><circle cx="160" cy="24" r="2" fill="#a8754c"/><circle cx="120" cy="16" r="1.5" fill="#a8754c"/><circle cx="70" cy="18" r="1.5" fill="#a8754c"/>
-              <text x="100" y="72" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="800" font-size="30" fill="#a8754c" opacity=".9">Даша</text>
+              <text x="100" y="72" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="800" font-size="30" fill="#a8754c" opacity=".9">Emma</text>
               <path d="M30 120 Q 100 96 170 120 L170 150 L30 150 Z" fill="#c8d3c0"/>
               <use href="#capy" x="70" y="100" width="40" height="34"/>
               <use href="#capy" x="98" y="102" width="36" height="31"/>
             </svg>
           </div>
-          <div class="txt"><h3>Имя в небе</h3><p>Звёзды, фейерверк или облака складываются в имя прямо в сцене, а не наклеены сверху.</p></div>
+          <div class="txt"><h3>A name in the sky</h3><p>Stars, fireworks or clouds form a name right inside the scene ⭐</p></div>
         </div>
         <div class="card personal-card reveal">
           <div class="vis">
@@ -393,7 +420,7 @@
               <use href="#heart" x="90" y="110" width="20" height="19"/>
             </svg>
           </div>
-          <div class="txt"><h3>Ваша история</h3><p>Как вы познакомились, первое свидание, предложение: капибары повторят всё в своём стиле.</p></div>
+          <div class="txt"><h3>Your story</h3><p>How you met, your first date, the proposal: Peep &amp; Peak replay it in their own sweet way.</p></div>
         </div>
       </div>
     </div>
@@ -403,13 +430,13 @@
   <section id="how" style="padding-top:0">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Как это работает</span>
-        <h2>Три шага до самого милого подарка</h2>
+        <span class="eyebrow">How it works</span>
+        <h2>Three steps to the cutest gift</h2>
       </div>
       <div class="grid-3 steps">
-        <div class="card step reveal"><h3>Расскажите историю</h3><p>Заполните заявку: повод, имена или инициалы, пара тёплых деталей о вас.</p></div>
-        <div class="card step reveal"><h3>Я создаю видео</h3><p>Придумываю сюжет и собираю ролик. Перед финалом можно попросить правки.</p></div>
-        <div class="card step reveal"><h3>Дарите и смотрите реакцию</h3><p>Присылаю готовое видео в высоком качестве, его можно отправить или показать на празднике.</p></div>
+        <div class="card step reveal"><h3>Tell us your story</h3><p>Fill in the form: the occasion, names or initials and a few sweet details about you two.</p></div>
+        <div class="card step reveal"><h3>We make the video</h3><p>We come up with the plot and create your video starring Peep &amp; Peak.</p></div>
+        <div class="card step reveal"><h3>Gift it and watch the reaction</h3><p>You get the finished video, ready to send or show at the celebration 💌</p></div>
       </div>
     </div>
   </section>
@@ -418,9 +445,9 @@
   <section id="examples" style="padding-top:0">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Поводы и примеры</span>
-        <h2>Для любого вашего праздника</h2>
-        <p>День рождения, годовщина, День влюблённых, предложение руки и сердца, «просто потому что люблю».</p>
+        <span class="eyebrow">Occasions &amp; examples</span>
+        <h2>For every moment that matters</h2>
+        <p>🎂 Birthdays · 💍 Anniversaries · 💌 Love confessions &amp; proposals</p>
       </div>
       <div class="gallery" id="gallery"></div>
     </div>
@@ -430,10 +457,14 @@
   <section id="pricing" style="padding-top:0">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Цены</span>
-        <h2>Выберите формат</h2>
+        <span class="eyebrow">Pricing</span>
+        <h2>Choose your video</h2>
       </div>
-      <div class="grid-3" id="pricing-grid"></div>
+      <div class="promo reveal" id="promo">
+        <p>🔥 −40% for our Telegram channel subscribers. Discounted prices are shown below.</p>
+      </div>
+      <div class="grid-2" id="pricing-grid"></div>
+      <p class="addon reveal" id="addon"></p>
     </div>
   </section>
 
@@ -441,50 +472,66 @@
   <section id="order" class="order">
     <div class="wrap order-grid">
       <div class="order-side reveal">
-        <span class="eyebrow">Заказ</span>
-        <h2>Расскажите о вас двоих</h2>
-        <p class="lead">Заполните форму: я соберу из неё сообщение, и вы отправите его мне в Instagram одним нажатием.</p>
+        <span class="eyebrow">Order</span>
+        <h2>Tell us about you two</h2>
+        <p class="lead">Fill in the form and choose how we should contact you. We'll reply to discuss the details.</p>
         <div class="contact-list" id="contacts"></div>
       </div>
-      <form id="order-form" class="reveal">
+      <form id="order-form" class="reveal" novalidate>
         <div class="row">
-          <label>Повод
+          <label>Occasion
             <select name="occasion" required>
-              <option>День рождения</option>
-              <option>Годовщина отношений</option>
-              <option>Годовщина свадьбы</option>
-              <option>День влюблённых</option>
-              <option>Предложение руки и сердца</option>
-              <option>Просто так, без повода</option>
+              <option>Birthday</option>
+              <option>Anniversary</option>
+              <option>Wedding anniversary</option>
+              <option>Valentine's Day</option>
+              <option>Love confession</option>
+              <option>Proposal</option>
+              <option>Just because</option>
             </select>
           </label>
-          <label>Для кого
+          <label>For
             <select name="for">
-              <option>Для неё</option>
-              <option>Для него</option>
-              <option>Для нас обоих</option>
+              <option>For her</option>
+              <option>For him</option>
+              <option>For both of us</option>
             </select>
           </label>
         </div>
         <div class="row">
-          <label>Имена или инициалы
-            <input name="names" placeholder="Например: Аня и Миша / А + М" required>
+          <label>Names or initials
+            <input name="names" placeholder="e.g. Emma &amp; Jack / E + J" required>
           </label>
-          <label>К какой дате нужно
+          <label>Needed by
             <input name="date" type="date">
           </label>
         </div>
-        <label>Формат
-          <select name="plan" id="plan-select"></select>
+        <div class="row">
+          <label>Video
+            <select name="plan" id="plan-select"></select>
+          </label>
+          <label><span>Your own idea (+<span id="addon-price"></span>)</span>
+            <select name="idea">
+              <option value="no">No, surprise me</option>
+              <option value="yes">Yes, I have my own idea</option>
+            </select>
+          </label>
+        </div>
+        <label>Your story &amp; wishes
+          <textarea name="story" placeholder="How you met, what you love doing together, what text you want to see in the video…"></textarea>
         </label>
-        <label>Ваша история и пожелания
-          <textarea name="story" placeholder="Как познакомились, что любите делать вместе, какие надписи хотите увидеть в видео…"></textarea>
-        </label>
-        <label>Ваш Instagram или Telegram для связи
-          <input name="contact" placeholder="@username" required>
-        </label>
-        <button class="btn btn-primary" type="submit" id="submit-btn">Отправить заявку →</button>
-        <p class="form-hint" id="form-hint">Текст заявки скопируется автоматически: просто вставьте его в открывшийся чат.</p>
+        <fieldset>
+          <legend>How should we contact you?</legend>
+          <div class="methods">
+            <label class="method"><input type="radio" name="method" value="instagram"><span>📸 Instagram</span></label>
+            <label class="method"><input type="radio" name="method" value="telegram"><span>✈️ Telegram</span></label>
+            <label class="method"><input type="radio" name="method" value="whatsapp"><span>💬 WhatsApp</span></label>
+          </div>
+          <input name="contact" id="contact-input" placeholder="Choose a contact method first" disabled autocomplete="off">
+          <div class="err" id="contact-err" role="alert"></div>
+        </fieldset>
+        <button class="btn btn-primary" type="submit" id="submit-btn">Send request →</button>
+        <p class="form-hint" id="form-hint">The request text will be copied automatically: just paste it into the chat that opens.</p>
       </form>
     </div>
   </section>
@@ -493,15 +540,16 @@
   <section id="faq">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Вопросы</span>
-        <h2>Часто спрашивают</h2>
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions</h2>
       </div>
       <div class="faq reveal">
-        <details><summary>Сколько времени занимает создание видео?</summary><p>Обычно 1–3 дня, в зависимости от сложности сюжета и загрузки. Срочные заказы можно обсудить отдельно.</p></details>
-        <details><summary>Можно ли внести правки?</summary><p>Да. Перед отправкой финальной версии вы смотрите видео и можете попросить изменения: количество правок зависит от выбранного формата.</p></details>
-        <details><summary>Какие надписи можно добавить в видео?</summary><p>Имена, инициалы, даты, короткие фразы. Они становятся частью сцены: на торте, в небе, на песке, на воздушных шарах и т.д.</p></details>
-        <details><summary>Как я получу готовое видео?</summary><p>Пришлю файл в высоком качестве в Instagram, Telegram или ссылкой на облако, как вам удобнее.</p></details>
-        <details><summary>Как оплатить?</summary><p>Детали оплаты обсуждаем в личных сообщениях после согласования сюжета.</p></details>
+        <details><summary>How long does it take?</summary><p>It depends on the video length and how busy we are. Tell us your date in the form and we'll confirm the timing before you pay.</p></details>
+        <details><summary>What text can you add to the video?</summary><p>Names, initials, dates and short phrases. They become part of the scene: on a cake, in the sky, in the sand, on balloons and more.</p></details>
+        <details><summary>What is “Your own idea”?</summary><p>Instead of a story from our collection, Peep &amp; Peak act out your own plot: how you met, an inside joke, a special place.</p></details>
+        <details><summary>How do I get the −40% discount?</summary><p>Subscribe to our Telegram channel. The discounted prices are shown on this page.</p></details>
+        <details><summary>How do I receive the video?</summary><p>We send the finished video in high quality to the messenger you chose in the form.</p></details>
+        <details><summary>How do I pay?</summary><p>We'll agree on the payment method in private messages once the story is confirmed.</p></details>
       </div>
     </div>
   </section>
@@ -510,60 +558,61 @@
 
 <footer>
   <div class="wrap foot">
-    <span>© <span id="year"></span> <span data-brand>Капибары поздравляют</span>. Видео созданы с помощью ИИ.</span>
+    <span>© <span id="year"></span> <span data-brand>Peep &amp; Peak</span>. Videos created with AI. You're my little star ⭐</span>
     <a id="footer-ig" href="#" target="_blank" rel="noopener">Instagram</a>
   </div>
 </footer>
 
 <div class="cookie" id="cookie" hidden>
-  <p>Мы используем cookies и счётчики аналитики, чтобы понимать, откуда приходят гости, и делать сайт лучше.</p>
+  <p>We use cookies and analytics to understand where our visitors come from and to improve the site.</p>
   <div class="btns">
-    <button class="btn btn-ghost" id="cookie-no" type="button">Только нужные</button>
-    <button class="btn btn-primary" id="cookie-yes" type="button">Принять</button>
+    <button class="btn btn-ghost" id="cookie-no" type="button">Essential only</button>
+    <button class="btn btn-primary" id="cookie-yes" type="button">Accept</button>
   </div>
 </div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-  /* ================= НАСТРОЙКИ — меняйте здесь ================= */
+  /* ================= SETTINGS: edit here ================= */
   const CONFIG = {
-    brand: "Капибары поздравляют",
-    instagram: "your_instagram",      // ваш ник в Instagram без @
-    telegram: "",                     // ник в Telegram без @ (необязательно)
-    // Заявки в Telegram-бота (см. README). Если пусто, заявка уходит через директ Instagram.
-    tgBotToken: "",                   // токен от @BotFather, например "123456:ABC-..."
-    tgChatId: "",                     // ваш chat id, например "123456789"
-    currency: "₽",
-    // Аналитика: впишите ID, и счётчик включится после согласия с cookies.
-    metaPixelId: "",                  // Meta (Facebook/Instagram) Pixel ID
-    yandexMetrikaId: "",              // номер счётчика Яндекс Метрики
-    googleAnalyticsId: "",            // например "G-XXXXXXXXXX"
+    brand: "Peep & Peak",
+    instagram: "peepandpeak",         // Instagram username without @
+    telegram: "",                     // your Telegram username without @ (optional)
+    telegramChannel: "",              // Telegram channel link for the −40% discount, e.g. "https://t.me/peepandpeak"
+    // Requests to a Telegram bot (see README). If empty, requests go via Instagram DM.
+    tgBotToken: "",                   // token from @BotFather
+    tgChatId: "",                     // your chat id
+    // Analytics: fill in an ID and the tracker turns on after cookie consent.
+    metaPixelId: "",
+    yandexMetrikaId: "",
+    googleAnalyticsId: "",            // e.g. "G-XXXXXXXXXX"
+    currency: "USD",
     plans: [
-      { name: "Мини",     price: 1500, note: "до 15 сек", features: ["Готовый сюжет из коллекции", "Ваши инициалы в кадре", "1 правка", "Готово за 1–2 дня"] },
-      { name: "История",  price: 3000, note: "до 30 сек", featured: true, features: ["Сюжет по вашей истории", "Имена в сцене (торт, небо, шары)", "2 правки", "Готово за 2–3 дня"] },
-      { name: "Премиум",  price: 5000, note: "до 60 сек", features: ["Полноценный мини-фильм", "Несколько сцен и надписей", "Музыка на выбор", "Без ограничения правок"] },
+      { name: "30 sec", old: 79,  price: 47, features: ["Peep & Peak tell your story", "Names or initials in the scene", "Vertical HD video for stories & Reels"] },
+      { name: "60 sec", old: 149, price: 89, featured: true, features: ["A longer story with more scenes", "Names or initials in the scene", "Vertical HD video for stories & Reels"] },
     ],
-    // Примеры: положите видео в папку videos/ и укажите путь в src. Без src покажется заглушка.
+    addon: { name: "Your own idea", old: 49, price: 29 },
+    // Examples: put videos into the videos/ folder and set src. Without src a placeholder is shown.
     examples: [
-      { title: "С днём рождения 🎂", emoji: "🎂", src: "" },
-      { title: "Нам 1 год 💍",       emoji: "💍", src: "" },
-      { title: "Имя в звёздах ✨",    emoji: "✨", src: "" },
-      { title: "Наша история 🤎",     emoji: "🤎", src: "" },
+      { title: "Happy birthday 🎂", emoji: "🎂", src: "" },
+      { title: "1 year together 💍", emoji: "💍", src: "" },
+      { title: "Name in the stars ✨", emoji: "✨", src: "" },
+      { title: "Will you marry me? 💌", emoji: "💌", src: "" },
     ],
   };
-  /* ============================================================== */
+  /* ======================================================== */
 
   const $ = (s) => document.querySelector(s);
   const igUrl = `https://instagram.com/${CONFIG.instagram}`;
   const igDm = `https://ig.me/m/${CONFIG.instagram}`;
-  const fmt = (n) => n.toLocaleString("ru-RU") + " " + CONFIG.currency;
+  const fmt = (n) => "$" + n;
 
   document.querySelectorAll("[data-brand]").forEach((el) => (el.textContent = CONFIG.brand));
   $("#year").textContent = new Date().getFullYear();
   $("#footer-ig").href = igUrl;
 
-  // Галерея
+  // Gallery
   $("#gallery").innerHTML = CONFIG.examples.map((e) => `
     <div class="reel reveal">
       ${e.src
@@ -572,28 +621,56 @@
       <div class="cap">${e.title}</div>
     </div>`).join("");
 
-  // Цены
+  // Pricing
   $("#pricing-grid").innerHTML = CONFIG.plans.map((p) => `
     <div class="card price-card reveal ${p.featured ? "featured" : ""}">
-      ${p.featured ? '<span class="badge">Чаще всего выбирают</span>' : ""}
-      <h3>${p.name}</h3>
-      <div class="price">${fmt(p.price)} <small>/ ${p.note}</small></div>
+      ${p.featured ? '<span class="badge">Most popular</span>' : ""}
+      <h3>${p.name === "30 sec" ? "⏱" : "🎬"} ${p.name}</h3>
+      <div class="price"><s>${fmt(p.old)}</s>${fmt(p.price)}</div>
       <ul>${p.features.map((f) => `<li>${f}</li>`).join("")}</ul>
-      <a href="#order" class="btn ${p.featured ? "btn-primary" : "btn-ghost"}" data-plan="${p.name}">Выбрать</a>
+      <a href="#order" class="btn ${p.featured ? "btn-primary" : "btn-ghost"}" data-plan="${p.name}">Choose</a>
     </div>`).join("");
+  const a = CONFIG.addon;
+  $("#addon").innerHTML = `✨ <b>${a.name}</b>: <s>+${fmt(a.old)}</s> <b>+${fmt(a.price)}</b> to any video`;
+  $("#addon-price").textContent = fmt(a.price);
+  if (CONFIG.telegramChannel) {
+    $("#promo").insertAdjacentHTML("beforeend",
+      `<a class="btn btn-primary" href="${CONFIG.telegramChannel}" target="_blank" rel="noopener">Join the channel</a>`);
+  }
 
   $("#plan-select").innerHTML = CONFIG.plans
     .map((p) => `<option value="${p.name}" ${p.featured ? "selected" : ""}>${p.name} · ${fmt(p.price)}</option>`)
     .join("");
-  document.querySelectorAll("[data-plan]").forEach((a) =>
-    a.addEventListener("click", () => ($("#plan-select").value = a.dataset.plan)));
+  document.querySelectorAll("[data-plan]").forEach((el) =>
+    el.addEventListener("click", () => ($("#plan-select").value = el.dataset.plan)));
 
-  // Контакты
+  // Contacts
   $("#contacts").innerHTML =
     `<a href="${igUrl}" target="_blank" rel="noopener">📸 Instagram · @${CONFIG.instagram}</a>` +
-    (CONFIG.telegram ? `<a href="https://t.me/${CONFIG.telegram}" target="_blank" rel="noopener">✈️ Telegram · @${CONFIG.telegram}</a>` : "");
+    (CONFIG.telegram ? `<a href="https://t.me/${CONFIG.telegram}" target="_blank" rel="noopener">✈️ Telegram · @${CONFIG.telegram}</a>` : "") +
+    (CONFIG.telegramChannel ? `<a href="${CONFIG.telegramChannel}" target="_blank" rel="noopener">🔥 Telegram channel: −40%</a>` : "");
 
-  // Тост
+  // Contact method
+  const METHODS = {
+    instagram: { label: "Instagram", placeholder: "@your_instagram", type: "text",
+      test: (v) => /^@?[A-Za-z0-9._]{1,30}$/.test(v), err: "Enter your Instagram username, e.g. @emma.jack" },
+    telegram:  { label: "Telegram", placeholder: "@your_telegram", type: "text",
+      test: (v) => /^@?[A-Za-z0-9_]{5,32}$/.test(v), err: "Enter your Telegram username, e.g. @emma_jack" },
+    whatsapp:  { label: "WhatsApp", placeholder: "+1 555 123 4567", type: "tel",
+      test: (v) => /^\+?[\d\s\-()]{7,20}$/.test(v) && v.replace(/\D/g, "").length >= 7, err: "Enter your WhatsApp number with country code, e.g. +1 555 123 4567" },
+  };
+  const contactInput = $("#contact-input");
+  const contactErr = $("#contact-err");
+  document.querySelectorAll('input[name="method"]').forEach((r) => r.addEventListener("change", () => {
+    const m = METHODS[r.value];
+    contactInput.disabled = false;
+    contactInput.type = m.type;
+    contactInput.placeholder = m.placeholder;
+    contactErr.textContent = "";
+    contactInput.focus();
+  }));
+
+  // Toast
   function toast(msg) {
     const t = $("#toast");
     t.textContent = msg;
@@ -603,54 +680,80 @@
   }
 
   const useTg = Boolean(CONFIG.tgBotToken && CONFIG.tgChatId);
-  if (useTg) $("#form-hint").textContent = "Заявка придёт мне сразу, я свяжусь с вами по указанному контакту.";
+  if (useTg) $("#form-hint").textContent = "Your request comes straight to us. We'll reach out via the contact you chose.";
 
-  // Форма → текст заявки → буфер обмена → директ
+  // Form → request text → Telegram bot or Instagram DM
   $("#order-form").addEventListener("submit", async (e) => {
     e.preventDefault();
-    const d = Object.fromEntries(new FormData(e.target));
-    const date = d.date ? new Date(d.date).toLocaleDateString("ru-RU") : "не указана";
+    const form = e.target;
+    const d = Object.fromEntries(new FormData(form));
+    if (!d.names || !d.names.trim()) {
+      form.names.focus();
+      toast("Please enter names or initials");
+      return;
+    }
+    if (!d.method) {
+      contactErr.textContent = "Please choose how we should contact you";
+      form.querySelector('input[name="method"]').focus();
+      return;
+    }
+    const m = METHODS[d.method];
+    const contact = (d.contact || "").trim();
+    if (!m.test(contact)) {
+      contactErr.textContent = m.err;
+      contactInput.focus();
+      return;
+    }
+    contactErr.textContent = "";
+
+    const plan = CONFIG.plans.find((p) => p.name === d.plan);
+    const total = (plan ? plan.price : 0) + (d.idea === "yes" ? CONFIG.addon.price : 0);
+    const date = d.date ? new Date(d.date + "T00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }) : "not specified";
+    const handle = d.method === "whatsapp" ? contact : "@" + contact.replace(/^@/, "");
     const text =
-`Привет! Хочу заказать видео с капибарами 🤎
-Повод: ${d.occasion} (${d.for.toLowerCase()})
-Имена/инициалы: ${d.names}
-Нужно к: ${date}
-Формат: ${d.plan}
-История и пожелания: ${d.story || "—"}
-Связь: ${d.contact}`;
+`Hi! I'd like to order a Peep & Peak video 🤎
+Occasion: ${d.occasion} (${d.for.toLowerCase()})
+Names/initials: ${d.names.trim()}
+Needed by: ${date}
+Video: ${d.plan}${d.idea === "yes" ? " + your own idea" : ""} (${fmt(total)})
+Story & wishes: ${d.story || "—"}
+Contact me via ${m.label}: ${handle}`;
+
     const btn = $("#submit-btn");
     if (useTg) {
       btn.disabled = true;
-      btn.textContent = "Отправляю…";
+      btn.textContent = "Sending…";
       try {
         const r = await fetch(`https://api.telegram.org/bot${CONFIG.tgBotToken}/sendMessage`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ chat_id: CONFIG.tgChatId, text: "🆕 Новая заявка с сайта\n\n" + text }),
+          body: JSON.stringify({ chat_id: CONFIG.tgChatId, text: "🆕 New request from the website\n\n" + text }),
         });
         if (!(await r.json()).ok) throw new Error("telegram");
-        e.target.reset();
-        trackLead(d);
-        toast("Заявка отправлена! Скоро напишу вам 🤎");
+        form.reset();
+        contactInput.disabled = true;
+        contactInput.placeholder = "Choose a contact method first";
+        trackLead(total);
+        toast("Request sent! We'll message you soon 🤎");
         return;
       } catch {
-        toast("Не получилось отправить, открываю Instagram");
+        toast("Couldn't send it, opening Instagram instead");
       } finally {
         btn.disabled = false;
-        btn.textContent = "Отправить заявку →";
+        btn.textContent = "Send request →";
       }
     }
     try {
       await navigator.clipboard.writeText(text);
-      toast("Заявка скопирована: вставьте её в открывшийся чат 💌");
-      trackLead(d);
+      toast("Request copied: paste it into the chat that opens 💌");
+      trackLead(total);
     } catch {
-      prompt("Скопируйте текст заявки и отправьте его в директ:", text);
+      prompt("Copy the request text and send it to us in a DM:", text);
     }
     window.open(igDm, "_blank", "noopener");
   });
 
-  // Аналитика (загружается только после согласия)
+  // Analytics (loaded only after consent)
   function loadAnalytics() {
     const add = (src) => { const el = document.createElement("script"); el.async = true; el.src = src; document.head.appendChild(el); };
     if (CONFIG.metaPixelId) {
@@ -672,12 +775,10 @@
       gtag("config", CONFIG.googleAnalyticsId);
     }
   }
-  function trackLead(d) {
-    const plan = CONFIG.plans.find((p) => p.name === d.plan);
-    const value = plan ? plan.price : 0;
-    if (window.fbq) fbq("track", "Lead", { value, currency: "RUB", content_name: d.occasion });
+  function trackLead(value) {
+    if (window.fbq) fbq("track", "Lead", { value, currency: CONFIG.currency });
     if (window.ym) ym(CONFIG.yandexMetrikaId, "reachGoal", "lead");
-    if (window.gtag) gtag("event", "generate_lead", { value, currency: "RUB" });
+    if (window.gtag) gtag("event", "generate_lead", { value, currency: CONFIG.currency });
   }
 
   const hasAnalytics = CONFIG.metaPixelId || CONFIG.yandexMetrikaId || CONFIG.googleAnalyticsId;
@@ -693,13 +794,13 @@
   $("#cookie-yes").addEventListener("click", () => setConsent("yes"));
   $("#cookie-no").addEventListener("click", () => setConsent("no"));
 
-  // Анимация появления
+  // Reveal on scroll
   const io = new IntersectionObserver((entries) => entries.forEach((en) => {
     if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
   }), { threshold: 0.12 });
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
-  // Тень у шапки при скролле
+  // Header shadow on scroll
   addEventListener("scroll", () => $("#nav").classList.toggle("scrolled", scrollY > 8), { passive: true });
 </script>
 </body>

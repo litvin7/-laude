@@ -1,291 +1,433 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Peep &amp; Peak — personalized capybara love videos</title>
-<meta name="description" content="Personalized AI videos starring Peep &amp; Peak, a capybara couple: birthdays, anniversaries, love confessions and proposals. Your names right inside the scene.">
+<title>Peep &amp; Peak — видео-поздравления с капибарами для влюблённых</title>
+<meta name="description" content="Именные видео с парой капибар Peep &amp; Peak: день рождения, годовщина, признание, предложение. Ваши имена прямо в сцене. Любая ваша идея. Видео 30, 60 и 90 секунд.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤎</text></svg>">
 <style>
   :root {
-    --bg: #fbf8f3;
+    --bg: #fffaf5;
     --surface: #ffffff;
-    --ink: #2b2420;
-    --muted: #7a6f66;
-    --line: #ece5db;
-    --accent: #a8754c;
-    --accent-ink: #ffffff;
-    --accent-soft: #f3e9de;
-    --pink: #e8a5a5;
-    --radius: 20px;
-    --max: 1120px;
+    --ink: #2a211d;
+    --muted: #75685f;
+    --line: #f0e4d8;
+    --accent: #c9694a;
+    --accent-soft: #fbeee4;
+    --pink-soft: #fde9ee;
+    --lav-soft: #f0ebfb;
+    --gold: #ffd98a;
+    --night-1: #251d48;
+    --night-2: #5b3f86;
+    --dusk: #f0968e;
+    --ok: #3f8f5f;
+    --err: #c0473d;
+    --grad: linear-gradient(135deg, #d9744f 0%, #e9879f 100%);
+    --radius: 22px;
+    --max: 1160px;
+    --display: "Unbounded", "Manrope", system-ui, sans-serif;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
+    margin: 0; background: var(--bg); color: var(--ink);
     font-family: "Manrope", system-ui, -apple-system, sans-serif;
-    font-size: 17px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
+    font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
-  img, svg { display: block; max-width: 100%; }
+  img, svg, video { display: block; max-width: 100%; }
   a { color: inherit; }
+  [hidden] { display: none !important; }
   .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
-  section { padding: 96px 0; }
-  h1, h2, h3 { line-height: 1.15; margin: 0; letter-spacing: -0.02em; }
-  h1 { font-size: clamp(38px, 6vw, 64px); font-weight: 800; }
-  h2 { font-size: clamp(30px, 4vw, 44px); font-weight: 800; margin-bottom: 16px; }
-  h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  section { padding: 104px 0; position: relative; }
+  h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -0.02em; }
+  h1, h2 { font-family: var(--display); font-weight: 800; }
+  h1 { font-size: clamp(32px, 5.2vw, 62px); }
+  h2 { font-size: clamp(26px, 3.6vw, 44px); margin-bottom: 18px; }
+  h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
   p { margin: 0; }
-  .lead { font-size: 19px; color: var(--muted); max-width: 560px; }
+  .grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lead { font-size: 19px; color: var(--muted); max-width: 580px; }
   .eyebrow {
-    display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: .08em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+    display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 800;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
   }
-  .section-head { max-width: 640px; margin-bottom: 48px; }
-  .section-head p { color: var(--muted); }
+  .section-head { max-width: 720px; margin-bottom: 52px; }
+  .section-head.center { text-align: center; margin-left: auto; margin-right: auto; }
+  .section-head p { color: var(--muted); font-size: 18px; }
 
-  /* buttons */
+  /* ---------- buttons ---------- */
   .btn {
-    display: inline-flex; align-items: center; gap: 10px; justify-content: center;
-    padding: 16px 28px; border-radius: 999px; border: 0; cursor: pointer;
-    font: inherit; font-weight: 700; font-size: 16px; text-decoration: none;
-    transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 17px 30px; border-radius: 999px; border: 0; cursor: pointer;
+    font: inherit; font-weight: 800; font-size: 16px; text-decoration: none; text-align: center;
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s;
   }
-  .btn-primary { background: var(--accent); color: var(--accent-ink); box-shadow: 0 8px 24px -10px rgba(168,117,76,.7); }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -10px rgba(168,117,76,.8); }
-  .btn-ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
+  .btn-primary { background: var(--grad); color: #fff; box-shadow: 0 12px 28px -12px rgba(217,116,79,.8); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 32px -12px rgba(217,116,79,.9); }
+  .btn-ghost { background: var(--surface); color: var(--ink); border: 1.5px solid var(--line); }
   .btn-ghost:hover { border-color: var(--accent); }
+  .btn-dark { background: var(--ink); color: #fff; }
+  .btn-dark:hover { transform: translateY(-2px); }
+  .btn-sm { padding: 11px 20px; font-size: 14px; }
+  .btn:disabled { opacity: .7; cursor: wait; }
 
-  /* nav */
+  /* ---------- nav ---------- */
   header.nav {
-    position: sticky; top: 0; z-index: 10;
-    background: rgba(251,248,243,.85); backdrop-filter: blur(12px);
+    position: sticky; top: 0; z-index: 30;
+    background: rgba(255,250,245,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid transparent; transition: border-color .2s;
   }
   header.nav.scrolled { border-bottom-color: var(--line); }
-  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; text-decoration: none; font-size: 18px; }
-  .logo-dot { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-soft); display: grid; place-items: center; font-size: 16px; }
-  .nav-links { display: flex; gap: 32px; align-items: center; }
-  .nav-links a { text-decoration: none; color: var(--muted); font-weight: 600; font-size: 15px; }
-  .nav-links a:hover { color: var(--ink); }
-  .nav-links .btn { padding: 10px 20px; font-size: 15px; color: var(--accent-ink); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 16px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--display); font-weight: 800; font-size: 18px; white-space: nowrap; }
+  .logo-dot { width: 36px; height: 36px; border-radius: 50%; background: var(--grad); display: grid; place-items: center; font-size: 17px; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a:not(.btn) { text-decoration: none; color: var(--muted); font-weight: 700; font-size: 15px; }
+  .nav-links a:not(.btn):hover { color: var(--ink); }
 
-  /* hero */
-  .hero { padding: 64px 0 96px; }
-  .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
-  .hero h1 em { font-style: normal; color: var(--accent); }
-  .hero .lead { margin: 24px 0 36px; }
+  /* ---------- hero ---------- */
+  .hero { padding: 56px 0 96px; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; top: -20%; right: -10%; width: 70vw; height: 70vw; max-width: 900px; max-height: 900px;
+    background: radial-gradient(circle, rgba(233,135,159,.22), transparent 60%); pointer-events: none;
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; position: relative; }
+  .hero .kicker { font-size: 18px; color: var(--accent); font-weight: 700; margin-bottom: 18px; }
+  .hero .lead { margin: 24px 0 34px; }
   .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
-  .hero-note { margin-top: 28px; font-size: 14px; color: var(--muted); display: flex; gap: 20px; flex-wrap: wrap; }
-  .hero-note span::before { content: "✓ "; color: var(--accent); font-weight: 800; }
-  .hero-art {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 32px;
-    aspect-ratio: 1 / 1; position: relative; overflow: hidden;
-    display: grid; place-items: center;
+  .chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 30px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px;
+    background: var(--surface); border: 1px solid var(--line); font-size: 14px; font-weight: 700;
   }
-  .hero-art .sky { position: absolute; inset: 0; background: linear-gradient(180deg, #fdf3ec 0%, #fff 70%); }
-  .hero-art svg { position: relative; width: 88%; }
-  .float { animation: float 5s ease-in-out infinite; }
-  @keyframes float { 50% { transform: translateY(-8px); } }
-  .heart-beat { transform-origin: 300px 120px; animation: beat 1.8s ease-in-out infinite; }
-  @keyframes beat { 0%,100% { transform: scale(1); } 15% { transform: scale(1.15); } 30% { transform: scale(1); } }
-  .tag {
-    position: absolute; background: var(--surface); border: 1px solid var(--line);
-    border-radius: 14px; padding: 10px 14px; font-size: 14px; font-weight: 600;
-    box-shadow: 0 10px 30px -15px rgba(43,36,32,.25);
-  }
-  .tag-1 { top: 8%; left: 6%; }
-  .tag-2 { bottom: 8%; right: 6%; }
 
-  /* cards */
+  /* phone with animated scene */
+  .hero-visual { position: relative; }
+  .phone {
+    position: relative; width: 100%; max-width: 340px; margin: 0 auto; aspect-ratio: 9 / 16;
+    border-radius: 40px; padding: 10px; background: #1b1530;
+    box-shadow: 0 40px 80px -30px rgba(37,29,72,.55);
+    transform: rotate(2deg);
+  }
+  .screen {
+    position: relative; width: 100%; height: 100%; border-radius: 31px; overflow: hidden;
+    background: linear-gradient(180deg, var(--night-1) 0%, var(--night-2) 45%, var(--dusk) 78%, #ffc9a8 100%);
+  }
+  .screen svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .twinkle { animation: twinkle 3s ease-in-out infinite; }
+  @keyframes twinkle { 0%,100% { opacity: .25; } 50% { opacity: 1; } }
+  .shoot { animation: shoot 6s ease-in infinite; opacity: 0; }
+  @keyframes shoot { 0%, 70% { opacity: 0; transform: translate(0,0); } 72% { opacity: 1; } 85% { opacity: 0; transform: translate(-160px, 90px); } 100% { opacity: 0; } }
+  .sky-name {
+    position: absolute; left: 0; right: 0; top: 16%; text-align: center; padding: 0 22px;
+    font-family: var(--display); font-weight: 800; font-size: 28px; line-height: 1.15;
+    color: #fff6dc; text-shadow: 0 0 12px rgba(255,217,138,.9), 0 0 32px rgba(255,217,138,.6);
+    transition: opacity .8s ease, filter .8s ease, letter-spacing .8s ease;
+  }
+  .sky-name.out { opacity: 0; filter: blur(8px); letter-spacing: .2em; }
+  .reel-ui { position: absolute; left: 14px; right: 60px; bottom: 16px; display: flex; align-items: center; gap: 10px; color: #fff; font-size: 13px; font-weight: 700; }
+  .reel-ui .ava { width: 30px; height: 30px; border-radius: 50%; background: var(--grad); display: grid; place-items: center; font-size: 14px; flex: none; }
+  .reel-side { position: absolute; right: 12px; bottom: 64px; display: grid; gap: 16px; color: #fff; font-size: 22px; }
+  .heart-pop { animation: pop 2.2s ease-in-out infinite; display: inline-block; }
+  @keyframes pop { 0%,100% { transform: scale(1); } 12% { transform: scale(1.3); } 24% { transform: scale(1); } }
+  .bob { animation: bob 4s ease-in-out infinite; }
+  .bob-2 { animation: bob 4s ease-in-out infinite -2s; }
+  @keyframes bob { 50% { transform: translateY(-4px); } }
+  .float-tag {
+    position: absolute; z-index: 2; background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    padding: 10px 14px; font-size: 14px; font-weight: 800; box-shadow: 0 18px 40px -20px rgba(42,33,29,.35);
+    animation: bob 5s ease-in-out infinite; white-space: nowrap;
+  }
+  .float-tag.t1 { top: 10%; left: -4%; }
+  .float-tag.t2 { bottom: 16%; right: -4%; animation-delay: -2.5s; }
+
+  /* ---------- marquee ---------- */
+  .marquee-wrap { overflow: hidden; padding: 12px 0; }
+  .marquee { background: var(--ink); color: #fff; overflow: hidden; padding: 18px 0; transform: rotate(-1.2deg); margin: 0 -20px; }
+  .marquee-track { display: flex; gap: 40px; width: max-content; animation: marquee 36s linear infinite; font-family: var(--display); font-weight: 700; font-size: 19px; }
+  .marquee-track span { white-space: nowrap; }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+
+  /* ---------- cards ---------- */
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 760px; }
   .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-  .card {
-    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 28px;
-  }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
   .card p { color: var(--muted); font-size: 16px; }
-  .icon {
-    width: 48px; height: 48px; border-radius: 14px; background: var(--accent-soft);
-    display: grid; place-items: center; font-size: 24px; margin-bottom: 20px;
+  .icon { width: 52px; height: 52px; border-radius: 16px; background: var(--accent-soft); display: grid; place-items: center; font-size: 26px; margin-bottom: 18px; flex: none; }
+
+  .why-quote {
+    font-family: var(--display); font-weight: 700; font-size: clamp(21px, 2.8vw, 32px); line-height: 1.35;
+    max-width: 860px; margin: 0 auto 56px; text-align: center;
   }
 
-  /* about */
-  .about { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-  .about-grid .lead { margin-top: 8px; }
-  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
-  .stat b { display: block; font-size: 32px; font-weight: 800; color: var(--accent); }
-  .stat span { font-size: 14px; color: var(--muted); }
+  /* ideas */
+  .ideas { background: linear-gradient(180deg, var(--bg), var(--pink-soft) 40%, var(--lav-soft)); }
+  .idea { padding: 0; overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; }
+  .idea:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -28px rgba(42,33,29,.35); }
+  .idea .vis { aspect-ratio: 16 / 10; overflow: hidden; }
+  .idea .vis svg { width: 100%; height: 100%; }
+  .idea .txt { padding: 22px 24px 26px; }
+  .any-idea {
+    margin-top: 28px; padding: 32px; border-radius: var(--radius); background: var(--ink); color: #fff;
+    display: flex; gap: 24px; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  }
+  .any-idea h3 { font-family: var(--display); font-size: 24px; }
+  .any-idea p { color: rgba(255,255,255,.75); max-width: 620px; }
 
-  /* personal */
-  .personal-card { padding: 0; overflow: hidden; }
-  .personal-card .vis { aspect-ratio: 4/3; background: var(--accent-soft); display: grid; place-items: center; }
-  .personal-card .vis svg { width: 75%; }
-  .personal-card .txt { padding: 24px 28px 28px; }
+  /* occasions */
+  .occasions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .occ {
+    display: inline-flex; align-items: center; gap: 10px; padding: 15px 20px; border-radius: 18px;
+    background: var(--surface); border: 1.5px solid var(--line); font: inherit; font-weight: 800; font-size: 16px;
+    cursor: pointer; color: var(--ink); transition: border-color .15s, transform .15s, background .15s;
+  }
+  .occ:hover { border-color: var(--accent); transform: translateY(-2px); background: var(--accent-soft); }
+  .occ span { font-size: 22px; }
+
+  /* examples */
+  .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .reel {
+    aspect-ratio: 9 / 16; border-radius: var(--radius); overflow: hidden; position: relative; text-decoration: none;
+    display: flex; align-items: flex-end; color: #fff; transition: transform .2s ease;
+  }
+  .reel:hover { transform: translateY(-4px); }
+  .reel video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .reel .ph { position: absolute; inset: 0; display: grid; place-items: center; font-size: 60px; }
+  .reel .play { position: absolute; top: 14px; right: 14px; background: rgba(255,255,255,.92); color: var(--ink); border-radius: 999px; padding: 6px 12px; font-size: 12px; font-weight: 800; }
+  .reel .cap { position: relative; width: 100%; padding: 18px 16px; font-weight: 800; font-size: 15px; background: linear-gradient(transparent, rgba(42,33,29,.7)); }
+  .gallery-cta { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+
+  /* pricing */
+  .tg-banner {
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: space-between;
+    padding: 22px 26px; border-radius: var(--radius); margin-bottom: 32px;
+    background: linear-gradient(135deg, #e8f3ff, #f3ecff); border: 1px solid #dfe3f7;
+  }
+  .tg-banner b { font-family: var(--display); font-size: 21px; display: block; margin-bottom: 4px; }
+  .tg-banner p { color: var(--muted); }
+  .plan { display: flex; flex-direction: column; position: relative; }
+  .plan.hit { border: 2px solid transparent; background: linear-gradient(var(--surface), var(--surface)) padding-box, var(--grad) border-box; box-shadow: 0 30px 60px -36px rgba(217,116,79,.6); }
+  .plan .badge { position: absolute; top: -14px; left: 28px; background: var(--grad); color: #fff; font-size: 12px; font-weight: 800; padding: 5px 12px; border-radius: 999px; }
+  .plan .dur { font-family: var(--display); font-size: 30px; font-weight: 800; }
+  .plan .tagline { color: var(--muted); font-size: 15px; margin-top: 4px; }
+  .plan .price-row { display: flex; align-items: baseline; gap: 10px; margin: 20px 0 2px; }
+  .plan .price { font-family: var(--display); font-size: 42px; font-weight: 800; letter-spacing: -0.03em; }
+  .plan .old { color: var(--muted); text-decoration: line-through; font-size: 20px; font-weight: 700; }
+  .plan .note { font-size: 13px; color: var(--accent); font-weight: 800; }
+  .plan ul { list-style: none; padding: 0; margin: 20px 0 26px; flex: 1; }
+  .plan li { padding: 6px 0 6px 28px; font-size: 15px; color: var(--muted); position: relative; }
+  .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 800; }
+  .addon-card {
+    margin-top: 20px; display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center;
+    padding: 26px 28px; border-radius: var(--radius); background: var(--surface); border: 1.5px dashed var(--accent);
+  }
+  .addon-card .icon { margin: 0; background: var(--pink-soft); }
+  .addon-card .p { font-family: var(--display); font-size: 30px; font-weight: 800; white-space: nowrap; text-align: right; }
+  .addon-card small { display: block; font-size: 12px; color: var(--muted); font-family: "Manrope", sans-serif; font-weight: 700; }
 
   /* steps */
   .steps { counter-reset: s; }
-  .step { position: relative; }
   .step::before {
     counter-increment: s; content: counter(s);
-    display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
-    background: var(--ink); color: var(--bg); font-weight: 800; margin-bottom: 20px;
+    display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
+    background: var(--grad); color: #fff; font-weight: 800; font-family: var(--display); margin-bottom: 18px;
   }
 
-  /* gallery */
-  .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-  .reel {
-    aspect-ratio: 9/16; border-radius: var(--radius); overflow: hidden; position: relative;
-    background: var(--accent-soft); border: 1px solid var(--line);
-    display: flex; align-items: flex-end;
-  }
-  .reel video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .reel .ph { position: absolute; inset: 0; display: grid; place-items: center; font-size: 56px; }
-  .reel .cap {
-    position: relative; width: 100%; padding: 16px; font-size: 14px; font-weight: 700;
-    background: linear-gradient(transparent, rgba(43,36,32,.55)); color: #fff;
-  }
-
-  /* pricing */
-  .price-card { display: flex; flex-direction: column; }
-  .price-card.featured { border: 2px solid var(--accent); position: relative; }
-  .price-card .badge {
-    position: absolute; top: -13px; left: 28px; background: var(--accent); color: #fff;
-    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 999px;
-  }
-  .price { font-size: 40px; font-weight: 800; margin: 12px 0 4px; letter-spacing: -0.02em; }
-  .price small { font-size: 16px; color: var(--muted); font-weight: 600; }
-  .price-card ul { list-style: none; padding: 0; margin: 20px 0 28px; flex: 1; }
-  .price-card li { padding: 6px 0; font-size: 15px; color: var(--muted); }
-  .price-card li::before { content: "✓"; color: var(--accent); font-weight: 800; margin-right: 10px; }
-
-  /* order */
+  /* ---------- order form ---------- */
   .order { background: var(--surface); border-top: 1px solid var(--line); }
-  .order-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
-  form { display: grid; gap: 16px; }
+  .order-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 40px; align-items: start; }
+  form { display: grid; gap: 22px; }
+  .block { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; background: var(--bg); display: grid; gap: 20px; }
+  .block-title { display: flex; align-items: center; gap: 12px; font-family: var(--display); font-weight: 700; font-size: 18px; }
+  .block-title i { font-style: normal; width: 30px; height: 30px; border-radius: 50%; background: var(--ink); color: #fff; display: grid; place-items: center; font-size: 14px; flex: none; }
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  label { display: grid; gap: 6px; font-size: 14px; font-weight: 600; }
-  input, select, textarea {
-    font: inherit; font-size: 16px; color: var(--ink);
-    background: var(--bg); border: 1.5px solid var(--line); border-radius: 14px;
-    padding: 14px 16px; width: 100%; transition: border-color .15s;
+  .field { display: grid; gap: 8px; min-width: 0; }
+  .field > span, .label { font-size: 14px; font-weight: 800; }
+  .field small, .help { font-size: 13px; color: var(--muted); }
+  .opt { color: var(--muted); font-weight: 600; }
+  input[type=text], input[type=tel], input[type=date], input[type=number], textarea {
+    font: inherit; font-size: 16px; color: var(--ink); background: var(--surface);
+    border: 1.5px solid var(--line); border-radius: 14px; padding: 14px 16px; width: 100%; min-width: 0;
+    transition: border-color .15s, box-shadow .15s;
   }
-  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
-  textarea { min-height: 120px; resize: vertical; }
-  .form-hint { font-size: 13px; color: var(--muted); }
-  .order-side .lead { margin: 8px 0 32px; }
-  .contact-list { display: grid; gap: 12px; }
-  .contact-list a {
-    display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 600;
-    padding: 16px 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--bg);
+  input[type=date] { min-height: 54px; }
+  input:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px rgba(201,105,74,.12); }
+  input:disabled { opacity: .55; }
+  textarea { min-height: 110px; resize: vertical; }
+  .invalid { border-color: var(--err) !important; }
+  .err { color: var(--err); font-size: 13px; font-weight: 700; }
+  .err:empty { display: none; }
+
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill { position: relative; }
+  .pill input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .pill span {
+    display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border-radius: 999px;
+    background: var(--surface); border: 1.5px solid var(--line); font-weight: 700; font-size: 15px; cursor: pointer;
+    transition: border-color .15s, background .15s;
   }
-  .contact-list a:hover { border-color: var(--accent); }
+  .pill input:checked + span { border-color: var(--accent); background: var(--accent-soft); }
+  .pill input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .durations { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .dur-opt { position: relative; }
+  .dur-opt input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .dur-opt span {
+    display: grid; gap: 2px; text-align: center; padding: 16px 8px; border-radius: 16px; cursor: pointer;
+    background: var(--surface); border: 1.5px solid var(--line); transition: border-color .15s, background .15s;
+  }
+  .dur-opt b { font-family: var(--display); font-size: 20px; }
+  .dur-opt em { font-style: normal; font-size: 14px; color: var(--muted); font-weight: 700; }
+  .dur-opt input:checked + span { border-color: var(--accent); background: var(--accent-soft); }
+  .dur-opt input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .toggle { display: flex; gap: 14px; align-items: flex-start; cursor: pointer; padding: 16px 18px; border-radius: 16px; background: var(--surface); border: 1.5px solid var(--line); transition: border-color .15s, background .15s; }
+  .toggle.on { border-color: var(--accent); background: var(--accent-soft); }
+  .toggle input { margin-top: 4px; width: 20px; height: 20px; accent-color: var(--accent); flex: none; }
+  .toggle b { display: block; }
+  .toggle small { color: var(--muted); font-size: 14px; }
+  .toggle a { color: var(--accent); font-weight: 800; }
+
+  .date-info { font-size: 14px; font-weight: 700; padding: 10px 14px; border-radius: 12px; }
+  .date-info:empty { display: none; }
+  .date-info.ok { background: #eaf6ee; color: var(--ok); }
+  .date-info.warn { background: #fff3e0; color: #a3600e; }
+
+  .methods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .methods .pill span { width: 100%; justify-content: center; border-radius: 14px; padding: 13px 6px; }
+
+  .summary { position: sticky; top: 96px; display: grid; gap: 16px; }
+  .sum-card { border-radius: var(--radius); padding: 26px; background: var(--ink); color: #fff; }
+  .sum-card h3 { font-family: var(--display); font-size: 18px; margin-bottom: 14px; }
+  .sum-line { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,.12); font-size: 15px; }
+  .sum-line span:first-child { color: rgba(255,255,255,.7); }
+  .sum-line span:last-child { text-align: right; }
+  .sum-line s { color: rgba(255,255,255,.5); margin-right: 6px; }
+  .sum-total { display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px; }
+  .sum-total b { font-family: var(--display); font-size: 36px; }
+  .sum-nudge { margin-top: 14px; padding: 12px 14px; border-radius: 12px; background: rgba(255,217,138,.14); color: var(--gold); font-size: 14px; font-weight: 700; }
+  .sum-nudge:empty { display: none; }
+  .direct-box { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; background: var(--bg); display: grid; gap: 10px; }
+  .direct-box p { font-size: 14px; color: var(--muted); }
+  .direct-box a { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; padding: 12px 14px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+  .direct-box a:hover { border-color: var(--accent); }
 
   /* faq */
-  .faq { max-width: 760px; }
-  details { border-bottom: 1px solid var(--line); padding: 20px 0; }
-  summary { cursor: pointer; font-weight: 700; font-size: 18px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  .faq { max-width: 820px; margin: 0 auto; }
+  details { border-bottom: 1px solid var(--line); padding: 22px 0; }
+  summary { cursor: pointer; font-weight: 800; font-size: 18px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
   summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; color: var(--accent); font-size: 24px; line-height: 1; transition: transform .2s; }
+  summary::after { content: "+"; color: var(--accent); font-size: 26px; line-height: 1; transition: transform .2s; }
   details[open] summary::after { transform: rotate(45deg); }
   details p { color: var(--muted); margin-top: 12px; }
 
-  footer { padding: 40px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  /* final cta */
+  .final {
+    border-radius: 36px; padding: 72px 32px; text-align: center; color: #fff; position: relative; overflow: hidden;
+    background: linear-gradient(160deg, var(--night-1), var(--night-2) 55%, var(--dusk));
+  }
+  .final h2 { color: #fff; max-width: 760px; margin: 0 auto 16px; position: relative; }
+  .final p { color: rgba(255,255,255,.82); max-width: 560px; margin: 0 auto 32px; font-size: 18px; position: relative; }
+  .final .hero-ctas { justify-content: center; position: relative; }
+  .final .btn-ghost { background: rgba(255,255,255,.1); color: #fff; border-color: rgba(255,255,255,.3); }
+  .final .stars { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+  footer { padding: 40px 0 48px; color: var(--muted); font-size: 14px; }
   .foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .foot nav { display: flex; gap: 18px; flex-wrap: wrap; }
+
+  /* pinned contacts */
+  .float-contact { position: fixed; right: 20px; bottom: 20px; z-index: 35; display: grid; gap: 10px; justify-items: end; }
+  .fab {
+    display: flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; border-radius: 999px;
+    background: var(--surface); border: 1px solid var(--line); text-decoration: none; font-weight: 800; font-size: 14px;
+    box-shadow: 0 16px 36px -18px rgba(42,33,29,.45); transition: transform .15s;
+  }
+  .fab:hover { transform: translateY(-2px); }
+  .fab i { font-style: normal; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-size: 17px; }
+  .fab.ig i { background: linear-gradient(45deg, #f9ce34, #ee2a7b 50%, #6228d7); }
+  .fab.tg i { background: #2aabee; }
+  .fab.wa i { background: #25d366; }
+  .mobile-bar { display: none; }
+
+  .cookie {
+    position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 50; max-width: 560px; margin: 0 auto;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px;
+    box-shadow: 0 16px 40px -20px rgba(42,33,29,.35); display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+  }
+  .cookie p { flex: 1 1 260px; font-size: 14px; color: var(--muted); }
+  .cookie .btns { display: flex; gap: 8px; }
 
   .toast {
-    position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 120px);
-    background: var(--ink); color: var(--bg); padding: 14px 22px; border-radius: 14px;
-    font-weight: 600; font-size: 15px; transition: transform .3s ease; z-index: 50;
-    max-width: calc(100% - 32px); text-align: center; visibility: hidden;
+    position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 140px); visibility: hidden;
+    background: var(--ink); color: #fff; padding: 14px 22px; border-radius: 14px; font-weight: 700; font-size: 15px;
+    transition: transform .3s ease; z-index: 60; max-width: calc(100% - 32px); text-align: center;
   }
   .toast.show { transform: translate(-50%, 0); visibility: visible; }
 
-  .cookie {
-    position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 40;
-    max-width: 560px; margin: 0 auto; background: var(--surface);
-    border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px;
-    box-shadow: 0 16px 40px -20px rgba(43,36,32,.35);
-    display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
-  }
-  .cookie[hidden] { display: none; }
-  .cookie p { flex: 1 1 260px; font-size: 14px; color: var(--muted); }
-  .cookie .btns { display: flex; gap: 8px; }
-  .cookie .btn { padding: 10px 18px; font-size: 14px; }
-
-  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
   .reveal.in { opacity: 1; transform: none; }
 
-  @media (max-width: 960px) {
-    .hero-grid, .about-grid, .order-grid { grid-template-columns: 1fr; gap: 40px; }
-    .grid-3 { grid-template-columns: 1fr; }
-    .grid-2 { grid-template-columns: 1fr; }
+  @media (max-width: 1000px) {
+    .hero-grid, .order-grid { grid-template-columns: 1fr; }
+    .hero-visual { max-width: 320px; margin: 0 auto; width: 100%; }
+    .grid-3 { grid-template-columns: 1fr 1fr; }
     .grid-4, .gallery { grid-template-columns: repeat(2, 1fr); }
     .nav-links a:not(.btn) { display: none; }
-    section { padding: 72px 0; }
+    .summary { position: static; }
+    section { padding: 80px 0; }
   }
-  @media (max-width: 560px) {
+  @media (max-width: 720px) {
     .wrap { padding: 0 16px; }
+    .grid-3 { grid-template-columns: 1fr; }
     .row { grid-template-columns: 1fr; }
-    .grid-4 { grid-template-columns: 1fr; }
-    .stats { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
-    .stat b { font-size: 24px; }
-    .hero { padding: 32px 0 64px; }
-    .tag { font-size: 12px; padding: 8px 10px; }
+    .addon-card { grid-template-columns: 1fr; gap: 14px; }
+    .addon-card .p { text-align: left; }
+    .hero { padding: 28px 0 72px; }
+    .lead { font-size: 17px; }
+    .float-tag { font-size: 12px; padding: 8px 10px; }
+    .float-tag.t1 { left: -2%; }
+    .float-tag.t2 { right: -2%; }
+    .block { padding: 20px 16px; }
+    .float-contact { display: none; }
+    .mobile-bar {
+      display: grid; grid-template-columns: 1fr 1fr 1.4fr; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 35;
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,250,245,.94);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--line);
+    }
+    .mobile-bar a { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 12px 4px; border-radius: 14px; text-decoration: none; font-weight: 800; font-size: 13px; background: var(--surface); border: 1px solid var(--line); white-space: nowrap; }
+    .mobile-bar a.go { background: var(--grad); color: #fff; border: 0; }
+    body { padding-bottom: 76px; }
+    .cookie { bottom: 88px; }
+    .toast { bottom: 92px; }
+    .final { padding: 56px 20px; border-radius: 28px; }
+    .nav-links .btn { padding: 10px 16px; }
+    .tg-banner .btn { width: 100%; }
+    .methods .pill span { flex-direction: column; gap: 2px; font-size: 14px; }
+  }
+  @media (max-width: 400px) {
+    .grid-4, .gallery { gap: 10px; }
+    .methods .pill span { font-size: 13px; padding: 12px 4px; }
+    .dur-opt b { font-size: 17px; }
+    .logo { font-size: 16px; }
   }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
     .reveal { opacity: 1; transform: none; }
   }
-
-  /* promo + prices */
-  .promo {
-    display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
-    background: var(--accent-soft); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 28px;
-  }
-  .promo p { flex: 1 1 260px; font-weight: 600; }
-  .promo .btn { padding: 12px 20px; font-size: 15px; }
-  .price s { color: var(--muted); font-size: 22px; font-weight: 600; margin-right: 6px; }
-  .addon { margin-top: 20px; text-align: center; color: var(--muted); }
-  .addon b { color: var(--ink); }
-  .addon s { margin: 0 4px; }
-
-  /* contact method picker */
-  fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 8px; }
-  legend { font-size: 14px; font-weight: 600; margin-bottom: 6px; padding: 0; }
-  .methods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-  .method input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-  .method span {
-    display: flex; align-items: center; justify-content: center; gap: 8px;
-    padding: 12px 10px; border: 1.5px solid var(--line); border-radius: 14px;
-    background: var(--bg); font-weight: 600; font-size: 15px; cursor: pointer;
-    transition: border-color .15s, background .15s;
-  }
-  .method input:checked + span { border-color: var(--accent); background: var(--accent-soft); }
-  .method input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .method { display: block; }
-  .err { color: #b4443c; font-size: 13px; font-weight: 600; min-height: 1em; }
-  @media (max-width: 400px) { .method span { font-size: 13px; padding: 12px 6px; } }
 </style>
 </head>
 <body>
 
-
-<!-- Capybara SVG symbols -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="capy" viewBox="0 0 200 170">
-      <ellipse cx="100" cy="158" rx="78" ry="8" fill="#000" opacity=".06"/>
+      <ellipse cx="100" cy="158" rx="78" ry="8" fill="#000" opacity=".08"/>
       <path d="M30 120 C 22 80, 50 52, 92 50 L 128 48 C 160 46, 186 66, 186 98 C 186 132, 160 152, 120 152 L 66 152 C 44 152, 34 140, 30 120 Z" fill="#b5835a"/>
       <rect x="54" y="132" width="16" height="24" rx="8" fill="#9c6e48"/>
       <rect x="140" y="132" width="16" height="24" rx="8" fill="#9c6e48"/>
@@ -296,260 +438,445 @@
       <circle cx="153.5" cy="50.5" r="1.6" fill="#fff"/>
       <ellipse cx="184" cy="66" rx="7" ry="5" fill="#7d5636"/>
       <path d="M170 82 q 6 4 12 0" stroke="#7d5636" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      <ellipse cx="146" cy="68" rx="8" ry="5" fill="#e8a5a5" opacity=".55"/>
+      <ellipse cx="146" cy="68" rx="8" ry="5" fill="#e8a5a5" opacity=".6"/>
     </symbol>
     <symbol id="bow" viewBox="0 0 40 24">
-      <path d="M20 12 L4 2 Q0 12 4 22 Z M20 12 L36 2 Q40 12 36 22 Z" fill="#e8a5a5"/>
-      <circle cx="20" cy="12" r="5" fill="#d98b8b"/>
+      <path d="M20 12 L4 2 Q0 12 4 22 Z M20 12 L36 2 Q40 12 36 22 Z" fill="#f08aa3"/>
+      <circle cx="20" cy="12" r="5" fill="#d96f8a"/>
     </symbol>
     <symbol id="heart" viewBox="0 0 32 30">
-      <path d="M16 29 C 6 21, 0 15, 0 8.5 C 0 3.5, 4 0, 8.5 0 C 12 0, 14.5 2, 16 4.5 C 17.5 2, 20 0, 23.5 0 C 28 0, 32 3.5, 32 8.5 C 32 15, 26 21, 16 29 Z" fill="#e8a5a5"/>
+      <path d="M16 29 C 6 21, 0 15, 0 8.5 C 0 3.5, 4 0, 8.5 0 C 12 0, 14.5 2, 16 4.5 C 17.5 2, 20 0, 23.5 0 C 28 0, 32 3.5, 32 8.5 C 32 15, 26 21, 16 29 Z" fill="#f08aa3"/>
+    </symbol>
+    <symbol id="star" viewBox="0 0 20 20">
+      <path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="#ffe8b0"/>
+    </symbol>
+    <!-- пара: Peep слева, Peak справа с бантиком -->
+    <symbol id="couple" viewBox="0 0 420 200">
+      <use href="#capy" x="10" y="20" width="200" height="170"/>
+      <g transform="translate(410 26) scale(-1 1)">
+        <use href="#capy" x="0" y="0" width="185" height="157"/>
+        <use href="#bow" x="112" y="16" width="34" height="20"/>
+      </g>
     </symbol>
   </defs>
 </svg>
 
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
-    <a href="#top" class="logo"><span class="logo-dot">🤎</span><span data-brand>Peep &amp; Peak</span></a>
+    <a href="#top" class="logo"><span class="logo-dot">🤎</span>Peep &amp; Peak</a>
     <nav class="nav-links">
-      <a href="#how">How it works</a>
-      <a href="#examples">Examples</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="#order" class="btn btn-primary">Order</a>
+      <a href="#ideas">Идеи</a>
+      <a href="#examples">Примеры</a>
+      <a href="#pricing">Цены</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#order" class="btn btn-primary btn-sm">Заказать</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
 
-  <!-- HERO -->
+  <!-- ================= HERO ================= -->
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="reveal">
-        <span class="eyebrow">Personalized video greetings</span>
-        <h1>Your love story, starring <em>Peep &amp; Peak</em></h1>
-        <p class="lead">Their name in the sky… or anywhere you dream ☁️⭐ Our two capybaras will turn <b>your</b> story into a little film, with your names, dates and favorite moments right inside the scene.</p>
+        <p class="kicker">Их имя в небе… или там, где вы мечтаете ☁️⭐</p>
+        <h1>Подарите <span class="grad-text">эмоции,</span> которые не&nbsp;забываются</h1>
+        <p class="lead">Peep &amp; Peak, пара капибар, в которой влюблённые узнают себя, разыграют <b>вашу</b> историю любви. С вашими именами, датами и моментами прямо внутри сцены. Любая идея, любой повод.</p>
         <div class="hero-ctas">
-          <a href="#order" class="btn btn-primary">Order your video →</a>
-          <a href="#examples" class="btn btn-ghost">See examples</a>
+          <a href="#order" class="btn btn-primary">Заказать видео →</a>
+          <a href="#" class="btn btn-ghost" data-link="profile">Смотреть в Instagram ↗</a>
         </div>
-        <div class="hero-note">
-          <span>Made just for you two</span>
-          <span>Names inside the scene</span>
-          <span>From $47</span>
+        <div class="chips">
+          <span class="chip">✨ Любая ваша идея</span>
+          <span class="chip">💌 Имена прямо в кадре</span>
+          <span class="chip">🎬 30, 60 или 90 секунд</span>
+          <span class="chip" id="from-chip">🔥 от $47</span>
         </div>
       </div>
-      <div class="hero-art reveal" aria-label="Illustration: two capybaras with a heart">
-        <div class="sky"></div>
-        <svg viewBox="0 0 600 420">
-          <g class="heart-beat"><use href="#heart" x="282" y="102" width="36" height="34"/></g>
-          <g class="float"><use href="#capy" x="40" y="150" width="270" height="230"/></g>
-          <g class="float" style="animation-delay:-2.5s">
-            <g transform="translate(560 150) scale(-1 1)">
-              <use href="#capy" x="0" y="0" width="250" height="213"/>
-              <use href="#bow" x="152" y="22" width="44" height="26"/>
-            </g>
-          </g>
-        </svg>
-        <div class="tag tag-1">🎂 Happy birthday, A + M</div>
-        <div class="tag tag-2">💍 3 years together!</div>
+
+      <div class="hero-visual reveal">
+        <div class="float-tag t1">🎂 С днём рождения!</div>
+        <div class="float-tag t2">💍 3 года вместе</div>
+        <div class="phone" role="img" aria-label="Пример видео: имя появляется в звёздном небе над парой капибар">
+          <div class="screen">
+            <svg viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <g fill="#fff">
+                <circle class="twinkle" cx="40" cy="60" r="1.6"/>
+                <circle class="twinkle" cx="300" cy="40" r="1.4" style="animation-delay:-1s"/>
+                <circle class="twinkle" cx="250" cy="110" r="1.2" style="animation-delay:-2s"/>
+                <circle class="twinkle" cx="90" cy="170" r="1.3" style="animation-delay:-.5s"/>
+                <circle class="twinkle" cx="320" cy="230" r="1.6" style="animation-delay:-1.6s"/>
+                <circle class="twinkle" cx="30" cy="260" r="1.2" style="animation-delay:-2.4s"/>
+                <circle class="twinkle" cx="170" cy="30" r="1.2" style="animation-delay:-.9s"/>
+                <circle class="twinkle" cx="210" cy="280" r="1" style="animation-delay:-1.3s"/>
+              </g>
+              <use class="twinkle" href="#star" x="50" y="200" width="14" height="14"/>
+              <use class="twinkle" href="#star" x="290" y="170" width="12" height="12" style="animation-delay:-1.4s"/>
+              <use class="twinkle" href="#star" x="150" y="290" width="10" height="10" style="animation-delay:-2.2s"/>
+              <g class="shoot"><line x1="300" y1="60" x2="340" y2="40" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".9"/></g>
+              <circle cx="280" cy="350" r="26" fill="#ffe2b8" opacity=".85"/>
+              <path d="M0 470 Q 120 400 240 440 T 360 430 L 360 640 L 0 640 Z" fill="#3a2a55" opacity=".55"/>
+              <path d="M0 500 Q 180 450 360 500 L 360 640 L 0 640 Z" fill="#2c2147"/>
+              <g class="bob"><use href="#capy" x="50" y="404" width="140" height="119"/></g>
+              <g class="bob-2" transform="translate(310 410) scale(-1 1)">
+                <use href="#capy" x="0" y="0" width="128" height="109"/>
+                <use href="#bow" x="78" y="12" width="24" height="14"/>
+              </g>
+              <use href="#heart" x="164" y="384" width="26" height="24" class="bob"/>
+            </svg>
+            <div class="sky-name" id="sky-name">Аня ♥ Макс</div>
+            <div class="reel-side"><span class="heart-pop">❤️</span><span>💬</span><span>↗</span></div>
+            <div class="reel-ui"><span class="ava">🤎</span><span id="reel-handle">@peepandpeak</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about">
-    <div class="wrap about-grid">
-      <div class="reveal">
-        <span class="eyebrow">Meet the couple</span>
-        <h2>Peep &amp; Peak: the couple everyone sees themselves in</h2>
-        <p class="lead">Tiny stories about big care: he wraps her in a blanket, brings her favorite snacks and always holds the umbrella over her, not himself. Couples watch, save and send them to each other with “this is us”.</p>
-      </div>
-      <div class="grid-4 reveal" style="grid-template-columns:1fr 1fr">
-        <div class="card"><div class="icon">☂️</div><h3>Care</h3><p>Always there, in rain and in joy</p></div>
-        <div class="card"><div class="icon">🍰</div><h3>Surprises</h3><p>Cakes, flowers and gifts for no reason</p></div>
-        <div class="card"><div class="icon">🌅</div><h3>Moments</h3><p>Sunsets, walks and first dates</p></div>
-        <div class="card"><div class="icon">🤎</div><h3>Tenderness</h3><p>The kind of video you send to your person</p></div>
-      </div>
-    </div>
-  </section>
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee"><div class="marquee-track" id="marquee"></div></div>
+  </div>
 
-  <!-- PERSONAL -->
-  <section id="personal">
+  <!-- ================= WHY ================= -->
+  <section id="why">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">What makes it special</span>
-        <h2>Not a template with a caption: your own little film</h2>
-        <p>Your names and details become part of the story, not just text pasted on top.</p>
+      <p class="why-quote reveal">Цветы завянут через неделю. А&nbsp;это видео будут <span class="grad-text">пересматривать годами</span> и показывать всем друзьям 🤍</p>
+      <div class="grid-3">
+        <div class="card reveal"><div class="icon">🎯</div><h3>Не шаблон, а ваша история</h3><p>Имена, даты и ваши моменты не наклеены сверху, а вплетены в сцену: на торте, в небе, на песке.</p></div>
+        <div class="card reveal"><div class="icon">🥹</div><h3>Реакция, которую вы запомните</h3><p>Персонажи, которых он или она уже любит, вдруг поздравляют лично. Это трогает до слёз.</p></div>
+        <div class="card reveal"><div class="icon">📲</div><h3>Удобно дарить где угодно</h3><p>Вертикальное видео: отправить в мессенджер, выложить в сторис или показать на празднике.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= IDEAS ================= -->
+  <section id="ideas" class="ideas">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow">✨ Любая идея в кадре</span>
+        <h2>Если вы можете это представить, Peep&nbsp;&amp;&nbsp;Peak это сыграют</h2>
+        <p>Вот что заказывают чаще всего. Но это только начало: можно всё, что подскажет ваша история.</p>
       </div>
       <div class="grid-3">
-        <div class="card personal-card reveal">
-          <div class="vis">
-            <svg viewBox="0 0 200 150" aria-hidden="true">
-              <rect x="40" y="80" width="120" height="50" rx="8" fill="#fff"/>
-              <rect x="40" y="80" width="120" height="14" rx="7" fill="#e8a5a5"/>
-              <rect x="56" y="48" width="88" height="36" rx="8" fill="#fff"/>
-              <rect x="56" y="48" width="88" height="10" rx="5" fill="#e8a5a5"/>
-              <rect x="98" y="26" width="4" height="22" rx="2" fill="#a8754c"/>
-              <path d="M100 14 q 6 8 0 12 q -6 -4 0 -12" fill="#f2b84b"/>
-              <text x="100" y="118" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="800" font-size="18" fill="#a8754c">A ♥ M</text>
+        <article class="card idea reveal">
+          <div class="vis" style="background:linear-gradient(180deg,#251d48,#5b3f86)">
+            <svg viewBox="0 0 320 200" aria-hidden="true">
+              <g fill="#fff"><circle class="twinkle" cx="30" cy="30" r="1.5"/><circle class="twinkle" cx="290" cy="24" r="1.5" style="animation-delay:-1s"/><circle class="twinkle" cx="250" cy="70" r="1.2" style="animation-delay:-2s"/><circle class="twinkle" cx="70" cy="80" r="1.2" style="animation-delay:-.6s"/></g>
+              <text x="160" y="88" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="800" font-size="40" fill="#fff6dc" style="filter:drop-shadow(0 0 6px #ffd98a)">Аня</text>
+              <path d="M0 170 Q 160 140 320 170 L320 200 L0 200 Z" fill="#2c2147"/>
+              <use href="#couple" x="105" y="124" width="110" height="52"/>
             </svg>
           </div>
-          <div class="txt"><h3>Initials on the cake</h3><p>Peep &amp; Peak bring a birthday cake with your letters piped in frosting.</p></div>
-        </div>
-        <div class="card personal-card reveal">
-          <div class="vis" style="background:#eef1f8">
-            <svg viewBox="0 0 200 150" aria-hidden="true">
-              <circle cx="40" cy="30" r="2" fill="#a8754c"/><circle cx="160" cy="24" r="2" fill="#a8754c"/><circle cx="120" cy="16" r="1.5" fill="#a8754c"/><circle cx="70" cy="18" r="1.5" fill="#a8754c"/>
-              <text x="100" y="72" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="800" font-size="30" fill="#a8754c" opacity=".9">Emma</text>
-              <path d="M30 120 Q 100 96 170 120 L170 150 L30 150 Z" fill="#c8d3c0"/>
-              <use href="#capy" x="70" y="100" width="40" height="34"/>
-              <use href="#capy" x="98" y="102" width="36" height="31"/>
+          <div class="txt"><h3>Имя в звёздном небе</h3><p>Звёзды, салют или облака складываются в имя любимого человека.</p></div>
+        </article>
+        <article class="card idea reveal">
+          <div class="vis" style="background:var(--pink-soft)">
+            <svg viewBox="0 0 320 200" aria-hidden="true">
+              <rect x="100" y="104" width="120" height="56" rx="10" fill="#fff"/>
+              <rect x="100" y="104" width="120" height="16" rx="8" fill="#f08aa3"/>
+              <rect x="118" y="70" width="84" height="40" rx="10" fill="#fff"/>
+              <rect x="118" y="70" width="84" height="12" rx="6" fill="#f08aa3"/>
+              <rect x="157" y="46" width="6" height="24" rx="3" fill="#c9694a"/>
+              <path d="M160 32 q 8 10 0 15 q -8 -5 0 -15" fill="#ffb84d"/>
+              <text x="160" y="148" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="800" font-size="20" fill="#c9694a">А ♥ М</text>
+              <use href="#capy" x="10" y="110" width="80" height="68"/>
+              <g transform="translate(310 112) scale(-1 1)"><use href="#capy" x="0" y="0" width="76" height="65"/><use href="#bow" x="46" y="6" width="16" height="10"/></g>
             </svg>
           </div>
-          <div class="txt"><h3>A name in the sky</h3><p>Stars, fireworks or clouds form a name right inside the scene ⭐</p></div>
-        </div>
-        <div class="card personal-card reveal">
-          <div class="vis">
-            <svg viewBox="0 0 200 150" aria-hidden="true">
-              <rect x="30" y="30" width="60" height="80" rx="8" fill="#fff" transform="rotate(-6 60 70)"/>
-              <rect x="110" y="30" width="60" height="80" rx="8" fill="#fff" transform="rotate(5 140 70)"/>
-              <use href="#capy" x="38" y="48" width="44" height="38" transform="rotate(-6 60 70)"/>
-              <use href="#capy" x="118" y="48" width="44" height="38" transform="rotate(5 140 70)"/>
-              <use href="#heart" x="90" y="110" width="20" height="19"/>
+          <div class="txt"><h3>Инициалы на торте</h3><p>Праздничный торт со свечой, а на нём ваши буквы кремом.</p></div>
+        </article>
+        <article class="card idea reveal">
+          <div class="vis" style="background:linear-gradient(180deg,#ffe9d6,#ffd2c2)">
+            <svg viewBox="0 0 320 200" aria-hidden="true">
+              <use href="#capy" x="30" y="80" width="120" height="102"/>
+              <g transform="translate(296 74) scale(-1 1)"><use href="#capy" x="0" y="0" width="120" height="102"/><use href="#bow" x="72" y="10" width="24" height="14"/></g>
+              <rect x="148" y="124" width="28" height="20" rx="4" fill="#c9694a"/>
+              <circle cx="162" cy="118" r="9" fill="none" stroke="#ffd98a" stroke-width="4"/>
+              <use href="#star" x="170" y="100" width="10" height="10" class="twinkle"/>
+              <use href="#heart" x="150" y="40" width="24" height="22" class="bob"/>
             </svg>
           </div>
-          <div class="txt"><h3>Your story</h3><p>How you met, your first date, the proposal: Peep &amp; Peak replay it in their own sweet way.</p></div>
+          <div class="txt"><h3>Предложение руки и сердца</h3><p>Кольцо, закат и вопрос, на который ответят «да». Видео можно показать прямо в момент предложения.</p></div>
+        </article>
+        <article class="card idea reveal">
+          <div class="vis" style="background:linear-gradient(180deg,#bfe3f2 0%,#bfe3f2 55%,#f6e3c4 55%)">
+            <svg viewBox="0 0 320 200" aria-hidden="true">
+              <circle cx="260" cy="40" r="18" fill="#ffe08a"/>
+              <path d="M0 110 Q 40 100 80 110 T 160 110 T 240 110 T 320 110" stroke="#fff" stroke-width="3" fill="none" opacity=".8"/>
+              <text x="222" y="168" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="700" font-size="20" fill="#b98d5c" transform="rotate(-4 222 168)">Аня + Макс</text>
+              <use href="#couple" x="6" y="112" width="140" height="66"/>
+            </svg>
+          </div>
+          <div class="txt"><h3>Надпись на песке у моря</h3><p>Отпуск мечты: закат, волны и ваши имена на берегу.</p></div>
+        </article>
+        <article class="card idea reveal">
+          <div class="vis" style="background:var(--lav-soft)">
+            <svg viewBox="0 0 320 200" aria-hidden="true">
+              <g class="bob">
+                <line x1="130" y1="96" x2="150" y2="150" stroke="#b9a9d8"/><line x1="170" y1="84" x2="160" y2="150" stroke="#b9a9d8"/><line x1="210" y1="100" x2="170" y2="150" stroke="#b9a9d8"/>
+                <ellipse cx="130" cy="70" rx="22" ry="27" fill="#f08aa3"/><ellipse cx="170" cy="58" rx="22" ry="27" fill="#ffc94d"/><ellipse cx="210" cy="74" rx="22" ry="27" fill="#a8c6f5"/>
+                <text x="130" y="77" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="800" font-size="18" fill="#fff">3</text>
+                <text x="170" y="63" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="800" font-size="11" fill="#fff">года</text>
+                <text x="210" y="81" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="800" font-size="18" fill="#fff">♥</text>
+              </g>
+              <use href="#couple" x="95" y="134" width="130" height="62"/>
+            </svg>
+          </div>
+          <div class="txt"><h3>Шары с датой и надписью</h3><p>Сколько вы вместе, сколько исполняется или главная фраза для него или неё.</p></div>
+        </article>
+        <article class="card idea reveal">
+          <div class="vis" style="background:var(--accent-soft)">
+            <svg viewBox="0 0 320 200" aria-hidden="true">
+              <g transform="rotate(-7 100 100)"><rect x="54" y="34" width="92" height="118" rx="8" fill="#fff"/><rect x="62" y="42" width="76" height="80" rx="4" fill="#fde9ee"/><use href="#capy" x="66" y="64" width="68" height="58"/><text x="100" y="142" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="800" font-size="10" fill="#75685f">первое свидание</text></g>
+              <g transform="rotate(6 220 100)"><rect x="174" y="34" width="92" height="118" rx="8" fill="#fff"/><rect x="182" y="42" width="76" height="80" rx="4" fill="#f0ebfb"/><g transform="translate(254 62) scale(-1 1)"><use href="#capy" x="0" y="0" width="68" height="58"/><use href="#bow" x="40" y="5" width="14" height="9"/></g><text x="220" y="142" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="800" font-size="10" fill="#75685f">наш город</text></g>
+              <use href="#heart" x="148" y="152" width="24" height="22" class="bob"/>
+            </svg>
+          </div>
+          <div class="txt"><h3>Ваша история один в один</h3><p>Как познакомились, первое свидание, ваша шутка или особое место. Повторим всё.</p></div>
+        </article>
+      </div>
+      <div class="any-idea reveal">
+        <div>
+          <h3>Не нашли свою идею?</h3>
+          <p>Опишите любую: Peep &amp; Peak сыграют то, что важно именно вам двоим. Это опция «Своя история», её можно добавить к любому видео.</p>
         </div>
+        <a href="#order" class="btn btn-primary" data-own-idea>Хочу свою историю →</a>
       </div>
     </div>
   </section>
 
-  <!-- HOW -->
-  <section id="how" style="padding-top:0">
+  <!-- ================= OCCASIONS ================= -->
+  <section id="occasions">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">How it works</span>
-        <h2>Three steps to the cutest gift</h2>
+      <div class="section-head center reveal">
+        <span class="eyebrow">💝 Поводы</span>
+        <h2>Для какого момента делаем?</h2>
+        <p>Нажмите на повод, и мы сразу подставим его в заявку.</p>
       </div>
-      <div class="grid-3 steps">
-        <div class="card step reveal"><h3>Tell us your story</h3><p>Fill in the form: the occasion, names or initials and a few sweet details about you two.</p></div>
-        <div class="card step reveal"><h3>We make the video</h3><p>We come up with the plot and create your video starring Peep &amp; Peak.</p></div>
-        <div class="card step reveal"><h3>Gift it and watch the reaction</h3><p>You get the finished video, ready to send or show at the celebration 💌</p></div>
-      </div>
+      <div class="occasions reveal" id="occasion-buttons"></div>
     </div>
   </section>
 
-  <!-- OCCASIONS + GALLERY -->
+  <!-- ================= EXAMPLES ================= -->
   <section id="examples" style="padding-top:0">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Occasions &amp; examples</span>
-        <h2>For every moment that matters</h2>
-        <p>🎂 Birthdays · 💍 Anniversaries · 💌 Love confessions &amp; proposals</p>
+        <span class="eyebrow">🎬 Примеры</span>
+        <h2>Посмотрите, как это выглядит</h2>
+        <p>Все видео с Peep &amp; Peak у нас в Instagram: нажмите на любое, чтобы открыть.</p>
       </div>
       <div class="gallery" id="gallery"></div>
+      <div class="gallery-cta reveal">
+        <a href="#" class="btn btn-dark" data-link="profile">Все видео в Instagram ↗</a>
+        <a href="#" class="btn btn-ghost" data-link="dm">Написать в директ 💬</a>
+      </div>
     </div>
   </section>
 
-  <!-- PRICING -->
+  <!-- ================= PRICING ================= -->
   <section id="pricing" style="padding-top:0">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Pricing</span>
-        <h2>Choose your video</h2>
+        <span class="eyebrow">💰 Цены</span>
+        <h2>Выберите своё видео</h2>
+        <p>Чем длиннее видео, тем больше сцен и деталей вашей истории в него помещается.</p>
       </div>
-      <div class="promo reveal" id="promo">
-        <p>🔥 −40% for our Telegram channel subscribers. Discounted prices are shown below.</p>
+
+      <div class="tg-banner reveal">
+        <div>
+          <b>🔥 −40% подписчикам Telegram-канала</b>
+          <p>Подпишитесь на канал Peep &amp; Peak, и любое видео обойдётся почти вдвое дешевле.</p>
+        </div>
+        <a href="#" class="btn btn-dark" data-link="channel" id="tg-banner-btn">Подписаться и получить скидку</a>
       </div>
-      <div class="grid-2" id="pricing-grid"></div>
-      <p class="addon reveal" id="addon"></p>
+
+      <div class="grid-3" id="plans"></div>
+
+      <div class="addon-card reveal">
+        <div class="icon">✨</div>
+        <div>
+          <h3 style="margin:0 0 4px">Своя история</h3>
+          <p style="color:var(--muted);font-size:15px">Добавьте к любому видео, и Peep &amp; Peak разыграют именно ваш сюжет: как вы познакомились, вашу шутку, место, мечту. Реализуем любую идею.</p>
+        </div>
+        <div class="p"><span id="addon-price"></span><small>доплата, скидка не действует</small></div>
+      </div>
     </div>
   </section>
 
-  <!-- ORDER -->
-  <section id="order" class="order">
-    <div class="wrap order-grid">
-      <div class="order-side reveal">
-        <span class="eyebrow">Order</span>
-        <h2>Tell us about you two</h2>
-        <p class="lead">Fill in the form and choose how we should contact you. We'll reply to discuss the details.</p>
-        <div class="contact-list" id="contacts"></div>
-      </div>
-      <form id="order-form" class="reveal" novalidate>
-        <div class="row">
-          <label>Occasion
-            <select name="occasion" required>
-              <option>Birthday</option>
-              <option>Anniversary</option>
-              <option>Wedding anniversary</option>
-              <option>Valentine's Day</option>
-              <option>Love confession</option>
-              <option>Proposal</option>
-              <option>Just because</option>
-            </select>
-          </label>
-          <label>For
-            <select name="for">
-              <option>For her</option>
-              <option>For him</option>
-              <option>For both of us</option>
-            </select>
-          </label>
-        </div>
-        <div class="row">
-          <label>Names or initials
-            <input name="names" placeholder="e.g. Emma &amp; Jack / E + J" required>
-          </label>
-          <label>Needed by
-            <input name="date" type="date">
-          </label>
-        </div>
-        <div class="row">
-          <label>Video
-            <select name="plan" id="plan-select"></select>
-          </label>
-          <label><span>Your own idea (+<span id="addon-price"></span>)</span>
-            <select name="idea">
-              <option value="no">No, surprise me</option>
-              <option value="yes">Yes, I have my own idea</option>
-            </select>
-          </label>
-        </div>
-        <label>Your story &amp; wishes
-          <textarea name="story" placeholder="How you met, what you love doing together, what text you want to see in the video…"></textarea>
-        </label>
-        <fieldset>
-          <legend>How should we contact you?</legend>
-          <div class="methods">
-            <label class="method"><input type="radio" name="method" value="instagram"><span>📸 Instagram</span></label>
-            <label class="method"><input type="radio" name="method" value="telegram"><span>✈️ Telegram</span></label>
-            <label class="method"><input type="radio" name="method" value="whatsapp"><span>💬 WhatsApp</span></label>
-          </div>
-          <input name="contact" id="contact-input" placeholder="Choose a contact method first" disabled autocomplete="off">
-          <div class="err" id="contact-err" role="alert"></div>
-        </fieldset>
-        <button class="btn btn-primary" type="submit" id="submit-btn">Send request →</button>
-        <p class="form-hint" id="form-hint">The request text will be copied automatically: just paste it into the chat that opens.</p>
-      </form>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq">
+  <!-- ================= HOW ================= -->
+  <section id="how" style="padding-top:0">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">FAQ</span>
-        <h2>Questions</h2>
+        <span class="eyebrow">🧭 Как заказать</span>
+        <h2>Четыре шага до самого милого подарка</h2>
+      </div>
+      <div class="grid-4 steps">
+        <div class="card step reveal"><h3>Заявка</h3><p>Заполните форму ниже: повод, имена, дата и ваша идея. Пара минут.</p></div>
+        <div class="card step reveal"><h3>Обсуждаем</h3><p>Пишем вам в выбранный мессенджер и уточняем детали сюжета.</p></div>
+        <div class="card step reveal"><h3>Создаём</h3><p>Peep &amp; Peak оживают в вашей истории к нужной дате.</p></div>
+        <div class="card step reveal"><h3>Дарите</h3><p>Получаете готовое видео и смотрите на реакцию любимого человека 💌</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ORDER ================= -->
+  <section id="order" class="order">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">📝 Заявка</span>
+        <h2>Расскажите о вас двоих</h2>
+        <p>Заполните форму, и мы свяжемся с вами в удобном мессенджере. Стоимость считается сразу.</p>
+      </div>
+
+      <div class="order-grid">
+        <form id="order-form" novalidate>
+
+          <div class="block">
+            <div class="block-title"><i>1</i>Повод и дата</div>
+            <div class="field">
+              <span class="label">Какой повод?</span>
+              <div class="pills" id="occasion-pills"></div>
+              <div class="err" data-err="occasion"></div>
+            </div>
+            <label class="field" id="f-occasion-other" hidden>
+              <span>Напишите ваш повод</span>
+              <input type="text" name="occasionOther" placeholder="Например: годовщина первого свидания">
+              <div class="err" data-err="occasionOther"></div>
+            </label>
+            <label class="field" id="f-age" hidden>
+              <span>Сколько исполняется? <span class="opt">(необязательно)</span></span>
+              <input type="number" name="age" min="1" max="120" inputmode="numeric" placeholder="Например: 25">
+            </label>
+            <label class="field" id="f-together" hidden>
+              <span>Сколько вы вместе? <span class="opt">(необязательно)</span></span>
+              <input type="text" name="together" placeholder="Например: 3 года / 6 месяцев / 10 лет брака">
+            </label>
+            <div class="field">
+              <span class="label">Кому видео?</span>
+              <div class="pills">
+                <label class="pill"><input type="radio" name="recipient" value="Ей"><span>💁‍♀️ Ей</span></label>
+                <label class="pill"><input type="radio" name="recipient" value="Ему"><span>🙋‍♂️ Ему</span></label>
+                <label class="pill"><input type="radio" name="recipient" value="Нам двоим"><span>💑 Нам двоим</span></label>
+              </div>
+              <div class="err" data-err="recipient"></div>
+            </div>
+            <label class="field">
+              <span>К какой дате нужно видео?</span>
+              <input type="date" name="date" id="date-input">
+              <div class="date-info" id="date-info"></div>
+              <div class="err" data-err="date"></div>
+            </label>
+          </div>
+
+          <div class="block">
+            <div class="block-title"><i>2</i>Имена и надпись в видео</div>
+            <div class="row">
+              <label class="field">
+                <span>Кого поздравляем</span>
+                <input type="text" name="toName" placeholder="Имя или инициалы: Аня / А." maxlength="40">
+                <small>Это имя появится в видео</small>
+                <div class="err" data-err="toName"></div>
+              </label>
+              <label class="field">
+                <span>От кого <span class="opt">(необязательно)</span></span>
+                <input type="text" name="fromName" placeholder="Ваше имя: Макс / М." maxlength="40">
+              </label>
+            </div>
+            <label class="field">
+              <span>Надпись в видео <span class="opt">(необязательно)</span></span>
+              <input type="text" name="caption" id="caption" maxlength="40" placeholder="С днём рождения, Аня! / А ♥ М / 3 года вместе">
+              <small><span id="caption-count">0</span>/40 · коротко, чтобы красиво смотрелось в кадре</small>
+            </label>
+          </div>
+
+          <div class="block">
+            <div class="block-title"><i>3</i>Видео и сюжет</div>
+            <div class="field">
+              <span class="label">Длительность</span>
+              <div class="durations" id="durations"></div>
+            </div>
+            <label class="toggle" id="t-own">
+              <input type="checkbox" name="ownIdea" id="own-idea">
+              <span><b>✨ Своя история <span id="addon-inline"></span></b><small>Сыграем именно ваш сюжет. Без неё мы сами придумаем красивую сцену под ваш повод.</small></span>
+            </label>
+            <label class="field" id="f-idea" hidden>
+              <span>Опишите вашу идею</span>
+              <textarea name="idea" placeholder="Например: мы познакомились в кофейне под дождём, он отдал мне свой зонт. Хочу, чтобы Peep и Peak повторили это, а в конце в небе появилось «Выходи за меня?»"></textarea>
+              <div class="err" data-err="idea"></div>
+            </label>
+            <label class="field">
+              <span>Пара слов о вас <span class="opt">(необязательно)</span></span>
+              <textarea name="details" placeholder="Что вы любите, общие увлечения, любимый цвет, что точно должно быть в видео…"></textarea>
+            </label>
+            <label class="toggle" id="t-sub">
+              <input type="checkbox" name="subscribed" id="subscribed">
+              <span><b>🔥 Я подписан(а) на Telegram-канал: −40%</b><small>Скидка на видео (не на «Свою историю»). Подписку проверим перед оплатой. <a href="#" data-link="channel">Подписаться ↗</a></small></span>
+            </label>
+          </div>
+
+          <div class="block">
+            <div class="block-title"><i>4</i>Как с вами связаться?</div>
+            <div class="methods">
+              <label class="pill"><input type="radio" name="contactMethod" value="instagram"><span>📸 Instagram</span></label>
+              <label class="pill"><input type="radio" name="contactMethod" value="telegram"><span>✈️ Telegram</span></label>
+              <label class="pill"><input type="radio" name="contactMethod" value="whatsapp"><span>💬 WhatsApp</span></label>
+            </div>
+            <input type="text" name="contact" id="contact-input" placeholder="Сначала выберите мессенджер" disabled autocomplete="off" aria-label="Ваш ник или номер">
+            <div class="err" data-err="contact"></div>
+          </div>
+
+          <button class="btn btn-primary" type="submit" id="submit-btn">Отправить заявку →</button>
+          <p class="help" id="form-hint">После отправки текст заявки скопируется и откроется наш директ: просто вставьте и отправьте.</p>
+        </form>
+
+        <aside class="summary">
+          <div class="sum-card">
+            <h3>Ваш заказ</h3>
+            <div id="sum-lines"></div>
+            <div class="sum-total"><span>Итого</span><b id="sum-total">$0</b></div>
+            <div class="sum-nudge" id="sum-nudge"></div>
+          </div>
+          <div class="direct-box">
+            <p>Не хотите заполнять форму? Напишите нам напрямую:</p>
+            <div id="direct-links" style="display:grid;gap:8px"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow">❓ Вопросы</span>
+        <h2>Часто спрашивают</h2>
       </div>
       <div class="faq reveal">
-        <details><summary>How long does it take?</summary><p>It depends on the video length and how busy we are. Tell us your date in the form and we'll confirm the timing before you pay.</p></details>
-        <details><summary>What text can you add to the video?</summary><p>Names, initials, dates and short phrases. They become part of the scene: on a cake, in the sky, in the sand, on balloons and more.</p></details>
-        <details><summary>What is “Your own idea”?</summary><p>Instead of a story from our collection, Peep &amp; Peak act out your own plot: how you met, an inside joke, a special place.</p></details>
-        <details><summary>How do I get the −40% discount?</summary><p>Subscribe to our Telegram channel. The discounted prices are shown on this page.</p></details>
-        <details><summary>How do I receive the video?</summary><p>We send the finished video in high quality to the messenger you chose in the form.</p></details>
-        <details><summary>How do I pay?</summary><p>We'll agree on the payment method in private messages once the story is confirmed.</p></details>
+        <details><summary>Можно реализовать вообще любую идею?</summary><p>Да, это наша фишка. Опишите сюжет в опции «Своя история», и Peep &amp; Peak его сыграют. Если что-то сложно показать, предложим, как сделать ещё красивее.</p></details>
+        <details><summary>Какие надписи можно добавить?</summary><p>Имена, инициалы, даты и короткие фразы до 40 символов. Они становятся частью сцены: в небе, на торте, на песке, на шарах.</p></details>
+        <details><summary>Сколько времени занимает создание?</summary><p>Зависит от длительности и сложности сюжета. Укажите дату в заявке, и мы сразу скажем, успеваем ли. Если до праздника совсем мало времени, лучше сразу напишите в директ.</p></details>
+        <details><summary>Как получить скидку −40%?</summary><p>Подпишитесь на наш Telegram-канал и отметьте это в заявке. Скидка действует на видео 30, 60 и 90 секунд. На опцию «Своя история» скидка не распространяется.</p></details>
+        <details><summary>Как я получу видео?</summary><p>Пришлём готовое видео в хорошем качестве в мессенджер, который вы выбрали в заявке.</p></details>
+        <details><summary>Как оплатить?</summary><p>Способ оплаты согласуем в личных сообщениях, когда обсудим сюжет.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="final reveal">
+        <svg class="stars" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true">
+          <g fill="#fff"><circle class="twinkle" cx="80" cy="60" r="2"/><circle class="twinkle" cx="900" cy="80" r="2" style="animation-delay:-1s"/><circle class="twinkle" cx="760" cy="40" r="1.5" style="animation-delay:-2s"/><circle class="twinkle" cx="200" cy="320" r="1.5" style="animation-delay:-.5s"/><circle class="twinkle" cx="940" cy="300" r="2" style="animation-delay:-1.5s"/><circle class="twinkle" cx="500" cy="30" r="1.5" style="animation-delay:-2.5s"/></g>
+        </svg>
+        <h2>Удивите вторую половинку так, как никто до вас</h2>
+        <p>Самый тёплый подарок не купить в магазине. Его можно только придумать вместе с Peep &amp; Peak.</p>
+        <div class="hero-ctas">
+          <a href="#order" class="btn btn-primary">Заказать видео →</a>
+          <a href="#" class="btn btn-ghost" data-link="dm">Написать в директ 💬</a>
+        </div>
       </div>
     </div>
   </section>
@@ -558,202 +885,403 @@
 
 <footer>
   <div class="wrap foot">
-    <span>© <span id="year"></span> <span data-brand>Peep &amp; Peak</span>. Videos created with AI. You're my little star ⭐</span>
-    <a id="footer-ig" href="#" target="_blank" rel="noopener">Instagram</a>
+    <span>© <span id="year"></span> Peep &amp; Peak. Видео созданы с помощью ИИ. You're my little star ⭐</span>
+    <nav>
+      <a href="#" data-link="profile">Instagram</a>
+      <a href="#" data-link="channel">Telegram-канал</a>
+    </nav>
   </div>
 </footer>
 
+<!-- закреплённые кнопки связи -->
+<div class="float-contact" id="float-contact"></div>
+<div class="mobile-bar">
+  <a href="#" data-link="profile">📸 Примеры</a>
+  <a href="#" data-link="dm">💬 Директ</a>
+  <a href="#order" class="go">Заказать видео</a>
+</div>
+
 <div class="cookie" id="cookie" hidden>
-  <p>We use cookies and analytics to understand where our visitors come from and to improve the site.</p>
+  <p>Мы используем cookies и счётчики аналитики, чтобы понимать, откуда приходят гости, и делать сайт лучше.</p>
   <div class="btns">
-    <button class="btn btn-ghost" id="cookie-no" type="button">Essential only</button>
-    <button class="btn btn-primary" id="cookie-yes" type="button">Accept</button>
+    <button class="btn btn-ghost btn-sm" id="cookie-no" type="button">Только нужные</button>
+    <button class="btn btn-primary btn-sm" id="cookie-yes" type="button">Принять</button>
   </div>
 </div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-  /* ================= SETTINGS: edit here ================= */
+  /* ===================== НАСТРОЙКИ: меняйте здесь ===================== */
   const CONFIG = {
-    brand: "Peep & Peak",
-    instagram: "peepandpeak",         // Instagram username without @
-    telegram: "",                     // your Telegram username without @ (optional)
-    telegramChannel: "",              // Telegram channel link for the −40% discount, e.g. "https://t.me/peepandpeak"
-    // Requests to a Telegram bot (see README). If empty, requests go via Instagram DM.
-    tgBotToken: "",                   // token from @BotFather
-    tgChatId: "",                     // your chat id
-    // Analytics: fill in an ID and the tracker turns on after cookie consent.
+    instagram: "peepandpeak",        // ник в Instagram без @
+    telegram: "",                    // ваш личный ник в Telegram без @ (для кнопки «написать»)
+    whatsapp: "",                    // номер WhatsApp цифрами с кодом страны, например "15551234567"
+    telegramChannel: "",             // ссылка на Telegram-канал со скидкой, например "https://t.me/peepandpeak"
+    // Заявки в Telegram-бота (см. README). Если пусто, заявка копируется и открывается директ Instagram.
+    tgBotToken: "",
+    tgChatId: "",
+    // Аналитика: впишите ID, и счётчик включится после согласия с cookies.
     metaPixelId: "",
     yandexMetrikaId: "",
-    googleAnalyticsId: "",            // e.g. "G-XXXXXXXXXX"
+    googleAnalyticsId: "",
     currency: "USD",
+    discountPercent: 40,             // скидка подписчикам канала
+    urgentDays: 3,                   // если до даты меньше стольких дней, показываем «срочный заказ»
     plans: [
-      { name: "30 sec", old: 79,  price: 47, features: ["Peep & Peak tell your story", "Names or initials in the scene", "Vertical HD video for stories & Reels"] },
-      { name: "60 sec", old: 149, price: 89, featured: true, features: ["A longer story with more scenes", "Names or initials in the scene", "Vertical HD video for stories & Reels"] },
+      { id: "30", title: "30 сек", price: 79,  sub: 47,  tagline: "Короткое и трогательное поздравление",
+        features: ["Одна яркая сцена под ваш повод", "Имя или инициалы в кадре", "Вертикальное видео для сторис и Reels"] },
+      { id: "60", title: "60 сек", price: 149, sub: 89,  tagline: "История из нескольких сцен", hit: true,
+        features: ["Несколько сцен с развитием сюжета", "Имена, дата и надпись в кадре", "Больше деталей вашей истории"] },
+      { id: "90", title: "90 сек", price: 219, sub: 129, tagline: "Мини-фильм о вашей любви",
+        features: ["Полноценный сюжет от начала до финала", "Все ваши надписи и моменты", "Максимум эмоций для особого дня"] },
     ],
-    addon: { name: "Your own idea", old: 49, price: 29 },
-    // Examples: put videos into the videos/ folder and set src. Without src a placeholder is shown.
+    ownIdea: { price: 49 },          // «Своя история»: доплата, скидка не действует
+    occasions: [
+      { id: "birthday",    emoji: "🎂", title: "День рождения", extra: "age" },
+      { id: "anniversary", emoji: "💑", title: "Годовщина отношений", extra: "together" },
+      { id: "wedding",     emoji: "💍", title: "Годовщина свадьбы", extra: "together" },
+      { id: "proposal",    emoji: "💎", title: "Предложение руки и сердца" },
+      { id: "confession",  emoji: "💌", title: "Признание в любви" },
+      { id: "valentine",   emoji: "❤️", title: "14 февраля" },
+      { id: "sorry",       emoji: "🕊️", title: "Помириться" },
+      { id: "miss",        emoji: "🌙", title: "Скучаю / на расстоянии" },
+      { id: "other",       emoji: "✨", title: "Другой повод", extra: "other" },
+    ],
+    // Примеры: url — ссылка на Reels в Instagram; src — путь к .mp4 в папке videos/ (необязательно)
     examples: [
-      { title: "Happy birthday 🎂", emoji: "🎂", src: "" },
-      { title: "1 year together 💍", emoji: "💍", src: "" },
-      { title: "Name in the stars ✨", emoji: "✨", src: "" },
-      { title: "Will you marry me? 💌", emoji: "💌", src: "" },
+      { title: "С днём рождения 🎂", emoji: "🎂", url: "", src: "" },
+      { title: "Нам 1 год 💍",       emoji: "💍", url: "", src: "" },
+      { title: "Имя в звёздах ✨",    emoji: "✨", url: "", src: "" },
+      { title: "Выходи за меня? 💌",  emoji: "💌", url: "", src: "" },
     ],
+    skyNames: ["Аня ♥ Макс", "С днём рождения, Лиза!", "3 года вместе ✨", "Ты моя звезда ⭐", "Выходи за меня? 💍"],
   };
-  /* ======================================================== */
+  /* ==================================================================== */
 
-  const $ = (s) => document.querySelector(s);
-  const igUrl = `https://instagram.com/${CONFIG.instagram}`;
-  const igDm = `https://ig.me/m/${CONFIG.instagram}`;
-  const fmt = (n) => "$" + n;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const money = (n) => "$" + n;
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
-  document.querySelectorAll("[data-brand]").forEach((el) => (el.textContent = CONFIG.brand));
+  const LINKS = {
+    profile: `https://instagram.com/${CONFIG.instagram}`,
+    dm: `https://ig.me/m/${CONFIG.instagram}`,
+    channel: CONFIG.telegramChannel || `https://instagram.com/${CONFIG.instagram}`,
+    tg: CONFIG.telegram ? `https://t.me/${CONFIG.telegram}` : "",
+    wa: CONFIG.whatsapp ? `https://wa.me/${CONFIG.whatsapp}` : "",
+  };
+  $$("[data-link]").forEach((a) => {
+    a.href = LINKS[a.dataset.link];
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+  if (!CONFIG.telegramChannel) $("#tg-banner-btn").textContent = "Ссылка на канал в нашем профиле ↗";
   $("#year").textContent = new Date().getFullYear();
-  $("#footer-ig").href = igUrl;
+  $("#reel-handle").textContent = "@" + CONFIG.instagram;
 
-  // Gallery
-  $("#gallery").innerHTML = CONFIG.examples.map((e) => `
-    <div class="reel reveal">
-      ${e.src
-        ? `<video src="${e.src}" muted loop playsinline autoplay preload="metadata"></video>`
-        : `<div class="ph">${e.emoji}</div>`}
-      <div class="cap">${e.title}</div>
-    </div>`).join("");
+  /* ---------- pinned / direct contacts ---------- */
+  const directs = [
+    { cls: "ig", icon: "📸", label: "Директ Instagram", href: LINKS.dm },
+    LINKS.tg && { cls: "tg", icon: "✈️", label: "Telegram", href: LINKS.tg },
+    LINKS.wa && { cls: "wa", icon: "💬", label: "WhatsApp", href: LINKS.wa },
+  ].filter(Boolean);
+  $("#float-contact").innerHTML = directs.map((d) =>
+    `<a class="fab ${d.cls}" href="${d.href}" target="_blank" rel="noopener"><i>${d.icon}</i>${d.label}</a>`).join("");
+  $("#direct-links").innerHTML = directs.map((d) =>
+    `<a href="${d.href}" target="_blank" rel="noopener">${d.icon} ${d.label} ↗</a>`).join("");
 
-  // Pricing
-  $("#pricing-grid").innerHTML = CONFIG.plans.map((p) => `
-    <div class="card price-card reveal ${p.featured ? "featured" : ""}">
-      ${p.featured ? '<span class="badge">Most popular</span>' : ""}
-      <h3>${p.name === "30 sec" ? "⏱" : "🎬"} ${p.name}</h3>
-      <div class="price"><s>${fmt(p.old)}</s>${fmt(p.price)}</div>
+  /* ---------- hero: name in the sky ---------- */
+  (() => {
+    const el = $("#sky-name");
+    let i = 0;
+    setInterval(() => {
+      el.classList.add("out");
+      setTimeout(() => {
+        i = (i + 1) % CONFIG.skyNames.length;
+        el.textContent = CONFIG.skyNames[i];
+        el.classList.remove("out");
+      }, 800);
+    }, 3600);
+  })();
+
+  /* ---------- marquee ---------- */
+  const mItems = CONFIG.occasions.filter((o) => o.id !== "other").map((o) => `<span>${o.emoji} ${o.title}</span>`).join("");
+  $("#marquee").innerHTML = mItems + mItems;
+
+  /* ---------- prices ---------- */
+  const minSub = Math.min(...CONFIG.plans.map((p) => p.sub));
+  $("#from-chip").textContent = `🔥 от ${money(minSub)}`;
+  $("#plans").innerHTML = CONFIG.plans.map((p) => `
+    <div class="card plan reveal ${p.hit ? "hit" : ""}">
+      ${p.hit ? '<span class="badge">Хит: выбирают чаще всего</span>' : ""}
+      <div class="dur">${p.title}</div>
+      <div class="tagline">${p.tagline}</div>
+      <div class="price-row"><span class="price">${money(p.sub)}</span><span class="old">${money(p.price)}</span></div>
+      <div class="note">с подпиской на Telegram-канал (−${CONFIG.discountPercent}%)</div>
       <ul>${p.features.map((f) => `<li>${f}</li>`).join("")}</ul>
-      <a href="#order" class="btn ${p.featured ? "btn-primary" : "btn-ghost"}" data-plan="${p.name}">Choose</a>
+      <a href="#order" class="btn ${p.hit ? "btn-primary" : "btn-ghost"}" data-pick-plan="${p.id}">Выбрать ${p.title}</a>
     </div>`).join("");
-  const a = CONFIG.addon;
-  $("#addon").innerHTML = `✨ <b>${a.name}</b>: <s>+${fmt(a.old)}</s> <b>+${fmt(a.price)}</b> to any video`;
-  $("#addon-price").textContent = fmt(a.price);
-  if (CONFIG.telegramChannel) {
-    $("#promo").insertAdjacentHTML("beforeend",
-      `<a class="btn btn-primary" href="${CONFIG.telegramChannel}" target="_blank" rel="noopener">Join the channel</a>`);
+  $("#addon-price").textContent = "+" + money(CONFIG.ownIdea.price);
+  $("#addon-inline").textContent = "+" + money(CONFIG.ownIdea.price);
+
+  /* ---------- examples ---------- */
+  const tints = ["linear-gradient(160deg,#fde9ee,#f2b8c6)", "linear-gradient(160deg,#fbeee4,#efbf98)", "linear-gradient(160deg,#2d2352,#6b4a8a)", "linear-gradient(160deg,#f0ebfb,#c7b5ee)"];
+  $("#gallery").innerHTML = CONFIG.examples.map((e, i) => `
+    <a class="reel reveal" href="${e.url || LINKS.profile}" target="_blank" rel="noopener" style="background:${tints[i % tints.length]}">
+      ${e.src ? `<video src="${e.src}" muted loop playsinline autoplay preload="metadata"></video>` : `<div class="ph">${e.emoji}</div>`}
+      <span class="play">▶ Смотреть</span>
+      <span class="cap">${e.title}</span>
+    </a>`).join("");
+
+  /* ---------- order form ---------- */
+  const form = $("#order-form");
+  const F = (name) => form.elements[name];
+  $("#occasion-pills").innerHTML = CONFIG.occasions.map((o) =>
+    `<label class="pill"><input type="radio" name="occasion" value="${o.id}"><span>${o.emoji} ${o.title}</span></label>`).join("");
+  $("#occasion-buttons").innerHTML = CONFIG.occasions.map((o) =>
+    `<button type="button" class="occ" data-occ="${o.id}"><span>${o.emoji}</span>${o.title}</button>`).join("");
+  $("#durations").innerHTML = CONFIG.plans.map((p) =>
+    `<label class="dur-opt"><input type="radio" name="plan" value="${p.id}" ${p.hit ? "checked" : ""}><span><b>${p.title}</b><em data-plan-price="${p.id}"></em></span></label>`).join("");
+
+  const occById = (id) => CONFIG.occasions.find((o) => o.id === id);
+  const planById = (id) => CONFIG.plans.find((p) => p.id === id);
+
+  function onOccasion() {
+    const o = occById(F("occasion").value);
+    $("#f-age").hidden = !(o && o.extra === "age");
+    $("#f-together").hidden = !(o && o.extra === "together");
+    $("#f-occasion-other").hidden = !(o && o.extra === "other");
+    update();
   }
+  $$("input[name=occasion]").forEach((r) => r.addEventListener("change", onOccasion));
+  $$("[data-occ]").forEach((b) => b.addEventListener("click", () => {
+    const r = form.querySelector(`input[name=occasion][value="${b.dataset.occ}"]`);
+    r.checked = true;
+    clearErr("occasion");
+    onOccasion();
+    $("#order").scrollIntoView({ behavior: "smooth" });
+  }));
+  $$("[data-pick-plan]").forEach((b) => b.addEventListener("click", () => {
+    form.querySelector(`input[name=plan][value="${b.dataset.pickPlan}"]`).checked = true;
+    update();
+  }));
+  $$("[data-own-idea]").forEach((b) => b.addEventListener("click", () => {
+    $("#own-idea").checked = true;
+    update();
+  }));
 
-  $("#plan-select").innerHTML = CONFIG.plans
-    .map((p) => `<option value="${p.name}" ${p.featured ? "selected" : ""}>${p.name} · ${fmt(p.price)}</option>`)
-    .join("");
-  document.querySelectorAll("[data-plan]").forEach((el) =>
-    el.addEventListener("click", () => ($("#plan-select").value = el.dataset.plan)));
+  // date: not in the past, days left, urgent warning
+  const pad = (n) => String(n).padStart(2, "0");
+  const now = new Date();
+  F("date").min = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+  function daysUntil(v) {
+    if (!v) return null;
+    const [y, m, d] = v.split("-").map(Number);
+    const t = new Date(); t.setHours(0, 0, 0, 0);
+    return Math.round((new Date(y, m - 1, d) - t) / 86400000);
+  }
+  const plural = (n, a, b, c) => { const m10 = n % 10, m100 = n % 100; return m10 === 1 && m100 !== 11 ? a : m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14) ? b : c; };
+  const daysWord = (n) => `${n} ${plural(n, "день", "дня", "дней")}`;
+  function onDate() {
+    const info = $("#date-info");
+    const n = daysUntil(F("date").value);
+    info.className = "date-info";
+    info.textContent = "";
+    if (n === null || n < 0) return;
+    if (n < CONFIG.urgentDays) {
+      info.classList.add("warn");
+      info.textContent = n === 0 ? "⚡ Это сегодня! Срочный заказ: после заявки лучше сразу напишите нам в директ" : `⚡ Через ${daysWord(n)}: срочный заказ, уточним сроки сразу после заявки`;
+    } else {
+      info.classList.add("ok");
+      info.textContent = `✓ Через ${daysWord(n)}: отличный запас времени`;
+    }
+  }
+  F("date").addEventListener("change", onDate);
+  F("date").addEventListener("input", onDate);
 
-  // Contacts
-  $("#contacts").innerHTML =
-    `<a href="${igUrl}" target="_blank" rel="noopener">📸 Instagram · @${CONFIG.instagram}</a>` +
-    (CONFIG.telegram ? `<a href="https://t.me/${CONFIG.telegram}" target="_blank" rel="noopener">✈️ Telegram · @${CONFIG.telegram}</a>` : "") +
-    (CONFIG.telegramChannel ? `<a href="${CONFIG.telegramChannel}" target="_blank" rel="noopener">🔥 Telegram channel: −40%</a>` : "");
+  $("#caption").addEventListener("input", (e) => ($("#caption-count").textContent = e.target.value.length));
 
-  // Contact method
+  // contact method
   const METHODS = {
-    instagram: { label: "Instagram", placeholder: "@your_instagram", type: "text",
-      test: (v) => /^@?[A-Za-z0-9._]{1,30}$/.test(v), err: "Enter your Instagram username, e.g. @emma.jack" },
-    telegram:  { label: "Telegram", placeholder: "@your_telegram", type: "text",
-      test: (v) => /^@?[A-Za-z0-9_]{5,32}$/.test(v), err: "Enter your Telegram username, e.g. @emma_jack" },
-    whatsapp:  { label: "WhatsApp", placeholder: "+1 555 123 4567", type: "tel",
-      test: (v) => /^\+?[\d\s\-()]{7,20}$/.test(v) && v.replace(/\D/g, "").length >= 7, err: "Enter your WhatsApp number with country code, e.g. +1 555 123 4567" },
+    instagram: { label: "Instagram", ph: "@ваш_instagram", type: "text", mode: "text",
+      test: (v) => /^@?[A-Za-z0-9._]{1,30}$/.test(v), err: "Введите ник в Instagram, например @anna.max" },
+    telegram: { label: "Telegram", ph: "@ваш_telegram", type: "text", mode: "text",
+      test: (v) => /^@?[A-Za-z0-9_]{5,32}$/.test(v), err: "Введите ник в Telegram (от 5 символов), например @anna_max" },
+    whatsapp: { label: "WhatsApp", ph: "+1 555 123 4567", type: "tel", mode: "tel",
+      test: (v) => /^\+?[\d\s\-()]{7,20}$/.test(v) && v.replace(/\D/g, "").length >= 7, err: "Введите номер WhatsApp с кодом страны, например +1 555 123 4567" },
   };
   const contactInput = $("#contact-input");
-  const contactErr = $("#contact-err");
-  document.querySelectorAll('input[name="method"]').forEach((r) => r.addEventListener("change", () => {
+  $$("input[name=contactMethod]").forEach((r) => r.addEventListener("change", () => {
     const m = METHODS[r.value];
     contactInput.disabled = false;
     contactInput.type = m.type;
-    contactInput.placeholder = m.placeholder;
-    contactErr.textContent = "";
+    contactInput.inputMode = m.mode;
+    contactInput.placeholder = m.ph;
+    clearErr("contact");
     contactInput.focus();
   }));
 
-  // Toast
+  function calc() {
+    const plan = planById(F("plan").value) || CONFIG.plans[0];
+    const sub = $("#subscribed").checked;
+    const own = $("#own-idea").checked;
+    const video = sub ? plan.sub : plan.price;
+    const addon = own ? CONFIG.ownIdea.price : 0;
+    return { plan, sub, own, video, addon, total: video + addon, saving: plan.price - plan.sub };
+  }
+  function occasionLabel() {
+    const o = occById(F("occasion").value);
+    if (!o) return "";
+    return o.extra === "other" ? F("occasionOther").value.trim() || o.title : o.title;
+  }
+  function update() {
+    const c = calc();
+    CONFIG.plans.forEach((p) => ($(`[data-plan-price="${p.id}"]`).textContent = money(c.sub ? p.sub : p.price)));
+    $("#f-idea").hidden = !c.own;
+    $("#t-own").classList.toggle("on", c.own);
+    $("#t-sub").classList.toggle("on", c.sub);
+    $("#sum-lines").innerHTML = [
+      ["Повод", esc(occasionLabel() || "не выбран")],
+      [`Видео ${c.plan.title}`, c.sub ? `<s>${money(c.plan.price)}</s>${money(c.plan.sub)}` : money(c.plan.price)],
+      c.own && ["Своя история", "+" + money(c.addon)],
+    ].filter(Boolean).map(([k, v]) => `<div class="sum-line"><span>${k}</span><span>${v}</span></div>`).join("");
+    $("#sum-total").textContent = money(c.total);
+    if (!$("#submit-btn").disabled) $("#submit-btn").textContent = `Отправить заявку · ${money(c.total)} →`;
+    $("#sum-nudge").textContent = c.sub ? "" : `💡 С подпиской на Telegram-канал видео обойдётся в ${money(c.plan.sub)}: экономия ${money(c.saving)}`;
+  }
+  ["change", "input"].forEach((ev) => form.addEventListener(ev, update));
+
+  // errors
+  function fieldInput(name) {
+    const el = F(name);
+    return el && el.tagName && el.type !== "radio" ? el : null;
+  }
+  function showErr(name, msg) {
+    const box = $(`[data-err="${name}"]`);
+    if (box) box.textContent = msg;
+    const input = fieldInput(name);
+    if (input) input.classList.add("invalid");
+  }
+  function clearErr(name) {
+    const box = $(`[data-err="${name}"]`);
+    if (box) box.textContent = "";
+    const input = fieldInput(name);
+    if (input) input.classList.remove("invalid");
+  }
+  form.addEventListener("input", (e) => e.target.name && clearErr(e.target.name));
+  form.addEventListener("change", (e) => {
+    if (!e.target.name) return;
+    clearErr(e.target.name === "contactMethod" ? "contact" : e.target.name);
+  });
+
+  function validate() {
+    const errs = [];
+    const add = (n, m) => { showErr(n, m); errs.push(n); };
+    const o = occById(F("occasion").value);
+    if (!o) add("occasion", "Выберите повод");
+    else if (o.extra === "other" && !F("occasionOther").value.trim()) add("occasionOther", "Напишите, какой у вас повод");
+    if (!F("recipient").value) add("recipient", "Выберите, кому видео");
+    const n = daysUntil(F("date").value);
+    if (n === null) add("date", "Укажите дату, к которой нужно видео");
+    else if (n < 0) add("date", "Эта дата уже прошла, выберите будущую");
+    if (!F("toName").value.trim()) add("toName", "Напишите имя или инициалы");
+    if ($("#own-idea").checked && F("idea").value.trim().length < 10) add("idea", "Опишите идею хотя бы в паре предложений");
+    const m = METHODS[F("contactMethod").value];
+    if (!m) add("contact", "Выберите мессенджер для связи");
+    else if (!m.test(contactInput.value.trim())) add("contact", m.err);
+    if (errs.length) {
+      $(`[data-err="${errs[0]}"]`).closest(".field, .block").scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+    return !errs.length;
+  }
+
+  function buildText() {
+    const c = calc();
+    const o = occById(F("occasion").value);
+    const extra = o.extra === "age" && F("age").value ? ` (исполняется ${F("age").value})`
+      : o.extra === "together" && F("together").value.trim() ? ` (вместе: ${F("together").value.trim()})` : "";
+    const [y, mo, d] = F("date").value.split("-").map(Number);
+    const n = daysUntil(F("date").value);
+    const dateStr = new Date(y, mo - 1, d).toLocaleDateString("ru-RU", { day: "numeric", month: "long", year: "numeric" });
+    const m = METHODS[F("contactMethod").value];
+    const contact = contactInput.value.trim();
+    const handle = F("contactMethod").value === "whatsapp" ? contact : "@" + contact.replace(/^@/, "");
+    const opt = (cond, line) => (cond ? line : null);
+    return [
+      "Здравствуйте! Хочу заказать видео с Peep & Peak 🤎",
+      "",
+      `🎉 Повод: ${occasionLabel()}${extra}`,
+      `💝 Кому: ${F("recipient").value}`,
+      `📅 Дата: ${dateStr} (через ${daysWord(n)})${n < CONFIG.urgentDays ? " ⚡ СРОЧНО" : ""}`,
+      `👤 Кого поздравляем: ${F("toName").value.trim()}`,
+      opt(F("fromName").value.trim(), `✍️ От кого: ${F("fromName").value.trim()}`),
+      opt(F("caption").value.trim(), `🔤 Надпись в видео: ${F("caption").value.trim()}`),
+      `🎬 Видео: ${c.plan.title}`,
+      c.own ? `✨ Своя история: ${F("idea").value.trim()}` : "✨ Своя история: нет, сюжет на ваш вкус",
+      opt(F("details").value.trim(), `📝 О нас: ${F("details").value.trim()}`),
+      `🔥 Подписка на канал: ${c.sub ? `да (−${CONFIG.discountPercent}%)` : "нет"}`,
+      `💰 Итого: ${money(c.total)}`,
+      "",
+      `📲 Связь: ${m.label} ${handle}`,
+    ].filter((l) => l !== null).join("\n");
+  }
+
   function toast(msg) {
     const t = $("#toast");
     t.textContent = msg;
     t.classList.add("show");
     clearTimeout(toast._t);
-    toast._t = setTimeout(() => t.classList.remove("show"), 4500);
+    toast._t = setTimeout(() => t.classList.remove("show"), 5000);
   }
 
   const useTg = Boolean(CONFIG.tgBotToken && CONFIG.tgChatId);
-  if (useTg) $("#form-hint").textContent = "Your request comes straight to us. We'll reach out via the contact you chose.";
+  if (useTg) $("#form-hint").textContent = "Заявка придёт нам сразу. Мы напишем вам в выбранный мессенджер.";
 
-  // Form → request text → Telegram bot or Instagram DM
-  $("#order-form").addEventListener("submit", async (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const form = e.target;
-    const d = Object.fromEntries(new FormData(form));
-    if (!d.names || !d.names.trim()) {
-      form.names.focus();
-      toast("Please enter names or initials");
-      return;
-    }
-    if (!d.method) {
-      contactErr.textContent = "Please choose how we should contact you";
-      form.querySelector('input[name="method"]').focus();
-      return;
-    }
-    const m = METHODS[d.method];
-    const contact = (d.contact || "").trim();
-    if (!m.test(contact)) {
-      contactErr.textContent = m.err;
-      contactInput.focus();
-      return;
-    }
-    contactErr.textContent = "";
-
-    const plan = CONFIG.plans.find((p) => p.name === d.plan);
-    const total = (plan ? plan.price : 0) + (d.idea === "yes" ? CONFIG.addon.price : 0);
-    const date = d.date ? new Date(d.date + "T00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }) : "not specified";
-    const handle = d.method === "whatsapp" ? contact : "@" + contact.replace(/^@/, "");
-    const text =
-`Hi! I'd like to order a Peep & Peak video 🤎
-Occasion: ${d.occasion} (${d.for.toLowerCase()})
-Names/initials: ${d.names.trim()}
-Needed by: ${date}
-Video: ${d.plan}${d.idea === "yes" ? " + your own idea" : ""} (${fmt(total)})
-Story & wishes: ${d.story || "—"}
-Contact me via ${m.label}: ${handle}`;
-
+    if (!validate()) { toast("Проверьте выделенные поля 👆"); return; }
+    const text = buildText();
+    const total = calc().total;
     const btn = $("#submit-btn");
     if (useTg) {
       btn.disabled = true;
-      btn.textContent = "Sending…";
+      btn.textContent = "Отправляем…";
       try {
         const r = await fetch(`https://api.telegram.org/bot${CONFIG.tgBotToken}/sendMessage`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ chat_id: CONFIG.tgChatId, text: "🆕 New request from the website\n\n" + text }),
+          body: JSON.stringify({ chat_id: CONFIG.tgChatId, text: "🆕 Новая заявка с сайта\n\n" + text }),
         });
         if (!(await r.json()).ok) throw new Error("telegram");
         form.reset();
         contactInput.disabled = true;
-        contactInput.placeholder = "Choose a contact method first";
+        contactInput.placeholder = "Сначала выберите мессенджер";
+        $("#caption-count").textContent = "0";
+        onOccasion(); onDate();
         trackLead(total);
-        toast("Request sent! We'll message you soon 🤎");
+        toast("Заявка отправлена! Скоро напишем вам 🤎");
         return;
       } catch {
-        toast("Couldn't send it, opening Instagram instead");
+        toast("Не получилось отправить, открываем директ Instagram");
       } finally {
         btn.disabled = false;
-        btn.textContent = "Send request →";
+        update();
       }
     }
     try {
       await navigator.clipboard.writeText(text);
-      toast("Request copied: paste it into the chat that opens 💌");
+      toast("Заявка скопирована: вставьте её в открывшийся директ 💌");
       trackLead(total);
     } catch {
-      prompt("Copy the request text and send it to us in a DM:", text);
+      prompt("Скопируйте текст заявки и отправьте нам в директ:", text);
     }
-    window.open(igDm, "_blank", "noopener");
+    window.open(LINKS.dm, "_blank", "noopener");
   });
 
-  // Analytics (loaded only after consent)
+  update();
+
+  /* ---------- analytics (after consent) ---------- */
   function loadAnalytics() {
     const add = (src) => { const el = document.createElement("script"); el.async = true; el.src = src; document.head.appendChild(el); };
     if (CONFIG.metaPixelId) {
@@ -780,7 +1308,6 @@ Contact me via ${m.label}: ${handle}`;
     if (window.ym) ym(CONFIG.yandexMetrikaId, "reachGoal", "lead");
     if (window.gtag) gtag("event", "generate_lead", { value, currency: CONFIG.currency });
   }
-
   const hasAnalytics = CONFIG.metaPixelId || CONFIG.yandexMetrikaId || CONFIG.googleAnalyticsId;
   let consent = null;
   try { consent = localStorage.getItem("cookie-consent"); } catch {}
@@ -794,13 +1321,11 @@ Contact me via ${m.label}: ${handle}`;
   $("#cookie-yes").addEventListener("click", () => setConsent("yes"));
   $("#cookie-no").addEventListener("click", () => setConsent("no"));
 
-  // Reveal on scroll
+  /* ---------- reveal & header ---------- */
   const io = new IntersectionObserver((entries) => entries.forEach((en) => {
     if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
-  }), { threshold: 0.12 });
-  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-
-  // Header shadow on scroll
+  }), { threshold: 0.1 });
+  $$(".reveal").forEach((el) => io.observe(el));
   addEventListener("scroll", () => $("#nav").classList.toggle("scrolled", scrollY > 8), { passive: true });
 </script>
 </body>

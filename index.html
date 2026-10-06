@@ -470,7 +470,7 @@
   .reel:nth-child(even) { margin-top: 0; }
   .reel img { opacity: 1; }
   .reel:hover img { transform: none; filter: brightness(.85); }
-  .reel .play { display: none; }
+  .reel .play { display: grid; width: 52px; height: 52px; }
   .reel .views { top: auto; bottom: 10px; left: 10px; background: none; backdrop-filter: none; padding: 0; font-size: 14px; font-weight: 600; text-shadow: 0 1px 6px rgba(0,0,0,.5); }
   .reel .views svg.ico { width: 14px; height: 14px; }
   .reel .cap { top: 10px; bottom: auto; padding: 0 12px; background: none; font-family: var(--sans); font-style: normal; font-size: 13px; font-weight: 700; letter-spacing: .02em; text-shadow: 0 1px 6px rgba(0,0,0,.55); }
@@ -708,8 +708,8 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Примеры</span>
-        <h2>Серии, которые <em>пересылают</em> друг другу</h2>
-        <p>Самые любимые эпизоды Peep &amp; Peak. Нажмите, чтобы посмотреть.</p>
+        <h2>Примеры <em>поздравлений</em></h2>
+        <p>Так выглядят именные видео, которые мы делаем на заказ. Нажмите, чтобы посмотреть.</p>
       </div>
       <div class="gallery" id="gallery"></div>
       <div class="gallery-cta reveal">
@@ -1007,10 +1007,10 @@
     ],
     // Примеры: img — кадр-обложка; youtube — ссылка на видео (откроется прямо на сайте); url — ссылка в Instagram
     examples: [
-      { title: "Под одним пледом", img: "images/frames/blanket.jpg", views: "71,7K", youtube: "", url: "" },
-      { title: "It's us", img: "images/frames/bed.jpg", views: "129K", youtube: "", url: "" },
-      { title: "Любимая картошка", img: "images/frames/fries.jpg", views: "36,2K", youtube: "", url: "" },
-      { title: "You're my little star", img: "images/frames/cake.jpg", views: "23,1K", youtube: "", url: "" },
+      { title: "День рождения", img: "images/frames/cake.jpg", views: "", youtube: "", url: "" },
+      { title: "Годовщина", img: "images/frames/gazebo.jpg", views: "", youtube: "", url: "" },
+      { title: "Признание в любви", img: "images/frames/kiss.jpg", views: "", youtube: "", url: "" },
+      { title: "Имя в звёздах", img: "images/frames/star-sky.jpg", views: "", youtube: "", url: "" },
     ],
     // Идеи для видео (кадр + подпись в кадре)
     ideas: [

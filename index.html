@@ -426,6 +426,97 @@
     .seg .pill span { font-size: 13px; padding: 12px 4px; }
     .dur-opt b { font-size: 24px; }
   }
+
+  /* ================= Instagram-style layer ================= */
+  :root { --ig-blue: #0095f6; --ig-blue-2: #1877f2; --ig-grey: #efefef; --ig-grey-2: #dbdbdb; --ig-text: #262626; --ig-muted: #737373; --radius: 12px;
+    --ig-ring: linear-gradient(45deg, #feda75, #fa7e1e 30%, #d62976 60%, #962fbf 80%, #4f5bd5); --shadow: 0 10px 30px -18px rgba(0,0,0,.25); }
+  .btn { border-radius: 8px; padding: 12px 22px; font-size: 14px; font-weight: 600; letter-spacing: 0; box-shadow: none; }
+  .btn::after { display: none; }
+  .btn-primary, .btn-gold { background: var(--ig-blue); color: #fff; box-shadow: none; }
+  .btn-primary:hover, .btn-gold:hover { background: var(--ig-blue-2); transform: none; }
+  .btn-ghost, .btn-light { background: var(--ig-grey); color: #000; border: 0; }
+  .btn-ghost:hover, .btn-light:hover { background: var(--ig-grey-2); transform: none; }
+  .btn-sm { padding: 8px 16px; }
+  .hero-ctas .btn, .gallery-cta .btn { padding: 13px 24px; }
+  .frame { border-radius: 8px; box-shadow: none; }
+  .card { border-radius: var(--radius); }
+  .card:hover { box-shadow: none; border-color: var(--ig-grey-2); }
+  .icon { border-radius: 50%; background: #fff; border: 1px solid var(--line); }
+  /* marquee: light */
+  .marquee-wrap { background: #fff; color: var(--ink); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .marquee { padding: 18px 0; }
+  .marquee-track { font-size: 24px; }
+  /* meet badge */
+  .meet-badge { background: #fff; color: var(--caramel); border: 1px solid var(--line); box-shadow: var(--shadow); }
+  .meet-photos .p2 { border-width: 6px; }
+  /* any idea: light */
+  .any-idea { background: #fff; color: var(--ink); border: 1px solid var(--line); border-radius: var(--radius); }
+  .any-idea::before { display: none; }
+  .any-idea p { color: var(--muted); }
+  /* stories (occasions) */
+  .occasions { gap: 22px 18px; max-width: 1060px; }
+  .plan .tagline { min-height: 48px; }
+  .story { display: grid; justify-items: center; gap: 8px; width: 96px; padding: 0; border: 0; background: none; cursor: pointer; font: inherit; color: var(--ig-text); }
+  .story .ring { width: 88px; height: 88px; border-radius: 50%; padding: 3px; background: var(--ig-ring); transition: transform .2s; }
+  .story .ring img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid #fff; background: #fff; }
+  .story:hover .ring { transform: scale(1.05); }
+  .story span { font-size: 12px; line-height: 1.25; text-align: center; font-weight: 500; }
+  /* examples: IG grid */
+  .examples { background: #fff; color: var(--ink); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .examples .section-head p { color: var(--muted); }
+  .examples .eyebrow { color: var(--caramel); }
+  .gallery { gap: 4px; }
+  .reel { border-radius: 4px; aspect-ratio: 3 / 4; }
+  .reel:nth-child(even) { margin-top: 0; }
+  .reel img { opacity: 1; }
+  .reel:hover img { transform: none; filter: brightness(.85); }
+  .reel .play { display: none; }
+  .reel .views { top: auto; bottom: 10px; left: 10px; background: none; backdrop-filter: none; padding: 0; font-size: 14px; font-weight: 600; text-shadow: 0 1px 6px rgba(0,0,0,.5); }
+  .reel .views svg.ico { width: 14px; height: 14px; }
+  .reel .cap { top: 10px; bottom: auto; padding: 0 12px; background: none; font-family: var(--sans); font-style: normal; font-size: 13px; font-weight: 700; letter-spacing: .02em; text-shadow: 0 1px 6px rgba(0,0,0,.55); }
+  .examples .btn-ghost { color: #000; }
+  /* pricing */
+  .tg-banner { border-radius: var(--radius); background: #fff; border: 1px solid var(--line); }
+  .plan.hit { background: #fff; color: var(--ink); border: 1.5px solid var(--ig-blue); box-shadow: 0 20px 40px -30px rgba(0,149,246,.6); }
+  .plan.hit .tagline, .plan.hit .note, .plan.hit .old { color: var(--muted); }
+  .plan.hit li { color: var(--ink); }
+  .plan.hit ul { border-color: var(--line); }
+  .plan.hit .price { background: var(--grad-text); -webkit-background-clip: text; background-clip: text; }
+  .plan .badge { background: var(--ig-blue); color: #fff; border-radius: 6px; letter-spacing: .08em; }
+  .addon-card { border-radius: var(--radius); }
+  /* wizard */
+  .wizard { border-radius: 16px; box-shadow: none; }
+  .wiz-steps li.active b { background: var(--ig-blue); border-color: var(--ig-blue); color: #fff; }
+  .wiz-steps li.done b { background: #e8f4fe; border-color: var(--ig-blue); color: var(--ig-blue); }
+  .wiz-bar i { background: var(--ig-blue); }
+  input[type=text], input[type=tel], input[type=date], input[type=number], textarea { border-radius: 8px; background: #fafafa; border-color: var(--ig-grey-2); }
+  input:focus, textarea:focus { border-color: #a8a8a8; box-shadow: none; background: #fff; }
+  .pill span, .dur-opt span, .toggle { border-radius: 8px; background: #fff; border-color: var(--ig-grey-2); }
+  .pill input:checked + span, .dur-opt input:checked + span { background: #e8f4fe; color: var(--ig-text); border-color: var(--ig-blue); }
+  .pill input:checked + span svg.ico { color: var(--ig-blue); }
+  .dur-opt input:checked + span em { color: var(--ig-blue); }
+  .toggle.on { background: #e8f4fe; border-color: var(--ig-blue); }
+  .toggle input { accent-color: var(--ig-blue); }
+  .sum-card { background: #fafafa; color: var(--ink); border: 1px solid var(--ig-grey-2); border-radius: 12px; }
+  .sum-line { border-color: var(--line); }
+  .sum-line span:first-child { color: var(--muted); }
+  .sum-line s { color: var(--muted); }
+  .sum-total b { background: var(--grad-text); -webkit-background-clip: text; background-clip: text; }
+  .sum-nudge { background: #fff4e5; color: #8a5a1f; }
+  .final { border-radius: 16px; }
+  .final .btn-ghost { background: rgba(255,255,255,.18); color: #fff; backdrop-filter: blur(6px); }
+  .fab { border-radius: 999px; }
+  .toast { border-radius: 8px; background: #262626; color: #fff; }
+  @media (max-width: 720px) {
+    .story { width: 76px; }
+    .story .ring { width: 70px; height: 70px; }
+    .occasions { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; gap: 12px; margin: 0 -18px; padding: 4px 18px 8px; scrollbar-width: none; }
+    .occasions::-webkit-scrollbar { display: none; }
+    .story { flex: none; }
+    .plan .tagline { min-height: 0; }
+    .reel .cap { font-size: 12px; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
     .reveal { opacity: 1; transform: none; }
@@ -904,15 +995,15 @@
     ],
     ownIdea: { price: 49 },          // «Своя история»: доплата, скидка не действует
     occasions: [
-      { id: "birthday",    icon: "cake", title: "День рождения", extra: "age" },
-      { id: "anniversary", icon: "infinity", title: "Годовщина отношений", extra: "together" },
-      { id: "wedding",     icon: "rings", title: "Годовщина свадьбы", extra: "together" },
-      { id: "proposal",    icon: "gem", title: "Предложение руки и сердца" },
-      { id: "confession",  icon: "mail", title: "Признание в любви" },
-      { id: "valentine",   icon: "heart", title: "14 февраля" },
-      { id: "sorry",       icon: "feather", title: "Помириться" },
-      { id: "miss",        icon: "moon", title: "Скучаю / на расстоянии" },
-      { id: "other",       icon: "sparkles", title: "Другой повод", extra: "other" },
+      { id: "birthday",    img: "cake", icon: "cake", title: "День рождения", extra: "age" },
+      { id: "anniversary", img: "kiss", icon: "infinity", title: "Годовщина отношений", extra: "together" },
+      { id: "wedding",     img: "sofa", icon: "rings", title: "Годовщина свадьбы", extra: "together" },
+      { id: "proposal",    img: "jewelry", icon: "gem", title: "Предложение руки и сердца" },
+      { id: "confession",  img: "heart", icon: "mail", title: "Признание в любви" },
+      { id: "valentine",   img: "sunset", icon: "heart", title: "14 февраля" },
+      { id: "sorry",       img: "blanket", icon: "feather", title: "Помириться" },
+      { id: "miss",        img: "star-sky", icon: "moon", title: "Скучаю / на расстоянии" },
+      { id: "other",       img: "clouds", icon: "sparkles", title: "Другой повод", extra: "other" },
     ],
     // Примеры: img — кадр-обложка; youtube — ссылка на видео (откроется прямо на сайте); url — ссылка в Instagram
     examples: [
@@ -1032,7 +1123,7 @@
   $("#occasion-pills").innerHTML = CONFIG.occasions.map((o) =>
     `<label class="pill"><input type="radio" name="occasion" value="${o.id}"><span>${ic(o.icon)} ${o.title}</span></label>`).join("");
   $("#occasion-buttons").innerHTML = CONFIG.occasions.map((o) =>
-    `<button type="button" class="occ" data-occ="${o.id}">${ic(o.icon)}${o.title}</button>`).join("");
+    `<button type="button" class="story" data-occ="${o.id}"><span class="ring"><img src="images/frames/${o.img}.jpg" alt="" loading="lazy"></span><span>${o.title}</span></button>`).join("");
   $("#durations").innerHTML = CONFIG.plans.map((p) =>
     `<label class="dur-opt"><input type="radio" name="plan" value="${p.id}" ${p.hit ? "checked" : ""}><span><b>${p.title}</b><em data-plan-price="${p.id}"></em></span></label>`).join("");
 

@@ -3,276 +3,279 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Peep &amp; Peak — видео-поздравления с капибарами для влюблённых</title>
-<meta name="description" content="Именные видео с парой капибар Peep &amp; Peak: день рождения, годовщина, признание, предложение. Ваши имена прямо в сцене. Любая ваша идея. Видео 30, 60 и 90 секунд.">
+<title>Peep &amp; Peak — ваша история любви в исполнении двух капибар</title>
+<meta name="description" content="Именные видео с Peep &amp; Peak, парой капибар из сериала «It's us»: день рождения, годовщина, признание, предложение. Ваши имена прямо в сцене. Видео 30, 60 и 90 секунд.">
+<meta property="og:title" content="Peep &amp; Peak — ваша история любви в исполнении двух капибар">
+<meta property="og:image" content="images/frames/sea-couple.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230c0a18'/%3E%3Cpath fill='%23e9c78f' d='M50 10C53 38 62 47 90 50 62 53 53 62 50 90 47 62 38 53 10 50 38 47 47 38 50 10Z'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23b77b4b'/%3E%3Cpath fill='%23fbf1e2' d='M50 16c3 0 5 2 6.5 5.5l6 12.5 13.5 2c3.6.5 5.5 2.3 5.5 5s-1.3 4-3.6 6.3l-9.9 9.6 2.3 13.6c.6 3.6-.6 6-3.3 6.9-2 .6-3.8 0-6.2-1.3L50 70l-12.3 6.6c-2.4 1.3-4.2 1.9-6.2 1.3-2.7-.9-3.9-3.3-3.3-6.9l2.3-13.6-9.9-9.6c-2.3-2.3-3.6-3.9-3.6-6.3s1.9-4.5 5.5-5l13.5-2 6-12.5C45 18 47 16 50 16Z'/%3E%3C/svg%3E">
 <style>
   :root {
-    --bg: #0c0a18;
-    --bg-2: #14102a;
-    --bg-3: #1b1636;
-    --surface: rgba(255,255,255,.035);
-    --surface-2: rgba(255,255,255,.06);
-    --line: rgba(255,255,255,.09);
-    --line-2: rgba(255,255,255,.16);
-    --ink: #f7f0e6;
-    --muted: #a99fbd;
-    --gold: #e9c78f;
-    --gold-2: #f6e2b8;
-    --rose: #f0a6b6;
-    --accent: var(--gold);
-    --ok: #8fd6a8;
-    --err: #ff8f86;
-    --grad: linear-gradient(120deg, #f6e2b8 0%, #e9c78f 35%, #f0a6b6 100%);
-    --grad-text: linear-gradient(100deg, #f6e2b8 10%, #e9c78f 45%, #f0a6b6 90%);
+    --bg: #fbf6ef;
+    --bg-2: #f4eadc;
+    --paper: #fffdf9;
+    --ink: #2a1c13;
+    --ink-2: #4a3628;
+    --muted: #806b5b;
+    --line: #eadccb;
+    --line-2: #dcc8b1;
+    --caramel: #b77b4b;
+    --caramel-2: #9a6238;
+    --honey: #e2a85c;
+    --rose: #e79aa8;
+    --sage: #4e7a5d;
+    --cocoa: #24170f;
+    --ok: #3f7f55;
+    --err: #b9443a;
+    --grad: linear-gradient(120deg, #c88653 0%, #e2a85c 55%, #e9b07a 100%);
+    --grad-text: linear-gradient(100deg, #9a6238 0%, #c88653 45%, #e2a85c 100%);
     --radius: 24px;
-    --max: 1180px;
+    --max: 1200px;
     --serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
     --sans: "Manrope", system-ui, -apple-system, sans-serif;
+    --shadow: 0 30px 60px -30px rgba(74,44,20,.35);
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; background: var(--bg); }
-  body {
-    margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans);
-    font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden;
-  }
-  body::after { /* film grain */
-    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 100; opacity: .05;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  ::selection { background: rgba(233,199,143,.35); }
-  img, svg, video, canvas { display: block; max-width: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 100; opacity: .04; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  ::selection { background: rgba(226,168,92,.35); }
+  img, svg, video { display: block; max-width: 100%; }
+  img { height: auto; }
   a { color: inherit; }
   [hidden] { display: none !important; }
   .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; position: relative; }
   section { padding: 120px 0; position: relative; }
-  h1, h2, h3 { margin: 0; line-height: 1.05; letter-spacing: -0.01em; font-weight: 600; }
-  h1, h2 { font-family: var(--serif); }
-  h1 { font-size: clamp(44px, 7.4vw, 104px); font-weight: 500; }
-  h2 { font-size: clamp(36px, 5vw, 64px); margin-bottom: 20px; font-weight: 500; }
+  h1, h2, h3 { margin: 0; line-height: 1.04; letter-spacing: -0.01em; font-weight: 600; }
+  h1, h2 { font-family: var(--serif); font-weight: 500; }
+  h1 { font-size: clamp(46px, 6.4vw, 92px); }
+  h2 { font-size: clamp(38px, 4.8vw, 66px); margin-bottom: 20px; }
   h3 { font-size: 19px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
-  h1 em, h2 em, .grad-text {
-    font-style: italic; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
+  h1 em, h2 em, .serif-em { font-style: italic; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .06em; }
   p { margin: 0; }
-  .lead { font-size: 19px; color: var(--muted); max-width: 600px; }
-  .eyebrow {
-    display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700;
-    letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
-  }
-  .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold); opacity: .7; }
+  .lead { font-size: 19px; color: var(--muted); max-width: 560px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: var(--caramel); margin-bottom: 20px; }
+  .eyebrow::before { content: ""; width: 30px; height: 1px; background: currentColor; opacity: .6; }
   .section-head { max-width: 760px; margin-bottom: 64px; }
   .section-head.center { text-align: center; margin-left: auto; margin-right: auto; }
-  .section-head.center .eyebrow::after { content: ""; width: 28px; height: 1px; background: var(--gold); opacity: .7; }
+  .section-head.center .eyebrow::after { content: ""; width: 30px; height: 1px; background: currentColor; opacity: .6; }
   .section-head p { color: var(--muted); font-size: 18px; }
 
-  /* icons */
-  svg.ico { display: inline-block; width: 1.15em; height: 1.15em; vertical-align: -0.2em; flex: none;
-    fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  svg.ico { display: inline-block; width: 1.15em; height: 1.15em; vertical-align: -0.2em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
   svg.ico.fill { fill: currentColor; }
-  .icon { width: 54px; height: 54px; border-radius: 16px; display: grid; place-items: center; margin-bottom: 22px; flex: none;
-    background: linear-gradient(145deg, rgba(233,199,143,.18), rgba(240,166,182,.08)); border: 1px solid rgba(233,199,143,.25); }
-  .icon svg.ico { width: 24px; height: 24px; color: var(--gold); }
+  .icon { width: 54px; height: 54px; border-radius: 16px; display: grid; place-items: center; margin-bottom: 22px; flex: none; background: #f6e7d4; border: 1px solid #ecd6bc; }
+  .icon svg.ico { width: 24px; height: 24px; color: var(--caramel); }
 
-  /* ---------- buttons ---------- */
-  .btn {
-    position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-    padding: 18px 32px; border-radius: 999px; border: 0; cursor: pointer; overflow: hidden;
-    font: inherit; font-weight: 700; font-size: 15px; letter-spacing: .02em; text-decoration: none; text-align: center;
-    transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s;
-  }
-  .btn-primary { background: var(--grad); color: #1a1326; box-shadow: 0 10px 40px -12px rgba(233,199,143,.55); }
-  .btn-primary::after { /* shine */
-    content: ""; position: absolute; top: 0; left: -60%; width: 40%; height: 100%;
-    background: linear-gradient(100deg, transparent, rgba(255,255,255,.65), transparent); transform: skewX(-20deg);
-    animation: shine 4.5s ease-in-out infinite;
-  }
-  @keyframes shine { 0%, 60% { left: -60%; } 100% { left: 130%; } }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 50px -12px rgba(233,199,143,.75); }
-  .btn-ghost { background: rgba(255,255,255,.04); color: var(--ink); border: 1px solid var(--line-2); backdrop-filter: blur(8px); }
-  .btn-ghost:hover { border-color: var(--gold); background: rgba(233,199,143,.08); }
-  .btn-dark { background: var(--ink); color: var(--bg); }
-  .btn-dark:hover { transform: translateY(-2px); }
+  /* buttons */
+  .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 18px 32px; border-radius: 999px; border: 0; cursor: pointer; overflow: hidden;
+    font: inherit; font-weight: 700; font-size: 15px; letter-spacing: .02em; text-decoration: none; text-align: center; transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s, color .2s; }
+  .btn-primary { background: var(--cocoa); color: #fbf1e2; box-shadow: 0 14px 30px -14px rgba(36,23,15,.6); }
+  .btn-primary::after { content: ""; position: absolute; top: 0; left: -60%; width: 40%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255,235,200,.35), transparent); transform: skewX(-20deg); animation: shine 5s ease-in-out infinite; }
+  @keyframes shine { 0%, 65% { left: -60%; } 100% { left: 130%; } }
+  .btn-primary:hover { transform: translateY(-2px); background: #3a2618; }
+  .btn-gold { background: var(--grad); color: var(--cocoa); box-shadow: 0 14px 30px -14px rgba(183,123,75,.7); }
+  .btn-gold:hover { transform: translateY(-2px); }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line-2); }
+  .btn-ghost:hover { border-color: var(--caramel); background: rgba(183,123,75,.06); }
+  .btn-light { background: #fbf1e2; color: var(--cocoa); }
   .btn-sm { padding: 11px 22px; font-size: 14px; }
   .btn:disabled { opacity: .7; cursor: wait; }
 
-  /* ---------- nav ---------- */
-  header.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 40; transition: background .3s, border-color .3s, backdrop-filter .3s; border-bottom: 1px solid transparent; }
-  header.nav.scrolled { background: rgba(12,10,24,.72); backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%); border-bottom-color: var(--line); }
-  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 16px; }
-  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; font-family: var(--serif); font-weight: 600; font-size: 26px; letter-spacing: .01em; white-space: nowrap; }
-  .logo em { font-style: italic; color: var(--gold); }
-  .logo-mark { width: 34px; height: 34px; flex: none; filter: drop-shadow(0 0 10px rgba(233,199,143,.55)); animation: spin-slow 18s linear infinite; }
-  @keyframes spin-slow { to { transform: rotate(360deg); } }
+  /* nav */
+  header.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 40; border-bottom: 1px solid transparent; transition: background .3s, border-color .3s; }
+  header.nav.scrolled { background: rgba(251,246,239,.82); backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%); border-bottom-color: var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 78px; gap: 16px; }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; font-family: var(--serif); font-weight: 600; font-size: 27px; white-space: nowrap; letter-spacing: .01em; }
+  .logo em { font-style: italic; color: var(--caramel); }
+  .logo-mark { width: 38px; height: 38px; flex: none; }
   .nav-links { display: flex; gap: 34px; align-items: center; }
-  .nav-links a:not(.btn) { text-decoration: none; color: var(--muted); font-weight: 600; font-size: 14px; letter-spacing: .04em; transition: color .2s; }
+  .nav-links a:not(.btn) { text-decoration: none; color: var(--muted); font-weight: 600; font-size: 14px; letter-spacing: .03em; transition: color .2s; }
   .nav-links a:not(.btn):hover { color: var(--ink); }
 
-  /* ---------- hero ---------- */
-  .hero { min-height: 100vh; min-height: 100svh; padding: 120px 0 0; overflow: hidden; display: flex; flex-direction: column;
-    background: radial-gradient(120% 80% at 50% 0%, #2a1f52 0%, #16112e 45%, var(--bg) 80%); }
-  #sky { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .hero-glow { position: absolute; left: 50%; top: 18%; width: 900px; height: 500px; transform: translateX(-50%); pointer-events: none;
-    background: radial-gradient(closest-side, rgba(240,166,182,.16), transparent); filter: blur(20px); }
-  .hero-inner { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; z-index: 2; }
-  .kicker { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--gold-2); }
-  .kicker svg { width: 16px; height: 16px; }
-  .sky-stage { width: min(100%, 980px); height: clamp(130px, 24vh, 240px); margin: 8px 0 4px; }
-  .hero h1 { max-width: 1000px; }
-  .hero .lead { margin: 26px auto 34px; font-size: 19px; }
-  .name-try { display: flex; gap: 8px; padding: 7px; border-radius: 999px; width: min(100%, 540px); margin: 0 auto 22px;
-    background: rgba(255,255,255,.06); border: 1px solid var(--line-2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-  .name-try input { flex: 1; min-width: 0; background: transparent; border: 0; color: var(--ink); font: inherit; font-size: 16px; padding: 0 18px; outline: none; }
-  .name-try input::placeholder { color: var(--muted); }
-  .name-try .btn { padding: 13px 22px; }
-  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-  .chips { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 30px; }
-  .chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--muted);
-    background: rgba(255,255,255,.04); border: 1px solid var(--line); }
-  .chip svg.ico { color: var(--gold); }
-  .hero-hill { position: relative; z-index: 1; height: clamp(150px, 17vw, 240px); margin-top: 40px; pointer-events: none; }
-  .hero-hill .hill { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .hero-hill .pair { position: absolute; left: 50%; bottom: 22%; transform: translateX(-50%); width: clamp(180px, 22vw, 320px); height: auto; overflow: visible; }
-  .scroll-cue { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 3; width: 22px; height: 36px; border: 1.5px solid var(--line-2); border-radius: 12px; }
-  .scroll-cue::after { content: ""; position: absolute; left: 50%; top: 7px; width: 3px; height: 7px; margin-left: -1.5px; border-radius: 2px; background: var(--gold); animation: cue 1.8s ease-in-out infinite; }
-  @keyframes cue { 0% { opacity: 0; transform: translateY(0); } 40% { opacity: 1; } 100% { opacity: 0; transform: translateY(12px); } }
+  /* hero */
+  .hero { padding: 132px 0 90px; overflow: hidden; background: radial-gradient(90% 70% at 85% 10%, #f7dcc0 0%, transparent 60%), radial-gradient(70% 60% at 0% 100%, #f6e3cf 0%, transparent 60%), var(--bg); }
+  .bokeh { position: absolute; border-radius: 50%; pointer-events: none; filter: blur(2px); background: radial-gradient(circle, rgba(255,214,150,.55), rgba(255,214,150,0) 70%); animation: drift 14s ease-in-out infinite; }
+  @keyframes drift { 50% { transform: translate(14px, -18px); } }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+  .hero h1 { margin: 6px 0 0; }
+  .hero .lead { margin: 26px 0 36px; }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .stats { display: flex; gap: 36px; flex-wrap: wrap; margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+  .stat b { display: block; font-family: var(--serif); font-size: 40px; font-weight: 600; line-height: 1; color: var(--ink); }
+  .stat span { font-size: 13px; color: var(--muted); }
+  .reels { position: relative; height: min(78vh, 720px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; overflow: hidden;
+    -webkit-mask-image: linear-gradient(transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(transparent, #000 12%, #000 88%, transparent); }
+  .reel-col { display: flex; flex-direction: column; gap: 14px; animation: up 46s linear infinite; }
+  .reel-col.down { animation-name: down; animation-duration: 52s; }
+  .reel-col:nth-child(3) { animation-duration: 40s; }
+  .reels:hover .reel-col { animation-play-state: paused; }
+  @keyframes up { to { transform: translateY(-50%); } }
+  @keyframes down { from { transform: translateY(-50%); } to { transform: translateY(0); } }
+  .frame { position: relative; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); background: var(--bg-2); flex: none; }
+  .frame img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  .frame-tag { position: absolute; left: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; color: #fff; background: rgba(36,23,15,.45); backdrop-filter: blur(6px); }
 
-  .twinkle { animation: twinkle 3s ease-in-out infinite; }
-  @keyframes twinkle { 0%,100% { opacity: .25; } 50% { opacity: 1; } }
-  .bob { animation: bob 4s ease-in-out infinite; }
-  .bob-2 { animation: bob 4s ease-in-out infinite -2s; }
-  @keyframes bob { 50% { transform: translateY(-4px); } }
-
-  /* ---------- marquee ---------- */
-  .marquee-wrap { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-2); }
-  .marquee { padding: 22px 0; }
-  .marquee-track { display: flex; gap: 56px; width: max-content; animation: marquee 48s linear infinite; font-family: var(--serif); font-style: italic; font-size: 28px; color: var(--ink); }
-  .marquee-track span { white-space: nowrap; display: inline-flex; align-items: center; gap: 56px; }
-  .marquee-track svg.ico { width: 14px; height: 14px; color: var(--gold); }
+  /* marquee */
+  .marquee-wrap { overflow: hidden; background: var(--cocoa); color: #fbf1e2; }
+  .marquee { padding: 24px 0; }
+  .marquee-track { display: flex; gap: 48px; width: max-content; animation: marquee 50s linear infinite; font-family: var(--serif); font-style: italic; font-size: 30px; }
+  .marquee-track span { white-space: nowrap; display: inline-flex; align-items: center; gap: 48px; }
+  .marquee-track svg.ico { width: 14px; height: 14px; color: var(--honey); }
   @keyframes marquee { to { transform: translateX(-50%); } }
 
-  /* ---------- cards ---------- */
+  /* meet */
+  .meet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+  .meet-photos { position: relative; height: 620px; }
+  .meet-photos .frame { position: absolute; }
+  .meet-photos .frame img { aspect-ratio: auto; height: 100%; }
+  .meet-photos .p1 { left: 0; top: 0; width: 64%; height: 82%; }
+  .meet-photos .p2 { right: 0; bottom: 0; width: 50%; height: 56%; border: 8px solid var(--bg); }
+  .meet-badge { position: absolute; left: 44%; top: 50%; z-index: 2; width: 116px; height: 116px; border-radius: 50%; display: grid; place-items: center; text-align: center;
+    background: var(--cocoa); color: #fbf1e2; font-family: var(--serif); font-style: italic; font-size: 26px; line-height: 1; box-shadow: var(--shadow); animation: spin-slow 22s linear infinite; }
+  .meet-badge svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .meet-badge b { animation: spin-slow 22s linear infinite reverse; font-weight: 500; }
+  @keyframes spin-slow { to { transform: rotate(360deg); } }
+  .traits { display: grid; gap: 18px; margin-top: 34px; }
+  .trait { display: flex; gap: 16px; align-items: flex-start; padding: 18px 20px; border-radius: 18px; background: var(--paper); border: 1px solid var(--line); }
+  .trait .dot { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; flex: none; }
+  .trait p { color: var(--muted); font-size: 15px; }
+  .trait b { display: block; color: var(--ink); font-size: 16px; margin-bottom: 2px; }
+
+  /* why */
+  .why { background: var(--bg-2); }
+  .why-quote { font-family: var(--serif); font-weight: 500; font-size: clamp(32px, 4.2vw, 56px); line-height: 1.12; max-width: 1000px; margin: 0 auto 72px; text-align: center; }
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-  .card { position: relative; background: linear-gradient(160deg, rgba(255,255,255,.055), rgba(255,255,255,.015)); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; transition: border-color .3s, transform .3s; }
-  .card:hover { border-color: rgba(233,199,143,.35); }
+  .card { position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; transition: transform .3s, box-shadow .3s, border-color .3s; }
+  .card:hover { box-shadow: var(--shadow); border-color: var(--line-2); }
   .card p { color: var(--muted); font-size: 16px; }
 
-  .why-quote { font-family: var(--serif); font-weight: 500; font-size: clamp(30px, 4.2vw, 54px); line-height: 1.15; max-width: 980px; margin: 0 auto 72px; text-align: center; }
-
   /* ideas */
-  .ideas { background: linear-gradient(180deg, var(--bg), var(--bg-2) 30%, var(--bg-2) 70%, var(--bg)); }
   .idea { padding: 0; overflow: hidden; }
   .idea:hover { transform: translateY(-6px); }
-  .idea .vis { aspect-ratio: 16 / 10; overflow: hidden; }
-  .idea .vis svg { width: 100%; height: 100%; transition: transform .6s ease; }
-  .idea:hover .vis svg { transform: scale(1.05); }
+  .idea .vis { position: relative; aspect-ratio: 4 / 4.2; overflow: hidden; }
+  .idea .vis img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+  .idea:hover .vis img { transform: scale(1.06); }
+  .idea .vis .overlay { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 16px; text-align: center; font-family: var(--serif); font-style: italic; font-size: 30px; color: #fff6e6;
+    text-shadow: 0 0 18px rgba(255,214,150,.9); background: linear-gradient(transparent, rgba(36,23,15,.45)); }
   .idea .txt { padding: 24px 26px 28px; }
-  .any-idea { margin-top: 28px; padding: 40px; border-radius: var(--radius); display: flex; gap: 24px; align-items: center; justify-content: space-between; flex-wrap: wrap;
-    background: radial-gradient(120% 140% at 0% 0%, rgba(240,166,182,.18), transparent 60%), radial-gradient(120% 140% at 100% 100%, rgba(233,199,143,.16), transparent 60%), var(--bg-3);
-    border: 1px solid rgba(233,199,143,.25); }
-  .any-idea h3 { font-family: var(--serif); font-size: 34px; font-weight: 500; margin-bottom: 8px; }
-  .any-idea p { color: var(--muted); max-width: 620px; }
+  .any-idea { margin-top: 28px; padding: 44px; border-radius: var(--radius); display: flex; gap: 24px; align-items: center; justify-content: space-between; flex-wrap: wrap; background: var(--cocoa); color: #fbf1e2; position: relative; overflow: hidden; }
+  .any-idea::before { content: ""; position: absolute; right: -80px; top: -80px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(226,168,92,.35), transparent 70%); }
+  .any-idea h3 { font-family: var(--serif); font-size: 38px; font-weight: 500; margin-bottom: 8px; }
+  .any-idea p { color: rgba(251,241,226,.72); max-width: 620px; }
 
   /* occasions */
   .occasions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 980px; margin: 0 auto; }
-  .occ { display: inline-flex; align-items: center; gap: 12px; padding: 16px 24px; border-radius: 999px; cursor: pointer;
-    background: rgba(255,255,255,.035); border: 1px solid var(--line); font: inherit; font-weight: 600; font-size: 16px; color: var(--ink);
-    transition: border-color .2s, transform .2s, background .2s; }
-  .occ:hover { border-color: var(--gold); transform: translateY(-2px); background: rgba(233,199,143,.08); }
-  .occ svg.ico { width: 20px; height: 20px; color: var(--gold); }
+  .occ { display: inline-flex; align-items: center; gap: 12px; padding: 16px 24px; border-radius: 999px; cursor: pointer; background: var(--paper); border: 1px solid var(--line); font: inherit; font-weight: 600; font-size: 16px; color: var(--ink); transition: border-color .2s, transform .2s, box-shadow .2s; }
+  .occ:hover { border-color: var(--caramel); transform: translateY(-2px); box-shadow: 0 12px 24px -16px rgba(74,44,20,.4); }
+  .occ svg.ico { width: 20px; height: 20px; color: var(--caramel); }
 
   /* examples */
+  .examples { background: var(--cocoa); color: #fbf1e2; }
+  .examples .section-head p { color: rgba(251,241,226,.7); }
+  .examples .eyebrow { color: var(--honey); }
   .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-  .reel { aspect-ratio: 9 / 16; border-radius: var(--radius); overflow: hidden; position: relative; text-decoration: none; display: flex; align-items: flex-end; color: #fff;
-    border: 1px solid var(--line); transition: transform .3s ease, border-color .3s; }
-  .reel:hover { transform: translateY(-6px); border-color: rgba(233,199,143,.4); }
-  .reel:nth-child(even) { margin-top: 40px; }
-  .reel video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .reel .ph { position: absolute; inset: 0; display: grid; place-items: center; }
-  .reel .ph svg.ico { width: 54px; height: 54px; stroke-width: 1.2; color: rgba(255,255,255,.85); }
-  .reel .play { position: absolute; top: 14px; right: 14px; display: inline-flex; align-items: center; gap: 6px; background: rgba(12,10,24,.55); backdrop-filter: blur(8px); color: #fff; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; padding: 6px 12px; font-size: 12px; font-weight: 700; }
-  .reel .play svg.ico { width: 10px; height: 10px; }
-  .reel .cap { position: relative; width: 100%; padding: 22px 18px; font-family: var(--serif); font-style: italic; font-size: 22px; background: linear-gradient(transparent, rgba(12,10,24,.85)); }
-  .gallery-cta { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 48px; }
+  .reel { position: relative; display: block; aspect-ratio: 9 / 14; border-radius: var(--radius); overflow: hidden; text-decoration: none; color: #fff; cursor: pointer; border: 0; padding: 0; font: inherit; background: #000; }
+  .reel:nth-child(even) { margin-top: 48px; }
+  .reel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .3s; opacity: .92; }
+  .reel:hover img { transform: scale(1.06); opacity: 1; }
+  .reel .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(.9); width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,248,236,.92); color: var(--cocoa); transition: transform .3s; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+  .reel:hover .play { transform: translate(-50%, -50%) scale(1); }
+  .reel .play svg.ico { width: 20px; height: 20px; margin-left: 3px; }
+  .reel .views { position: absolute; left: 14px; top: 14px; display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; background: rgba(36,23,15,.5); backdrop-filter: blur(6px); }
+  .reel .cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 18px; text-align: left; font-family: var(--serif); font-style: italic; font-size: 24px; line-height: 1.1; background: linear-gradient(transparent, rgba(20,12,7,.85)); }
+  .gallery-cta { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 56px; }
+  .examples .btn-ghost { color: #fbf1e2; border-color: rgba(251,241,226,.3); }
+  .examples .btn-ghost:hover { border-color: var(--honey); background: rgba(226,168,92,.1); }
+
+  /* video modal */
+  .modal { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 20px; background: rgba(20,12,7,.82); backdrop-filter: blur(8px); }
+  .modal-box { position: relative; width: min(420px, 100%); aspect-ratio: 9 / 16; max-height: 86vh; border-radius: 24px; overflow: hidden; background: #000; }
+  .modal-box iframe { width: 100%; height: 100%; border: 0; }
+  .modal-close { position: absolute; top: 18px; right: 18px; width: 46px; height: 46px; border-radius: 50%; border: 0; cursor: pointer; background: #fbf1e2; color: var(--cocoa); font-size: 24px; line-height: 1; }
 
   /* pricing */
-  .tg-banner { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: space-between; padding: 26px 30px; border-radius: var(--radius); margin-bottom: 36px;
-    background: linear-gradient(120deg, rgba(42,171,238,.14), rgba(240,166,182,.1)); border: 1px solid rgba(42,171,238,.3); }
-  .tg-banner b { font-family: var(--serif); font-size: 28px; font-weight: 600; display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
-  .tg-banner b svg.ico { color: var(--rose); }
+  .tg-banner { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; justify-content: space-between; padding: 26px 30px; border-radius: var(--radius); margin-bottom: 40px; background: linear-gradient(120deg, #e7f3fb, #f7ece2); border: 1px solid #d7e6f0; }
+  .tg-banner .tg-ico { width: 52px; height: 52px; border-radius: 50%; background: #2aabee; color: #fff; display: grid; place-items: center; flex: none; }
+  .tg-banner .tg-ico svg.ico { width: 24px; height: 24px; margin-left: -2px; }
+  .tg-banner .tg-text { flex: 1 1 320px; display: flex; gap: 18px; align-items: center; }
+  .tg-banner b { font-family: var(--serif); font-size: 30px; font-weight: 600; display: block; line-height: 1.1; }
   .tg-banner p { color: var(--muted); }
   .plan { display: flex; flex-direction: column; padding: 36px 32px; }
-  .plan.hit { background: radial-gradient(120% 80% at 50% 0%, rgba(233,199,143,.16), transparent 60%), linear-gradient(160deg, rgba(255,255,255,.07), rgba(255,255,255,.02)); border-color: rgba(233,199,143,.55); box-shadow: 0 30px 80px -40px rgba(233,199,143,.5); transform: translateY(-12px); }
-  .plan.hit:hover { transform: translateY(-16px); }
-  .plan .badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); white-space: nowrap; background: var(--grad); color: #1a1326; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; padding: 6px 14px; border-radius: 999px; }
+  .plan.hit { background: var(--cocoa); color: #fbf1e2; border-color: var(--cocoa); box-shadow: 0 40px 80px -40px rgba(36,23,15,.7); transform: translateY(-14px); }
+  .plan.hit:hover { transform: translateY(-18px); }
+  .plan.hit .tagline, .plan.hit .note, .plan.hit .old { color: rgba(251,241,226,.6); }
+  .plan.hit li { color: #fbf1e2; border-color: rgba(251,241,226,.12); }
+  .plan.hit ul { border-color: rgba(251,241,226,.15); }
+  .plan.hit .price { background: linear-gradient(100deg, #f6d9a8, #e2a85c); -webkit-background-clip: text; background-clip: text; }
+  .plan .badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); white-space: nowrap; background: var(--grad); color: var(--cocoa); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; padding: 6px 14px; border-radius: 999px; }
   .plan .dur { font-family: var(--serif); font-size: 44px; font-weight: 500; line-height: 1; }
   .plan .tagline { color: var(--muted); font-size: 15px; margin-top: 8px; }
   .plan .price-row { display: flex; align-items: baseline; gap: 12px; margin: 28px 0 4px; }
-  .plan .price { font-family: var(--serif); font-size: 64px; font-weight: 600; line-height: 1; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .plan .price { font-family: var(--serif); font-size: 66px; font-weight: 600; line-height: 1; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .plan .old { color: var(--muted); text-decoration: line-through; font-size: 20px; }
   .plan .note { font-size: 13px; color: var(--muted); }
-  .plan ul { list-style: none; padding: 24px 0 0; margin: 24px 0 30px; flex: 1; border-top: 1px solid var(--line); }
-  .plan li { padding: 7px 0 7px 28px; font-size: 15px; color: var(--ink); position: relative; opacity: .9; }
-  .plan li::before { content: ""; position: absolute; left: 2px; top: 15px; width: 12px; height: 1px; background: var(--gold); }
-  .addon-card { margin-top: 24px; display: grid; grid-template-columns: auto 1fr auto; gap: 26px; align-items: center; padding: 30px 32px; border-radius: var(--radius);
-    background: var(--surface); border: 1px dashed rgba(233,199,143,.45); }
-  .addon-card .icon { margin: 0; }
-  .addon-card h3 { font-family: var(--serif); font-size: 30px; font-weight: 500; }
-  .addon-card .p { font-family: var(--serif); font-size: 44px; font-weight: 600; white-space: nowrap; text-align: right; color: var(--gold-2); line-height: 1; }
-  .addon-card small { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); font-family: var(--sans); font-weight: 600; }
+  .plan ul { list-style: none; padding: 22px 0 0; margin: 24px 0 30px; flex: 1; border-top: 1px solid var(--line); }
+  .plan li { padding: 7px 0 7px 26px; font-size: 15px; position: relative; }
+  .plan li::before { content: ""; position: absolute; left: 2px; top: 16px; width: 12px; height: 1px; background: var(--honey); }
+  .plan.hit .btn-gold { width: 100%; }
+  .plan .btn { width: 100%; }
+  .addon-card { margin-top: 28px; display: grid; grid-template-columns: 220px 1fr auto; gap: 30px; align-items: center; padding: 0; border-radius: var(--radius); background: var(--paper); border: 1px solid var(--line); overflow: hidden; }
+  .addon-card img { width: 100%; height: 100%; min-height: 180px; object-fit: cover; }
+  .addon-card h3 { font-family: var(--serif); font-size: 34px; font-weight: 500; }
+  .addon-card .p { padding-right: 34px; font-family: var(--serif); font-size: 48px; font-weight: 600; white-space: nowrap; text-align: right; color: var(--caramel); line-height: 1; }
+  .addon-card small { display: block; margin-top: 8px; font-size: 12px; color: var(--muted); font-family: var(--sans); font-weight: 600; }
 
   /* steps */
   .steps { counter-reset: s; }
-  .step::before { counter-increment: s; content: "0" counter(s); display: block; font-family: var(--serif); font-size: 56px; font-weight: 500; line-height: 1; margin-bottom: 18px;
-    background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .step::before { counter-increment: s; content: "0" counter(s); display: block; font-family: var(--serif); font-size: 60px; font-weight: 500; line-height: 1; margin-bottom: 18px; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
-  /* ---------- order wizard ---------- */
-  .order { background: radial-gradient(80% 60% at 50% 0%, rgba(91,63,134,.35), transparent 70%), var(--bg); border-top: 1px solid var(--line); }
-  .wizard { max-width: 760px; margin: 0 auto; padding: 36px; border-radius: 32px;
-    background: linear-gradient(160deg, rgba(255,255,255,.07), rgba(255,255,255,.02)); border: 1px solid var(--line-2);
-    box-shadow: 0 40px 100px -40px rgba(0,0,0,.7); backdrop-filter: blur(10px); }
+  /* order wizard */
+  .order { background: var(--bg-2); }
+  .order-wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: start; }
+  .order-aside { position: sticky; top: 110px; }
+  .order-aside .frame img { aspect-ratio: 4 / 5; }
+  .order-aside blockquote { margin: 26px 0 0; font-family: var(--serif); font-style: italic; font-size: 30px; line-height: 1.2; color: var(--ink-2); }
+  .order-aside cite { display: block; margin-top: 10px; font-family: var(--sans); font-style: normal; font-size: 13px; color: var(--muted); }
+  .wizard { padding: 36px; border-radius: 32px; background: var(--paper); border: 1px solid var(--line); box-shadow: var(--shadow); }
   .wiz-head { margin-bottom: 30px; }
   .wiz-steps { list-style: none; margin: 0 0 16px; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
-  .wiz-steps li { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; letter-spacing: .04em; color: var(--muted); }
+  .wiz-steps li { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; color: var(--muted); }
   .wiz-steps li.done { cursor: pointer; }
   .wiz-steps b { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; border: 1px solid var(--line-2); flex: none; }
   .wiz-steps li.active { color: var(--ink); }
-  .wiz-steps li.active b { background: var(--grad); color: #1a1326; border-color: transparent; }
-  .wiz-steps li.done b { border-color: var(--gold); color: var(--gold); }
-  .wiz-bar { height: 2px; background: var(--line); overflow: hidden; border-radius: 2px; }
+  .wiz-steps li.active b { background: var(--cocoa); color: #fbf1e2; border-color: var(--cocoa); }
+  .wiz-steps li.done b { border-color: var(--caramel); color: var(--caramel); background: #f6e7d4; }
+  .wiz-bar { height: 3px; background: var(--line); overflow: hidden; border-radius: 3px; }
   .wiz-bar i { display: block; height: 100%; width: 25%; background: var(--grad); transition: width .4s ease; }
   form { display: grid; }
   .step-pane { display: grid; gap: 22px; animation: paneIn .45s ease; }
   @keyframes paneIn { from { opacity: 0; transform: translateX(16px); } }
-  .pane-title { font-family: var(--serif); font-size: 34px; font-weight: 500; margin: 0; }
+  .pane-title { font-family: var(--serif); font-size: 36px; font-weight: 500; margin: 0; }
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .field { display: grid; gap: 8px; min-width: 0; }
-  .field > span, .label { font-size: 13px; font-weight: 700; letter-spacing: .04em; color: var(--ink); }
+  .field > span, .label { font-size: 13px; font-weight: 800; letter-spacing: .03em; }
   .field small, .help { font-size: 13px; color: var(--muted); }
   .opt { color: var(--muted); font-weight: 500; }
-  input[type=text], input[type=tel], input[type=date], input[type=number], textarea {
-    font: inherit; font-size: 16px; color: var(--ink); background: rgba(255,255,255,.04); color-scheme: dark;
-    border: 1px solid var(--line-2); border-radius: 14px; padding: 15px 16px; width: 100%; min-width: 0; transition: border-color .2s, box-shadow .2s, background .2s;
-  }
-  input::placeholder, textarea::placeholder { color: rgba(169,159,189,.7); }
+  input[type=text], input[type=tel], input[type=date], input[type=number], textarea { font: inherit; font-size: 16px; color: var(--ink); background: var(--bg); border: 1px solid var(--line-2); border-radius: 14px; padding: 15px 16px; width: 100%; min-width: 0; transition: border-color .2s, box-shadow .2s, background .2s; }
+  input::placeholder, textarea::placeholder { color: #ad9a8a; }
   input[type=date] { min-height: 54px; }
-  input:focus, textarea:focus { outline: none; border-color: var(--gold); background: rgba(233,199,143,.05); box-shadow: 0 0 0 4px rgba(233,199,143,.1); }
-  input:disabled { opacity: .45; }
+  input:focus, textarea:focus { outline: none; border-color: var(--caramel); background: #fff; box-shadow: 0 0 0 4px rgba(183,123,75,.12); }
+  input:disabled { opacity: .5; }
   textarea { min-height: 110px; resize: vertical; }
   .invalid { border-color: var(--err) !important; }
-  .err { color: var(--err); font-size: 13px; font-weight: 600; }
+  .err { color: var(--err); font-size: 13px; font-weight: 700; }
   .err:empty { display: none; }
   .pill { position: relative; display: block; }
   .pill input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-  .pill span { display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 14px; cursor: pointer; font-weight: 600; font-size: 15px;
-    background: rgba(255,255,255,.035); border: 1px solid var(--line-2); transition: border-color .2s, background .2s, color .2s; }
-  .pill svg.ico { color: var(--gold); }
-  .pill input:checked + span { border-color: var(--gold); background: rgba(233,199,143,.12); color: var(--gold-2); box-shadow: inset 0 0 0 1px rgba(233,199,143,.4); }
-  .pill input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .pill span { display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 14px; cursor: pointer; font-weight: 600; font-size: 15px; background: var(--bg); border: 1px solid var(--line-2); transition: border-color .2s, background .2s, color .2s; }
+  .pill svg.ico { color: var(--caramel); }
+  .pill input:checked + span { border-color: var(--cocoa); background: var(--cocoa); color: #fbf1e2; }
+  .pill input:checked + span svg.ico { color: var(--honey); }
+  .pill input:focus-visible + span { outline: 2px solid var(--caramel); outline-offset: 2px; }
   .occ-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
   .occ-grid .pill span { width: 100%; height: 100%; padding: 15px 14px; font-size: 14px; line-height: 1.25; }
   .seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
@@ -280,94 +283,93 @@
   .durations { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
   .dur-opt { position: relative; }
   .dur-opt input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-  .dur-opt span { display: grid; gap: 4px; text-align: center; padding: 18px 8px; border-radius: 16px; cursor: pointer; background: rgba(255,255,255,.035); border: 1px solid var(--line-2); transition: border-color .2s, background .2s; }
-  .dur-opt b { font-family: var(--serif); font-size: 28px; font-weight: 500; line-height: 1; }
-  .dur-opt em { font-style: normal; font-size: 14px; color: var(--gold); font-weight: 700; }
-  .dur-opt input:checked + span { border-color: var(--gold); background: rgba(233,199,143,.12); box-shadow: inset 0 0 0 1px rgba(233,199,143,.4); }
-  .dur-opt input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
-  .toggle { display: flex; gap: 14px; align-items: flex-start; cursor: pointer; padding: 18px 20px; border-radius: 16px; background: rgba(255,255,255,.035); border: 1px solid var(--line-2); transition: border-color .2s, background .2s; }
-  .toggle.on { border-color: var(--gold); background: rgba(233,199,143,.1); }
-  .toggle input { margin-top: 4px; width: 18px; height: 18px; accent-color: #e9c78f; flex: none; }
-  .toggle b { display: flex; align-items: center; gap: 8px; font-weight: 700; }
-  .toggle b svg.ico { color: var(--gold); }
+  .dur-opt span { display: grid; gap: 4px; text-align: center; padding: 18px 8px; border-radius: 16px; cursor: pointer; background: var(--bg); border: 1px solid var(--line-2); transition: border-color .2s, background .2s; }
+  .dur-opt b { font-family: var(--serif); font-size: 30px; font-weight: 500; line-height: 1; }
+  .dur-opt em { font-style: normal; font-size: 14px; color: var(--caramel); font-weight: 800; }
+  .dur-opt input:checked + span { border-color: var(--cocoa); background: var(--cocoa); color: #fbf1e2; }
+  .dur-opt input:checked + span em { color: var(--honey); }
+  .dur-opt input:focus-visible + span { outline: 2px solid var(--caramel); outline-offset: 2px; }
+  .toggle { display: flex; gap: 14px; align-items: flex-start; cursor: pointer; padding: 18px 20px; border-radius: 16px; background: var(--bg); border: 1px solid var(--line-2); transition: border-color .2s, background .2s; }
+  .toggle.on { border-color: var(--caramel); background: #f8ecdc; }
+  .toggle input { margin-top: 4px; width: 18px; height: 18px; accent-color: #9a6238; flex: none; }
+  .toggle b { display: flex; align-items: center; gap: 8px; font-weight: 800; }
+  .toggle b svg.ico { color: var(--caramel); }
   .toggle small { color: var(--muted); font-size: 14px; }
-  .toggle a { color: var(--gold); font-weight: 700; }
-  .date-info { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; padding: 10px 14px; border-radius: 12px; }
+  .toggle a { color: var(--caramel-2); font-weight: 800; }
+  .date-info { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; padding: 10px 14px; border-radius: 12px; }
   .date-info:empty { display: none; }
-  .date-info.ok { background: rgba(143,214,168,.1); color: var(--ok); }
-  .date-info.warn { background: rgba(233,199,143,.12); color: var(--gold-2); }
-  .sum-card { margin-top: 6px; border-radius: 20px; padding: 26px; background: radial-gradient(120% 100% at 100% 0%, rgba(233,199,143,.14), transparent 60%), rgba(0,0,0,.25); border: 1px solid rgba(233,199,143,.3); }
-  .sum-card h3 { font-family: var(--serif); font-size: 26px; font-weight: 500; margin-bottom: 12px; }
-  .sum-line { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
-  .sum-line span:first-child { color: var(--muted); }
+  .date-info.ok { background: #e8f2ea; color: var(--ok); }
+  .date-info.warn { background: #fbecd6; color: #94591b; }
+  .sum-card { margin-top: 6px; border-radius: 20px; padding: 26px; background: var(--cocoa); color: #fbf1e2; }
+  .sum-card h3 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin-bottom: 12px; }
+  .sum-line { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(251,241,226,.12); font-size: 15px; }
+  .sum-line span:first-child { color: rgba(251,241,226,.6); }
   .sum-line span:last-child { text-align: right; }
-  .sum-line s { color: var(--muted); margin-right: 6px; }
+  .sum-line s { color: rgba(251,241,226,.45); margin-right: 6px; }
   .sum-total { display: flex; justify-content: space-between; align-items: baseline; margin-top: 16px; }
-  .sum-total b { font-family: var(--serif); font-size: 52px; font-weight: 600; line-height: 1; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .sum-nudge { display: flex; gap: 8px; align-items: flex-start; margin-top: 16px; padding: 12px 14px; border-radius: 12px; background: rgba(233,199,143,.1); color: var(--gold-2); font-size: 14px; font-weight: 600; }
+  .sum-total b { font-family: var(--serif); font-size: 54px; font-weight: 600; line-height: 1; background: linear-gradient(100deg, #f6d9a8, #e2a85c); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sum-nudge { display: flex; gap: 8px; align-items: flex-start; margin-top: 16px; padding: 12px 14px; border-radius: 12px; background: rgba(226,168,92,.14); color: #f6d9a8; font-size: 14px; font-weight: 600; }
   .sum-nudge:empty { display: none; }
   .wiz-nav { display: flex; gap: 10px; justify-content: space-between; margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--line); }
   .wiz-nav .btn-primary { flex: 1; max-width: 360px; margin-left: auto; }
   .help.center { text-align: center; margin-top: 14px; }
-  .direct-line { text-align: center; margin-top: 26px; color: var(--muted); font-size: 15px; }
-  .direct-line a { display: inline-flex; align-items: center; gap: 6px; color: var(--gold); font-weight: 700; margin: 0 8px; text-decoration: none; white-space: nowrap; }
+  .direct-line { margin-top: 22px; color: var(--muted); font-size: 15px; }
+  .direct-line a { display: inline-flex; align-items: center; gap: 6px; color: var(--caramel-2); font-weight: 800; margin: 0 10px 0 0; text-decoration: none; white-space: nowrap; }
 
   /* faq */
   .faq { max-width: 860px; margin: 0 auto; }
   details { border-bottom: 1px solid var(--line); padding: 26px 0; }
-  summary { cursor: pointer; font-family: var(--serif); font-weight: 500; font-size: 26px; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  summary { cursor: pointer; font-family: var(--serif); font-weight: 500; font-size: 28px; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
   summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; font-family: var(--sans); font-weight: 300; color: var(--gold); font-size: 30px; line-height: 1; transition: transform .3s; }
+  summary::after { content: "+"; font-family: var(--sans); font-weight: 300; color: var(--caramel); font-size: 30px; line-height: 1; transition: transform .3s; }
   details[open] summary::after { transform: rotate(45deg); }
   details p { color: var(--muted); margin-top: 14px; max-width: 720px; }
 
-  /* final cta */
-  .final { border-radius: 40px; padding: 110px 32px; text-align: center; position: relative; overflow: hidden;
-    background: radial-gradient(80% 120% at 50% 100%, rgba(240,166,182,.35), transparent 60%), linear-gradient(180deg, #1d1640, #2d1f4f); border: 1px solid var(--line-2); }
-  .final h2 { max-width: 820px; margin: 0 auto 18px; position: relative; }
-  .final p { color: var(--muted); max-width: 560px; margin: 0 auto 36px; font-size: 18px; position: relative; }
-  .final .hero-ctas { position: relative; }
-  .final .stars { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  /* final */
+  .final { position: relative; border-radius: 40px; overflow: hidden; min-height: 560px; display: grid; place-items: center; text-align: center; padding: 80px 28px; color: #fff6e6; }
+  .final > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(1.05); }
+  .final::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(36,23,15,.25), rgba(36,23,15,.72)); }
+  .final > div { position: relative; }
+  .final h2 { max-width: 820px; margin: 0 auto 18px; color: #fff6e6; }
+  .final h2 em { background: linear-gradient(100deg, #f6d9a8, #e2a85c); -webkit-background-clip: text; background-clip: text; }
+  .final p { color: rgba(255,246,230,.85); max-width: 560px; margin: 0 auto 36px; font-size: 18px; }
+  .final .hero-ctas { justify-content: center; }
+  .final .btn-ghost { color: #fff6e6; border-color: rgba(255,246,230,.45); }
 
   footer { padding: 48px 0 56px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
   .foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
   .foot nav { display: flex; gap: 22px; flex-wrap: wrap; }
   .foot a { text-decoration: none; }
-  .foot a:hover { color: var(--gold); }
+  .foot a:hover { color: var(--caramel); }
 
-  /* pinned contact (desktop) */
   .float-contact { position: fixed; right: 22px; bottom: 22px; z-index: 35; display: grid; gap: 10px; justify-items: end; }
-  .fab { display: flex; align-items: center; gap: 10px; padding: 7px 18px 7px 7px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 14px;
-    background: rgba(20,16,42,.8); backdrop-filter: blur(12px); border: 1px solid var(--line-2); box-shadow: 0 16px 40px -18px rgba(0,0,0,.8); transition: transform .2s, border-color .2s; }
-  .fab:hover { transform: translateY(-2px); border-color: var(--gold); }
+  .fab { display: flex; align-items: center; gap: 10px; padding: 7px 18px 7px 7px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 14px; background: rgba(255,253,249,.92); backdrop-filter: blur(12px); border: 1px solid var(--line); box-shadow: 0 16px 40px -18px rgba(74,44,20,.5); transition: transform .2s; }
+  .fab:hover { transform: translateY(-2px); }
   .fab i { color: #fff; font-style: normal; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; }
   .fab.ig i { background: linear-gradient(45deg, #f9ce34, #ee2a7b 50%, #6228d7); }
   .fab.tg i { background: #2aabee; }
   .fab.wa i { background: #25d366; }
 
-  .cookie { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 50; max-width: 580px; margin: 0 auto; display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
-    background: rgba(20,16,42,.92); backdrop-filter: blur(14px); border: 1px solid var(--line-2); border-radius: 18px; padding: 18px 20px; box-shadow: 0 16px 40px -20px rgba(0,0,0,.8); }
+  .cookie { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 50; max-width: 580px; margin: 0 auto; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px; box-shadow: var(--shadow); }
   .cookie p { flex: 1 1 260px; font-size: 14px; color: var(--muted); }
   .cookie .btns { display: flex; gap: 8px; }
-
-  .toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 140px); visibility: hidden; z-index: 60; max-width: calc(100% - 32px); text-align: center;
-    background: var(--ink); color: var(--bg); padding: 14px 22px; border-radius: 14px; font-weight: 700; font-size: 15px; transition: transform .3s ease; }
+  .toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 140px); visibility: hidden; z-index: 60; max-width: calc(100% - 32px); text-align: center; background: var(--cocoa); color: #fbf1e2; padding: 14px 22px; border-radius: 14px; font-weight: 700; font-size: 15px; transition: transform .3s ease; }
   .toast.show { transform: translate(-50%, 0); visibility: visible; }
-
-  /* cursor glow */
-  .cursor-glow { position: fixed; left: 0; top: 0; width: 520px; height: 520px; margin: -260px 0 0 -260px; border-radius: 50%; pointer-events: none; z-index: 1;
-    background: radial-gradient(closest-side, rgba(233,199,143,.07), transparent); transition: opacity .3s; opacity: 0; }
 
   .reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
   .reveal.in { opacity: 1; transform: none; }
 
   @media (max-width: 1000px) {
+    .hero-grid, .meet-grid, .order-wrap { grid-template-columns: 1fr; }
+    .order-aside { position: static; display: none; }
     .grid-3 { grid-template-columns: 1fr 1fr; }
     .grid-4, .gallery { grid-template-columns: repeat(2, 1fr); }
     .nav-links a:not(.btn) { display: none; }
     section { padding: 96px 0; }
     .plan.hit { transform: none; }
     .plan.hit:hover { transform: translateY(-4px); }
+    .reels { height: 420px; grid-template-columns: repeat(3, 1fr); order: -1; }
+    .meet-photos { height: 520px; max-width: 560px; }
   }
   @media (max-width: 720px) {
     body { font-size: 16px; }
@@ -376,26 +378,34 @@
     .grid-3 { grid-template-columns: 1fr; }
     .row { grid-template-columns: 1fr; }
     .section-head { margin-bottom: 44px; }
-    .logo { font-size: 22px; }
-    .logo-mark { width: 28px; height: 28px; }
-    .nav-inner { height: 64px; }
-    .hero { padding-top: 92px; }
-    .kicker { font-size: 18px; }
-    .lead, .hero .lead { font-size: 16px; }
-    .hero .lead { margin: 18px auto 26px; }
-    .name-try { flex-direction: column; border-radius: 22px; }
-    .name-try input { padding: 12px 14px; text-align: center; }
-    .name-try .btn { width: 100%; }
-    .hero-ctas { flex-direction: column; width: 100%; }
-    .hero-ctas .btn { width: 100%; }
-    .chips { display: none; }
-    .marquee-track { font-size: 22px; gap: 40px; }
-    .marquee-track span { gap: 40px; }
-    .reel:nth-child(even) { margin-top: 24px; }
-    .reel .cap { font-size: 18px; padding: 16px 14px; }
-    .addon-card { grid-template-columns: 1fr; gap: 14px; }
-    .addon-card .p { text-align: left; }
-    .any-idea { padding: 28px 22px; }
+    .logo { font-size: 23px; }
+    .logo-mark { width: 32px; height: 32px; }
+    .nav-inner { height: 66px; }
+    .hero { padding: 96px 0 64px; }
+    .hero .lead { font-size: 16px; margin: 18px 0 26px; }
+    .hero-ctas .btn { flex: 1 1 100%; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 30px; }
+    .stat span { display: block; font-size: 12px; line-height: 1.3; margin-top: 4px; }
+    .stat b { font-size: 32px; }
+    .reels { height: 300px; gap: 10px; margin-bottom: 8px; }
+    .reel-col { gap: 10px; }
+    .frame { border-radius: 14px; }
+    .marquee-track { font-size: 22px; gap: 34px; }
+    .marquee-track span { gap: 34px; }
+    .meet-photos { height: 420px; }
+    .meet-badge { width: 92px; height: 92px; font-size: 21px; }
+    .reel:nth-child(even) { margin-top: 28px; }
+    .reel .cap { font-size: 19px; padding: 30px 12px 12px; }
+    .reel .play { width: 50px; height: 50px; }
+    .addon-card { grid-template-columns: 1fr; gap: 0; }
+    .addon-card > div { padding: 22px 22px 0; }
+    .addon-card .p { text-align: left; padding: 14px 22px 24px; }
+    .addon-card img { max-height: 220px; }
+    .any-idea { padding: 30px 22px; }
+    .any-idea h3 { font-size: 30px; }
+    .tg-banner { padding: 22px; }
+    .tg-banner b { font-size: 24px; }
+    .tg-banner .btn { width: 100%; }
     .wizard { padding: 22px 16px; border-radius: 24px; margin: 0 -6px; }
     .wiz-steps span { display: none; }
     .wiz-steps li { justify-content: center; }
@@ -403,20 +413,18 @@
     .wiz-steps { grid-template-columns: auto auto auto auto; justify-content: space-between; }
     .occ-grid { grid-template-columns: 1fr 1fr; }
     .seg .pill span { flex-direction: column; gap: 4px; font-size: 14px; }
-    .pane-title { font-size: 28px; }
-    .wiz-nav { position: sticky; bottom: 0; z-index: 5; background: rgba(20,16,42,.96); backdrop-filter: blur(12px); margin: 22px -16px -22px; padding: 14px 16px; border-radius: 0 0 24px 24px; }
+    .pane-title { font-size: 30px; }
+    .wiz-nav { position: sticky; bottom: 0; z-index: 5; background: rgba(255,253,249,.97); backdrop-filter: blur(12px); margin: 22px -16px -22px; padding: 14px 16px; border-radius: 0 0 24px 24px; }
     .wiz-nav .btn { padding: 15px 18px; }
     .hide-m { display: none; }
     .float-contact { display: none; }
-    .final { padding: 72px 22px; border-radius: 28px; }
-    summary { font-size: 21px; }
-    .tg-banner .btn { width: 100%; }
-    .cursor-glow { display: none; }
+    .final { min-height: 480px; border-radius: 28px; padding: 60px 20px; }
+    summary { font-size: 22px; }
   }
   @media (max-width: 400px) {
     .grid-4, .gallery { gap: 10px; }
     .seg .pill span { font-size: 13px; padding: 12px 4px; }
-    .dur-opt b { font-size: 22px; }
+    .dur-opt b { font-size: 24px; }
   }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -461,6 +469,7 @@
       </g>
     </symbol>
     <symbol id="i-star4" viewBox="0 0 24 24"><path d="M12 1.5C12.7 8 16 11.3 22.5 12 16 12.7 12.7 16 12 22.5 11.3 16 8 12.7 1.5 12 8 11.3 11.3 8 12 1.5Z"/></symbol>
+    <symbol id="i-star5" viewBox="0 0 24 24"><path d="M12 2.5c.6 0 1 .4 1.4 1.1l2.2 4.6 5 .7c.8.1 1.3.6 1.3 1.2s-.3 1-.9 1.5l-3.6 3.5.9 5c.1.8-.1 1.4-.8 1.6-.4.1-.9 0-1.4-.3L12 19l-4.4 2.4c-.5.3-1 .4-1.4.3-.7-.2-.9-.8-.8-1.6l.9-5-3.6-3.5c-.6-.5-.9-.9-.9-1.5s.5-1.1 1.3-1.2l5-.7 2.2-4.6c.4-.7.8-1.1 1.4-1.1Z"/></symbol>
     <!-- иконки (стиль Lucide) -->
     <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
@@ -492,12 +501,15 @@
 
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
-    <a href="#top" class="logo" aria-label="Peep &amp; Peak"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e2b8"/><stop offset=".5" stop-color="#e9c78f"/><stop offset="1" stop-color="#f0a6b6"/></linearGradient></defs><path fill="url(#lg)" d="M20 2C21.2 13.5 26.5 18.8 38 20 26.5 21.2 21.2 26.5 20 38 18.8 26.5 13.5 21.2 2 20 13.5 18.8 18.8 13.5 20 2Z"/><path fill="#fff6dc" d="M33 4C33.3 6.8 34.2 7.7 37 8 34.2 8.3 33.3 9.2 33 12 32.7 9.2 31.8 8.3 29 8 31.8 7.7 32.7 6.8 33 4Z"/></svg><span>Peep <em>&amp;</em> Peak</span></a>
+    <a href="#top" class="logo" aria-label="Peep &amp; Peak">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c88653"/><stop offset="1" stop-color="#e2a85c"/></linearGradient></defs><circle cx="20" cy="20" r="20" fill="url(#lg)"/><path fill="#fbf1e2" d="M20 8.5c1.1 0 1.9.7 2.5 2l2.3 4.7 5.1.8c1.4.2 2.1.9 2.1 1.9s-.5 1.6-1.4 2.4l-3.7 3.6.9 5.1c.2 1.4-.2 2.3-1.3 2.6-.7.2-1.4 0-2.3-.5L20 28.6l-4.6 2.5c-.9.5-1.6.7-2.3.5-1-.3-1.5-1.2-1.3-2.6l.9-5.1-3.7-3.6c-.9-.8-1.4-1.4-1.4-2.4s.7-1.7 2.1-1.9l5.1-.8 2.3-4.7c.6-1.3 1.4-2 2.5-2Z"/></svg>
+      <span>Peep <em>&amp;</em> Peak</span>
+    </a>
     <nav class="nav-links">
+      <a href="#meet">Герои</a>
       <a href="#ideas">Идеи</a>
       <a href="#examples">Примеры</a>
       <a href="#pricing">Цены</a>
-      <a href="#faq">Вопросы</a>
       <a href="#order" class="btn btn-primary btn-sm">Заказать</a>
     </nav>
   </div>
@@ -506,54 +518,61 @@
 <main id="top">
 
   <!-- ================= HERO ================= -->
-  <section class="hero" id="hero">
-    <canvas id="sky" aria-hidden="true"></canvas>
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="wrap hero-inner">
-      <p class="kicker reveal"><svg class="ico fill"><use href="#i-star4"/></svg>Их имя в небе… или там, где вы мечтаете</p>
-      <div class="sky-stage" id="sky-stage" role="img" aria-label="Имя, выложенное звёздами"></div>
-      <h1 class="reveal">Подарите <em>эмоции,</em><br>которые не&nbsp;забываются</h1>
-      <p class="lead reveal">Peep &amp; Peak, пара капибар, в которой влюблённые узнают себя, разыграют вашу историю любви. С вашими именами прямо внутри сцены.</p>
-      <form class="name-try reveal" id="name-try" autocomplete="off">
-        <input id="name-input" maxlength="14" placeholder="Впишите имя любимого человека" aria-label="Имя любимого человека">
-        <button class="btn btn-primary" type="submit">Зажечь в небе</button>
-      </form>
-      <div class="hero-ctas reveal">
-        <a href="#order" class="btn btn-primary">Заказать видео</a>
-        <a href="#" class="btn btn-ghost" data-link="profile"><svg class="ico"><use href="#i-instagram"/></svg> Смотреть в Instagram</a>
+  <section class="hero">
+    <span class="bokeh" style="width:180px;height:180px;left:6%;top:18%"></span>
+    <span class="bokeh" style="width:90px;height:90px;left:42%;top:12%;animation-delay:-4s"></span>
+    <span class="bokeh" style="width:240px;height:240px;left:30%;bottom:-60px;animation-delay:-8s;opacity:.6"></span>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow reveal">Сериал «It's us» · 3 сезона</span>
+        <h1 class="reveal">Ваша история любви — <em>новая серия</em> Peep&nbsp;&amp;&nbsp;Peak</h1>
+        <p class="lead reveal">Пара капибар, в которой тысячи влюблённых узнают себя, разыграет вашу историю: с вашими именами, датами и самыми тёплыми моментами прямо внутри сцены.</p>
+        <div class="hero-ctas reveal">
+          <a href="#order" class="btn btn-primary">Заказать видео</a>
+          <a href="#examples" class="btn btn-ghost"><svg class="ico fill"><use href="#i-play"/></svg> Смотреть примеры</a>
+        </div>
+        <div class="stats reveal">
+          <div class="stat"><b>152K</b><span>просмотров у одной серии</span></div>
+          <div class="stat"><b>3</b><span>сезона историй о любви</span></div>
+          <div class="stat"><b id="from-chip">$47</b><span>цена видео от</span></div>
+        </div>
       </div>
-      <div class="chips reveal">
-        <span class="chip"><svg class="ico"><use href="#i-sparkles"/></svg>Любая ваша идея</span>
-        <span class="chip"><svg class="ico"><use href="#i-type"/></svg>Имена прямо в кадре</span>
-        <span class="chip"><svg class="ico"><use href="#i-film"/></svg>30, 60 или 90 секунд</span>
-        <span class="chip"><svg class="ico"><use href="#i-flame"/></svg><span id="from-chip">от $47</span></span>
-      </div>
+      <div class="reels reveal" id="reels" aria-label="Кадры из видео Peep &amp; Peak"></div>
     </div>
-    <div class="hero-hill" aria-hidden="true">
-      <svg class="hill" viewBox="0 0 1440 200" preserveAspectRatio="none">
-        <path d="M0 120 C 240 60 480 70 720 96 C 960 122 1200 60 1440 90 L1440 200 L0 200 Z" fill="#1a1433"/>
-        <path d="M0 150 C 300 110 560 120 720 128 C 900 136 1160 104 1440 132 L1440 200 L0 200 Z" fill="#0c0a18"/>
-      </svg>
-      <svg class="pair" viewBox="0 0 420 220">
-        <use href="#heart" x="196" y="0" width="30" height="28" class="bob"/>
-        <g class="bob"><use href="#capy" x="10" y="44" width="200" height="170"/></g>
-        <g class="bob-2"><g transform="translate(410 50) scale(-1 1)">
-          <use href="#capy" x="0" y="0" width="185" height="157"/>
-          <use href="#bow" x="112" y="16" width="34" height="20"/>
-        </g></g>
-      </svg>
-    </div>
-    <div class="scroll-cue" aria-hidden="true"></div>
   </section>
 
   <div class="marquee-wrap" aria-hidden="true">
     <div class="marquee"><div class="marquee-track" id="marquee"></div></div>
   </div>
 
+  <!-- ================= MEET ================= -->
+  <section id="meet">
+    <div class="wrap meet-grid">
+      <div class="meet-photos reveal">
+        <div class="frame p1"><img src="images/frames/sea-couple.jpg" alt="Peep и Peak у моря" loading="lazy"></div>
+        <div class="frame p2"><img src="images/frames/kiss.jpg" alt="Peep и Peak целуются" loading="lazy"></div>
+        <div class="meet-badge">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="circ" d="M60 60 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0"/></defs><text font-family="Manrope, sans-serif" font-size="9.5" font-weight="700" letter-spacing="3.2" fill="#e2a85c"><textPath href="#circ">IT'S US · PEEP &amp; PEAK · IT'S US ·</textPath></text></svg>
+          <b>it's us</b>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow reveal">Знакомьтесь</span>
+        <h2 class="reveal">Он и она. <em>Это мы</em> — говорят о них пары</h2>
+        <p class="lead reveal">Peep &amp; Peak — пара, где он всегда рядом: укрывает пледом, держит зонт над ней, а не над собой, и дарит звёзды. Поэтому их серии пересылают друг другу со словами «это мы».</p>
+        <div class="traits">
+          <div class="trait reveal"><span class="dot" style="background:#e3eee6;color:var(--sage)"><svg class="ico"><use href="#i-heart"/></svg></span><div><b>Он — в зелёной бабочке</b><p>Заботливый, немного неуклюжий и всегда с сюрпризом в лапках.</p></div></div>
+          <div class="trait reveal"><span class="dot" style="background:#fbe6ea;color:#c46a7c"><svg class="ico"><use href="#i-sparkles"/></svg></span><div><b>Она — с ромашкой или бантиком</b><p>Нежная, мечтательная и самая любимая звёздочка на свете.</p></div></div>
+          <div class="trait reveal"><span class="dot" style="background:#f6e7d4;color:var(--caramel)"><svg class="ico fill"><use href="#i-star5"/></svg></span><div><b>Звезда на животике</b><p>Их общий знак: «You're my little star». В вашем видео он тоже будет.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= WHY ================= -->
-  <section id="why">
+  <section class="why">
     <div class="wrap">
-      <p class="why-quote reveal">Цветы завянут через неделю. А&nbsp;это видео будут <span class="grad-text">пересматривать годами</span> и показывать всем друзьям</p>
+      <p class="why-quote reveal">Цветы завянут через неделю. А&nbsp;это видео будут <em class="serif-em">пересматривать годами</em> и показывать всем друзьям</p>
       <div class="grid-3">
         <div class="card reveal"><div class="icon"><svg class="ico"><use href="#i-target"/></svg></div><h3>Не шаблон, а ваша история</h3><p>Имена, даты и ваши моменты не наклеены сверху, а вплетены в сцену: на торте, в небе, на песке.</p></div>
         <div class="card reveal"><div class="icon"><svg class="ico"><use href="#i-smile"/></svg></div><h3>Реакция, которую вы запомните</h3><p>Персонажи, которых он или она уже любит, вдруг поздравляют лично. Это трогает до слёз.</p></div>
@@ -563,153 +582,73 @@
   </section>
 
   <!-- ================= IDEAS ================= -->
-  <section id="ideas" class="ideas">
+  <section id="ideas">
     <div class="wrap">
       <div class="section-head center reveal">
         <span class="eyebrow">Любая идея в кадре</span>
-        <h2>Если вы можете это представить, Peep&nbsp;&amp;&nbsp;Peak это сыграют</h2>
+        <h2>Если вы можете это <em>представить</em> — Peep&nbsp;&amp;&nbsp;Peak это сыграют</h2>
         <p>Вот что заказывают чаще всего. Но это только начало: можно всё, что подскажет ваша история.</p>
       </div>
-      <div class="grid-3">
-        <article class="card idea reveal">
-          <div class="vis" style="background:linear-gradient(180deg,#251d48,#5b3f86)">
-            <svg viewBox="0 0 320 200" aria-hidden="true">
-              <g fill="#fff"><circle class="twinkle" cx="30" cy="30" r="1.5"/><circle class="twinkle" cx="290" cy="24" r="1.5" style="animation-delay:-1s"/><circle class="twinkle" cx="250" cy="70" r="1.2" style="animation-delay:-2s"/><circle class="twinkle" cx="70" cy="80" r="1.2" style="animation-delay:-.6s"/></g>
-              <text x="160" y="88" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-weight="800" font-size="40" fill="#fff6dc" style="filter:drop-shadow(0 0 6px #ffd98a)">Аня</text>
-              <path d="M0 170 Q 160 140 320 170 L320 200 L0 200 Z" fill="#2c2147"/>
-              <use href="#couple" x="105" y="124" width="110" height="52"/>
-            </svg>
-          </div>
-          <div class="txt"><h3>Имя в звёздном небе</h3><p>Звёзды, салют или облака складываются в имя любимого человека.</p></div>
-        </article>
-        <article class="card idea reveal">
-          <div class="vis" style="background:linear-gradient(160deg,#3a2347,#6b3a5c)">
-            <svg viewBox="0 0 320 200" aria-hidden="true">
-              <rect x="100" y="104" width="120" height="56" rx="10" fill="#fff"/>
-              <rect x="100" y="104" width="120" height="16" rx="8" fill="#f08aa3"/>
-              <rect x="118" y="70" width="84" height="40" rx="10" fill="#fff"/>
-              <rect x="118" y="70" width="84" height="12" rx="6" fill="#f08aa3"/>
-              <rect x="157" y="46" width="6" height="24" rx="3" fill="#c9694a"/>
-              <path d="M160 32 q 8 10 0 15 q -8 -5 0 -15" fill="#ffb84d"/>
-              <text x="160" y="148" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-weight="800" font-size="20" fill="#c9694a">А ♥ М</text>
-              <use href="#capy" x="10" y="110" width="80" height="68"/>
-              <g transform="translate(310 112) scale(-1 1)"><use href="#capy" x="0" y="0" width="76" height="65"/><use href="#bow" x="46" y="6" width="16" height="10"/></g>
-            </svg>
-          </div>
-          <div class="txt"><h3>Инициалы на торте</h3><p>Праздничный торт со свечой, а на нём ваши буквы кремом.</p></div>
-        </article>
-        <article class="card idea reveal">
-          <div class="vis" style="background:linear-gradient(180deg,#f6b38f,#c9708a)">
-            <svg viewBox="0 0 320 200" aria-hidden="true">
-              <use href="#capy" x="30" y="80" width="120" height="102"/>
-              <g transform="translate(296 74) scale(-1 1)"><use href="#capy" x="0" y="0" width="120" height="102"/><use href="#bow" x="72" y="10" width="24" height="14"/></g>
-              <rect x="148" y="124" width="28" height="20" rx="4" fill="#c9694a"/>
-              <circle cx="162" cy="118" r="9" fill="none" stroke="#ffd98a" stroke-width="4"/>
-              <use href="#star" x="170" y="100" width="10" height="10" class="twinkle"/>
-              <use href="#heart" x="150" y="40" width="24" height="22" class="bob"/>
-            </svg>
-          </div>
-          <div class="txt"><h3>Предложение руки и сердца</h3><p>Кольцо, закат и вопрос, на который ответят «да». Видео можно показать прямо в момент предложения.</p></div>
-        </article>
-        <article class="card idea reveal">
-          <div class="vis" style="background:linear-gradient(180deg,#f3a98f 0%,#c77b95 55%,#e8c99a 55%)">
-            <svg viewBox="0 0 320 200" aria-hidden="true">
-              <circle cx="260" cy="40" r="18" fill="#ffe08a"/>
-              <path d="M0 110 Q 40 100 80 110 T 160 110 T 240 110 T 320 110" stroke="#fff" stroke-width="3" fill="none" opacity=".8"/>
-              <text x="222" y="168" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-weight="700" font-size="20" fill="#b98d5c" transform="rotate(-4 222 168)">Аня + Макс</text>
-              <use href="#couple" x="6" y="112" width="140" height="66"/>
-            </svg>
-          </div>
-          <div class="txt"><h3>Надпись на песке у моря</h3><p>Отпуск мечты: закат, волны и ваши имена на берегу.</p></div>
-        </article>
-        <article class="card idea reveal">
-          <div class="vis" style="background:linear-gradient(160deg,#241c4a,#45367a)">
-            <svg viewBox="0 0 320 200" aria-hidden="true">
-              <g class="bob">
-                <line x1="130" y1="96" x2="150" y2="150" stroke="#b9a9d8"/><line x1="170" y1="84" x2="160" y2="150" stroke="#b9a9d8"/><line x1="210" y1="100" x2="170" y2="150" stroke="#b9a9d8"/>
-                <ellipse cx="130" cy="70" rx="22" ry="27" fill="#f08aa3"/><ellipse cx="170" cy="58" rx="22" ry="27" fill="#ffc94d"/><ellipse cx="210" cy="74" rx="22" ry="27" fill="#a8c6f5"/>
-                <text x="130" y="77" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-weight="800" font-size="18" fill="#fff">3</text>
-                <text x="170" y="63" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-weight="800" font-size="11" fill="#fff">года</text>
-                <text x="210" y="81" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-weight="800" font-size="18" fill="#fff">♥</text>
-              </g>
-              <use href="#couple" x="95" y="134" width="130" height="62"/>
-            </svg>
-          </div>
-          <div class="txt"><h3>Шары с датой и надписью</h3><p>Сколько вы вместе, сколько исполняется или главная фраза для него или неё.</p></div>
-        </article>
-        <article class="card idea reveal">
-          <div class="vis" style="background:linear-gradient(160deg,#35263f,#5b3d50)">
-            <svg viewBox="0 0 320 200" aria-hidden="true">
-              <g transform="rotate(-7 100 100)"><rect x="54" y="34" width="92" height="118" rx="8" fill="#fff"/><rect x="62" y="42" width="76" height="80" rx="4" fill="#fde9ee"/><use href="#capy" x="66" y="64" width="68" height="58"/><text x="100" y="142" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="800" font-size="10" fill="#75685f">первое свидание</text></g>
-              <g transform="rotate(6 220 100)"><rect x="174" y="34" width="92" height="118" rx="8" fill="#fff"/><rect x="182" y="42" width="76" height="80" rx="4" fill="#f0ebfb"/><g transform="translate(254 62) scale(-1 1)"><use href="#capy" x="0" y="0" width="68" height="58"/><use href="#bow" x="40" y="5" width="14" height="9"/></g><text x="220" y="142" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="800" font-size="10" fill="#75685f">наш город</text></g>
-              <use href="#heart" x="148" y="152" width="24" height="22" class="bob"/>
-            </svg>
-          </div>
-          <div class="txt"><h3>Ваша история один в один</h3><p>Как познакомились, первое свидание, ваша шутка или особое место. Повторим всё.</p></div>
-        </article>
-      </div>
+      <div class="grid-3" id="ideas-grid"></div>
       <div class="any-idea reveal">
         <div>
           <h3>Не нашли свою идею?</h3>
-          <p>Опишите любую: Peep &amp; Peak сыграют то, что важно именно вам двоим. Это опция «Своя история», её можно добавить к любому видео.</p>
+          <p>Опишите любую — Peep &amp; Peak сыграют то, что важно именно вам двоим. Это опция «Своя история», её можно добавить к любому видео.</p>
         </div>
-        <a href="#order" class="btn btn-primary" data-own-idea>Хочу свою историю</a>
+        <a href="#order" class="btn btn-gold" data-own-idea>Хочу свою историю</a>
       </div>
     </div>
   </section>
 
   <!-- ================= OCCASIONS ================= -->
-  <section id="occasions">
+  <section id="occasions" style="padding-top:0">
     <div class="wrap">
       <div class="section-head center reveal">
         <span class="eyebrow">Поводы</span>
-        <h2>Для какого момента делаем?</h2>
-        <p>Нажмите на повод, и мы сразу подставим его в заявку.</p>
+        <h2>Для какого <em>момента</em> делаем?</h2>
+        <p>Нажмите на повод — и он сразу появится в заявке.</p>
       </div>
       <div class="occasions reveal" id="occasion-buttons"></div>
     </div>
   </section>
 
   <!-- ================= EXAMPLES ================= -->
-  <section id="examples" style="padding-top:0">
+  <section id="examples" class="examples">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Примеры</span>
-        <h2>Посмотрите, как это выглядит</h2>
-        <p>Все видео с Peep &amp; Peak у нас в Instagram: нажмите на любое, чтобы открыть.</p>
+        <h2>Серии, которые <em>пересылают</em> друг другу</h2>
+        <p>Самые любимые эпизоды Peep &amp; Peak. Нажмите, чтобы посмотреть.</p>
       </div>
       <div class="gallery" id="gallery"></div>
       <div class="gallery-cta reveal">
-        <a href="#" class="btn btn-dark" data-link="profile">Все видео в Instagram <svg class="ico"><use href="#i-arrow-up-right"/></svg></a>
+        <a href="#" class="btn btn-light" data-link="profile"><svg class="ico"><use href="#i-instagram"/></svg> Все серии в Instagram</a>
         <a href="#" class="btn btn-ghost" data-link="dm"><svg class="ico"><use href="#i-message"/></svg> Написать в директ</a>
       </div>
     </div>
   </section>
 
   <!-- ================= PRICING ================= -->
-  <section id="pricing" style="padding-top:0">
+  <section id="pricing">
     <div class="wrap">
-      <div class="section-head reveal">
+      <div class="section-head center reveal">
         <span class="eyebrow">Цены</span>
-        <h2>Выберите своё видео</h2>
+        <h2>Выберите своё <em>видео</em></h2>
         <p>Чем длиннее видео, тем больше сцен и деталей вашей истории в него помещается.</p>
       </div>
-
       <div class="tg-banner reveal">
-        <div>
-          <b><svg class="ico"><use href="#i-flame"/></svg> −40% подписчикам Telegram-канала</b>
-          <p>Подпишитесь на канал Peep &amp; Peak, и любое видео обойдётся почти вдвое дешевле.</p>
+        <div class="tg-text">
+          <span class="tg-ico"><svg class="ico"><use href="#i-send"/></svg></span>
+          <div><b>−40% подписчикам Telegram-канала</b><p>Подпишитесь на канал Peep &amp; Peak — и любое видео обойдётся почти вдвое дешевле.</p></div>
         </div>
-        <a href="#" class="btn btn-dark" data-link="channel" id="tg-banner-btn">Подписаться и получить скидку</a>
+        <a href="#" class="btn btn-primary" data-link="channel" id="tg-banner-btn">Подписаться и получить скидку</a>
       </div>
-
       <div class="grid-3" id="plans"></div>
-
       <div class="addon-card reveal">
-        <div class="icon"><svg class="ico"><use href="#i-sparkles"/></svg></div>
+        <img src="images/frames/blush.jpg" alt="" loading="lazy">
         <div>
           <h3>Своя история</h3>
-          <p style="color:var(--muted);font-size:15px;margin-top:6px">Добавьте к любому видео, и Peep &amp; Peak разыграют именно ваш сюжет: как вы познакомились, вашу шутку, место, мечту. Реализуем любую идею.</p>
+          <p style="color:var(--muted);font-size:15px;margin-top:8px">Добавьте к любому видео — и Peep &amp; Peak разыграют именно ваш сюжет: как вы познакомились, вашу шутку, место, мечту. Реализуем любую идею.</p>
         </div>
         <div class="p"><span id="addon-price"></span><small>доплата, скидка не действует</small></div>
       </div>
@@ -721,7 +660,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Как заказать</span>
-        <h2>Четыре шага до самого милого подарка</h2>
+        <h2>Четыре шага до самого <em>тёплого</em> подарка</h2>
       </div>
       <div class="grid-4 steps">
         <div class="card step reveal"><h3>Заявка</h3><p>Заполните форму ниже: повод, имена, дата и ваша идея. Пара минут.</p></div>
@@ -735,13 +674,19 @@
   <!-- ================= ORDER ================= -->
   <section id="order" class="order">
     <div class="wrap">
-      <div class="section-head center reveal">
+      <div class="section-head reveal">
         <span class="eyebrow">Заявка</span>
-        <h2>Закажите видео за 4 шага</h2>
-        <p>Пара минут, и мы свяжемся с вами в удобном мессенджере.</p>
+        <h2>Закажите видео <em>за 4 шага</em></h2>
+        <p>Пара минут — и мы свяжемся с вами в удобном мессенджере.</p>
       </div>
+      <div class="order-wrap">
+        <aside class="order-aside reveal">
+          <div class="frame"><img src="images/frames/cake.jpg" alt="Peep и Peak с праздничным тортом" loading="lazy"></div>
+          <blockquote>«You're my little star»<cite>— из серии Peep &amp; Peak</cite></blockquote>
+        </aside>
+        <div>
+          <div class="wizard reveal" id="wizard">
 
-      <div class="wizard" id="wizard">
         <div class="wiz-head">
           <ol class="wiz-steps" id="wiz-steps">
             <li data-go="1"><b>1</b><span>Повод</span></li>
@@ -859,9 +804,10 @@
           </div>
           <p class="help center" id="form-hint" hidden>После отправки текст заявки скопируется и откроется наш директ: просто вставьте и отправьте.</p>
         </form>
+          </div>
+          <p class="direct-line">Не хотите заполнять? Напишите напрямую: <span id="direct-links"></span></p>
+        </div>
       </div>
-
-      <p class="direct-line">Не хотите заполнять? <span id="direct-links"></span></p>
     </div>
   </section>
 
@@ -883,18 +829,20 @@
     </div>
   </section>
 
+
+
   <!-- ================= FINAL CTA ================= -->
   <section style="padding-top:0">
     <div class="wrap">
       <div class="final reveal">
-        <svg class="stars" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true">
-          <g fill="#fff"><circle class="twinkle" cx="80" cy="60" r="2"/><circle class="twinkle" cx="900" cy="80" r="2" style="animation-delay:-1s"/><circle class="twinkle" cx="760" cy="40" r="1.5" style="animation-delay:-2s"/><circle class="twinkle" cx="200" cy="320" r="1.5" style="animation-delay:-.5s"/><circle class="twinkle" cx="940" cy="300" r="2" style="animation-delay:-1.5s"/><circle class="twinkle" cx="500" cy="30" r="1.5" style="animation-delay:-2.5s"/></g>
-        </svg>
-        <h2>Удивите вторую половинку так, как никто до вас</h2>
-        <p>Самый тёплый подарок не купить в магазине. Его можно только придумать вместе с Peep &amp; Peak.</p>
-        <div class="hero-ctas">
-          <a href="#order" class="btn btn-primary">Заказать видео</a>
-          <a href="#" class="btn btn-ghost" data-link="dm"><svg class="ico"><use href="#i-message"/></svg> Написать в директ</a>
+        <img src="images/frames/sunset.jpg" alt="" loading="lazy">
+        <div>
+          <h2>Удивите вторую половинку <em>так, как никто до вас</em></h2>
+          <p>Самый тёплый подарок не купить в магазине. Его можно только придумать — вместе с Peep &amp; Peak.</p>
+          <div class="hero-ctas">
+            <a href="#order" class="btn btn-gold">Заказать видео</a>
+            <a href="#" class="btn btn-ghost" data-link="dm"><svg class="ico"><use href="#i-message"/></svg> Написать в директ</a>
+          </div>
         </div>
       </div>
     </div>
@@ -912,8 +860,12 @@
   </div>
 </footer>
 
-<!-- закреплённые кнопки связи -->
 <div class="float-contact" id="float-contact"></div>
+
+<div class="modal" id="video-modal" hidden>
+  <button class="modal-close" id="modal-close" aria-label="Закрыть">×</button>
+  <div class="modal-box" id="modal-box"></div>
+</div>
 
 <div class="cookie" id="cookie" hidden>
   <p>Мы используем cookies и счётчики аналитики, чтобы понимать, откуда приходят гости, и делать сайт лучше.</p>
@@ -931,7 +883,7 @@
     instagram: "peepandpeak",        // ник в Instagram без @
     telegram: "",                    // ваш личный ник в Telegram без @ (для кнопки «написать»)
     whatsapp: "",                    // номер WhatsApp цифрами с кодом страны, например "15551234567"
-    telegramChannel: "",             // ссылка на Telegram-канал со скидкой, например "https://t.me/peepandpeak"
+    telegramChannel: "https://t.me/peepandpeak",             // ссылка на Telegram-канал со скидкой, например "https://t.me/peepandpeak"
     // Заявки в Telegram-бота (см. README). Если пусто, заявка копируется и открывается директ Instagram.
     tgBotToken: "",
     tgChatId: "",
@@ -962,14 +914,24 @@
       { id: "miss",        icon: "moon", title: "Скучаю / на расстоянии" },
       { id: "other",       icon: "sparkles", title: "Другой повод", extra: "other" },
     ],
-    // Примеры: url — ссылка на Reels в Instagram; src — путь к .mp4 в папке videos/ (необязательно)
+    // Примеры: img — кадр-обложка; youtube — ссылка на видео (откроется прямо на сайте); url — ссылка в Instagram
     examples: [
-      { title: "С днём рождения", icon: "cake", url: "", src: "" },
-      { title: "Нам 1 год",       icon: "rings", url: "", src: "" },
-      { title: "Имя в звёздах",    icon: "sparkles", url: "", src: "" },
-      { title: "Выходи за меня?",  icon: "gem", url: "", src: "" },
+      { title: "В самолёте", img: "images/frames/plane-close.jpg", views: "152K", youtube: "", url: "" },
+      { title: "It's us", img: "images/frames/bed.jpg", views: "129K", youtube: "", url: "" },
+      { title: "Собираем чемодан", img: "images/frames/suitcase.jpg", views: "91,6K", youtube: "", url: "" },
+      { title: "У моря", img: "images/frames/sea-couple.jpg", views: "72,2K", youtube: "", url: "" },
     ],
-    skyNames: ["Аня", "Эмма", "Лиза", "София", "Макс"],
+    // Идеи для видео (кадр + подпись в кадре)
+    ideas: [
+      { img: "images/frames/star-sky.jpg", overlay: "Аня", title: "Имя в звёздном небе", text: "Звёзды, салют или облака складываются в имя любимого человека." },
+      { img: "images/frames/cake.jpg", overlay: "А ♥ М", title: "Торт с вашими инициалами", text: "Праздничный торт со свечой, а на нём ваши буквы кремом." },
+      { img: "images/frames/jewelry.jpg", overlay: "", title: "Подарок-сюрприз", text: "Кольцо, украшение или ваш настоящий подарок — Peep выберет его для неё." },
+      { img: "images/frames/candle-dinner.jpg", overlay: "3 года вместе", title: "Ужин на закате", text: "Свечи, море и тёплые слова в день вашей годовщины." },
+      { img: "images/frames/plane-night.jpg", overlay: "", title: "Путешествие мечты", text: "Peep и Peak летят туда, куда мечтаете отправиться вы." },
+      { img: "images/frames/blush.jpg", overlay: "", title: "Ваша история один в один", text: "Как познакомились, первое свидание, ваша шутка. Повторим всё." },
+    ],
+    // Кадры для анимированной ленты на первом экране
+    reels: ["fries", "star-sky", "pool", "blanket", "cake", "umbrella", "door", "kiss", "plane-glasses", "candle-dinner", "heart", "gazebo", "window", "sofa", "pool-girl"],
   };
   /* ==================================================================== */
 
@@ -1006,12 +968,12 @@
     `<a href="${d.href}" target="_blank" rel="noopener">${ic(d.icon)} ${d.label}</a>`).join("");
 
   /* ---------- marquee ---------- */
-  const mItems = CONFIG.occasions.filter((o) => o.id !== "other").map((o) => `<span>${o.title}${ic("star4", "fill")}</span>`).join("");
+  const mItems = CONFIG.occasions.filter((o) => o.id !== "other").map((o) => `<span>${o.title}${ic("star5", "fill")}</span>`).join("");
   $("#marquee").innerHTML = mItems + mItems;
 
   /* ---------- prices ---------- */
   const minSub = Math.min(...CONFIG.plans.map((p) => p.sub));
-  $("#from-chip").textContent = `от ${money(minSub)}`;
+  $("#from-chip").textContent = money(minSub);
   $("#plans").innerHTML = CONFIG.plans.map((p) => `
     <div class="card plan reveal ${p.hit ? "hit" : ""}">
       ${p.hit ? '<span class="badge">Хит: выбирают чаще всего</span>' : ""}
@@ -1020,19 +982,49 @@
       <div class="price-row"><span class="price">${money(p.sub)}</span><span class="old">${money(p.price)}</span></div>
       <div class="note">с подпиской на Telegram-канал (−${CONFIG.discountPercent}%)</div>
       <ul>${p.features.map((f) => `<li>${f}</li>`).join("")}</ul>
-      <a href="#order" class="btn ${p.hit ? "btn-primary" : "btn-ghost"}" data-pick-plan="${p.id}">Выбрать ${p.title}</a>
+      <a href="#order" class="btn ${p.hit ? "btn-gold" : "btn-ghost"}" data-pick-plan="${p.id}">Выбрать ${p.title}</a>
     </div>`).join("");
   $("#addon-price").textContent = "+" + money(CONFIG.ownIdea.price);
   $("#addon-inline").textContent = "+" + money(CONFIG.ownIdea.price);
 
-  /* ---------- examples ---------- */
-  const tints = ["linear-gradient(160deg,#4a2a52,#c76f8f)", "linear-gradient(160deg,#3b2a4a,#d39a6a)", "linear-gradient(160deg,#1d1640,#5b3f86)", "linear-gradient(160deg,#2a2150,#8a6bc4)"];
-  $("#gallery").innerHTML = CONFIG.examples.map((e, i) => `
-    <a class="reel reveal" href="${e.url || LINKS.profile}" target="_blank" rel="noopener" style="background:${tints[i % tints.length]}">
-      ${e.src ? `<video src="${e.src}" muted loop playsinline autoplay preload="metadata"></video>` : `<div class="ph">${ic(e.icon)}</div>`}
-      <span class="play">${ic("play", "fill")} Смотреть</span>
-      <span class="cap">${e.title}</span>
-    </a>`).join("");
+  /* ---------- hero reels ---------- */
+  (() => {
+    const f = CONFIG.reels.map((n) => `images/frames/${n}.jpg`);
+    const cols = [[], [], []];
+    f.forEach((src, i) => cols[i % 3].push(src));
+    $("#reels").innerHTML = cols.map((c, i) => {
+      const items = c.map((src) => `<div class="frame"><img src="${src}" alt="" loading="${i ? "lazy" : "eager"}"></div>`).join("");
+      return `<div class="reel-col ${i === 1 ? "down" : ""}">${items}${items}</div>`;
+    }).join("");
+  })();
+
+  /* ---------- ideas ---------- */
+  $("#ideas-grid").innerHTML = CONFIG.ideas.map((d) => `
+    <article class="card idea reveal">
+      <div class="vis"><img src="${d.img}" alt="${esc(d.title)}" loading="lazy">${d.overlay ? `<div class="overlay">${esc(d.overlay)}</div>` : ""}</div>
+      <div class="txt"><h3>${d.title}</h3><p>${d.text}</p></div>
+    </article>`).join("");
+
+  /* ---------- examples + video modal ---------- */
+  const ytId = (u) => { const m = String(u).match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/); return m ? m[1] : ""; };
+  $("#gallery").innerHTML = CONFIG.examples.map((e, i) => {
+    const yt = ytId(e.youtube);
+    const inner = `<img src="${e.img}" alt="${esc(e.title)}" loading="lazy">
+      ${e.views ? `<span class="views">${ic("play", "fill")} ${e.views}</span>` : ""}
+      <span class="play">${ic("play", "fill")}</span>
+      <span class="cap">${e.title}</span>`;
+    return yt ? `<button type="button" class="reel reveal" data-yt="${yt}" aria-label="Смотреть: ${esc(e.title)}">${inner}</button>`
+              : `<a class="reel reveal" href="${e.url || LINKS.profile}" target="_blank" rel="noopener">${inner}</a>`;
+  }).join("");
+  const modal = $("#video-modal");
+  const closeModal = () => { modal.hidden = true; $("#modal-box").innerHTML = ""; };
+  $$("[data-yt]").forEach((b) => b.addEventListener("click", () => {
+    $("#modal-box").innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Видео Peep & Peak"></iframe>`;
+    modal.hidden = false;
+  }));
+  $("#modal-close").addEventListener("click", closeModal);
+  modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+  addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) closeModal(); });
 
   /* ---------- order form ---------- */
   const form = $("#order-form");
@@ -1332,138 +1324,6 @@
   });
 
   update();
-
-  /* ---------- hero: имя, выложенное звёздами ---------- */
-  (() => {
-    const cvs = $("#sky"), hero = $("#hero"), stage = $("#sky-stage");
-    const ctx = cvs.getContext("2d");
-    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let W = 0, H = 0, dpr = 1, stars = [], dust = [], targets = [], mouse = { x: -9999, y: -9999 };
-    let names = CONFIG.skyNames.slice(), nameIdx = 0, userName = "", cycle = null, visible = true;
-    const COLORS = ["#fff6dc", "#f6e2b8", "#e9c78f", "#ffffff", "#f0a6b6"];
-
-    function sample(text) {
-      const r = stage.getBoundingClientRect(), hr = hero.getBoundingClientRect();
-      const sw = Math.max(10, Math.floor(r.width)), sh = Math.max(10, Math.floor(r.height));
-      const off = document.createElement("canvas");
-      off.width = sw; off.height = sh;
-      const o = off.getContext("2d");
-      let fs = sh * 0.82;
-      const font = (s) => `italic 600 ${s}px "Cormorant Garamond", Georgia, serif`;
-      o.font = font(fs);
-      while (o.measureText(text).width > sw * 0.94 && fs > 12) { fs -= 2; o.font = font(fs); }
-      o.fillStyle = "#fff"; o.textAlign = "center"; o.textBaseline = "middle";
-      o.fillText(text, sw / 2, sh / 2);
-      const data = o.getImageData(0, 0, sw, sh).data;
-      const gap = W < 720 ? 3 : 4;
-      const pts = [];
-      for (let y = 0; y < sh; y += gap) for (let x = 0; x < sw; x += gap) {
-        if (data[(y * sw + x) * 4 + 3] > 140) pts.push({ x: x + r.left - hr.left, y: y + r.top - hr.top });
-      }
-      for (let i = pts.length - 1; i > 0; i--) { const j = (Math.random() * (i + 1)) | 0; [pts[i], pts[j]] = [pts[j], pts[i]]; }
-      return pts;
-    }
-
-    function setText(text) {
-      targets = sample(text);
-      const need = targets.length;
-      while (stars.length < need) stars.push(newStar(Math.random() * W, Math.random() * H));
-      stars.forEach((s, i) => {
-        if (i < need) { s.tx = targets[i].x; s.ty = targets[i].y; s.free = false; }
-        else { s.free = true; s.tx = Math.random() * W; s.ty = Math.random() * H * 0.7; }
-      });
-      if (stars.length > need + 200) stars.length = need + 200;
-      if (reduce) { stars.forEach((s) => { s.x = s.tx; s.y = s.ty; }); draw(0); }
-    }
-    function newStar(x, y) {
-      return { x, y, vx: 0, vy: 0, tx: x, ty: y, r: Math.random() * 1.1 + 0.6, c: COLORS[(Math.random() * COLORS.length) | 0],
-        p: Math.random() * Math.PI * 2, sp: 0.02 + Math.random() * 0.04, free: true };
-    }
-    function resize() {
-      dpr = Math.min(devicePixelRatio || 1, 2);
-      W = hero.clientWidth; H = hero.clientHeight;
-      cvs.width = W * dpr; cvs.height = H * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      dust = Array.from({ length: Math.round((W * H) / 5200) }, () => ({
-        x: Math.random() * W, y: Math.random() * H * 0.85, r: Math.random() * 1.1 + 0.2, p: Math.random() * 6.28, sp: 0.005 + Math.random() * 0.02 }));
-      setText(userName || names[nameIdx]);
-    }
-    let shoot = null;
-    function draw(t) {
-      ctx.clearRect(0, 0, W, H);
-      for (const d of dust) {
-        d.p += d.sp;
-        ctx.globalAlpha = 0.25 + 0.55 * (0.5 + 0.5 * Math.sin(d.p));
-        ctx.fillStyle = "#fff";
-        ctx.fillRect(d.x, d.y, d.r, d.r);
-      }
-      ctx.globalCompositeOperation = "lighter";
-      for (const s of stars) {
-        if (!reduce) {
-          const dx = s.x - mouse.x, dy = s.y - mouse.y, dist2 = dx * dx + dy * dy;
-          if (dist2 < 6400) { const f = (6400 - dist2) / 6400 * 2.2; const d = Math.sqrt(dist2) || 1; s.vx += dx / d * f; s.vy += dy / d * f; }
-          const k = s.free ? 0.0016 : 0.012;
-          s.vx += (s.tx - s.x) * k; s.vy += (s.ty - s.y) * k;
-          s.vx *= 0.86; s.vy *= 0.86;
-          s.x += s.vx; s.y += s.vy;
-          s.p += s.sp;
-        }
-        const tw = 0.55 + 0.45 * Math.sin(s.p);
-        ctx.globalAlpha = s.free ? tw * 0.5 : 0.35 + tw * 0.65;
-        ctx.fillStyle = s.c;
-        ctx.beginPath(); ctx.arc(s.x, s.y, s.free ? s.r * 0.8 : s.r, 0, 6.283); ctx.fill();
-        if (!s.free && tw > 0.92) { ctx.globalAlpha = 0.15; ctx.beginPath(); ctx.arc(s.x, s.y, s.r * 3.2, 0, 6.283); ctx.fill(); }
-      }
-      // падающая звезда
-      if (!reduce) {
-        if (!shoot && Math.random() < 0.004) shoot = { x: W * (0.4 + Math.random() * 0.6), y: Math.random() * H * 0.3, l: 0 };
-        if (shoot) {
-          shoot.l += 1;
-          const len = 120, x2 = shoot.x - shoot.l * 9, y2 = shoot.y + shoot.l * 4.5;
-          const g = ctx.createLinearGradient(x2, y2, x2 + len, y2 - len / 2);
-          g.addColorStop(0, "rgba(255,246,220,.9)"); g.addColorStop(1, "rgba(255,246,220,0)");
-          ctx.globalAlpha = Math.max(0, 1 - shoot.l / 50);
-          ctx.strokeStyle = g; ctx.lineWidth = 1.5;
-          ctx.beginPath(); ctx.moveTo(x2, y2); ctx.lineTo(x2 + len, y2 - len / 2); ctx.stroke();
-          if (shoot.l > 50) shoot = null;
-        }
-      }
-      ctx.globalCompositeOperation = "source-over";
-      ctx.globalAlpha = 1;
-      if (!reduce && visible) requestAnimationFrame(draw);
-    }
-    function startCycle() {
-      clearInterval(cycle);
-      cycle = setInterval(() => { if (userName) return; nameIdx = (nameIdx + 1) % names.length; setText(names[nameIdx]); }, 4200);
-    }
-    hero.addEventListener("pointermove", (e) => { const r = hero.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; });
-    hero.addEventListener("pointerleave", () => { mouse.x = mouse.y = -9999; });
-    $("#name-try").addEventListener("submit", (e) => {
-      e.preventDefault();
-      const v = $("#name-input").value.trim();
-      userName = v;
-      setText(v || names[nameIdx]);
-      if (v) toast(`${v}, вот так это может выглядеть в вашем видео`);
-    });
-    let rt;
-    addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(resize, 150); });
-    new IntersectionObserver(([en]) => {
-      const was = visible; visible = en.isIntersecting;
-      if (visible && !was && !reduce) requestAnimationFrame(draw);
-    }).observe(hero);
-    const go = () => { resize(); stars.forEach((s) => { s.x = Math.random() * W; s.y = Math.random() * H; }); if (!reduce) requestAnimationFrame(draw); startCycle(); };
-    const fontReady = document.fonts && document.fonts.load ? document.fonts.load('italic 600 40px "Cormorant Garamond"') : Promise.resolve();
-    Promise.race([fontReady, new Promise((r) => setTimeout(r, 1200))]).then(go, go);
-  })();
-
-  /* ---------- мягкое свечение за курсором ---------- */
-  (() => {
-    if (!matchMedia("(pointer: fine)").matches) return;
-    const g = document.createElement("div");
-    g.className = "cursor-glow";
-    document.body.appendChild(g);
-    addEventListener("pointermove", (e) => { g.style.opacity = 1; g.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`; }, { passive: true });
-  })();
 
   /* ---------- analytics (after consent) ---------- */
   function loadAnalytics() {

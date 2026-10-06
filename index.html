@@ -976,7 +976,8 @@
     whatsapp: "",                    // номер WhatsApp цифрами с кодом страны, например "15551234567"
     telegramChannel: "https://t.me/peepandpeak",             // ссылка на Telegram-канал со скидкой, например "https://t.me/peepandpeak"
     // Заявки в Telegram-бота (см. README). Если пусто, заявка копируется и открывается директ Instagram.
-    tgBotToken: "",
+    leadEndpoint: "",                // адрес Cloudflare Worker (см. worker/README) — заявки уходят в Telegram, токен скрыт
+    tgBotToken: "",                  // не используйте на публичном сайте, вместо этого leadEndpoint
     tgChatId: "",
     // Аналитика: впишите ID, и счётчик включится после согласия с cookies.
     metaPixelId: "",
@@ -1368,7 +1369,7 @@
     toast._t = setTimeout(() => t.classList.remove("show"), 5000);
   }
 
-  const useTg = Boolean(CONFIG.tgBotToken && CONFIG.tgChatId);
+  const useTg = Boolean(CONFIG.leadEndpoint || (CONFIG.tgBotToken && CONFIG.tgChatId));
   if (useTg) $("#form-hint").textContent = "Заявка придёт нам сразу. Мы напишем вам в выбранный мессенджер.";
 
   form.addEventListener("submit", async (e) => {
@@ -1382,11 +1383,13 @@
       btn.disabled = true;
       btn.textContent = "Отправляем…";
       try {
-        const r = await fetch(`https://api.telegram.org/bot${CONFIG.tgBotToken}/sendMessage`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ chat_id: CONFIG.tgChatId, text: "🆕 Новая заявка с сайта\n\n" + text }),
-        });
+        const r = CONFIG.leadEndpoint
+          ? await fetch(CONFIG.leadEndpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text }) })
+          : await fetch(`https://api.telegram.org/bot${CONFIG.tgBotToken}/sendMessage`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ chat_id: CONFIG.tgChatId, text: "🆕 Новая заявка с сайта\n\n" + text }),
+            });
         if (!(await r.json()).ok) throw new Error("telegram");
         form.reset();
         contactInput.disabled = true;

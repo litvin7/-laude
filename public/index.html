@@ -9,7 +9,7 @@
 <meta property="og:image" content="images/frames/sofa.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23b77b4b'/%3E%3Cpath fill='%23fbf1e2' d='M50 16c3 0 5 2 6.5 5.5l6 12.5 13.5 2c3.6.5 5.5 2.3 5.5 5s-1.3 4-3.6 6.3l-9.9 9.6 2.3 13.6c.6 3.6-.6 6-3.3 6.9-2 .6-3.8 0-6.2-1.3L50 70l-12.3 6.6c-2.4 1.3-4.2 1.9-6.2 1.3-2.7-.9-3.9-3.3-3.3-6.9l2.3-13.6-9.9-9.6c-2.3-2.3-3.6-3.9-3.6-6.3s1.9-4.5 5.5-5l13.5-2 6-12.5C45 18 47 16 50 16Z'/%3E%3C/svg%3E">
 <style>
   :root {
@@ -517,6 +517,105 @@
     .reel .cap { font-size: 12px; }
   }
 
+
+  /* ================= v5: читаемые шрифты, тарифы, форма, донаты ================= */
+  :root { --serif: "Nunito", system-ui, sans-serif; --sans: "Nunito", system-ui, sans-serif; --muted: #6b5546; }
+  body { font-size: 17px; line-height: 1.6; }
+  h1, h2 { font-weight: 800; letter-spacing: -0.025em; line-height: 1.08; }
+  h1 { font-size: clamp(38px, 5.2vw, 70px); }
+  h2 { font-size: clamp(30px, 3.8vw, 50px); }
+  h1 em, h2 em, .serif-em { font-style: normal; }
+  .why-quote { font-weight: 800; font-size: clamp(26px, 3.2vw, 42px); letter-spacing: -0.02em; }
+  .marquee-track { font-style: normal; font-weight: 800; font-size: 20px; }
+  .lead, .section-head p { color: var(--muted); }
+  .eyebrow { font-weight: 900; }
+  .any-idea h3, .pane-title, summary { font-weight: 800; letter-spacing: -0.01em; }
+  summary { font-size: 20px; }
+  .stat b { font-weight: 900; }
+  .order-quote, .idea .vis .overlay, .reel .cap { font-style: normal; font-weight: 800; }
+  .order-quote { font-size: 24px; margin-top: 18px; color: var(--ink-2); }
+
+  /* тарифы */
+  .tiers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: stretch; }
+  .tier { position: relative; display: flex; flex-direction: column; padding: 30px 24px; border-radius: 16px; background: #fff; border: 1px solid var(--line); }
+  .tier h3 { font-size: 24px; font-weight: 900; margin: 0 0 6px; }
+  .tier-desc { color: var(--muted); font-size: 15px; min-height: 48px; }
+  .tier-price { font-size: 44px; font-weight: 900; letter-spacing: -0.03em; margin-top: 22px; line-height: 1; }
+  .tier-meta { color: var(--muted); font-size: 13px; margin-top: 8px; }
+  .tier-label { font-size: 11px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 22px 0 10px; }
+  .tier-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tier-tags span { font-size: 12.5px; font-weight: 700; padding: 5px 10px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); }
+  .tier ul { list-style: none; padding: 0; margin: 22px 0 26px; flex: 1; display: grid; gap: 10px; }
+  .tier li { display: flex; gap: 10px; font-size: 14.5px; line-height: 1.4; }
+  .tier li svg.ico { color: var(--caramel); margin-top: 2px; }
+  .tier .btn { width: 100%; }
+  .tier.popular { background: #fff6ec; border: 1.5px solid var(--honey); box-shadow: 0 20px 40px -30px rgba(183,123,75,.7); }
+  .tier-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 11px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; background: var(--honey); color: #fff; }
+  .tier.premium { background: linear-gradient(170deg, #4a3123, #2e1e15); color: #fbf1e2; border-color: #4a3123; }
+  .tier.premium .tier-desc, .tier.premium .tier-meta, .tier.premium .tier-label { color: rgba(251,241,226,.7); }
+  .tier.premium .tier-tags span { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.14); color: #fbf1e2; }
+  .tier.premium li svg.ico { color: var(--honey); }
+  .tier-kicker { font-size: 11px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; color: var(--honey); margin-bottom: 10px; }
+  .tiers-note { text-align: center; color: var(--muted); font-size: 14px; margin-top: 26px; }
+  .tiers-note a { color: var(--caramel-2); font-weight: 800; }
+
+  /* форма */
+  .order-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 56px; align-items: start; }
+  .order-media { position: sticky; top: 110px; }
+  .order-media .frame img { aspect-ratio: 4 / 5; object-fit: cover; transition: opacity .3s; }
+  .oform { display: grid; gap: 22px; padding: 32px; border-radius: 16px; background: #fff; border: 1px solid var(--line); }
+  .tier-pick { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .tp { position: relative; }
+  .tp input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .tp span { display: grid; gap: 2px; padding: 12px 12px; border-radius: 10px; cursor: pointer; border: 1px solid var(--ig-grey-2, #dbdbdb); background: #fff; transition: border-color .2s, background .2s; }
+  .tp b { font-size: 14px; font-weight: 800; }
+  .tp em { font-style: normal; font-size: 15px; font-weight: 900; color: var(--caramel-2); }
+  .tp input:checked + span { border-color: var(--ig-blue, #0095f6); background: #e8f4fe; }
+  .tp input:focus-visible + span { outline: 2px solid var(--ig-blue, #0095f6); outline-offset: 2px; }
+  .chips-pick { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips-pick .pill span { padding: 9px 14px; border-radius: 999px; font-size: 14px; }
+  .file-pick { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px; border-radius: 10px; border: 1.5px dashed var(--line-2); background: #fafafa; cursor: pointer; font-weight: 700; font-size: 14px; color: var(--ink-2); text-align: center; }
+  .file-pick:hover { border-color: var(--caramel); }
+  .file-pick input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .file-pick:focus-within { outline: 2px solid var(--ig-blue, #0095f6); outline-offset: 2px; }
+  .btn-wide { width: 100%; padding: 16px 22px; font-size: 15px; }
+  .oform .help { font-size: 13px; color: var(--muted); text-align: center; }
+  .oform .direct-line { margin: 0; text-align: center; font-size: 14px; }
+  .field > span, .label { font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+  .field > span .opt { text-transform: none; letter-spacing: 0; font-weight: 600; }
+
+  /* донаты */
+  .support { background: #fff3f1; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .donate-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 760px; margin: 0 auto; }
+  .donate { display: grid; gap: 4px; padding: 18px 20px; border-radius: 12px; background: #fff; border: 1px solid var(--line); text-decoration: none; transition: border-color .2s, transform .2s; }
+  .donate:hover { border-color: var(--rose); transform: translateY(-2px); }
+  .d-top { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+  .d-top b { font-size: 17px; font-weight: 900; }
+  .d-top em { font-style: normal; font-weight: 900; color: #c4566e; }
+  .d-perk { font-size: 14px; color: var(--muted); }
+  .donate-sub { text-align: center; font-weight: 900; font-size: 22px; margin: 48px 0 20px; }
+  .donate-big { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 900px; margin: 0 auto; }
+  .donate-card { display: flex; flex-direction: column; padding: 26px 22px; border-radius: 14px; background: #fff; border: 1px solid var(--line); }
+  .d-price { font-size: 34px; font-weight: 900; letter-spacing: -0.02em; }
+  .donate-card h3 { color: #c4566e; font-weight: 900; margin: 2px 0 14px; }
+  .donate-card ul { list-style: none; padding: 0; margin: 0 0 20px; display: grid; gap: 8px; flex: 1; }
+  .donate-card li { display: flex; gap: 8px; font-size: 14px; color: var(--muted); }
+  .donate-card li svg.ico { color: var(--rose); margin-top: 2px; }
+
+  @media (max-width: 1100px) { .tiers { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 1000px) {
+    .order-grid { grid-template-columns: 1fr; }
+    .order-media { display: none; }
+  }
+  @media (max-width: 720px) {
+    .tiers { grid-template-columns: 1fr; }
+    .tier-desc { min-height: 0; }
+    .oform { padding: 22px 16px; margin: 0 -4px; }
+    .tier-pick { grid-template-columns: 1fr 1fr; }
+    .donate-grid, .donate-big { grid-template-columns: 1fr; }
+    summary { font-size: 18px; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
     .reveal { opacity: 1; transform: none; }
@@ -561,6 +660,7 @@
     </symbol>
     <symbol id="i-star4" viewBox="0 0 24 24"><path d="M12 1.5C12.7 8 16 11.3 22.5 12 16 12.7 12.7 16 12 22.5 11.3 16 8 12.7 1.5 12 8 11.3 11.3 8 12 1.5Z"/></symbol>
     <symbol id="i-star5" viewBox="0 0 24 24"><path d="M12 2.5c.6 0 1 .4 1.4 1.1l2.2 4.6 5 .7c.8.1 1.3.6 1.3 1.2s-.3 1-.9 1.5l-3.6 3.5.9 5c.1.8-.1 1.4-.8 1.6-.4.1-.9 0-1.4-.3L12 19l-4.4 2.4c-.5.3-1 .4-1.4.3-.7-.2-.9-.8-.8-1.6l.9-5-3.6-3.5c-.6-.5-.9-.9-.9-1.5s.5-1.1 1.3-1.2l5-.7 2.2-4.6c.4-.7.8-1.1 1.4-1.1Z"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></symbol>
     <!-- иконки (стиль Lucide) -->
     <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
@@ -601,6 +701,7 @@
       <a href="#ideas">Идеи</a>
       <a href="#examples">Примеры</a>
       <a href="#pricing">Цены</a>
+      <a href="#support">Поддержать</a>
       <a href="#order" class="btn btn-primary btn-sm">Заказать</a>
     </nav>
   </div>
@@ -724,25 +825,11 @@
     <div class="wrap">
       <div class="section-head center reveal">
         <span class="eyebrow">Цены</span>
-        <h2>Выберите своё <em>видео</em></h2>
-        <p>Чем длиннее видео, тем больше сцен и деталей вашей истории в него помещается.</p>
+        <h2>Ваша история. <em>Их мир.</em></h2>
+        <p>Ваши моменты, шутки, понятные только вам двоим, и любимые истории — в исполнении Peep &amp; Peak. Каждое видео создаётся вручную, только для вас.</p>
       </div>
-      <div class="tg-banner reveal">
-        <div class="tg-text">
-          <span class="tg-ico"><svg class="ico"><use href="#i-send"/></svg></span>
-          <div><b>−40% подписчикам Telegram-канала</b><p>Подпишитесь на канал Peep &amp; Peak — и любое видео обойдётся почти вдвое дешевле.</p></div>
-        </div>
-        <a href="#" class="btn btn-primary" data-link="channel" id="tg-banner-btn">Подписаться и получить скидку</a>
-      </div>
-      <div class="grid-3" id="plans"></div>
-      <div class="addon-card reveal">
-        <img src="images/frames/clouds.jpg" alt="" loading="lazy">
-        <div>
-          <h3>Своя история</h3>
-          <p style="color:var(--muted);font-size:15px;margin-top:8px">Добавьте к любому видео — и Peep &amp; Peak разыграют именно ваш сюжет: как вы познакомились, вашу шутку, место, мечту. Реализуем любую идею.</p>
-        </div>
-        <div class="p"><span id="addon-price"></span><small>доплата, скидка не действует</small></div>
-      </div>
+      <div class="tiers" id="plans"></div>
+      <p class="tiers-note reveal">Оплата — только после того, как мы согласуем с вами сюжет и сроки.</p>
     </div>
   </section>
 
@@ -754,10 +841,10 @@
         <h2>Четыре шага до самого <em>тёплого</em> подарка</h2>
       </div>
       <div class="grid-4 steps">
-        <div class="card step reveal"><h3>Заявка</h3><p>Заполните форму ниже: повод, имена, дата и ваша идея. Пара минут.</p></div>
-        <div class="card step reveal"><h3>Обсуждаем</h3><p>Пишем вам в выбранный мессенджер и уточняем детали сюжета.</p></div>
-        <div class="card step reveal"><h3>Создаём</h3><p>Peep &amp; Peak оживают в вашей истории к нужной дате.</p></div>
-        <div class="card step reveal"><h3>Дарите</h3><p>Получаете готовое видео и смотрите на реакцию любимого человека.</p></div>
+        <div class="card step reveal"><h3>Заявка</h3><p>Выберите видео, расскажите вашу историю и оставьте контакт. Пара минут.</p></div>
+        <div class="card step reveal"><h3>Обсуждаем</h3><p>Пишем вам в выбранный мессенджер, уточняем сюжет, детали и сроки.</p></div>
+        <div class="card step reveal"><h3>Создаём</h3><p>Peep &amp; Peak оживают в вашей истории. Показываем результат перед финалом.</p></div>
+        <div class="card step reveal"><h3>Дарите</h3><p>Получаете готовое видео в высоком качестве и смотрите на реакцию.</p></div>
       </div>
     </div>
   </section>
@@ -767,112 +854,87 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Заявка</span>
-        <h2>Закажите видео <em>за 4 шага</em></h2>
-        <p>Пара минут — и мы свяжемся с вами в удобном мессенджере.</p>
+        <h2>Расскажите <em>вашу историю</em></h2>
+        <p>Мы ответим с идеей сюжета и сроками. Оплата — только после согласования.</p>
       </div>
-      <div class="order-wrap">
-        <aside class="order-aside reveal">
-          <div class="frame"><img src="images/frames/cake.jpg" alt="Peep и Peak с праздничным тортом" loading="lazy"></div>
-          <blockquote>«You're my little star»<cite>— из серии Peep &amp; Peak</cite></blockquote>
-        </aside>
-        <div>
-          <div class="wizard reveal" id="wizard">
-
-        <div class="wiz-head">
-          <ol class="wiz-steps" id="wiz-steps">
-            <li data-go="1"><b>1</b><span>Повод</span></li>
-            <li data-go="2"><b>2</b><span>Имена</span></li>
-            <li data-go="3"><b>3</b><span>Видео</span></li>
-            <li data-go="4"><b>4</b><span>Контакт</span></li>
-          </ol>
-          <div class="wiz-bar"><i id="wiz-bar"></i></div>
+      <div class="order-grid">
+        <div class="order-media reveal">
+          <div class="frame"><img id="order-img" src="images/frames/bed.jpg" alt="Peep и Peak" loading="lazy"></div>
+          <p class="order-quote">«You're my little star»</p>
         </div>
 
-        <form id="order-form" novalidate>
+        <form id="order-form" class="oform reveal" novalidate>
+          <div class="field">
+            <span class="label">Ваше видео</span>
+            <div class="tier-pick" id="tier-pick"></div>
+            <small id="tier-meta"></small>
+          </div>
 
-          <div class="step-pane" data-step="1">
-            <h3 class="pane-title">Какой у вас повод?</h3>
-            <div class="field">
-              <div class="occ-grid" id="occasion-pills"></div>
-              <div class="err" data-err="occasion"></div>
-            </div>
-            <label class="field" id="f-occasion-other" hidden>
-              <span>Напишите ваш повод</span>
-              <input type="text" name="occasionOther" placeholder="Например: годовщина первого свидания">
-              <div class="err" data-err="occasionOther"></div>
-            </label>
+          <div class="field">
+            <span class="label">Какой повод?</span>
+            <div class="chips-pick" id="occasion-pills"></div>
+            <div class="err" data-err="occasion"></div>
+          </div>
+          <label class="field" id="f-occasion-other" hidden>
+            <span>Напишите ваш повод</span>
+            <input type="text" name="occasionOther" placeholder="Например: годовщина первого свидания">
+            <div class="err" data-err="occasionOther"></div>
+          </label>
+          <div class="row">
             <label class="field" id="f-age" hidden>
-              <span>Сколько исполняется? <span class="opt">(необязательно)</span></span>
+              <span>Сколько исполняется? <span class="opt">(по желанию)</span></span>
               <input type="number" name="age" min="1" max="120" inputmode="numeric" placeholder="Например: 25">
             </label>
             <label class="field" id="f-together" hidden>
-              <span>Сколько вы вместе? <span class="opt">(необязательно)</span></span>
-              <input type="text" name="together" placeholder="Например: 3 года / 6 месяцев / 10 лет брака">
+              <span>Сколько вы вместе? <span class="opt">(по желанию)</span></span>
+              <input type="text" name="together" placeholder="3 года / 6 месяцев / 10 лет брака">
             </label>
-            <div class="field">
-              <span class="label">Кому видео?</span>
-              <div class="seg">
-                <label class="pill"><input type="radio" name="recipient" value="Ей"><span>Ей</span></label>
-                <label class="pill"><input type="radio" name="recipient" value="Ему"><span>Ему</span></label>
-                <label class="pill"><input type="radio" name="recipient" value="Нам двоим"><span>Нам двоим</span></label>
-              </div>
-              <div class="err" data-err="recipient"></div>
-            </div>
           </div>
 
-          <div class="step-pane" data-step="2" hidden>
-            <h3 class="pane-title">Когда и для кого?</h3>
+          <label class="field">
+            <span>Расскажите вашу историю</span>
+            <textarea name="story" placeholder="Как вы познакомились, путешествие, день, который не забыть… Что должно быть в видео?"></textarea>
+            <div class="err" data-err="story"></div>
+          </label>
+
+          <div class="row">
+            <label class="field">
+              <span>Кого поздравляем</span>
+              <input type="text" name="toName" placeholder="Имя или инициалы: Аня / А." maxlength="40">
+              <div class="err" data-err="toName"></div>
+            </label>
+            <label class="field">
+              <span>От кого <span class="opt">(по желанию)</span></span>
+              <input type="text" name="fromName" placeholder="Ваше имя" maxlength="40">
+            </label>
+          </div>
+
+          <div class="row">
             <label class="field">
               <span>К какой дате нужно видео?</span>
               <input type="date" name="date" id="date-input">
               <div class="date-info" id="date-info"></div>
               <div class="err" data-err="date"></div>
             </label>
-            <div class="row">
-              <label class="field">
-                <span>Кого поздравляем</span>
-                <input type="text" name="toName" placeholder="Аня / А." maxlength="40">
-                <div class="err" data-err="toName"></div>
-              </label>
-              <label class="field">
-                <span>От кого <span class="opt">(необязательно)</span></span>
-                <input type="text" name="fromName" placeholder="Макс / М." maxlength="40">
-              </label>
-            </div>
             <label class="field">
-              <span>Надпись в видео <span class="opt">(необязательно)</span></span>
-              <input type="text" name="caption" id="caption" maxlength="40" placeholder="С днём рождения, Аня! / А ♥ М">
-              <small><span id="caption-count">0</span>/40 · коротко, чтобы красиво смотрелось в кадре</small>
+              <span>Надпись в видео <span class="opt">(по желанию)</span></span>
+              <input type="text" name="caption" id="caption" maxlength="40" placeholder="А ♥ М / 3 года вместе">
+              <small><span id="caption-count">0</span>/40</small>
             </label>
           </div>
 
-          <div class="step-pane" data-step="3" hidden>
-            <h3 class="pane-title">Какое видео делаем?</h3>
-            <div class="field">
-              <span class="label">Длительность</span>
-              <div class="durations" id="durations"></div>
-            </div>
-            <label class="toggle" id="t-sub">
-              <input type="checkbox" name="subscribed" id="subscribed">
-              <span><b><svg class="ico"><use href="#i-flame"/></svg> Я подписан(а) на Telegram-канал: −40%</b><small>Скидка на видео. Подписку проверим перед оплатой. <a href="#" data-link="channel">Подписаться ↗</a></small></span>
+          <div class="field">
+            <span>Фото <span class="opt">(по желанию)</span></span>
+            <label class="file-pick">
+              <input type="file" name="photo" id="photo-input" accept="image/jpeg,image/png,image/webp">
+              <svg class="ico"><use href="#i-image"/></svg><span id="photo-name">Выберите фото для видео</span>
             </label>
-            <label class="toggle" id="t-own">
-              <input type="checkbox" name="ownIdea" id="own-idea">
-              <span><b><svg class="ico"><use href="#i-sparkles"/></svg> Своя история <span id="addon-inline"></span></b><small>Сыграем именно ваш сюжет (без скидки). Без неё придумаем красивую сцену сами.</small></span>
-            </label>
-            <label class="field" id="f-idea" hidden>
-              <span>Опишите вашу идею</span>
-              <textarea name="idea" placeholder="Например: мы познакомились в кофейне под дождём, он отдал мне свой зонт. Хочу, чтобы Peep и Peak повторили это"></textarea>
-              <div class="err" data-err="idea"></div>
-            </label>
-            <label class="field">
-              <span>Пожелания <span class="opt">(необязательно)</span></span>
-              <textarea name="details" rows="3" placeholder="Что вы любите, любимый цвет, что точно должно быть в видео…"></textarea>
-            </label>
+            <small>JPG, PNG или WEBP до 10 МБ. Фото вас двоих, питомца, места — всё, что поможет сделать историю вашей.</small>
+            <div class="err" data-err="photo"></div>
           </div>
 
-          <div class="step-pane" data-step="4" hidden>
-            <h3 class="pane-title">Куда вам написать?</h3>
+          <div class="field">
+            <span class="label">Куда вам написать?</span>
             <div class="seg">
               <label class="pill"><input type="radio" name="contactMethod" value="instagram"><span><svg class="ico"><use href="#i-instagram"/></svg> Instagram</span></label>
               <label class="pill"><input type="radio" name="contactMethod" value="telegram"><span><svg class="ico"><use href="#i-send"/></svg> Telegram</span></label>
@@ -880,25 +942,28 @@
             </div>
             <input type="text" name="contact" id="contact-input" placeholder="Сначала выберите мессенджер" disabled autocomplete="off" aria-label="Ваш ник или номер">
             <div class="err" data-err="contact"></div>
-            <div class="sum-card">
-              <h3>Ваш заказ</h3>
-              <div id="sum-lines"></div>
-              <div class="sum-total"><span>Итого</span><b id="sum-total">$0</b></div>
-              <div class="sum-nudge" id="sum-nudge"></div>
-            </div>
           </div>
 
-          <div class="wiz-nav">
-            <button type="button" class="btn btn-ghost" id="wiz-back" aria-label="Назад">←<span class="hide-m">&nbsp;Назад</span></button>
-            <button type="button" class="btn btn-primary" id="wiz-next">Далее →</button>
-            <button type="submit" class="btn btn-primary" id="submit-btn" hidden>Отправить заявку →</button>
-          </div>
-          <p class="help center" id="form-hint" hidden>После отправки текст заявки скопируется и откроется наш директ: просто вставьте и отправьте.</p>
+          <button class="btn btn-primary btn-wide" type="submit" id="submit-btn">Отправить заявку</button>
+          <p class="help" id="form-hint">Мы ответим с индивидуальным предложением и сроками. Оплата — только после вашего согласия. Фото используем только для вашего видео.</p>
+          <p class="direct-line">Удобнее написать самим? <span id="direct-links"></span></p>
         </form>
-          </div>
-          <p class="direct-line">Не хотите заполнять? Напишите напрямую: <span id="direct-links"></span></p>
-        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ================= SUPPORT ================= -->
+  <section id="support" class="support">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Поддержать</span>
+        <h2>Помогите Peep &amp; Peak <em>снимать новые серии</em></h2>
+        <p>Каждая серия — это недели работы. Если вам откликаются наши герои, вы можете поддержать проект. Все средства идут на новые эпизоды.</p>
+      </div>
+      <div class="donate-grid" id="donate-small"></div>
+      <p class="donate-sub reveal">Хотите сделать что-то большее?</p>
+      <div class="donate-big" id="donate-big"></div>
+      <p class="tiers-note reveal">Хотите поддержать иначе или стать партнёром? Напишите нам в <a href="#" data-link="dm">директ</a>.</p>
     </div>
   </section>
 
@@ -910,16 +975,15 @@
         <h2>Часто спрашивают</h2>
       </div>
       <div class="faq reveal">
-        <details><summary>Можно реализовать вообще любую идею?</summary><p>Да, это наша фишка. Опишите сюжет в опции «Своя история», и Peep &amp; Peak его сыграют. Если что-то сложно показать, предложим, как сделать ещё красивее.</p></details>
+        <details><summary>Можно реализовать вообще любую идею?</summary><p>Да. Расскажите вашу историю в заявке — Peep &amp; Peak её сыграют. Если что-то сложно показать, предложим, как сделать ещё красивее. Для больших идей есть «Премиум-история».</p></details>
         <details><summary>Какие надписи можно добавить?</summary><p>Имена, инициалы, даты и короткие фразы до 40 символов. Они становятся частью сцены: в небе, на торте, на песке, на шарах.</p></details>
-        <details><summary>Сколько времени занимает создание?</summary><p>Зависит от длительности и сложности сюжета. Укажите дату в заявке, и мы сразу скажем, успеваем ли. Если до праздника совсем мало времени, лучше сразу напишите в директ.</p></details>
-        <details><summary>Как получить скидку −40%?</summary><p>Подпишитесь на наш Telegram-канал и отметьте это в заявке. Скидка действует на видео 30, 60 и 90 секунд. На опцию «Своя история» скидка не распространяется.</p></details>
-        <details><summary>Как я получу видео?</summary><p>Пришлём готовое видео в хорошем качестве в мессенджер, который вы выбрали в заявке.</p></details>
-        <details><summary>Как оплатить?</summary><p>Способ оплаты согласуем в личных сообщениях, когда обсудим сюжет.</p></details>
+        <details><summary>Сколько времени занимает создание?</summary><p>Обычно 3–7 рабочих дней, премиум-истории — дольше, сроки обсуждаем индивидуально. Укажите дату в заявке, и мы сразу скажем, успеваем ли.</p></details>
+        <details><summary>Зачем фото?</summary><p>По желанию. Фото помогает перенести в видео ваши детали: место, питомца, любимые вещи. Используем его только для вашего видео.</p></details>
+        <details><summary>Как я получу видео?</summary><p>Пришлём готовое видео в высоком качестве в мессенджер, который вы выбрали в заявке.</p></details>
+        <details><summary>Как оплатить?</summary><p>После согласования сюжета и сроков пришлём вам удобный способ оплаты. До этого платить ничего не нужно.</p></details>
       </div>
     </div>
   </section>
-
 
 
   <!-- ================= FINAL CTA ================= -->
@@ -971,49 +1035,64 @@
 <script>
   /* ===================== НАСТРОЙКИ: меняйте здесь ===================== */
   const CONFIG = {
-    instagram: "peepandpeak",        // ник в Instagram без @
-    telegram: "",                    // ваш личный ник в Telegram без @ (для кнопки «написать»)
-    whatsapp: "",                    // номер WhatsApp цифрами с кодом страны, например "15551234567"
-    telegramChannel: "https://t.me/peepandpeak",             // ссылка на Telegram-канал со скидкой, например "https://t.me/peepandpeak"
-    // Заявки в Telegram-бота (см. README). Если пусто, заявка копируется и открывается директ Instagram.
-    leadEndpoint: "/api/lead",       // заявки уходят на Cloudflare Worker → Telegram (см. worker/README.md)
-    tgBotToken: "",                  // не используйте на публичном сайте, вместо этого leadEndpoint
-    tgChatId: "",
+    instagram: "peepandpeak",          // ник в Instagram без @
+    telegram: "",                      // ваш личный ник в Telegram без @ (для кнопки «написать»)
+    whatsapp: "",                      // номер WhatsApp цифрами с кодом страны, например "15551234567"
+    telegramChannel: "https://t.me/peepandpeak",
+    leadEndpoint: "/api/lead",         // Cloudflare Worker → Telegram (см. worker/README.md)
     // Аналитика: впишите ID, и счётчик включится после согласия с cookies.
     metaPixelId: "",
     yandexMetrikaId: "",
     googleAnalyticsId: "",
     currency: "USD",
-    discountPercent: 40,             // скидка подписчикам канала
-    urgentDays: 3,                   // если до даты меньше стольких дней, показываем «срочный заказ»
+    urgentDays: 3,                     // если до даты меньше стольких дней — «срочный заказ»
+    readyTime: "готово за 3–7 рабочих дней",
+    // Тарифы. price — цена; from: true — «от»; style: "popular" | "premium"
     plans: [
-      { id: "30", title: "30 сек", price: 79,  sub: 47,  tagline: "Короткое и трогательное поздравление",
-        features: ["Одна яркая сцена под ваш повод", "Имя или инициалы в кадре", "Вертикальное видео для сторис и Reels"] },
-      { id: "60", title: "60 сек", price: 149, sub: 89,  tagline: "История из нескольких сцен", hit: true,
-        features: ["Несколько сцен с развитием сюжета", "Имена, дата и надпись в кадре", "Больше деталей вашей истории"] },
-      { id: "90", title: "90 сек", price: 219, sub: 129, tagline: "Мини-фильм о вашей любви",
-        features: ["Полноценный сюжет от начала до финала", "Все ваши надписи и моменты", "Максимум эмоций для особого дня"] },
+      { id: "moment", name: "Момент", desc: "Один ваш тёплый момент в исполнении Peep & Peak.", price: 89, duration: "≈30 сек",
+        perfect: ["Милый момент для двоих", "Ваша шутка", "Маленький сюрприз", "Простой повод"],
+        features: ["Одна сцена по деталям вашей истории", "Ваши имена или инициалы в кадре", "Одна правка", "Видео в высоком качестве"] },
+      { id: "scene", name: "Сцена", desc: "Ваша история целиком — в одной красивой сцене.", price: 149, duration: "≈60 сек",
+        perfect: ["Любимое свидание", "День рождения", "Особое место", "Тёплое послание"],
+        features: ["Полноценная сцена по вашему сюжету", "Имена, дата и надпись в кадре", "Одна правка", "Видео в высоком качестве"] },
+      { id: "story", name: "История", desc: "Ваша история как настоящая маленькая серия Peep & Peak.", price: 199, duration: "≈90 сек", style: "popular",
+        perfect: ["Годовщина", "Предложение", "Любовь на расстоянии", "Дата, которую не забыть"],
+        features: ["Сюжет с началом, серединой и финалом", "До 3 сцен", "Ваши детали во всём видео", "Две правки", "Видео в высоком качестве"] },
+      { id: "premium", name: "Премиум-история", desc: "Ваш мир — в кинематографичной истории Peep & Peak.", price: 499, from: true, duration: "до 3 мин", style: "premium", ready: "сроки обсуждаем индивидуально",
+        perfect: ["Путешествия", "Большое свидание", "Предложение с планом", "Вся ваша история любви"],
+        features: ["Сценарий вместе с вами", "Несколько локаций, образов и сцен", "Показ на каждом этапе", "Правки по договорённости", "Финальная версия в максимальном качестве"] },
     ],
-    ownIdea: { price: 49 },          // «Своя история»: доплата, скидка не действует
     occasions: [
-      { id: "birthday",    img: "cake", icon: "cake", title: "День рождения", extra: "age" },
-      { id: "anniversary", img: "kiss", icon: "infinity", title: "Годовщина отношений", extra: "together" },
-      { id: "wedding",     img: "sofa", icon: "rings", title: "Годовщина свадьбы", extra: "together" },
-      { id: "proposal",    img: "jewelry", icon: "gem", title: "Предложение руки и сердца" },
-      { id: "confession",  img: "heart", icon: "mail", title: "Признание в любви" },
-      { id: "valentine",   img: "sunset", icon: "heart", title: "14 февраля" },
-      { id: "sorry",       img: "blanket", icon: "feather", title: "Помириться" },
-      { id: "miss",        img: "star-sky", icon: "moon", title: "Скучаю / на расстоянии" },
-      { id: "other",       img: "clouds", icon: "sparkles", title: "Другой повод", extra: "other" },
+      { id: "birthday",    img: "cake",     icon: "cake",     title: "День рождения", extra: "age" },
+      { id: "anniversary", img: "kiss",     icon: "infinity", title: "Годовщина отношений", extra: "together" },
+      { id: "wedding",     img: "sofa",     icon: "rings",    title: "Годовщина свадьбы", extra: "together" },
+      { id: "proposal",    img: "jewelry",  icon: "gem",      title: "Предложение руки и сердца" },
+      { id: "confession",  img: "heart",    icon: "mail",     title: "Признание в любви" },
+      { id: "valentine",   img: "sunset",   icon: "heart",    title: "14 февраля" },
+      { id: "sorry",       img: "blanket",  icon: "feather",  title: "Помириться" },
+      { id: "miss",        img: "star-sky", icon: "moon",     title: "Скучаю / на расстоянии" },
+      { id: "other",       img: "clouds",   icon: "sparkles", title: "Другой повод", extra: "other" },
     ],
-    // Примеры: img — кадр-обложка; youtube — ссылка на видео (откроется прямо на сайте); url — ссылка в Instagram
+    // Донаты. url — ссылка на оплату (Tribute / PayPal / Boosty). Если пусто — ведёт в Telegram-канал.
+    donateUrl: "",
+    donate: [
+      { name: "Друг", price: 9.99, perk: "Значок «Друг Peep & Peak» в нашем канале" },
+      { name: "Лучший друг", price: 29.99, perk: "Ваше имя в благодарностях в конце серии" },
+      { name: "Звёздочка", price: 59.99, perk: "+ эксклюзивные обои с Peep & Peak" },
+      { name: "Герой", price: 99.99, perk: "+ видео-спасибо от Peep & Peak с вашим именем" },
+    ],
+    donateBig: [
+      { name: "Продюсер серии", price: 250, perks: ["Всё из «Героя»", "Ваше имя в титрах серии"] },
+      { name: "Крёстный родитель", price: 500, perks: ["Всё из «Продюсера»", "Персональное видео с Peep & Peak для вас"] },
+      { name: "Семья Peep & Peak", price: 1000, perks: ["Всё из «Крёстного родителя»", "Вы — герой одной из серий"] },
+    ],
+    // Примеры: img — обложка; youtube — ссылка (откроется прямо на сайте); url — ссылка в Instagram
     examples: [
-      { title: "День рождения", img: "images/frames/cake.jpg", views: "", youtube: "", url: "" },
-      { title: "Годовщина", img: "images/frames/gazebo.jpg", views: "", youtube: "", url: "" },
-      { title: "Признание в любви", img: "images/frames/kiss.jpg", views: "", youtube: "", url: "" },
-      { title: "Имя в звёздах", img: "images/frames/star-sky.jpg", views: "", youtube: "", url: "" },
+      { title: "День рождения", img: "images/frames/cake.jpg", youtube: "", url: "" },
+      { title: "Годовщина", img: "images/frames/gazebo.jpg", youtube: "", url: "" },
+      { title: "Признание в любви", img: "images/frames/kiss.jpg", youtube: "", url: "" },
+      { title: "Имя в звёздах", img: "images/frames/star-sky.jpg", youtube: "", url: "" },
     ],
-    // Идеи для видео (кадр + подпись в кадре)
     ideas: [
       { img: "images/frames/star-sky.jpg", overlay: "Аня", title: "Имя в звёздном небе", text: "Звёзды, салют или облака складываются в имя любимого человека." },
       { img: "images/frames/cake.jpg", overlay: "А ♥ М", title: "Торт с вашими инициалами", text: "Праздничный торт со свечой, а на нём ваши буквы кремом." },
@@ -1022,14 +1101,13 @@
       { img: "images/frames/pool-girl.jpg", overlay: "", title: "Отпуск мечты", text: "Бассейн, пальмы и солнце: Peep и Peak отправятся туда, куда мечтаете вы." },
       { img: "images/frames/sunset.jpg", overlay: "", title: "Ваша история один в один", text: "Как познакомились, первое свидание, ваша шутка. Повторим всё." },
     ],
-    // Кадры для анимированной ленты на первом экране
     reels: ["fries", "star-sky", "pool-girl", "blanket", "cake", "sofa", "jewelry", "kiss", "laptop", "sunset", "heart", "gazebo", "bed", "clouds", "pool-close"],
   };
   /* ==================================================================== */
 
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-  const money = (n) => "$" + n;
+  const money = (n) => "$" + (Number.isInteger(n) ? n : n.toFixed(2));
   const ic = (n, c = "") => `<svg class="ico ${c}"><use href="#i-${n}"/></svg>`;
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
@@ -1039,16 +1117,11 @@
     channel: CONFIG.telegramChannel || `https://instagram.com/${CONFIG.instagram}`,
     tg: CONFIG.telegram ? `https://t.me/${CONFIG.telegram}` : "",
     wa: CONFIG.whatsapp ? `https://wa.me/${CONFIG.whatsapp}` : "",
+    donate: CONFIG.donateUrl || CONFIG.telegramChannel,
   };
-  $$("[data-link]").forEach((a) => {
-    a.href = LINKS[a.dataset.link];
-    a.target = "_blank";
-    a.rel = "noopener";
-  });
-  if (!CONFIG.telegramChannel) $("#tg-banner-btn").textContent = "Ссылка на канал в нашем профиле";
   $("#year").textContent = new Date().getFullYear();
 
-  /* ---------- pinned / direct contacts ---------- */
+  /* ---------- контакты ---------- */
   const directs = [
     { cls: "ig", icon: "instagram", label: "Директ Instagram", href: LINKS.dm },
     LINKS.tg && { cls: "tg", icon: "send", label: "Telegram", href: LINKS.tg },
@@ -1059,52 +1132,34 @@
   $("#direct-links").innerHTML = directs.map((d) =>
     `<a href="${d.href}" target="_blank" rel="noopener">${ic(d.icon)} ${d.label}</a>`).join("");
 
-  /* ---------- marquee ---------- */
-  const mItems = CONFIG.occasions.filter((o) => o.id !== "other").map((o) => `<span>${o.title}${ic("star5", "fill")}</span>`).join("");
-  $("#marquee").innerHTML = mItems + mItems;
-
-  /* ---------- prices ---------- */
-  const minSub = Math.min(...CONFIG.plans.map((p) => p.sub));
-  $("#from-chip").textContent = money(minSub);
-  $("#plans").innerHTML = CONFIG.plans.map((p) => `
-    <div class="card plan reveal ${p.hit ? "hit" : ""}">
-      ${p.hit ? '<span class="badge">Хит: выбирают чаще всего</span>' : ""}
-      <div class="dur">${p.title}</div>
-      <div class="tagline">${p.tagline}</div>
-      <div class="price-row"><span class="price">${money(p.sub)}</span><span class="old">${money(p.price)}</span></div>
-      <div class="note">с подпиской на Telegram-канал (−${CONFIG.discountPercent}%)</div>
-      <ul>${p.features.map((f) => `<li>${f}</li>`).join("")}</ul>
-      <a href="#order" class="btn ${p.hit ? "btn-gold" : "btn-ghost"}" data-pick-plan="${p.id}">Выбрать ${p.title}</a>
-    </div>`).join("");
-  $("#addon-price").textContent = "+" + money(CONFIG.ownIdea.price);
-  $("#addon-inline").textContent = "+" + money(CONFIG.ownIdea.price);
-
-  /* ---------- hero reels ---------- */
+  /* ---------- первый экран: лента кадров ---------- */
   (() => {
-    const f = CONFIG.reels.map((n) => `images/frames/${n}.jpg`);
     const cols = [[], [], []];
-    f.forEach((src, i) => cols[i % 3].push(src));
+    CONFIG.reels.forEach((n, i) => cols[i % 3].push(`images/frames/${n}.jpg`));
     $("#reels").innerHTML = cols.map((c, i) => {
       const items = c.map((src) => `<div class="frame"><img src="${src}" alt="" loading="${i ? "lazy" : "eager"}"></div>`).join("");
       return `<div class="reel-col ${i === 1 ? "down" : ""}">${items}${items}</div>`;
     }).join("");
   })();
+  const minPrice = Math.min(...CONFIG.plans.map((p) => p.price));
+  $("#from-chip").textContent = money(minPrice);
 
-  /* ---------- ideas ---------- */
+  /* ---------- бегущая строка, идеи, поводы ---------- */
+  const mItems = CONFIG.occasions.filter((o) => o.id !== "other").map((o) => `<span>${o.title}${ic("star5", "fill")}</span>`).join("");
+  $("#marquee").innerHTML = mItems + mItems;
   $("#ideas-grid").innerHTML = CONFIG.ideas.map((d) => `
     <article class="card idea reveal">
       <div class="vis"><img src="${d.img}" alt="${esc(d.title)}" loading="lazy">${d.overlay ? `<div class="overlay">${esc(d.overlay)}</div>` : ""}</div>
       <div class="txt"><h3>${d.title}</h3><p>${d.text}</p></div>
     </article>`).join("");
+  $("#occasion-buttons").innerHTML = CONFIG.occasions.map((o) =>
+    `<button type="button" class="story" data-occ="${o.id}"><span class="ring"><img src="images/frames/${o.img}.jpg" alt="" loading="lazy"></span><span>${o.title}</span></button>`).join("");
 
-  /* ---------- examples + video modal ---------- */
+  /* ---------- примеры + видео-окно ---------- */
   const ytId = (u) => { const m = String(u).match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/); return m ? m[1] : ""; };
-  $("#gallery").innerHTML = CONFIG.examples.map((e, i) => {
+  $("#gallery").innerHTML = CONFIG.examples.map((e) => {
     const yt = ytId(e.youtube);
-    const inner = `<img src="${e.img}" alt="${esc(e.title)}" loading="lazy">
-      ${e.views ? `<span class="views">${ic("play", "fill")} ${e.views}</span>` : ""}
-      <span class="play">${ic("play", "fill")}</span>
-      <span class="cap">${e.title}</span>`;
+    const inner = `<img src="${e.img}" alt="${esc(e.title)}" loading="lazy"><span class="play">${ic("play", "fill")}</span><span class="cap">${e.title}</span>`;
     return yt ? `<button type="button" class="reel reveal" data-yt="${yt}" aria-label="Смотреть: ${esc(e.title)}">${inner}</button>`
               : `<a class="reel reveal" href="${e.url || LINKS.profile}" target="_blank" rel="noopener">${inner}</a>`;
   }).join("");
@@ -1118,45 +1173,72 @@
   modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
   addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) closeModal(); });
 
-  /* ---------- order form ---------- */
+  /* ---------- тарифы ---------- */
+  const priceLabel = (p) => (p.from ? "от " : "") + money(p.price);
+  $("#plans").innerHTML = CONFIG.plans.map((p) => `
+    <article class="tier reveal ${p.style || ""}">
+      ${p.style === "popular" ? '<span class="tier-badge">Чаще всего выбирают</span>' : ""}
+      ${p.style === "premium" ? '<span class="tier-kicker">Индивидуальное производство</span>' : ""}
+      <h3>${p.name}</h3>
+      <p class="tier-desc">${p.desc}</p>
+      <div class="tier-price">${priceLabel(p)}</div>
+      <p class="tier-meta">${p.duration} · ${p.ready || CONFIG.readyTime}</p>
+      <p class="tier-label">Идеально подходит для</p>
+      <div class="tier-tags">${p.perfect.map((t) => `<span>${t}</span>`).join("")}</div>
+      <ul>${p.features.map((f) => `<li>${ic(p.style === "premium" ? "sparkles" : "check")}${f}</li>`).join("")}</ul>
+      <a href="#order" class="btn ${p.style ? "btn-primary" : "btn-ghost"}" data-pick-plan="${p.id}">${p.style === "premium" ? "Рассказать нам историю" : "Выбрать «" + p.name + "»"}</a>
+    </article>`).join("");
+
+  /* ---------- донаты ---------- */
+  $("#donate-small").innerHTML = CONFIG.donate.map((d) => `
+    <a class="donate reveal" href="${LINKS.donate}" target="_blank" rel="noopener">
+      <span class="d-top"><b>${d.name}</b><em>${money(d.price)}</em></span>
+      <span class="d-perk">${d.perk}</span>
+    </a>`).join("");
+  $("#donate-big").innerHTML = CONFIG.donateBig.map((d) => `
+    <article class="donate-card reveal">
+      <div class="d-price">${money(d.price)}</div>
+      <h3>${d.name}</h3>
+      <ul>${d.perks.map((x) => `<li>${ic("heart")}${x}</li>`).join("")}</ul>
+      <a class="btn btn-ghost" href="${LINKS.donate}" target="_blank" rel="noopener">Поддержать</a>
+    </article>`).join("");
+
+  /* ---------- ссылки ---------- */
+  $$("[data-link]").forEach((a) => { a.href = LINKS[a.dataset.link]; a.target = "_blank"; a.rel = "noopener"; });
+
+  /* ---------- форма заказа ---------- */
   const form = $("#order-form");
   const F = (name) => form.elements[name];
-  $("#occasion-pills").innerHTML = CONFIG.occasions.map((o) =>
-    `<label class="pill"><input type="radio" name="occasion" value="${o.id}"><span>${ic(o.icon)} ${o.title}</span></label>`).join("");
-  $("#occasion-buttons").innerHTML = CONFIG.occasions.map((o) =>
-    `<button type="button" class="story" data-occ="${o.id}"><span class="ring"><img src="images/frames/${o.img}.jpg" alt="" loading="lazy"></span><span>${o.title}</span></button>`).join("");
-  $("#durations").innerHTML = CONFIG.plans.map((p) =>
-    `<label class="dur-opt"><input type="radio" name="plan" value="${p.id}" ${p.hit ? "checked" : ""}><span><b>${p.title}</b><em data-plan-price="${p.id}"></em></span></label>`).join("");
-
   const occById = (id) => CONFIG.occasions.find((o) => o.id === id);
   const planById = (id) => CONFIG.plans.find((p) => p.id === id);
+  $("#tier-pick").innerHTML = CONFIG.plans.map((p) => `
+    <label class="tp"><input type="radio" name="plan" value="${p.id}" ${p.style === "popular" ? "checked" : ""}><span><b>${p.name}</b><em>${priceLabel(p)}</em></span></label>`).join("");
+  $("#occasion-pills").innerHTML = CONFIG.occasions.map((o) =>
+    `<label class="pill"><input type="radio" name="occasion" value="${o.id}"><span>${ic(o.icon)} ${o.title}</span></label>`).join("");
 
-  function onOccasion() {
+  function update() {
+    const p = planById(F("plan").value) || CONFIG.plans[0];
+    $("#tier-meta").textContent = `${p.duration} · ${p.ready || CONFIG.readyTime}`;
+    $("#submit-btn").textContent = `Отправить заявку — ${priceLabel(p)}`;
     const o = occById(F("occasion").value);
     $("#f-age").hidden = !(o && o.extra === "age");
     $("#f-together").hidden = !(o && o.extra === "together");
     $("#f-occasion-other").hidden = !(o && o.extra === "other");
-    update();
+    if (o) $("#order-img").src = `images/frames/${o.img}.jpg`;
   }
-  $$("input[name=occasion]").forEach((r) => r.addEventListener("change", onOccasion));
-  $$("[data-occ]").forEach((b) => b.addEventListener("click", () => {
-    const r = form.querySelector(`input[name=occasion][value="${b.dataset.occ}"]`);
-    r.checked = true;
-    clearErr("occasion");
-    onOccasion();
-    goStep(1);
-    $("#order").scrollIntoView({ behavior: "smooth" });
-  }));
+  form.addEventListener("change", update);
   $$("[data-pick-plan]").forEach((b) => b.addEventListener("click", () => {
     form.querySelector(`input[name=plan][value="${b.dataset.pickPlan}"]`).checked = true;
     update();
   }));
-  $$("[data-own-idea]").forEach((b) => b.addEventListener("click", () => {
-    $("#own-idea").checked = true;
+  $$("[data-occ]").forEach((b) => b.addEventListener("click", () => {
+    form.querySelector(`input[name=occasion][value="${b.dataset.occ}"]`).checked = true;
+    clearErr("occasion");
     update();
+    $("#order").scrollIntoView({ behavior: "smooth" });
   }));
 
-  // date: not in the past, days left, urgent warning
+  // дата
   const pad = (n) => String(n).padStart(2, "0");
   const now = new Date();
   F("date").min = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
@@ -1176,18 +1258,26 @@
     if (n === null || n < 0) return;
     if (n < CONFIG.urgentDays) {
       info.classList.add("warn");
-      info.innerHTML = ic("zap") + " " + (n === 0 ? "Это сегодня! Срочный заказ: после заявки лучше сразу напишите нам в директ" : `Через ${daysWord(n)}: срочный заказ, уточним сроки сразу после заявки`);
+      info.innerHTML = ic("zap") + " " + (n === 0 ? "Это сегодня! Лучше сразу напишите нам в директ" : `Через ${daysWord(n)}: срочный заказ, уточним сроки`);
     } else {
       info.classList.add("ok");
-      info.innerHTML = ic("check") + ` Через ${daysWord(n)}: отличный запас времени`;
+      info.innerHTML = ic("check") + ` Через ${daysWord(n)}`;
     }
   }
-  F("date").addEventListener("change", onDate);
   F("date").addEventListener("input", onDate);
-
+  F("date").addEventListener("change", onDate);
   $("#caption").addEventListener("input", (e) => ($("#caption-count").textContent = e.target.value.length));
 
-  // contact method
+  // фото
+  const MAX_PHOTO = 10 * 1024 * 1024;
+  $("#photo-input").addEventListener("change", (e) => {
+    const f = e.target.files[0];
+    clearErr("photo");
+    $("#photo-name").textContent = f ? f.name : "Выберите фото для видео";
+    if (f && f.size > MAX_PHOTO) showErr("photo", "Фото больше 10 МБ — выберите поменьше");
+  });
+
+  // контакт
   const METHODS = {
     instagram: { label: "Instagram", ph: "@ваш_instagram", type: "text", mode: "text",
       test: (v) => /^@?[A-Za-z0-9._]{1,30}$/.test(v), err: "Введите ник в Instagram, например @anna.max" },
@@ -1207,132 +1297,43 @@
     contactInput.focus();
   }));
 
-  function calc() {
-    const plan = planById(F("plan").value) || CONFIG.plans[0];
-    const sub = $("#subscribed").checked;
-    const own = $("#own-idea").checked;
-    const video = sub ? plan.sub : plan.price;
-    const addon = own ? CONFIG.ownIdea.price : 0;
-    return { plan, sub, own, video, addon, total: video + addon, saving: plan.price - plan.sub };
-  }
-  function occasionLabel() {
-    const o = occById(F("occasion").value);
-    if (!o) return "";
-    return o.extra === "other" ? F("occasionOther").value.trim() || o.title : o.title;
-  }
-  function update() {
-    const c = calc();
-    CONFIG.plans.forEach((p) => ($(`[data-plan-price="${p.id}"]`).textContent = money(c.sub ? p.sub : p.price)));
-    $("#f-idea").hidden = !c.own;
-    $("#t-own").classList.toggle("on", c.own);
-    $("#t-sub").classList.toggle("on", c.sub);
-    $("#sum-lines").innerHTML = [
-      ["Повод", esc(occasionLabel() || "не выбран")],
-      [`Видео ${c.plan.title}`, c.sub ? `<s>${money(c.plan.price)}</s>${money(c.plan.sub)}` : money(c.plan.price)],
-      c.own && ["Своя история", "+" + money(c.addon)],
-    ].filter(Boolean).map(([k, v]) => `<div class="sum-line"><span>${k}</span><span>${v}</span></div>`).join("");
-    $("#sum-total").textContent = money(c.total);
-    if (!$("#submit-btn").disabled) $("#submit-btn").textContent = `Отправить заявку · ${money(c.total)}`;
-    $("#sum-nudge").innerHTML = c.sub ? "" : ic("lightbulb") + ` С подпиской на Telegram-канал видео обойдётся в ${money(c.plan.sub)}: экономия ${money(c.saving)}`;
-  }
-  ["change", "input"].forEach((ev) => form.addEventListener(ev, update));
-
-  // errors
-  function fieldInput(name) {
-    const el = F(name);
-    return el && el.tagName && el.type !== "radio" ? el : null;
-  }
+  // ошибки
+  const fieldInput = (name) => { const el = F(name); return el && el.tagName && el.type !== "radio" ? el : null; };
   function showErr(name, msg) {
-    const box = $(`[data-err="${name}"]`);
-    if (box) box.textContent = msg;
-    const input = fieldInput(name);
-    if (input) input.classList.add("invalid");
+    const box = $(`[data-err="${name}"]`); if (box) box.textContent = msg;
+    const input = fieldInput(name); if (input) input.classList.add("invalid");
   }
   function clearErr(name) {
-    const box = $(`[data-err="${name}"]`);
-    if (box) box.textContent = "";
-    const input = fieldInput(name);
-    if (input) input.classList.remove("invalid");
+    const box = $(`[data-err="${name}"]`); if (box) box.textContent = "";
+    const input = fieldInput(name); if (input) input.classList.remove("invalid");
   }
   form.addEventListener("input", (e) => e.target.name && clearErr(e.target.name));
-  form.addEventListener("change", (e) => {
-    if (!e.target.name) return;
-    clearErr(e.target.name === "contactMethod" ? "contact" : e.target.name);
-  });
+  form.addEventListener("change", (e) => e.target.name && clearErr(e.target.name === "contactMethod" ? "contact" : e.target.name));
 
-  const STEP_FIELDS = {
-    1: ["occasion", "occasionOther", "recipient"],
-    2: ["date", "toName"],
-    3: ["idea"],
-    4: ["contact"],
-  };
-  function checks() {
-    const errs = {};
-    const o = occById(F("occasion").value);
-    if (!o) errs.occasion = "Выберите повод";
-    else if (o.extra === "other" && !F("occasionOther").value.trim()) errs.occasionOther = "Напишите, какой у вас повод";
-    if (!F("recipient").value) errs.recipient = "Выберите, кому видео";
-    const n = daysUntil(F("date").value);
-    if (n === null) errs.date = "Укажите дату, к которой нужно видео";
-    else if (n < 0) errs.date = "Эта дата уже прошла, выберите будущую";
-    if (!F("toName").value.trim()) errs.toName = "Напишите имя или инициалы";
-    if ($("#own-idea").checked && F("idea").value.trim().length < 10) errs.idea = "Опишите идею хотя бы в паре предложений";
-    const m = METHODS[F("contactMethod").value];
-    if (!m) errs.contact = "Выберите мессенджер для связи";
-    else if (!m.test(contactInput.value.trim())) errs.contact = m.err;
-    return errs;
-  }
-  function validateStep(n) {
-    const errs = checks();
-    const bad = STEP_FIELDS[n].filter((f) => errs[f]);
-    bad.forEach((f) => showErr(f, errs[f]));
-    if (bad.length) $(`[data-err="${bad[0]}"]`).closest(".field, .step-pane").scrollIntoView({ behavior: "smooth", block: "center" });
-    return !bad.length;
-  }
   function validate() {
-    for (let n = 1; n <= 4; n++) {
-      if (!validateStep(n)) { goStep(n); validateStep(n); return false; }
-    }
-    return true;
+    const errs = [];
+    const add = (n, m) => { showErr(n, m); errs.push(n); };
+    const o = occById(F("occasion").value);
+    if (!o) add("occasion", "Выберите повод");
+    else if (o.extra === "other" && !F("occasionOther").value.trim()) add("occasionOther", "Напишите, какой у вас повод");
+    if (F("story").value.trim().length < 10) add("story", "Расскажите историю хотя бы в паре предложений");
+    if (!F("toName").value.trim()) add("toName", "Напишите имя или инициалы");
+    const n = daysUntil(F("date").value);
+    if (n === null) add("date", "Укажите дату, к которой нужно видео");
+    else if (n < 0) add("date", "Эта дата уже прошла");
+    const photo = $("#photo-input").files[0];
+    if (photo && photo.size > MAX_PHOTO) add("photo", "Фото больше 10 МБ — выберите поменьше");
+    const m = METHODS[F("contactMethod").value];
+    if (!m) add("contact", "Выберите мессенджер для связи");
+    else if (!m.test(contactInput.value.trim())) add("contact", m.err);
+    if (errs.length) $(`[data-err="${errs[0]}"]`).closest(".field").scrollIntoView({ behavior: "smooth", block: "center" });
+    return !errs.length;
   }
-
-  // wizard navigation
-  let step = 1;
-  let maxStep = 1;
-  function goStep(n) {
-    step = n;
-    maxStep = Math.max(maxStep, n);
-    $$(".step-pane").forEach((p) => (p.hidden = Number(p.dataset.step) !== n));
-    $$("#wiz-steps li").forEach((li) => {
-      const k = Number(li.dataset.go);
-      li.classList.toggle("active", k === n);
-      li.classList.toggle("done", k < n || (k <= maxStep && k !== n));
-    });
-    $("#wiz-bar").style.width = `${n * 25}%`;
-    $("#wiz-back").hidden = n === 1;
-    $("#wiz-next").hidden = n === 4;
-    $("#submit-btn").hidden = n !== 4;
-    $("#form-hint").hidden = n !== 4;
-  }
-  function scrollToWizard() {
-    const top = $("#wizard").getBoundingClientRect().top + scrollY - 84;
-    if (Math.abs(scrollY - top) > 40) scrollTo({ top, behavior: "smooth" });
-  }
-  $("#wiz-next").addEventListener("click", () => {
-    if (!validateStep(step)) return;
-    goStep(step + 1);
-    scrollToWizard();
-  });
-  $("#wiz-back").addEventListener("click", () => { goStep(step - 1); scrollToWizard(); });
-  $$("#wiz-steps li").forEach((li) => li.addEventListener("click", () => {
-    const k = Number(li.dataset.go);
-    if (k < step || k <= maxStep) { goStep(k); scrollToWizard(); }
-  }));
-  goStep(1);
 
   function buildText() {
-    const c = calc();
+    const p = planById(F("plan").value);
     const o = occById(F("occasion").value);
+    const occ = o.extra === "other" ? F("occasionOther").value.trim() : o.title;
     const extra = o.extra === "age" && F("age").value ? ` (исполняется ${F("age").value})`
       : o.extra === "together" && F("together").value.trim() ? ` (вместе: ${F("together").value.trim()})` : "";
     const [y, mo, d] = F("date").value.split("-").map(Number);
@@ -1341,21 +1342,16 @@
     const m = METHODS[F("contactMethod").value];
     const contact = contactInput.value.trim();
     const handle = F("contactMethod").value === "whatsapp" ? contact : "@" + contact.replace(/^@/, "");
-    const opt = (cond, line) => (cond ? line : null);
+    const v = (k) => F(k).value.trim();
     return [
-      "Здравствуйте! Хочу заказать видео с Peep & Peak 🤎",
-      "",
-      `🎉 Повод: ${occasionLabel()}${extra}`,
-      `💝 Кому: ${F("recipient").value}`,
+      `🎬 Видео: ${p.name} (${p.duration}) — ${priceLabel(p)}`,
+      `🎉 Повод: ${occ}${extra}`,
       `📅 Дата: ${dateStr} (через ${daysWord(n)})${n < CONFIG.urgentDays ? " ⚡ СРОЧНО" : ""}`,
-      `👤 Кого поздравляем: ${F("toName").value.trim()}`,
-      opt(F("fromName").value.trim(), `✍️ От кого: ${F("fromName").value.trim()}`),
-      opt(F("caption").value.trim(), `🔤 Надпись в видео: ${F("caption").value.trim()}`),
-      `🎬 Видео: ${c.plan.title}`,
-      c.own ? `✨ Своя история: ${F("idea").value.trim()}` : "✨ Своя история: нет, сюжет на ваш вкус",
-      opt(F("details").value.trim(), `📝 О нас: ${F("details").value.trim()}`),
-      `🔥 Подписка на канал: ${c.sub ? `да (−${CONFIG.discountPercent}%)` : "нет"}`,
-      `💰 Итого: ${money(c.total)}`,
+      `👤 Кого поздравляем: ${v("toName")}`,
+      v("fromName") ? `✍️ От кого: ${v("fromName")}` : null,
+      v("caption") ? `🔤 Надпись: ${v("caption")}` : null,
+      `📝 История: ${v("story")}`,
+      $("#photo-input").files[0] ? "🖼 Фото: приложено" : null,
       "",
       `📲 Связь: ${m.label} ${handle}`,
     ].filter((l) => l !== null).join("\n");
@@ -1369,46 +1365,40 @@
     toast._t = setTimeout(() => t.classList.remove("show"), 5000);
   }
 
-  const useTg = Boolean(CONFIG.leadEndpoint || (CONFIG.tgBotToken && CONFIG.tgChatId));
-  if (useTg) $("#form-hint").textContent = "Заявка придёт нам сразу. Мы напишем вам в выбранный мессенджер.";
-
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    if (step < 4) { $("#wiz-next").click(); return; }
     if (!validate()) { toast("Проверьте выделенные поля"); return; }
     const text = buildText();
-    const total = calc().total;
+    const total = planById(F("plan").value).price;
     const btn = $("#submit-btn");
-    if (useTg) {
+    if (CONFIG.leadEndpoint) {
       btn.disabled = true;
       btn.textContent = "Отправляем…";
       try {
-        const r = CONFIG.leadEndpoint
-          ? await fetch(CONFIG.leadEndpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text }) })
-          : await fetch(`https://api.telegram.org/bot${CONFIG.tgBotToken}/sendMessage`, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ chat_id: CONFIG.tgChatId, text: "🆕 Новая заявка с сайта\n\n" + text }),
-            });
-        if (!(await r.json()).ok) throw new Error("telegram");
+        const fd = new FormData();
+        fd.append("text", text);
+        const photo = $("#photo-input").files[0];
+        if (photo) fd.append("photo", photo);
+        const r = await fetch(CONFIG.leadEndpoint, { method: "POST", body: fd });
+        if (!r.ok || !(await r.json()).ok) throw new Error("lead");
         form.reset();
         contactInput.disabled = true;
         contactInput.placeholder = "Сначала выберите мессенджер";
+        $("#photo-name").textContent = "Выберите фото для видео";
         $("#caption-count").textContent = "0";
-        onOccasion(); onDate();
-        maxStep = 1; goStep(1);
+        onDate();
         trackLead(total);
         toast("Заявка отправлена! Скоро напишем вам");
         return;
       } catch {
-        toast("Не получилось отправить, открываем директ Instagram");
+        toast("Не получилось отправить — открываем директ Instagram");
       } finally {
         btn.disabled = false;
         update();
       }
     }
     try {
-      await navigator.clipboard.writeText(text);
+      await navigator.clipboard.writeText("Здравствуйте! Хочу заказать видео с Peep & Peak\n\n" + text);
       toast("Заявка скопирована: вставьте её в открывшийся директ");
       trackLead(total);
     } catch {
@@ -1416,10 +1406,9 @@
     }
     window.open(LINKS.dm, "_blank", "noopener");
   });
-
   update();
 
-  /* ---------- analytics (after consent) ---------- */
+  /* ---------- аналитика (после согласия) ---------- */
   function loadAnalytics() {
     const add = (src) => { const el = document.createElement("script"); el.async = true; el.src = src; document.head.appendChild(el); };
     if (CONFIG.metaPixelId) {
@@ -1459,7 +1448,7 @@
   $("#cookie-yes").addEventListener("click", () => setConsent("yes"));
   $("#cookie-no").addEventListener("click", () => setConsent("no"));
 
-  /* ---------- reveal & header ---------- */
+  /* ---------- появление и шапка ---------- */
   const io = new IntersectionObserver((entries) => entries.forEach((en) => {
     if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
   }), { threshold: 0.1 });

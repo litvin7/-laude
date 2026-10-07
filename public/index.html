@@ -976,7 +976,7 @@
     whatsapp: "",                    // номер WhatsApp цифрами с кодом страны, например "15551234567"
     telegramChannel: "https://t.me/peepandpeak",             // ссылка на Telegram-канал со скидкой, например "https://t.me/peepandpeak"
     // Заявки в Telegram-бота (см. README). Если пусто, заявка копируется и открывается директ Instagram.
-    leadEndpoint: "",                // адрес Cloudflare Worker (см. worker/README) — заявки уходят в Telegram, токен скрыт
+    leadEndpoint: "/api/lead",       // заявки уходят на Cloudflare Worker → Telegram (см. worker/README.md)
     tgBotToken: "",                  // не используйте на публичном сайте, вместо этого leadEndpoint
     tgChatId: "",
     // Аналитика: впишите ID, и счётчик включится после согласия с cookies.

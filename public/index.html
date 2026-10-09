@@ -129,13 +129,6 @@
   .includes span { display: inline-flex; align-items: center; gap: 8px; }
   .includes svg.ico { color: var(--caramel); }
 
-  /* скидки */
-  .deals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  .deal { display: flex; gap: 16px; align-items: flex-start; padding: 22px; border-radius: 14px; background: #fff; border: 1px solid var(--line); }
-  .deal .pct { flex: none; min-width: 72px; height: 72px; padding: 0 10px; border-radius: 14px; display: grid; place-items: center; font-weight: 900; font-size: 24px; color: var(--rose); background: #fbe8ec; }
-  .deal h3 { margin-bottom: 4px; }
-  .deal p { color: var(--muted); font-size: 15px; }
-  .deals-note { text-align: center; color: var(--muted); font-size: 14px; margin-top: 18px; }
 
   /* идеи по 2 в ряд */
   .ideas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; max-width: 920px; margin: 0 auto; }
@@ -199,7 +192,7 @@
     .hero-grid, .meet-grid { grid-template-columns: 1fr; }
     .reels { height: 340px; order: -1; }
     .tiers { grid-template-columns: repeat(3, 1fr); }
-    .deals, .steps { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; }
     .nav-links > a:not(.btn) { display: none; }
     section { padding: 64px 0; }
   }
@@ -267,7 +260,6 @@
     <nav class="nav-links">
       <a href="#examples">Примеры</a>
       <a href="#prices">Цены</a>
-      <a href="#deals">Скидки</a>
       <a href="#how">Как заказать</a>
       <a class="btn btn-ig btn-sm" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg><span>Заказать</span></a>
     </nav>
@@ -323,21 +315,6 @@
         <span><svg class="ico"><use href="#i-check"/></svg>Одна правка в подарок</span>
         <span><svg class="ico"><use href="#i-clock"/></svg>Обычно 3–7 дней</span>
       </div>
-    </div>
-  </section>
-
-  <section id="deals">
-    <div class="wrap">
-      <div class="head center">
-        <span class="eyebrow">Скидки</span>
-        <h2>Как сэкономить</h2>
-      </div>
-      <div class="deals">
-        <div class="deal"><span class="pct">−10%</span><div><h3>Заранее</h3><p>Напишите нам за 14 дней до праздника или раньше.</p></div></div>
-        <div class="deal"><span class="pct">−15%</span><div><h3>Второе видео</h3><p>На каждое следующее видео, если заказывали у нас раньше.</p></div></div>
-        <div class="deal"><span class="pct">−20%</span><div><h3>Покажите реакцию</h3><p>Пришлите видео, как ваша половинка смотрит поздравление, и получите скидку на следующий заказ.</p></div></div>
-      </div>
-      <p class="deals-note">Скидки не суммируются. Напишите, какая вам подходит, и мы учтём её в цене.</p>
     </div>
   </section>
 

@@ -2,9 +2,498 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<title>Peep &amp; Peak</title>
-<meta http-equiv="refresh" content="0; url=public/">
-<link rel="canonical" href="public/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peep &amp; Peak — именные видео-поздравления с капибарами</title>
+<meta name="description" content="Именные видео с Peep &amp; Peak, парой капибар из сериала «It's us»: день рождения, годовщина, признание, предложение. Ваши имена прямо в сцене. От $47.">
+<meta property="og:title" content="Peep &amp; Peak — именные видео-поздравления">
+<meta property="og:image" content="images/frames/emma-pillow.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%23fcc419' stroke='%23e0a20c' d='M20 3.2c1.3 0 2.2.8 2.9 2.3l3 6.1 6.7 1c1.7.2 2.6 1.1 2.6 2.3s-.6 2-1.7 3l-4.9 4.7 1.2 6.7c.3 1.7-.3 2.8-1.6 3.2-.9.3-1.7 0-2.8-.6L20 29.5l-6 3.2c-1.1.6-1.9.9-2.8.6-1.3-.4-1.9-1.5-1.6-3.2l1.2-6.7-4.9-4.7c-1.1-1-1.7-1.8-1.7-3s.9-2.1 2.6-2.3l6.7-1 3-6.1c.7-1.5 1.6-2.3 2.9-2.3Z'/%3E%3C/svg%3E">
+<style>
+  /* Тёплая «киношная» палитра под кадры Peep & Peak, округлый Nunito, кнопки в стиле Instagram */
+  :root {
+    --bg: #fbf6ef;
+    --bg-2: #f3e9dc;
+    --card: #ffffff;
+    --ink: #2a1c13;
+    --ink-2: #4a3628;
+    --muted: #6b5546;
+    --line: #eadccb;
+    --caramel: #b77b4b;
+    --caramel-2: #9a6238;
+    --honey: #e2a85c;
+    --rose: #c4566e;
+    --ig: linear-gradient(45deg, #f9ce34 0%, #ee2a7b 45%, #6228d7 100%);
+    --grad-text: linear-gradient(100deg, #9a6238 0%, #c88653 45%, #e2a85c 100%);
+    --font: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --max: 1120px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; }
+  [hidden] { display: none !important; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+  section { padding: 88px 0; }
+  h1, h2, h3 { margin: 0; letter-spacing: -0.02em; line-height: 1.1; text-wrap: balance; }
+  h1 { font-size: clamp(36px, 5vw, 64px); font-weight: 900; }
+  h2 { font-size: clamp(28px, 3.6vw, 44px); font-weight: 900; margin-bottom: 14px; }
+  h3 { font-size: 19px; font-weight: 800; }
+  p { margin: 0; }
+  em { font-style: normal; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .eyebrow { display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; color: var(--caramel); margin-bottom: 14px; }
+  .head { max-width: 680px; margin-bottom: 40px; }
+  .head.center { margin-left: auto; margin-right: auto; text-align: center; }
+  .head p { color: var(--muted); font-size: 18px; }
+
+  svg.ico { display: inline-block; width: 1.15em; height: 1.15em; vertical-align: -0.2em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  svg.ico.fill { fill: currentColor; }
+
+  /* кнопки */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 22px; border-radius: 10px; border: 0; cursor: pointer; font: inherit; font-weight: 800; font-size: 15px; text-decoration: none; text-align: center; transition: transform .15s, filter .15s, background .15s; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:focus-visible { outline: 3px solid var(--honey); outline-offset: 2px; }
+  .btn-ig { background: var(--ig); color: #fff; }
+  .btn-ig:hover { filter: brightness(1.06); }
+  .btn-light { background: #efefef; color: #111; }
+  .btn-light:hover { background: #e2e2e2; }
+  .btn-sm { padding: 9px 14px; font-size: 14px; }
+  .btns { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  /* шапка */
+  header.nav { position: sticky; top: 0; z-index: 30; background: rgba(251,246,239,.9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 900; font-size: 22px; white-space: nowrap; }
+  .logo em { -webkit-text-fill-color: var(--caramel); }
+  .logo svg { width: 34px; height: 34px; }
+  .nav-links { display: flex; align-items: center; gap: 26px; }
+  .nav-links > a:not(.btn) { text-decoration: none; color: var(--muted); font-weight: 700; font-size: 15px; }
+  .nav-links > a:not(.btn):hover { color: var(--ink); }
+
+  /* первый экран */
+  .hero { padding: 56px 0 72px; background: radial-gradient(80% 70% at 90% 0%, #f7dcc0 0%, transparent 60%), var(--bg); overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
+  .hero .lead { color: var(--muted); font-size: 19px; margin: 20px 0 28px; max-width: 540px; }
+  .stats { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .stat b { display: block; font-size: 30px; font-weight: 900; line-height: 1; }
+  .stat span { font-size: 13px; color: var(--muted); }
+  .reels { height: min(70vh, 620px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; overflow: hidden;
+    -webkit-mask-image: linear-gradient(transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(transparent, #000 10%, #000 90%, transparent); }
+  .reel-col { display: flex; flex-direction: column; gap: 12px; animation: up 50s linear infinite; }
+  .reel-col.down { animation-name: down; animation-duration: 56s; }
+  .reel-col:nth-child(3) { animation-duration: 44s; }
+  .reel-col img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; background: var(--bg-2); }
+  @keyframes up { to { transform: translateY(-50%); } }
+  @keyframes down { from { transform: translateY(-50%); } to { transform: translateY(0); } }
+
+  .marquee { overflow: hidden; background: #fff; border-block: 1px solid var(--line); padding: 16px 0; }
+  .marquee-track { display: flex; gap: 40px; width: max-content; animation: marquee 50s linear infinite; font-weight: 800; font-size: 18px; }
+  .marquee-track span { display: inline-flex; align-items: center; gap: 40px; white-space: nowrap; }
+  .marquee-track svg.ico { width: 12px; height: 12px; color: var(--honey); }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+
+  /* видео-примеры */
+  .videos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .video { position: relative; aspect-ratio: 9 / 16; border-radius: 14px; overflow: hidden; border: 0; padding: 0; cursor: pointer; background: #1a120c; }
+  .video img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease, filter .3s; }
+  .video:hover img { transform: scale(1.04); filter: brightness(.9); }
+  .video .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.92); color: #111; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+  .video .play svg { width: 22px; height: 22px; margin-left: 3px; }
+  .video:focus-visible { outline: 3px solid var(--honey); outline-offset: 3px; }
+  .modal { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 20px; background: rgba(20,12,7,.85); }
+  .modal-box { width: min(400px, 100%); aspect-ratio: 9 / 16; max-height: 86vh; border-radius: 18px; overflow: hidden; background: #000; }
+  .modal-box iframe { width: 100%; height: 100%; border: 0; }
+  .modal-close { position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer; background: #fff; font-size: 24px; line-height: 1; }
+
+  /* цены */
+  .prices { background: #fff; border-block: 1px solid var(--line); }
+  .tiers { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .tier { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 22px 18px; border-radius: 14px; background: var(--bg); border: 1px solid var(--line); }
+  .tier .dur { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 800; color: var(--caramel-2); }
+  .tier h3 { font-size: 20px; }
+  .tier .price { font-size: 38px; font-weight: 900; letter-spacing: -0.03em; line-height: 1; margin: 6px 0 4px; }
+  .tier p { color: var(--muted); font-size: 14px; line-height: 1.45; flex: 1; }
+  .tier.hit { background: #fff6ec; border: 1.5px solid var(--honey); }
+  .tier.premium { background: #2e1e15; color: #fbf1e2; border-color: #2e1e15; }
+  .tier.premium p { color: rgba(251,241,226,.72); }
+  .tier.premium .dur { color: var(--honey); }
+  .badge { position: absolute; top: -11px; left: 18px; font-size: 11px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; background: var(--honey); color: #fff; }
+  .includes { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px; margin-top: 26px; color: var(--ink-2); font-size: 15px; font-weight: 700; }
+  .includes span { display: inline-flex; align-items: center; gap: 8px; }
+  .includes svg.ico { color: var(--caramel); }
+
+
+  /* идеи по 2 в ряд */
+  .ideas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; max-width: 920px; margin: 0 auto; }
+  .idea { display: grid; grid-template-columns: 150px 1fr; gap: 16px; align-items: center; padding: 12px; border-radius: 14px; background: #fff; border: 1px solid var(--line); }
+  .idea img { width: 150px; aspect-ratio: 1; object-fit: cover; border-radius: 10px; }
+  .idea h3 { margin-bottom: 4px; }
+  .idea p { color: var(--muted); font-size: 15px; line-height: 1.45; }
+
+  /* герои */
+  .meet { background: var(--bg-2); }
+  .meet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .meet-grid > img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 16px; }
+  .traits { display: grid; gap: 10px; margin-top: 20px; }
+  .trait { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; }
+  .trait svg.ico { color: var(--caramel); margin-top: 3px; }
+  .trait b { font-weight: 800; }
+
+  /* как заказать */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; counter-reset: s; }
+  .step { padding: 22px; border-radius: 14px; background: #fff; border: 1px solid var(--line); }
+  .step::before { counter-increment: s; content: counter(s); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--ink); color: #fff; font-weight: 900; margin-bottom: 14px; }
+  .step h3 { margin-bottom: 6px; }
+  .step p { color: var(--muted); font-size: 15px; }
+  .msg { margin-top: 18px; padding: 20px 22px; border-radius: 14px; background: #fff; border: 1px dashed var(--caramel); display: flex; gap: 18px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+  .msg p { font-size: 15px; color: var(--ink-2); min-width: 0; flex: 1 1 360px; }
+  .msg b { color: var(--ink); }
+
+  /* вопросы */
+  .faq { max-width: 780px; margin: 0 auto; }
+  details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+  summary { cursor: pointer; font-weight: 800; font-size: 18px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--caramel); font-size: 26px; line-height: 1; transition: transform .2s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { color: var(--muted); margin-top: 10px; }
+
+  /* финал */
+  .final { position: relative; overflow: hidden; border-radius: 18px; min-height: 420px; display: grid; place-items: center; text-align: center; padding: 56px 24px; color: #fff6e6; }
+  .final > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .final::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,12,7,.66), rgba(20,12,7,.86)); }
+  .final > div { position: relative; }
+  .final h2 { color: #fff6e6; }
+  .final p { color: rgba(255,246,230,.88); max-width: 520px; margin: 0 auto 26px; font-size: 18px; }
+  .final .btns { justify-content: center; }
+
+  footer { padding: 32px 0 40px; color: var(--muted); font-size: 14px; }
+  .foot { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+  .foot nav { display: flex; gap: 18px; }
+  .foot a { text-decoration: none; font-weight: 700; }
+  .foot a:hover { color: var(--caramel); }
+
+  .float { position: fixed; right: 18px; bottom: 18px; z-index: 40; display: grid; gap: 10px; }
+  .float a { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; color: #fff; box-shadow: 0 12px 28px -10px rgba(0,0,0,.45); transition: transform .15s; }
+  .float a:hover { transform: scale(1.06); }
+  .float a svg { width: 26px; height: 26px; }
+  .float .ig { background: var(--ig); }
+
+  @media (max-width: 1000px) {
+    .hero-grid, .meet-grid { grid-template-columns: 1fr; }
+    .reels { height: 340px; order: -1; }
+    .tiers { grid-template-columns: repeat(3, 1fr); }
+    .steps { grid-template-columns: 1fr; }
+    .nav-links > a:not(.btn) { display: none; }
+    section { padding: 64px 0; }
+  }
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 16px; }
+    .hero { padding: 24px 0 48px; }
+    .hero .lead { font-size: 16px; }
+    .hero .btns .btn { flex: 1 1 100%; }
+    .reels { height: 260px; gap: 8px; }
+    .reel-col { gap: 8px; }
+    .stats { gap: 18px; }
+    .stat b { font-size: 24px; }
+    .videos { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .tiers { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .tier { padding: 18px 14px; }
+    .tier .price { font-size: 30px; }
+    .tier.premium { grid-column: 1 / -1; }
+    .ideas { gap: 10px; }
+    .idea { grid-template-columns: 1fr; gap: 8px; padding: 8px; }
+    .idea img { width: 100%; }
+    .idea h3 { font-size: 15px; }
+    .idea p { font-size: 13px; }
+    .nav-links .btn-sm span { display: none; }
+    .logo { font-size: 19px; }
+    .float { right: 12px; bottom: 12px; }
+    .float a { width: 50px; height: 50px; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
 </head>
-<body><a href="public/">Peep &amp; Peak</a></body>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <symbol id="i-star5" viewBox="0 0 24 24"><path d="M12 2.5c.6 0 1 .4 1.4 1.1l2.2 4.6 5 .7c.8.1 1.3.6 1.3 1.2s-.3 1-.9 1.5l-3.6 3.5.9 5c.1.8-.1 1.4-.8 1.6-.4.1-.9 0-1.4-.3L12 19l-4.4 2.4c-.5.3-1 .4-1.4.3-.7-.2-.9-.8-.8-1.6l.9-5-3.6-3.5c-.6-.5-.9-.9-.9-1.5s.5-1.1 1.3-1.2l5-.7 2.2-4.6c.4-.7.8-1.1 1.4-1.1Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/></symbol>
+    <symbol id="i-cake" viewBox="0 0 24 24"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></symbol>
+    <symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></symbol>
+    <symbol id="i-rings" viewBox="0 0 24 24"><circle cx="9" cy="14" r="6"/><circle cx="15" cy="14" r="6"/><path d="M10.5 3h3L12 6z"/></symbol>
+    <symbol id="i-infinity" viewBox="0 0 24 24"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-feather" viewBox="0 0 24 24"><path d="M12.67 19a2 2 0 0 0 1.416-.588l6.154-6.172a6 6 0 0 0-8.49-8.49L5.586 9.914A2 2 0 0 0 5 11.328V18a1 1 0 0 0 1 1z"/><path d="M16 8 2 22"/><path d="M17.5 15H9"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3l14 9-14 9z"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></symbol>
+    <symbol id="i-percent" viewBox="0 0 24 24"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-film" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></symbol>
+</defs></svg>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo" aria-label="Peep &amp; Peak">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd84d"/><stop offset="1" stop-color="#f5b40f"/></linearGradient></defs><path fill="url(#lg)" stroke="#e0a20c" stroke-width="1" d="M20 3.2c1.3 0 2.2.8 2.9 2.3l3 6.1 6.7 1c1.7.2 2.6 1.1 2.6 2.3s-.6 2-1.7 3l-4.9 4.7 1.2 6.7c.3 1.7-.3 2.8-1.6 3.2-.9.3-1.7 0-2.8-.6L20 29.5l-6 3.2c-1.1.6-1.9.9-2.8.6-1.3-.4-1.9-1.5-1.6-3.2l1.2-6.7-4.9-4.7c-1.1-1-1.7-1.8-1.7-3s.9-2.1 2.6-2.3l6.7-1 3-6.1c.7-1.5 1.6-2.3 2.9-2.3Z"/></svg>
+      <span>Peep <em>&amp;</em> Peak</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#examples">Примеры</a>
+      <a href="#prices">Цены</a>
+      <a href="#how">Как заказать</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Ваша история любви — <em>новая серия</em> Peep&nbsp;&amp;&nbsp;Peak</h1>
+        <p class="lead">Пара капибар, в которой влюблённые узнают себя, разыграет вашу историю. Ваши имена и даты становятся частью сцены: на торте, в небе, на песке.</p>
+        <div class="btns">
+          <a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg> Написать в Instagram</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>152K</b><span>просмотров у одной серии</span></div>
+          <div class="stat"><b>3</b><span>сезона историй о любви</span></div>
+          <div class="stat"><b id="from-price">$47</b><span>видео от</span></div>
+        </div>
+      </div>
+      <div class="reels" id="reels" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+  <section id="examples">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Примеры</span>
+        <h2>Так выглядит <em>ваше поздравление</em></h2>
+        <p>Реальные именные видео, которые мы сделали на заказ. Нажмите, чтобы посмотреть.</p>
+      </div>
+      <div class="videos" id="videos"></div>
+    </div>
+  </section>
+
+  <section id="prices" class="prices">
+    <div class="wrap">
+      <div class="head center">
+        <span class="eyebrow">Цены</span>
+        <h2>Выберите длительность</h2>
+        <p>Каждое видео делаем вручную под вашу историю. Оплата после того, как согласуем сюжет.</p>
+      </div>
+      <div class="tiers" id="tiers"></div>
+      <div class="includes">
+        <span><svg class="ico"><use href="#i-check"/></svg>Ваши имена и даты в кадре</span>
+        <span><svg class="ico"><use href="#i-check"/></svg>Сюжет под ваш повод</span>
+        <span><svg class="ico"><use href="#i-check"/></svg>Одна правка в подарок</span>
+        <span><svg class="ico"><use href="#i-clock"/></svg>Обычно 3–7 дней</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="ideas" style="padding-top:0">
+    <div class="wrap">
+      <div class="head center">
+        <span class="eyebrow">Идеи</span>
+        <h2>Что можно сделать</h2>
+        <p>Любую вашу идею. Вот что заказывают чаще всего.</p>
+      </div>
+      <div class="ideas" id="ideas-list"></div>
+    </div>
+  </section>
+
+  <section class="meet">
+    <div class="wrap meet-grid">
+      <img src="images/frames/beach.jpg" alt="Peep и Peak на пляже" loading="lazy">
+      <div>
+        <span class="eyebrow">Знакомьтесь</span>
+        <h2>Peep &amp; Peak — <em>это мы</em>, говорят о них пары</h2>
+        <p style="color:var(--muted)">Он всегда рядом: укрывает пледом, печёт торт со свечой и дарит ей звёзды. Их серии пересылают друг другу со словами «это мы».</p>
+        <div class="traits">
+          <div class="trait"><svg class="ico"><use href="#i-heart"/></svg><span><b>Он</b> — с кулончиком-звёздочкой, заботливый и всегда с сюрпризом.</span></div>
+          <div class="trait"><svg class="ico"><use href="#i-sparkles"/></svg><span><b>Она</b> — с ромашкой и звёздочкой на животике, нежная и мечтательная.</span></div>
+          <div class="trait"><svg class="ico fill"><use href="#i-star5"/></svg><span><b>Звёздочка</b> — их общий знак: «You're my little star».</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="head center">
+        <span class="eyebrow">Как заказать</span>
+        <h2>Три шага до подарка</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Напишите нам</h3><p>В директ Instagram. Расскажите повод и вашу историю.</p></div>
+        <div class="step"><h3>Согласуем сюжет</h3><p>Предложим идею, длительность и срок. Оплата после согласования.</p></div>
+        <div class="step"><h3>Получите видео</h3><p>Пришлём готовое видео в тот же чат. Остаётся подарить.</p></div>
+      </div>
+      <div class="msg">
+        <p><b>Что написать в сообщении:</b> повод, имена или инициалы, дату праздника, длительность видео и пару слов о вашей истории.</p>
+        <div class="btns">
+          <a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg> Написать в директ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="head center"><h2>Вопросы</h2></div>
+      <div class="faq">
+        <details><summary>Можно любую идею?</summary><p>Да. Опишите её в сообщении, и Peep &amp; Peak её сыграют. Если что-то сложно показать, предложим, как сделать ещё красивее.</p></details>
+        <details><summary>Какие надписи можно добавить?</summary><p>Имена, инициалы, даты и короткие фразы. Они становятся частью сцены: в небе, на торте, на песке, на подушке.</p></details>
+        <details><summary>Сколько ждать?</summary><p>Обычно 3–7 дней. Видео на 180 секунд — дольше, срок скажем сразу. Если праздник совсем скоро, напишите, постараемся успеть.</p></details>
+        <details><summary>Как оплатить?</summary><p>После того как согласуем сюжет, пришлём удобный способ оплаты. До этого платить ничего не нужно.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="final">
+        <img src="images/frames/emma-pillow.jpg" alt="" loading="lazy">
+        <div>
+          <h2>Удивите вторую половинку</h2>
+          <p>Напишите нам, расскажите вашу историю, и Peep &amp; Peak превратят её в подарок, который будут пересматривать годами.</p>
+          <div class="btns">
+            <a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg> Написать в Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="year">2026</span> Peep &amp; Peak. You're my little star.</span>
+    <nav>
+      <a data-link="profile">Instagram</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="float">
+  <a class="ig" data-link="ig" aria-label="Написать в Instagram"><svg class="ico"><use href="#i-instagram"/></svg></a>
+</div>
+
+<div class="modal" id="modal" hidden>
+  <button class="modal-close" id="modal-close" aria-label="Закрыть">×</button>
+  <div class="modal-box" id="modal-box"></div>
+</div>
+
+<script>
+  /* ============ НАСТРОЙКИ: меняйте здесь ============ */
+  const CONFIG = {
+    instagram: "peepandpeak",   // ник в Instagram
+    // Цены: sec — длительность, price — цена в $, hit/premium — выделение карточки
+    tiers: [
+      { sec: 10,  name: "Открытка", price: 47,  text: "Короткое поздравление: одна сцена и ваше имя в кадре." },
+      { sec: 20,  name: "Момент",   price: 69,  text: "Один тёплый момент вашей истории с надписью." },
+      { sec: 40,  name: "Сцена",    price: 129, text: "Полноценная сцена по вашему сюжету.", hit: true },
+      { sec: 60,  name: "История",  price: 199, text: "Маленькая серия: начало, развитие и финал." },
+      { sec: 180, name: "Фильм",    price: 499, text: "Мини-фильм о вашей любви: несколько сцен и локаций.", premium: true },
+    ],
+    // Видео-примеры с YouTube
+    videos: [
+      "https://youtube.com/shorts/dCV7vGV43Cg",
+      "https://youtube.com/shorts/vRxWtBrTIzU",
+      "https://youtube.com/shorts/buBhIAuzPDg",
+      "https://youtube.com/shorts/bsfbB4PPT0o",
+    ],
+    ideas: [
+      { img: "emma-cake",   title: "Торт с именем",      text: "Имя и дата кремом на праздничном торте." },
+      { img: "emma-pillow", title: "Имена на сердце",    text: "Светящаяся надпись «вместе навсегда»." },
+      { img: "sky-love",    title: "Признание в небе",   text: "Самолёт пишет облаками ваши слова." },
+      { img: "emma-sand",   title: "Имена на песке",     text: "Сердце на закатном пляже." },
+      { img: "jewelry",     title: "Подарок-сюрприз",    text: "Кольцо или украшение для неё." },
+      { img: "gazebo",      title: "Вечер под звёздами", text: "Беседка, гирлянды и тёплые слова." },
+    ],
+    occasions: ["День рождения", "Годовщина", "Предложение руки и сердца", "Признание в любви", "14 февраля", "Свадьба", "Помириться", "Скучаю на расстоянии"],
+    reels: ["emma-pillow", "fries", "emma-cake", "star-sky", "sky-love", "beach", "emma-sand", "pool-girl", "blanket", "cake", "sofa", "jewelry", "kiss", "laptop", "sunset", "heart", "gazebo", "bed"],
+  };
+  /* =================================================== */
+
+  const $ = (s) => document.querySelector(s);
+  const ic = (n, c = "") => `<svg class="ico ${c}"><use href="#i-${n}"/></svg>`;
+  const LINKS = {
+    ig: `https://ig.me/m/${CONFIG.instagram}`,
+    profile: `https://instagram.com/${CONFIG.instagram}`,
+  };
+  document.querySelectorAll("[data-link]").forEach((a) => {
+    a.href = LINKS[a.dataset.link];
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+  $("#year").textContent = new Date().getFullYear();
+  $("#from-price").textContent = "$" + Math.min(...CONFIG.tiers.map((t) => t.price));
+
+  // лента кадров
+  const cols = [[], [], []];
+  CONFIG.reels.forEach((n, i) => cols[i % 3].push(`<img src="images/frames/${n}.jpg" alt="" loading="${i < 6 ? "eager" : "lazy"}">`));
+  $("#reels").innerHTML = cols.map((c, i) => `<div class="reel-col ${i === 1 ? "down" : ""}">${c.join("")}${c.join("")}</div>`).join("");
+
+  // бегущая строка
+  const m = CONFIG.occasions.map((o) => `<span>${o}${ic("star5", "fill")}</span>`).join("");
+  $("#marquee").innerHTML = m + m;
+
+  // цены
+  $("#tiers").innerHTML = CONFIG.tiers.map((t) => `
+    <article class="tier ${t.hit ? "hit" : ""} ${t.premium ? "premium" : ""}">
+      ${t.hit ? '<span class="badge">Популярное</span>' : ""}
+      <span class="dur">${ic("clock")} ${t.sec} сек</span>
+      <h3>${t.name}</h3>
+      <div class="price">$${t.price}</div>
+      <p>${t.text}</p>
+    </article>`).join("");
+
+  // идеи
+  $("#ideas-list").innerHTML = CONFIG.ideas.map((d) => `
+    <article class="idea">
+      <img src="images/frames/${d.img}.jpg" alt="${d.title}" loading="lazy">
+      <div><h3>${d.title}</h3><p>${d.text}</p></div>
+    </article>`).join("");
+
+  // видео с YouTube
+  const ytId = (u) => (String(u).match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/) || [])[1];
+  const fallback = ["emma-cake", "emma-pillow", "sky-love", "emma-sand"];
+  $("#videos").innerHTML = CONFIG.videos.map((u, i) => {
+    const id = ytId(u);
+    return `<button type="button" class="video" data-yt="${id}" aria-label="Смотреть пример ${i + 1}">
+      <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='images/frames/${fallback[i % fallback.length]}.jpg'">
+      <span class="play">${ic("play", "fill")}</span>
+    </button>`;
+  }).join("");
+  const modal = $("#modal");
+  const close = () => { modal.hidden = true; $("#modal-box").innerHTML = ""; };
+  document.querySelectorAll("[data-yt]").forEach((b) => b.addEventListener("click", () => {
+    $("#modal-box").innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Видео Peep & Peak"></iframe>`;
+    modal.hidden = false;
+  }));
+  $("#modal-close").addEventListener("click", close);
+  modal.addEventListener("click", (e) => { if (e.target === modal) close(); });
+  addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) close(); });
+</script>
+</body>
 </html>

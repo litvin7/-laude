@@ -2,14 +2,13 @@
 
 Информационная страница об именных видео-поздравлениях с парой капибар Peep & Peak. Без форм: клиенты пишут в личку Instagram или Telegram.
 
-Сайт — один файл `public/index.html` и картинки в `public/images/frames/`.
+Сайт — один файл `index.html` и картинки в `images/frames/`. Раздаётся через GitHub Pages: https://litvin7.github.io/-laude/
 
 ## Что поменять
 
-В конце `public/index.html` есть блок `CONFIG`:
+В конце `index.html` есть блок `CONFIG`:
 
 - `instagram` — ник в Instagram (кнопки ведут в директ);
-- `telegram` — ник в Telegram для личных сообщений;
 - `tiers` — цены: длительность, название, цена, короткое описание;
 - `videos` — ссылки на YouTube Shorts с примерами;
 - `ideas` — идеи с картинками;
@@ -20,5 +19,4 @@
 
 ## Публикация
 
-- **GitHub Pages:** Settings → Pages → ветка с сайтом, папка `/ (root)`. Корневой `index.html` перенаправляет на `public/`.
-- **Cloudflare:** подключите репозиторий в Workers & Pages, `wrangler.jsonc` уже настроен на папку `public/`. Там же можно привязать свой домен.
+GitHub Pages: Settings → Pages → ветка с сайтом, папка `/ (root)`. Каждый пуш обновляет сайт через 1–2 минуты. Свой домен подключается там же (Custom domain).

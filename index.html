@@ -127,9 +127,9 @@
 
 
   /* идеи по 2 в ряд */
-  .ideas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; max-width: 920px; margin: 0 auto; }
-  .idea { display: grid; grid-template-columns: 150px 1fr; gap: 16px; align-items: center; padding: 12px; border-radius: 14px; background: #fff; border: 1px solid var(--line); }
-  .idea img { width: 150px; aspect-ratio: 1; object-fit: cover; border-radius: 10px; }
+  .ideas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .idea { display: grid; grid-template-columns: 170px 1fr; gap: 16px; align-items: center; padding: 12px; border-radius: 14px; background: #fff; border: 1px solid var(--line); }
+  .idea img { width: 170px; aspect-ratio: 1; object-fit: cover; border-radius: 10px; }
   .idea h3 { margin-bottom: 4px; }
   .idea p { color: var(--muted); font-size: 15px; line-height: 1.45; }
 
@@ -153,7 +153,8 @@
   .msg b { color: var(--ink); }
 
   /* вопросы */
-  .faq { max-width: 780px; margin: 0 auto; }
+  .faq { padding: 4px 24px; border-radius: 14px; background: #fff; border: 1px solid var(--line); }
+  .faq details:last-child { border-bottom: 0; }
   details { border-bottom: 1px solid var(--line); padding: 18px 0; }
   summary { cursor: pointer; font-weight: 800; font-size: 18px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
   summary::-webkit-details-marker { display: none; }

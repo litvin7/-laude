@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Peep &amp; Peak — именные видео-поздравления с капибарами</title>
-<meta name="description" content="Именные видео с Peep &amp; Peak, парой капибар из сериала «It's us»: день рождения, годовщина, признание, предложение. Ваши имена прямо в сцене. От $47.">
-<meta property="og:title" content="Peep &amp; Peak — именные видео-поздравления">
+<title>Peep &amp; Peak — personalized capybara love videos</title>
+<meta name="description" content="Personalized videos starring Peep &amp; Peak, a capybara couple: birthdays, anniversaries, love confessions, proposals. Your names right inside the scene. From $47.">
+<meta property="og:title" content="Peep &amp; Peak — personalized capybara love videos">
 <meta property="og:image" content="images/frames/emma-pillow.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -182,12 +182,24 @@
   .float a svg { width: 26px; height: 26px; }
   .float .ig { background: var(--ig); }
 
+
+  /* переключатель языка */
+  .lang { position: relative; display: inline-flex; align-items: center; }
+  .lang svg.ico { position: absolute; inset-inline-start: 10px; width: 16px; height: 16px; color: var(--muted); pointer-events: none; }
+  .lang select { appearance: none; -webkit-appearance: none; font: inherit; font-size: 14px; font-weight: 800; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 8px 30px 8px 32px; cursor: pointer;
+    background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 16px) 52%, calc(100% - 11px) 52%; background-size: 5px 5px; background-repeat: no-repeat; }
+  .lang select:focus-visible { outline: 3px solid var(--honey); outline-offset: 2px; }
+  [dir="rtl"] .lang select { padding: 8px 32px 8px 30px; background-position: 16px 52%, 11px 52%; }
+  [dir="rtl"] .badge { left: auto; right: 18px; }
+  [dir="rtl"] .float { right: auto; left: 18px; }
+  .marquee-track { direction: ltr; }
+
   @media (max-width: 1000px) {
     .hero-grid, .meet-grid { grid-template-columns: 1fr; }
     .reels { height: 340px; order: -1; }
     .tiers { grid-template-columns: repeat(3, 1fr); }
     .steps { grid-template-columns: 1fr; }
-    .nav-links > a:not(.btn) { display: none; }
+    .nav-links > a { display: none; }
     section { padding: 64px 0; }
   }
   @media (max-width: 720px) {
@@ -243,6 +255,7 @@
     <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
     <symbol id="i-message" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
     <symbol id="i-film" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
 </defs></svg>
 
 <header class="nav">
@@ -252,9 +265,13 @@
       <span>Peep <em>&amp;</em> Peak</span>
     </a>
     <nav class="nav-links">
-      <a href="#examples">Примеры</a>
-      <a href="#prices">Цены</a>
-      <a href="#how">Как заказать</a>
+      <a href="#examples" data-i18n="nav_examples">Examples</a>
+      <a href="#prices" data-i18n="nav_prices">Prices</a>
+      <a href="#how" data-i18n="nav_how">How to order</a>
+      <label class="lang">
+        <svg class="ico"><use href="#i-globe"/></svg>
+        <select id="lang-select" data-i18n-aria="lang"></select>
+      </label>
     </nav>
   </div>
 </header>
@@ -264,15 +281,15 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <h1>Ваша история любви — <em>новая серия</em> Peep&nbsp;&amp;&nbsp;Peak</h1>
-        <p class="lead">Пара капибар, в которой влюблённые узнают себя, разыграет вашу историю. Ваши имена и даты становятся частью сцены: на торте, в небе, на песке.</p>
+        <h1 data-i18n-html="hero_h1">Your love story — <em>a new episode</em> of Peep&nbsp;&amp;&nbsp;Peak</h1>
+        <p class="lead" data-i18n="hero_lead"></p>
         <div class="btns">
-          <a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg> Написать в Instagram</a>
+          <a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg> <span data-i18n="cta_ig">Message us on Instagram</span></a>
         </div>
         <div class="stats">
-          <div class="stat"><b>152K</b><span>просмотров у одной серии</span></div>
-          <div class="stat"><b>3</b><span>сезона историй о любви</span></div>
-          <div class="stat"><b id="from-price">$47</b><span>видео от</span></div>
+          <div class="stat"><b>152K</b><span data-i18n="stat_views"></span></div>
+          <div class="stat"><b>3</b><span data-i18n="stat_seasons"></span></div>
+          <div class="stat"><b id="from-price">$47</b><span data-i18n="stat_from"></span></div>
         </div>
       </div>
       <div class="reels" id="reels" aria-hidden="true"></div>
@@ -284,9 +301,9 @@
   <section id="examples">
     <div class="wrap">
       <div class="head">
-        <span class="eyebrow">Примеры</span>
-        <h2>Так выглядит <em>ваше поздравление</em></h2>
-        <p>Реальные именные видео, которые мы сделали на заказ. Нажмите, чтобы посмотреть.</p>
+        <span class="eyebrow" data-i18n="ex_eyebrow"></span>
+        <h2 data-i18n-html="ex_h2"></h2>
+        <p data-i18n="ex_p"></p>
       </div>
       <div class="videos" id="videos"></div>
     </div>
@@ -295,26 +312,21 @@
   <section id="prices" class="prices">
     <div class="wrap">
       <div class="head center">
-        <span class="eyebrow">Цены</span>
-        <h2>Выберите длительность</h2>
-        <p>Каждое видео делаем вручную под вашу историю. Оплата после того, как согласуем сюжет.</p>
+        <span class="eyebrow" data-i18n="pr_eyebrow"></span>
+        <h2 data-i18n="pr_h2"></h2>
+        <p data-i18n="pr_p"></p>
       </div>
       <div class="tiers" id="tiers"></div>
-      <div class="includes">
-        <span><svg class="ico"><use href="#i-check"/></svg>Ваши имена и даты в кадре</span>
-        <span><svg class="ico"><use href="#i-check"/></svg>Сюжет под ваш повод</span>
-        <span><svg class="ico"><use href="#i-check"/></svg>Одна правка в подарок</span>
-        <span><svg class="ico"><use href="#i-clock"/></svg>Обычно 3–7 дней</span>
-      </div>
+      <div class="includes" id="includes"></div>
     </div>
   </section>
 
   <section id="ideas" style="padding-top:0">
     <div class="wrap">
       <div class="head center">
-        <span class="eyebrow">Идеи</span>
-        <h2>Что можно сделать</h2>
-        <p>Любую вашу идею. Вот что заказывают чаще всего.</p>
+        <span class="eyebrow" data-i18n="id_eyebrow"></span>
+        <h2 data-i18n="id_h2"></h2>
+        <p data-i18n="id_p"></p>
       </div>
       <div class="ideas" id="ideas-list"></div>
     </div>
@@ -322,15 +334,15 @@
 
   <section class="meet">
     <div class="wrap meet-grid">
-      <img src="images/frames/beach.jpg" alt="Peep и Peak на пляже" loading="lazy">
+      <img src="images/frames/beach.jpg" data-i18n-alt="meet_alt" alt="Peep and Peak on the beach" loading="lazy">
       <div>
-        <span class="eyebrow">Знакомьтесь</span>
-        <h2>Peep &amp; Peak — <em>это мы</em>, говорят о них пары</h2>
-        <p style="color:var(--muted)">Он всегда рядом: укрывает пледом, печёт торт со свечой и дарит ей звёзды. Их серии пересылают друг другу со словами «это мы».</p>
+        <span class="eyebrow" data-i18n="meet_eyebrow"></span>
+        <h2 data-i18n-html="meet_h2"></h2>
+        <p style="color:var(--muted)" data-i18n="meet_p"></p>
         <div class="traits">
-          <div class="trait"><svg class="ico"><use href="#i-heart"/></svg><span><b>Он</b> — с кулончиком-звёздочкой, заботливый и всегда с сюрпризом.</span></div>
-          <div class="trait"><svg class="ico"><use href="#i-sparkles"/></svg><span><b>Она</b> — с ромашкой и звёздочкой на животике, нежная и мечтательная.</span></div>
-          <div class="trait"><svg class="ico fill"><use href="#i-star5"/></svg><span><b>Звёздочка</b> — их общий знак: «You're my little star».</span></div>
+          <div class="trait"><svg class="ico"><use href="#i-heart"/></svg><span data-i18n-html="meet_he"></span></div>
+          <div class="trait"><svg class="ico"><use href="#i-sparkles"/></svg><span data-i18n-html="meet_she"></span></div>
+          <div class="trait"><svg class="ico fill"><use href="#i-star5"/></svg><span data-i18n-html="meet_star"></span></div>
         </div>
       </div>
     </div>
@@ -339,18 +351,14 @@
   <section id="how">
     <div class="wrap">
       <div class="head center">
-        <span class="eyebrow">Как заказать</span>
-        <h2>Три шага до подарка</h2>
+        <span class="eyebrow" data-i18n="how_eyebrow"></span>
+        <h2 data-i18n="how_h2"></h2>
       </div>
-      <div class="steps">
-        <div class="step"><h3>Напишите нам</h3><p>В директ Instagram. Расскажите повод и вашу историю.</p></div>
-        <div class="step"><h3>Согласуем сюжет</h3><p>Предложим идею, длительность и срок. Оплата после согласования.</p></div>
-        <div class="step"><h3>Получите видео</h3><p>Пришлём готовое видео в тот же чат. Остаётся подарить.</p></div>
-      </div>
+      <div class="steps" id="steps"></div>
       <div class="msg">
-        <p><b>Что написать в сообщении:</b> повод, имена или инициалы, дату праздника, длительность видео и пару слов о вашей истории.</p>
+        <p data-i18n-html="how_msg"></p>
         <div class="btns">
-          <a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg> Написать в директ</a>
+          <a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg> <span data-i18n="cta_dm"></span></a>
         </div>
       </div>
     </div>
@@ -358,13 +366,8 @@
 
   <section id="faq" style="padding-top:0">
     <div class="wrap">
-      <div class="head center"><h2>Вопросы</h2></div>
-      <div class="faq">
-        <details><summary>Можно любую идею?</summary><p>Да. Опишите её в сообщении, и Peep &amp; Peak её сыграют. Если что-то сложно показать, предложим, как сделать ещё красивее.</p></details>
-        <details><summary>Какие надписи можно добавить?</summary><p>Имена, инициалы, даты и короткие фразы. Они становятся частью сцены: в небе, на торте, на песке, на подушке.</p></details>
-        <details><summary>Сколько ждать?</summary><p>Обычно 3–7 дней. Видео на 180 секунд — дольше, срок скажем сразу. Если праздник совсем скоро, напишите, постараемся успеть.</p></details>
-        <details><summary>Как оплатить?</summary><p>После того как согласуем сюжет, пришлём удобный способ оплаты. До этого платить ничего не нужно.</p></details>
-      </div>
+      <div class="head center"><h2 data-i18n="faq_h2"></h2></div>
+      <div class="faq" id="faq-list"></div>
     </div>
   </section>
 
@@ -373,10 +376,10 @@
       <div class="final">
         <img src="images/frames/emma-pillow.jpg" alt="" loading="lazy">
         <div>
-          <h2>Удивите вторую половинку</h2>
-          <p>Напишите нам, расскажите вашу историю, и Peep &amp; Peak превратят её в подарок, который будут пересматривать годами.</p>
+          <h2 data-i18n="final_h2"></h2>
+          <p data-i18n="final_p"></p>
           <div class="btns">
-            <a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg> Написать в Instagram</a>
+            <a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg> <span data-i18n="cta_ig"></span></a>
           </div>
         </div>
       </div>
@@ -395,105 +398,1392 @@
 </footer>
 
 <div class="float">
-  <a class="ig" data-link="ig" aria-label="Написать в Instagram"><svg class="ico"><use href="#i-instagram"/></svg></a>
+  <a class="ig" data-link="ig" data-i18n-aria="cta_ig" aria-label="Message us on Instagram"><svg class="ico"><use href="#i-instagram"/></svg></a>
 </div>
 
 <div class="modal" id="modal" hidden>
-  <button class="modal-close" id="modal-close" aria-label="Закрыть">×</button>
+  <button class="modal-close" id="modal-close" data-i18n-aria="close" aria-label="Close">×</button>
   <div class="modal-box" id="modal-box"></div>
 </div>
 
 <script>
-  /* ============ НАСТРОЙКИ: меняйте здесь ============ */
+  /* ============ SETTINGS / НАСТРОЙКИ ============ */
   const CONFIG = {
-    instagram: "peepandpeak",   // ник в Instagram
-    // Цены: sec — длительность, price — цена в $, hit/premium — выделение карточки
+    instagram: "peepandpeak",
+    defaultLang: "en",
+    // Цены: sec — длительность, price — цена в $. Названия и описания — в переводах (tiers).
     tiers: [
-      { sec: 10,  name: "Открытка", price: 47,  text: "Короткое поздравление: одна сцена и ваше имя в кадре." },
-      { sec: 20,  name: "Момент",   price: 69,  text: "Один тёплый момент вашей истории с надписью." },
-      { sec: 40,  name: "Сцена",    price: 129, text: "Полноценная сцена по вашему сюжету.", hit: true },
-      { sec: 60,  name: "История",  price: 199, text: "Маленькая серия: начало, развитие и финал." },
-      { sec: 180, name: "Фильм",    price: 499, text: "Мини-фильм о вашей любви: несколько сцен и локаций.", premium: true },
+      { sec: 10,  price: 47 },
+      { sec: 20,  price: 69 },
+      { sec: 40,  price: 129, hit: true },
+      { sec: 60,  price: 199 },
+      { sec: 180, price: 499, premium: true },
     ],
-    // Видео-примеры с YouTube
     videos: [
       "https://youtube.com/shorts/dCV7vGV43Cg",
       "https://youtube.com/shorts/vRxWtBrTIzU",
       "https://youtube.com/shorts/buBhIAuzPDg",
       "https://youtube.com/shorts/bsfbB4PPT0o",
     ],
-    ideas: [
-      { img: "emma-cake",   title: "Торт с именем",      text: "Имя и дата кремом на праздничном торте." },
-      { img: "emma-pillow", title: "Имена на сердце",    text: "Светящаяся надпись «вместе навсегда»." },
-      { img: "sky-love",    title: "Признание в небе",   text: "Самолёт пишет облаками ваши слова." },
-      { img: "emma-sand",   title: "Имена на песке",     text: "Сердце на закатном пляже." },
-      { img: "jewelry",     title: "Подарок-сюрприз",    text: "Кольцо или украшение для неё." },
-      { img: "gazebo",      title: "Вечер под звёздами", text: "Беседка, гирлянды и тёплые слова." },
-    ],
-    occasions: ["День рождения", "Годовщина", "Предложение руки и сердца", "Признание в любви", "14 февраля", "Свадьба", "Помириться", "Скучаю на расстоянии"],
+    ideaImages: ["emma-cake", "emma-pillow", "sky-love", "emma-sand", "jewelry", "gazebo"],
     reels: ["emma-pillow", "fries", "emma-cake", "star-sky", "sky-love", "beach", "emma-sand", "pool-girl", "blanket", "cake", "sofa", "jewelry", "kiss", "laptop", "sunset", "heart", "gazebo", "bed"],
   };
-  /* =================================================== */
+
+  // Языки: код → название и шрифт для письменности (если нужен)
+  const LANGS = [
+    { code: "en", name: "English" },
+    { code: "zh", name: "中文", font: "Noto Sans SC" },
+    { code: "hi", name: "हिन्दी", font: "Noto Sans Devanagari" },
+    { code: "es", name: "Español" },
+    { code: "fr", name: "Français" },
+    { code: "ar", name: "العربية", font: "Noto Sans Arabic", rtl: true },
+    { code: "bn", name: "বাংলা", font: "Noto Sans Bengali" },
+    { code: "pt", name: "Português" },
+    { code: "ru", name: "Русский" },
+  ];
+
+  /* ============ ПЕРЕВОДЫ ============ */
+  const I18N = {
+ "en": {
+  "title": "Peep & Peak — personalized capybara love videos",
+  "desc": "Personalized videos starring Peep & Peak, a capybara couple: birthdays, anniversaries, love confessions, proposals. Your names right inside the scene. From $47.",
+  "lang": "Language",
+  "nav_examples": "Examples",
+  "nav_prices": "Prices",
+  "nav_how": "How to order",
+  "hero_h1": "Your love story — <em>a new episode</em> of Peep&nbsp;&amp;&nbsp;Peak",
+  "hero_lead": "The capybara couple that lovers see themselves in will act out your story. Your names and dates become part of the scene: on a cake, in the sky, in the sand.",
+  "cta_ig": "Message us on Instagram",
+  "cta_dm": "Send a DM",
+  "stat_views": "views on a single episode",
+  "stat_seasons": "seasons of love stories",
+  "stat_from": "starting price",
+  "occasions": [
+   "Birthday",
+   "Anniversary",
+   "Marriage proposal",
+   "Love confession",
+   "Valentine’s Day",
+   "Wedding",
+   "Making up",
+   "Missing you from afar"
+  ],
+  "ex_eyebrow": "Examples",
+  "ex_h2": "This is what <em>your greeting</em> looks like",
+  "ex_p": "Real personalized videos we made for our clients. Tap to watch.",
+  "ex_watch": "Watch example",
+  "pr_eyebrow": "Prices",
+  "pr_h2": "Choose the length",
+  "pr_p": "Every video is made by hand for your story. You pay once we’ve agreed on the plot.",
+  "popular": "Popular",
+  "sec": "sec",
+  "tiers": [
+   {
+    "n": "Postcard",
+    "t": "A short greeting: one scene with your name in the frame."
+   },
+   {
+    "n": "Moment",
+    "t": "One warm moment from your story, with a caption."
+   },
+   {
+    "n": "Scene",
+    "t": "A full scene based on your story."
+   },
+   {
+    "n": "Story",
+    "t": "A little episode with a beginning, middle and end."
+   },
+   {
+    "n": "Film",
+    "t": "A mini-film about your love: several scenes and locations."
+   }
+  ],
+  "inc": [
+   "Your names and dates in the frame",
+   "A plot for your occasion",
+   "One revision included",
+   "Usually 3–7 days"
+  ],
+  "id_eyebrow": "Ideas",
+  "id_h2": "What we can make",
+  "id_p": "Any idea you have. Here’s what people order most.",
+  "ideas": [
+   {
+    "t": "Cake with a name",
+    "d": "Name and date piped on a birthday cake."
+   },
+   {
+    "t": "Names on a heart",
+    "d": "A glowing “together forever” message."
+   },
+   {
+    "t": "Love note in the sky",
+    "d": "A plane writes your words in clouds."
+   },
+   {
+    "t": "Names in the sand",
+    "d": "A heart on a sunset beach."
+   },
+   {
+    "t": "Surprise gift",
+    "d": "A ring or jewelry for her."
+   },
+   {
+    "t": "Evening under the stars",
+    "d": "A gazebo, string lights and warm words."
+   }
+  ],
+  "meet_eyebrow": "Meet the couple",
+  "meet_h2": "Peep &amp; Peak: <em>“that’s us,”</em> couples say",
+  "meet_p": "He’s always there for her: tucks her in with a blanket, bakes a cake with a candle and gives her the stars. Couples send their episodes to each other saying “that’s us.”",
+  "meet_he": "<b>He</b> wears a little star pendant, caring and always full of surprises.",
+  "meet_she": "<b>She</b> has a daisy and a star on her tummy, gentle and dreamy.",
+  "meet_star": "<b>The star</b> is their shared symbol: “You’re my little star.”",
+  "meet_alt": "Peep and Peak on the beach",
+  "how_eyebrow": "How to order",
+  "how_h2": "Three steps to the gift",
+  "steps": [
+   {
+    "h": "Message us",
+    "p": "In Instagram DMs. Tell us the occasion and your story."
+   },
+   {
+    "h": "We agree on the plot",
+    "p": "We suggest an idea, length and timing. You pay after we agree."
+   },
+   {
+    "h": "Get your video",
+    "p": "We send the finished video in the same chat. All that’s left is to give it."
+   }
+  ],
+  "how_msg": "<b>What to include in your message:</b> the occasion, names or initials, the date, video length and a few words about your story.",
+  "faq_h2": "Questions",
+  "faq": [
+   {
+    "q": "Can you do any idea?",
+    "a": "Yes. Describe it in your message and Peep & Peak will act it out. If something is hard to show, we’ll suggest how to make it even better."
+   },
+   {
+    "q": "What text can you add?",
+    "a": "Names, initials, dates and short phrases. They become part of the scene: in the sky, on a cake, in the sand, on a pillow."
+   },
+   {
+    "q": "How long does it take?",
+    "a": "Usually 3–7 days. A 180-second video takes longer, and we’ll tell you the timing right away. If your celebration is very soon, message us and we’ll do our best."
+   },
+   {
+    "q": "How do I pay?",
+    "a": "Once we’ve agreed on the plot, we’ll send you a convenient payment method. You don’t pay anything before that."
+   }
+  ],
+  "final_h2": "Surprise your other half",
+  "final_p": "Message us, tell us your story, and Peep & Peak will turn it into a gift they’ll rewatch for years.",
+  "close": "Close"
+ },
+ "zh": {
+  "title": "Peep & Peak — 水豚情侣定制爱情视频",
+  "desc": "由水豚情侣 Peep & Peak 出演的定制视频：生日、纪念日、表白、求婚。你们的名字就在画面里。$47 起。",
+  "lang": "语言",
+  "nav_examples": "作品示例",
+  "nav_prices": "价格",
+  "nav_how": "如何下单",
+  "hero_h1": "你们的爱情故事，<em>Peep&nbsp;&amp;&nbsp;Peak 的新一集</em>",
+  "hero_lead": "这对让无数情侣看到自己的水豚，将演绎你们的故事。你们的名字和日期会成为画面的一部分：写在蛋糕上、天空中、沙滩上。",
+  "cta_ig": "在 Instagram 联系我们",
+  "cta_dm": "发送私信",
+  "stat_views": "单集播放量",
+  "stat_seasons": "季爱情故事",
+  "stat_from": "起价",
+  "occasions": [
+   "生日",
+   "纪念日",
+   "求婚",
+   "表白",
+   "情人节",
+   "婚礼",
+   "和好",
+   "异地思念"
+  ],
+  "ex_eyebrow": "作品示例",
+  "ex_h2": "这就是<em>你的专属祝福</em>",
+  "ex_p": "我们为客户制作的真实定制视频。点击观看。",
+  "ex_watch": "观看示例",
+  "pr_eyebrow": "价格",
+  "pr_h2": "选择时长",
+  "pr_p": "每个视频都根据你们的故事手工制作。确定剧情后再付款。",
+  "popular": "热门",
+  "sec": "秒",
+  "tiers": [
+   {
+    "n": "贺卡",
+    "t": "简短祝福：一个场景，画面中有你的名字。"
+   },
+   {
+    "n": "瞬间",
+    "t": "你们故事中的一个温暖瞬间，配上文字。"
+   },
+   {
+    "n": "场景",
+    "t": "根据你们的故事打造的完整场景。"
+   },
+   {
+    "n": "故事",
+    "t": "一集小故事：有开头、发展和结尾。"
+   },
+   {
+    "n": "电影",
+    "t": "关于你们爱情的迷你电影：多个场景和地点。"
+   }
+  ],
+  "inc": [
+   "画面中有你们的名字和日期",
+   "为你的场合定制剧情",
+   "含一次修改",
+   "通常 3–7 天"
+  ],
+  "id_eyebrow": "创意",
+  "id_h2": "我们能做什么",
+  "id_p": "你的任何想法都可以。以下是最受欢迎的。",
+  "ideas": [
+   {
+    "t": "带名字的蛋糕",
+    "d": "用奶油把名字和日期写在生日蛋糕上。"
+   },
+   {
+    "t": "爱心上的名字",
+    "d": "闪亮的“永远在一起”字样。"
+   },
+   {
+    "t": "天空中的表白",
+    "d": "飞机用云朵写下你的话。"
+   },
+   {
+    "t": "沙滩上的名字",
+    "d": "夕阳海滩上的一颗爱心。"
+   },
+   {
+    "t": "惊喜礼物",
+    "d": "送给她的戒指或首饰。"
+   },
+   {
+    "t": "星空下的夜晚",
+    "d": "凉亭、串灯和温暖的话语。"
+   }
+  ],
+  "meet_eyebrow": "认识一下",
+  "meet_h2": "Peep &amp; Peak：情侣们说<em>“这就是我们”</em>",
+  "meet_p": "他总在她身边：为她盖上毯子，烤一个插着蜡烛的蛋糕，把星星送给她。情侣们互相转发他们的视频，说一句“这就是我们”。",
+  "meet_he": "<b>他</b>戴着星星吊坠，体贴入微，总有惊喜。",
+  "meet_she": "<b>她</b>头戴小雏菊，肚子上有颗星星，温柔又爱幻想。",
+  "meet_star": "<b>星星</b>是他们共同的标志：“You’re my little star”。",
+  "meet_alt": "Peep 和 Peak 在海滩上",
+  "how_eyebrow": "如何下单",
+  "how_h2": "三步收到礼物",
+  "steps": [
+   {
+    "h": "联系我们",
+    "p": "通过 Instagram 私信。告诉我们场合和你们的故事。"
+   },
+   {
+    "h": "确定剧情",
+    "p": "我们会提出创意、时长和交付时间。确认后再付款。"
+   },
+   {
+    "h": "收到视频",
+    "p": "我们会在同一个聊天中发送成品视频。剩下的就是送出惊喜。"
+   }
+  ],
+  "how_msg": "<b>私信里请写：</b>场合、名字或首字母、日期、视频时长，以及几句关于你们故事的话。",
+  "faq_h2": "常见问题",
+  "faq": [
+   {
+    "q": "什么创意都可以吗？",
+    "a": "可以。在私信里描述你的想法，Peep & Peak 就会演出来。如果某些内容难以呈现，我们会建议更好的做法。"
+   },
+   {
+    "q": "可以加哪些文字？",
+    "a": "名字、首字母、日期和简短的话。它们会成为画面的一部分：在天空中、蛋糕上、沙滩上、抱枕上。"
+   },
+   {
+    "q": "需要多久？",
+    "a": "通常 3–7 天。180 秒的视频需要更长时间，我们会立即告诉你交付时间。如果日子很近，请联系我们，我们会尽力赶上。"
+   },
+   {
+    "q": "怎么付款？",
+    "a": "确定剧情后，我们会发给你方便的付款方式。在此之前无需付款。"
+   }
+  ],
+  "final_h2": "给另一半一个惊喜",
+  "final_p": "联系我们，讲讲你们的故事，Peep & Peak 会把它变成一份值得反复观看多年的礼物。",
+  "close": "关闭"
+ },
+ "hi": {
+  "title": "Peep & Peak — कैपीबारा के साथ पर्सनलाइज़्ड लव वीडियो",
+  "desc": "कैपीबारा जोड़ी Peep & Peak के साथ पर्सनलाइज़्ड वीडियो: जन्मदिन, सालगिरह, प्यार का इज़हार, प्रपोज़ल। आपके नाम सीधे सीन में। $47 से।",
+  "lang": "भाषा",
+  "nav_examples": "उदाहरण",
+  "nav_prices": "कीमतें",
+  "nav_how": "ऑर्डर कैसे करें",
+  "hero_h1": "आपकी प्रेम कहानी — Peep&nbsp;&amp;&nbsp;Peak का <em>नया एपिसोड</em>",
+  "hero_lead": "कैपीबारा की वह जोड़ी, जिसमें प्रेमी खुद को देखते हैं, आपकी कहानी निभाएगी। आपके नाम और तारीखें सीन का हिस्सा बनेंगी: केक पर, आसमान में, रेत पर।",
+  "cta_ig": "Instagram पर मैसेज करें",
+  "cta_dm": "मैसेज भेजें",
+  "stat_views": "एक एपिसोड के व्यूज़",
+  "stat_seasons": "प्रेम कहानियों के सीज़न",
+  "stat_from": "शुरुआती कीमत",
+  "occasions": [
+   "जन्मदिन",
+   "सालगिरह",
+   "शादी का प्रस्ताव",
+   "प्यार का इज़हार",
+   "वैलेंटाइन डे",
+   "शादी",
+   "सुलह",
+   "दूरी में याद"
+  ],
+  "ex_eyebrow": "उदाहरण",
+  "ex_h2": "ऐसा दिखता है <em>आपका बधाई संदेश</em>",
+  "ex_p": "हमारे ग्राहकों के लिए बनाए गए असली पर्सनलाइज़्ड वीडियो। देखने के लिए टैप करें।",
+  "ex_watch": "उदाहरण देखें",
+  "pr_eyebrow": "कीमतें",
+  "pr_h2": "अवधि चुनें",
+  "pr_p": "हर वीडियो आपकी कहानी के लिए हाथ से बनाया जाता है। कहानी तय होने के बाद ही भुगतान।",
+  "popular": "लोकप्रिय",
+  "sec": "सेकंड",
+  "tiers": [
+   {
+    "n": "पोस्टकार्ड",
+    "t": "छोटा संदेश: एक सीन और फ्रेम में आपका नाम।"
+   },
+   {
+    "n": "पल",
+    "t": "आपकी कहानी का एक प्यारा पल, एक संदेश के साथ।"
+   },
+   {
+    "n": "सीन",
+    "t": "आपकी कहानी पर आधारित पूरा सीन।"
+   },
+   {
+    "n": "कहानी",
+    "t": "एक छोटा एपिसोड: शुरुआत, बीच और अंत।"
+   },
+   {
+    "n": "फ़िल्म",
+    "t": "आपके प्यार पर मिनी-फ़िल्म: कई सीन और लोकेशन।"
+   }
+  ],
+  "inc": [
+   "फ्रेम में आपके नाम और तारीखें",
+   "आपके मौके के हिसाब से कहानी",
+   "एक बदलाव शामिल",
+   "आमतौर पर 3–7 दिन"
+  ],
+  "id_eyebrow": "आइडिया",
+  "id_h2": "हम क्या बना सकते हैं",
+  "id_p": "आपका कोई भी आइडिया। सबसे ज़्यादा यही ऑर्डर किए जाते हैं।",
+  "ideas": [
+   {
+    "t": "नाम वाला केक",
+    "d": "जन्मदिन के केक पर क्रीम से लिखा नाम और तारीख।"
+   },
+   {
+    "t": "दिल पर नाम",
+    "d": "चमकता हुआ संदेश «हमेशा साथ»।"
+   },
+   {
+    "t": "आसमान में इज़हार",
+    "d": "हवाई जहाज़ बादलों से आपके शब्द लिखता है।"
+   },
+   {
+    "t": "रेत पर नाम",
+    "d": "सूर्यास्त के समुद्र तट पर एक दिल।"
+   },
+   {
+    "t": "सरप्राइज़ गिफ़्ट",
+    "d": "उसके लिए अंगूठी या गहना।"
+   },
+   {
+    "t": "तारों भरी शाम",
+    "d": "गज़ेबो, रोशनी की लड़ियाँ और प्यारे शब्द।"
+   }
+  ],
+  "meet_eyebrow": "मिलिए",
+  "meet_h2": "Peep &amp; Peak — जोड़े कहते हैं <em>«ये हम हैं»</em>",
+  "meet_p": "वह हमेशा उसके साथ रहता है: उसे कंबल ओढ़ाता है, मोमबत्ती वाला केक बनाता है और उसे तारे देता है। जोड़े इनके एपिसोड एक-दूसरे को भेजते हैं और कहते हैं «ये हम हैं»।",
+  "meet_he": "<b>वह</b> सितारे वाला लॉकेट पहनता है, परवाह करने वाला और हमेशा सरप्राइज़ के साथ।",
+  "meet_she": "<b>वह</b> डेज़ी का फूल लगाती है और उसके पेट पर एक सितारा है, कोमल और सपनों में खोई।",
+  "meet_star": "<b>सितारा</b> उनका साझा निशान है: «You’re my little star»।",
+  "meet_alt": "समुद्र तट पर Peep और Peak",
+  "how_eyebrow": "ऑर्डर कैसे करें",
+  "how_h2": "तोहफ़े तक तीन कदम",
+  "steps": [
+   {
+    "h": "हमें मैसेज करें",
+    "p": "Instagram डायरेक्ट में। मौका और अपनी कहानी बताएँ।"
+   },
+   {
+    "h": "कहानी तय करें",
+    "p": "हम आइडिया, अवधि और समय सुझाएँगे। तय होने के बाद भुगतान।"
+   },
+   {
+    "h": "वीडियो पाएँ",
+    "p": "तैयार वीडियो उसी चैट में भेजेंगे। बस तोहफ़ा देना बाकी है।"
+   }
+  ],
+  "how_msg": "<b>मैसेज में क्या लिखें:</b> मौका, नाम या इनिशियल, तारीख, वीडियो की अवधि और अपनी कहानी के बारे में कुछ शब्द।",
+  "faq_h2": "सवाल",
+  "faq": [
+   {
+    "q": "क्या कोई भी आइडिया बन सकता है?",
+    "a": "हाँ। मैसेज में बताइए और Peep & Peak उसे निभाएँगे। अगर कुछ दिखाना मुश्किल हो, तो हम उसे और सुंदर बनाने का तरीका सुझाएँगे।"
+   },
+   {
+    "q": "कौन-से शब्द जोड़ सकते हैं?",
+    "a": "नाम, इनिशियल, तारीखें और छोटे वाक्य। ये सीन का हिस्सा बनते हैं: आसमान में, केक पर, रेत पर, तकिए पर।"
+   },
+   {
+    "q": "कितना समय लगता है?",
+    "a": "आमतौर पर 3–7 दिन। 180 सेकंड के वीडियो में ज़्यादा समय लगता है, हम तुरंत समय बता देंगे। अगर मौका बहुत जल्दी है, तो मैसेज करें, हम पूरी कोशिश करेंगे।"
+   },
+   {
+    "q": "भुगतान कैसे करें?",
+    "a": "कहानी तय होने के बाद हम भुगतान का आसान तरीका भेजेंगे। उससे पहले कुछ भी नहीं देना है।"
+   }
+  ],
+  "final_h2": "अपने हमसफ़र को सरप्राइज़ दें",
+  "final_p": "हमें मैसेज करें, अपनी कहानी बताएँ, और Peep & Peak उसे ऐसा तोहफ़ा बना देंगे जिसे सालों तक बार-बार देखा जाएगा।",
+  "close": "बंद करें"
+ },
+ "es": {
+  "title": "Peep & Peak — videos de amor personalizados con capibaras",
+  "desc": "Videos personalizados con Peep & Peak, una pareja de capibaras: cumpleaños, aniversarios, declaraciones de amor y propuestas. Sus nombres dentro de la escena. Desde $47.",
+  "lang": "Idioma",
+  "nav_examples": "Ejemplos",
+  "nav_prices": "Precios",
+  "nav_how": "Cómo pedir",
+  "hero_h1": "Tu historia de amor, <em>un nuevo episodio</em> de Peep&nbsp;&amp;&nbsp;Peak",
+  "hero_lead": "La pareja de capibaras en la que los enamorados se reconocen interpretará tu historia. Sus nombres y fechas se vuelven parte de la escena: en una tarta, en el cielo, en la arena.",
+  "cta_ig": "Escríbenos por Instagram",
+  "cta_dm": "Enviar mensaje",
+  "stat_views": "visualizaciones de un solo episodio",
+  "stat_seasons": "temporadas de historias de amor",
+  "stat_from": "precio desde",
+  "occasions": [
+   "Cumpleaños",
+   "Aniversario",
+   "Propuesta de matrimonio",
+   "Declaración de amor",
+   "San Valentín",
+   "Boda",
+   "Hacer las paces",
+   "Te extraño a la distancia"
+  ],
+  "ex_eyebrow": "Ejemplos",
+  "ex_h2": "Así se ve <em>tu felicitación</em>",
+  "ex_p": "Videos personalizados reales que hicimos para nuestros clientes. Toca para verlos.",
+  "ex_watch": "Ver ejemplo",
+  "pr_eyebrow": "Precios",
+  "pr_h2": "Elige la duración",
+  "pr_p": "Cada video lo hacemos a mano según tu historia. Pagas cuando acordamos la trama.",
+  "popular": "Popular",
+  "sec": "seg",
+  "tiers": [
+   {
+    "n": "Postal",
+    "t": "Una felicitación corta: una escena con tu nombre en pantalla."
+   },
+   {
+    "n": "Momento",
+    "t": "Un momento tierno de tu historia, con un texto."
+   },
+   {
+    "n": "Escena",
+    "t": "Una escena completa basada en tu historia."
+   },
+   {
+    "n": "Historia",
+    "t": "Un pequeño episodio con inicio, desarrollo y final."
+   },
+   {
+    "n": "Película",
+    "t": "Una minipelícula sobre su amor: varias escenas y lugares."
+   }
+  ],
+  "inc": [
+   "Sus nombres y fechas en pantalla",
+   "Trama para tu ocasión",
+   "Una corrección incluida",
+   "Normalmente 3–7 días"
+  ],
+  "id_eyebrow": "Ideas",
+  "id_h2": "Qué podemos hacer",
+  "id_p": "Cualquier idea que tengas. Esto es lo que más se pide.",
+  "ideas": [
+   {
+    "t": "Tarta con nombre",
+    "d": "Nombre y fecha escritos con crema en la tarta."
+   },
+   {
+    "t": "Nombres en un corazón",
+    "d": "Un mensaje luminoso de «juntos para siempre»."
+   },
+   {
+    "t": "Declaración en el cielo",
+    "d": "Un avión escribe tus palabras con nubes."
+   },
+   {
+    "t": "Nombres en la arena",
+    "d": "Un corazón en una playa al atardecer."
+   },
+   {
+    "t": "Regalo sorpresa",
+    "d": "Un anillo o una joya para ella."
+   },
+   {
+    "t": "Noche bajo las estrellas",
+    "d": "Un cenador, guirnaldas de luces y palabras cálidas."
+   }
+  ],
+  "meet_eyebrow": "Conócelos",
+  "meet_h2": "Peep &amp; Peak: <em>«somos nosotros»</em>, dicen las parejas",
+  "meet_p": "Él siempre está a su lado: la tapa con una manta, hornea un pastel con vela y le regala las estrellas. Las parejas se envían sus episodios diciendo «somos nosotros».",
+  "meet_he": "<b>Él</b> lleva un colgante de estrella, es atento y siempre tiene una sorpresa.",
+  "meet_she": "<b>Ella</b> lleva una margarita y una estrella en la pancita, tierna y soñadora.",
+  "meet_star": "<b>La estrella</b> es su símbolo compartido: «You’re my little star».",
+  "meet_alt": "Peep y Peak en la playa",
+  "how_eyebrow": "Cómo pedir",
+  "how_h2": "Tres pasos hasta el regalo",
+  "steps": [
+   {
+    "h": "Escríbenos",
+    "p": "Por mensaje directo en Instagram. Cuéntanos la ocasión y tu historia."
+   },
+   {
+    "h": "Acordamos la trama",
+    "p": "Te proponemos una idea, la duración y el plazo. Pagas después de acordarlo."
+   },
+   {
+    "h": "Recibe tu video",
+    "p": "Te enviamos el video terminado en el mismo chat. Solo queda regalarlo."
+   }
+  ],
+  "how_msg": "<b>Qué incluir en tu mensaje:</b> la ocasión, nombres o iniciales, la fecha, la duración del video y unas palabras sobre su historia.",
+  "faq_h2": "Preguntas",
+  "faq": [
+   {
+    "q": "¿Pueden hacer cualquier idea?",
+    "a": "Sí. Descríbela en tu mensaje y Peep & Peak la interpretarán. Si algo es difícil de mostrar, te propondremos cómo hacerlo aún más bonito."
+   },
+   {
+    "q": "¿Qué textos se pueden añadir?",
+    "a": "Nombres, iniciales, fechas y frases cortas. Se vuelven parte de la escena: en el cielo, en una tarta, en la arena, en un cojín."
+   },
+   {
+    "q": "¿Cuánto tarda?",
+    "a": "Normalmente 3–7 días. Un video de 180 segundos tarda más y te diremos el plazo de inmediato. Si la celebración es muy pronto, escríbenos e intentaremos llegar a tiempo."
+   },
+   {
+    "q": "¿Cómo pago?",
+    "a": "Cuando acordemos la trama, te enviaremos un método de pago cómodo. Antes de eso no pagas nada."
+   }
+  ],
+  "final_h2": "Sorprende a tu media naranja",
+  "final_p": "Escríbenos, cuéntanos tu historia y Peep & Peak la convertirán en un regalo que verán una y otra vez durante años.",
+  "close": "Cerrar"
+ },
+ "fr": {
+  "title": "Peep & Peak — vidéos d’amour personnalisées avec des capybaras",
+  "desc": "Vidéos personnalisées avec Peep & Peak, un couple de capybaras : anniversaires, déclarations d’amour, demandes en mariage. Vos prénoms au cœur de la scène. À partir de 47 $.",
+  "lang": "Langue",
+  "nav_examples": "Exemples",
+  "nav_prices": "Tarifs",
+  "nav_how": "Commander",
+  "hero_h1": "Votre histoire d’amour, <em>un nouvel épisode</em> de Peep&nbsp;&amp;&nbsp;Peak",
+  "hero_lead": "Le couple de capybaras dans lequel les amoureux se reconnaissent joue votre histoire. Vos prénoms et vos dates font partie de la scène : sur un gâteau, dans le ciel, dans le sable.",
+  "cta_ig": "Écrivez-nous sur Instagram",
+  "cta_dm": "Envoyer un message",
+  "stat_views": "vues pour un seul épisode",
+  "stat_seasons": "saisons d’histoires d’amour",
+  "stat_from": "à partir de",
+  "occasions": [
+   "Anniversaire",
+   "Anniversaire de couple",
+   "Demande en mariage",
+   "Déclaration d’amour",
+   "Saint-Valentin",
+   "Mariage",
+   "Se réconcilier",
+   "Amour à distance"
+  ],
+  "ex_eyebrow": "Exemples",
+  "ex_h2": "Voici à quoi ressemble <em>votre surprise</em>",
+  "ex_p": "De vraies vidéos personnalisées réalisées pour nos clients. Touchez pour regarder.",
+  "ex_watch": "Voir l’exemple",
+  "pr_eyebrow": "Tarifs",
+  "pr_h2": "Choisissez la durée",
+  "pr_p": "Chaque vidéo est faite à la main pour votre histoire. Vous payez une fois le scénario validé ensemble.",
+  "popular": "Populaire",
+  "sec": "s",
+  "tiers": [
+   {
+    "n": "Carte",
+    "t": "Un message court : une scène avec votre prénom à l’écran."
+   },
+   {
+    "n": "Moment",
+    "t": "Un moment tendre de votre histoire, avec une phrase."
+   },
+   {
+    "n": "Scène",
+    "t": "Une scène complète d’après votre histoire."
+   },
+   {
+    "n": "Histoire",
+    "t": "Un petit épisode avec un début, un milieu et une fin."
+   },
+   {
+    "n": "Film",
+    "t": "Un mini-film sur votre amour : plusieurs scènes et décors."
+   }
+  ],
+  "inc": [
+   "Vos prénoms et dates à l’écran",
+   "Un scénario pour votre occasion",
+   "Une retouche incluse",
+   "En général 3 à 7 jours"
+  ],
+  "id_eyebrow": "Idées",
+  "id_h2": "Ce que nous pouvons faire",
+  "id_p": "Toutes vos idées. Voici les plus demandées.",
+  "ideas": [
+   {
+    "t": "Gâteau avec prénom",
+    "d": "Prénom et date écrits à la crème sur le gâteau."
+   },
+   {
+    "t": "Prénoms sur un cœur",
+    "d": "Un message lumineux « ensemble pour toujours »."
+   },
+   {
+    "t": "Déclaration dans le ciel",
+    "d": "Un avion écrit vos mots avec des nuages."
+   },
+   {
+    "t": "Prénoms dans le sable",
+    "d": "Un cœur sur une plage au coucher du soleil."
+   },
+   {
+    "t": "Cadeau surprise",
+    "d": "Une bague ou un bijou pour elle."
+   },
+   {
+    "t": "Soirée sous les étoiles",
+    "d": "Une tonnelle, des guirlandes lumineuses et des mots tendres."
+   }
+  ],
+  "meet_eyebrow": "Faites leur connaissance",
+  "meet_h2": "Peep &amp; Peak : <em>« c’est nous »</em>, disent les couples",
+  "meet_p": "Il est toujours là pour elle : il la couvre d’un plaid, prépare un gâteau avec une bougie et lui offre les étoiles. Les couples s’envoient leurs épisodes en disant « c’est nous ».",
+  "meet_he": "<b>Lui</b> porte un pendentif étoile, attentionné et toujours plein de surprises.",
+  "meet_she": "<b>Elle</b> a une marguerite et une étoile sur le ventre, douce et rêveuse.",
+  "meet_star": "<b>L’étoile</b> est leur symbole commun : « You’re my little star ».",
+  "meet_alt": "Peep et Peak sur la plage",
+  "how_eyebrow": "Commander",
+  "how_h2": "Trois étapes jusqu’au cadeau",
+  "steps": [
+   {
+    "h": "Écrivez-nous",
+    "p": "En message privé sur Instagram. Racontez l’occasion et votre histoire."
+   },
+   {
+    "h": "On valide le scénario",
+    "p": "Nous proposons une idée, une durée et un délai. Vous payez après accord."
+   },
+   {
+    "h": "Recevez la vidéo",
+    "p": "Nous envoyons la vidéo terminée dans la même conversation. Il ne reste qu’à l’offrir."
+   }
+  ],
+  "how_msg": "<b>Quoi écrire dans votre message :</b> l’occasion, les prénoms ou initiales, la date, la durée de la vidéo et quelques mots sur votre histoire.",
+  "faq_h2": "Questions",
+  "faq": [
+   {
+    "q": "Toutes les idées sont-elles possibles ?",
+    "a": "Oui. Décrivez-la dans votre message et Peep & Peak la joueront. Si quelque chose est difficile à montrer, nous proposerons comment le rendre encore plus beau."
+   },
+   {
+    "q": "Quels textes peut-on ajouter ?",
+    "a": "Prénoms, initiales, dates et phrases courtes. Ils font partie de la scène : dans le ciel, sur un gâteau, dans le sable, sur un coussin."
+   },
+   {
+    "q": "Combien de temps faut-il ?",
+    "a": "En général 3 à 7 jours. Une vidéo de 180 secondes prend plus de temps, et nous vous donnons le délai tout de suite. Si la fête est très proche, écrivez-nous : nous ferons tout pour être à temps."
+   },
+   {
+    "q": "Comment payer ?",
+    "a": "Une fois le scénario validé, nous vous envoyons un moyen de paiement pratique. Avant cela, vous ne payez rien."
+   }
+  ],
+  "final_h2": "Surprenez votre moitié",
+  "final_p": "Écrivez-nous, racontez votre histoire, et Peep & Peak en feront un cadeau qu’on regarde encore et encore pendant des années.",
+  "close": "Fermer"
+ },
+ "ar": {
+  "title": "Peep & Peak — فيديوهات حب مخصصة مع الكابيبارا",
+  "desc": "فيديوهات مخصصة بطولة Peep & Peak، ثنائي الكابيبارا: أعياد الميلاد، الذكرى السنوية، الاعتراف بالحب، طلب الزواج. أسماؤكما داخل المشهد. ابتداءً من 47$.",
+  "lang": "اللغة",
+  "nav_examples": "أمثلة",
+  "nav_prices": "الأسعار",
+  "nav_how": "طريقة الطلب",
+  "hero_h1": "قصة حبكما — <em>حلقة جديدة</em> من Peep&nbsp;&amp;&nbsp;Peak",
+  "hero_lead": "ثنائي الكابيبارا الذي يرى فيه العشاق أنفسهم سيؤدي قصتكما. تصبح أسماؤكما وتواريخكما جزءًا من المشهد: على الكعكة، في السماء، على الرمال.",
+  "cta_ig": "راسلنا على إنستغرام",
+  "cta_dm": "أرسل رسالة",
+  "stat_views": "مشاهدة لحلقة واحدة",
+  "stat_seasons": "مواسم من قصص الحب",
+  "stat_from": "السعر يبدأ من",
+  "occasions": [
+   "عيد ميلاد",
+   "ذكرى سنوية",
+   "طلب الزواج",
+   "اعتراف بالحب",
+   "عيد الحب",
+   "زفاف",
+   "مصالحة",
+   "اشتياق عن بُعد"
+  ],
+  "ex_eyebrow": "أمثلة",
+  "ex_h2": "هكذا تبدو <em>تهنئتك</em>",
+  "ex_p": "فيديوهات مخصصة حقيقية صنعناها لعملائنا. اضغط للمشاهدة.",
+  "ex_watch": "شاهد المثال",
+  "pr_eyebrow": "الأسعار",
+  "pr_h2": "اختر المدة",
+  "pr_p": "نصنع كل فيديو يدويًا حسب قصتكما. الدفع بعد الاتفاق على القصة.",
+  "popular": "الأكثر طلبًا",
+  "sec": "ث",
+  "tiers": [
+   {
+    "n": "بطاقة",
+    "t": "تهنئة قصيرة: مشهد واحد واسمك داخل الإطار."
+   },
+   {
+    "n": "لحظة",
+    "t": "لحظة دافئة من قصتكما مع عبارة."
+   },
+   {
+    "n": "مشهد",
+    "t": "مشهد كامل مبني على قصتكما."
+   },
+   {
+    "n": "قصة",
+    "t": "حلقة صغيرة لها بداية وأحداث ونهاية."
+   },
+   {
+    "n": "فيلم",
+    "t": "فيلم قصير عن حبكما: عدة مشاهد وأماكن."
+   }
+  ],
+  "inc": [
+   "أسماؤكما وتواريخكما داخل الإطار",
+   "قصة تناسب مناسبتك",
+   "تعديل واحد مجاني",
+   "عادةً من 3 إلى 7 أيام"
+  ],
+  "id_eyebrow": "أفكار",
+  "id_h2": "ماذا يمكننا أن نصنع",
+  "id_p": "أي فكرة لديك. إليك الأكثر طلبًا.",
+  "ideas": [
+   {
+    "t": "كعكة باسم",
+    "d": "الاسم والتاريخ مكتوبان بالكريمة على الكعكة."
+   },
+   {
+    "t": "أسماء على قلب",
+    "d": "عبارة مضيئة «معًا إلى الأبد»."
+   },
+   {
+    "t": "اعتراف في السماء",
+    "d": "طائرة تكتب كلماتك بالغيوم."
+   },
+   {
+    "t": "أسماء على الرمال",
+    "d": "قلب على شاطئ عند الغروب."
+   },
+   {
+    "t": "هدية مفاجئة",
+    "d": "خاتم أو قطعة مجوهرات لها."
+   },
+   {
+    "t": "أمسية تحت النجوم",
+    "d": "عريشة وأضواء معلّقة وكلمات دافئة."
+   }
+  ],
+  "meet_eyebrow": "تعرّف عليهما",
+  "meet_h2": "Peep &amp; Peak — يقول الأزواج <em>«هذان نحن»</em>",
+  "meet_p": "هو دائمًا بجانبها: يغطيها بالبطانية، ويخبز كعكة بشمعة، ويهديها النجوم. يرسل الأزواج حلقاتهما لبعضهم قائلين «هذان نحن».",
+  "meet_he": "<b>هو</b> يرتدي قلادة على شكل نجمة، حنون ولديه مفاجأة دائمًا.",
+  "meet_she": "<b>هي</b> تضع زهرة أقحوان وعلى بطنها نجمة، رقيقة وحالمة.",
+  "meet_star": "<b>النجمة</b> رمزهما المشترك: «You’re my little star».",
+  "meet_alt": "Peep وPeak على الشاطئ",
+  "how_eyebrow": "طريقة الطلب",
+  "how_h2": "ثلاث خطوات للهدية",
+  "steps": [
+   {
+    "h": "راسلنا",
+    "p": "عبر رسائل إنستغرام. أخبرنا بالمناسبة وبقصتكما."
+   },
+   {
+    "h": "نتفق على القصة",
+    "p": "نقترح الفكرة والمدة وموعد التسليم. الدفع بعد الاتفاق."
+   },
+   {
+    "h": "استلم الفيديو",
+    "p": "نرسل الفيديو الجاهز في نفس المحادثة. لم يبقَ إلا أن تهديه."
+   }
+  ],
+  "how_msg": "<b>ماذا تكتب في رسالتك:</b> المناسبة، الأسماء أو الأحرف الأولى، التاريخ، مدة الفيديو وبضع كلمات عن قصتكما.",
+  "faq_h2": "أسئلة",
+  "faq": [
+   {
+    "q": "هل يمكن تنفيذ أي فكرة؟",
+    "a": "نعم. صِفها في رسالتك وسيؤديها Peep & Peak. وإن كان شيء صعب العرض، سنقترح طريقة تجعله أجمل."
+   },
+   {
+    "q": "ما النصوص التي يمكن إضافتها؟",
+    "a": "الأسماء والأحرف الأولى والتواريخ والعبارات القصيرة. تصبح جزءًا من المشهد: في السماء، على الكعكة، على الرمال، على وسادة."
+   },
+   {
+    "q": "كم يستغرق ذلك؟",
+    "a": "عادةً من 3 إلى 7 أيام. الفيديو الذي مدته 180 ثانية يستغرق وقتًا أطول، وسنخبرك بالموعد فورًا. وإن كانت المناسبة قريبة جدًا، راسلنا وسنبذل جهدنا."
+   },
+   {
+    "q": "كيف أدفع؟",
+    "a": "بعد الاتفاق على القصة، نرسل لك طريقة دفع مريحة. لا تدفع شيئًا قبل ذلك."
+   }
+  ],
+  "final_h2": "فاجئ نصفك الآخر",
+  "final_p": "راسلنا واحكِ لنا قصتكما، وسيحوّلها Peep & Peak إلى هدية تُشاهَد مرارًا لسنوات.",
+  "close": "إغلاق"
+ },
+ "bn": {
+  "title": "Peep & Peak — ক্যাপিবারাদের সাথে ব্যক্তিগত ভালোবাসার ভিডিও",
+  "desc": "ক্যাপিবারা জুটি Peep & Peak-এর সাথে ব্যক্তিগত ভিডিও: জন্মদিন, বার্ষিকী, ভালোবাসার স্বীকারোক্তি, প্রস্তাব। আপনাদের নাম সরাসরি দৃশ্যে। $47 থেকে।",
+  "lang": "ভাষা",
+  "nav_examples": "উদাহরণ",
+  "nav_prices": "দাম",
+  "nav_how": "কীভাবে অর্ডার করবেন",
+  "hero_h1": "আপনাদের ভালোবাসার গল্প — Peep&nbsp;&amp;&nbsp;Peak-এর <em>নতুন পর্ব</em>",
+  "hero_lead": "যে ক্যাপিবারা জুটির মধ্যে প্রেমিকরা নিজেদের খুঁজে পায়, তারা আপনাদের গল্পটি অভিনয় করবে। আপনাদের নাম ও তারিখ দৃশ্যের অংশ হয়ে যাবে: কেকের উপর, আকাশে, বালিতে।",
+  "cta_ig": "Instagram-এ মেসেজ করুন",
+  "cta_dm": "মেসেজ পাঠান",
+  "stat_views": "একটি পর্বের ভিউ",
+  "stat_seasons": "ভালোবাসার গল্পের সিজন",
+  "stat_from": "শুরুর দাম",
+  "occasions": [
+   "জন্মদিন",
+   "বার্ষিকী",
+   "বিয়ের প্রস্তাব",
+   "ভালোবাসার স্বীকারোক্তি",
+   "ভালোবাসা দিবস",
+   "বিয়ে",
+   "মিটমাট",
+   "দূর থেকে মনে পড়া"
+  ],
+  "ex_eyebrow": "উদাহরণ",
+  "ex_h2": "এমন দেখায় <em>আপনার শুভেচ্ছা</em>",
+  "ex_p": "আমাদের গ্রাহকদের জন্য বানানো আসল ব্যক্তিগত ভিডিও। দেখতে ট্যাপ করুন।",
+  "ex_watch": "উদাহরণ দেখুন",
+  "pr_eyebrow": "দাম",
+  "pr_h2": "দৈর্ঘ্য বেছে নিন",
+  "pr_p": "প্রতিটি ভিডিও আপনাদের গল্প অনুযায়ী হাতে বানানো হয়। গল্প ঠিক হওয়ার পর পেমেন্ট।",
+  "popular": "জনপ্রিয়",
+  "sec": "সেকেন্ড",
+  "tiers": [
+   {
+    "n": "পোস্টকার্ড",
+    "t": "ছোট শুভেচ্ছা: একটি দৃশ্য আর ফ্রেমে আপনার নাম।"
+   },
+   {
+    "n": "মুহূর্ত",
+    "t": "আপনাদের গল্পের একটি উষ্ণ মুহূর্ত, একটি বার্তা সহ।"
+   },
+   {
+    "n": "দৃশ্য",
+    "t": "আপনাদের গল্প নিয়ে একটি পূর্ণ দৃশ্য।"
+   },
+   {
+    "n": "গল্প",
+    "t": "একটি ছোট পর্ব: শুরু, মাঝখান আর শেষ।"
+   },
+   {
+    "n": "ছবি",
+    "t": "আপনাদের ভালোবাসা নিয়ে মিনি-ফিল্ম: একাধিক দৃশ্য ও লোকেশন।"
+   }
+  ],
+  "inc": [
+   "ফ্রেমে আপনাদের নাম ও তারিখ",
+   "আপনার উপলক্ষ অনুযায়ী গল্প",
+   "একটি সংশোধন ফ্রি",
+   "সাধারণত ৩–৭ দিন"
+  ],
+  "id_eyebrow": "আইডিয়া",
+  "id_h2": "আমরা কী বানাতে পারি",
+  "id_p": "আপনার যেকোনো আইডিয়া। সবচেয়ে বেশি অর্ডার হয় এগুলো।",
+  "ideas": [
+   {
+    "t": "নাম লেখা কেক",
+    "d": "জন্মদিনের কেকে ক্রিম দিয়ে নাম ও তারিখ।"
+   },
+   {
+    "t": "হৃদয়ে নাম",
+    "d": "জ্বলজ্বলে লেখা «চিরকাল একসাথে»।"
+   },
+   {
+    "t": "আকাশে স্বীকারোক্তি",
+    "d": "বিমান মেঘ দিয়ে আপনার কথা লেখে।"
+   },
+   {
+    "t": "বালিতে নাম",
+    "d": "সূর্যাস্তের সৈকতে একটি হৃদয়।"
+   },
+   {
+    "t": "সারপ্রাইজ উপহার",
+    "d": "তার জন্য আংটি বা গয়না।"
+   },
+   {
+    "t": "তারার নিচে সন্ধ্যা",
+    "d": "গেজেবো, আলোর মালা আর উষ্ণ কথা।"
+   }
+  ],
+  "meet_eyebrow": "পরিচয় করুন",
+  "meet_h2": "Peep &amp; Peak — দম্পতিরা বলে <em>«এটা আমরা»</em>",
+  "meet_p": "সে সবসময় তার পাশে থাকে: কম্বল দিয়ে ঢেকে দেয়, মোমবাতি দেওয়া কেক বানায় আর তাকে তারা উপহার দেয়। দম্পতিরা «এটা আমরা» বলে একে অপরকে এদের পর্ব পাঠায়।",
+  "meet_he": "<b>ছেলেটি</b> তারার লকেট পরে, যত্নশীল আর সবসময় সারপ্রাইজ নিয়ে।",
+  "meet_she": "<b>মেয়েটি</b> ডেইজি ফুল পরে, পেটে একটি তারা, কোমল আর স্বপ্নময়।",
+  "meet_star": "<b>তারা</b> তাদের যৌথ প্রতীক: «You’re my little star»।",
+  "meet_alt": "সৈকতে Peep ও Peak",
+  "how_eyebrow": "কীভাবে অর্ডার করবেন",
+  "how_h2": "উপহার পর্যন্ত তিন ধাপ",
+  "steps": [
+   {
+    "h": "আমাদের মেসেজ করুন",
+    "p": "Instagram ডাইরেক্টে। উপলক্ষ আর আপনাদের গল্প বলুন।"
+   },
+   {
+    "h": "গল্প ঠিক করি",
+    "p": "আমরা আইডিয়া, দৈর্ঘ্য ও সময় প্রস্তাব করব। ঠিক হওয়ার পর পেমেন্ট।"
+   },
+   {
+    "h": "ভিডিও পান",
+    "p": "তৈরি ভিডিও একই চ্যাটে পাঠাব। বাকি শুধু উপহার দেওয়া।"
+   }
+  ],
+  "how_msg": "<b>মেসেজে কী লিখবেন:</b> উপলক্ষ, নাম বা আদ্যক্ষর, তারিখ, ভিডিওর দৈর্ঘ্য আর আপনাদের গল্প নিয়ে কয়েকটি কথা।",
+  "faq_h2": "প্রশ্ন",
+  "faq": [
+   {
+    "q": "যেকোনো আইডিয়া করা যায়?",
+    "a": "হ্যাঁ। মেসেজে লিখুন, Peep & Peak সেটি অভিনয় করবে। কিছু দেখানো কঠিন হলে, আরও সুন্দর করার উপায় প্রস্তাব করব।"
+   },
+   {
+    "q": "কী লেখা যোগ করা যায়?",
+    "a": "নাম, আদ্যক্ষর, তারিখ আর ছোট বাক্য। এগুলো দৃশ্যের অংশ হয়: আকাশে, কেকে, বালিতে, বালিশে।"
+   },
+   {
+    "q": "কত সময় লাগে?",
+    "a": "সাধারণত ৩–৭ দিন। ১৮০ সেকেন্ডের ভিডিওতে বেশি সময় লাগে, আমরা সঙ্গে সঙ্গে সময় জানাব। উপলক্ষ খুব কাছে হলে মেসেজ করুন, আমরা চেষ্টা করব।"
+   },
+   {
+    "q": "কীভাবে পেমেন্ট করব?",
+    "a": "গল্প ঠিক হওয়ার পর সুবিধাজনক পেমেন্ট পদ্ধতি পাঠাব। তার আগে কিছুই দিতে হবে না।"
+   }
+  ],
+  "final_h2": "আপনার প্রিয়জনকে চমকে দিন",
+  "final_p": "আমাদের মেসেজ করুন, আপনাদের গল্প বলুন, আর Peep & Peak সেটিকে এমন উপহারে বদলে দেবে যা বছরের পর বছর বারবার দেখা হবে।",
+  "close": "বন্ধ করুন"
+ },
+ "pt": {
+  "title": "Peep & Peak — vídeos de amor personalizados com capivaras",
+  "desc": "Vídeos personalizados com Peep & Peak, um casal de capivaras: aniversários, datas especiais, declarações de amor e pedidos de casamento. Seus nomes dentro da cena. A partir de $47.",
+  "lang": "Idioma",
+  "nav_examples": "Exemplos",
+  "nav_prices": "Preços",
+  "nav_how": "Como pedir",
+  "hero_h1": "Sua história de amor, <em>um novo episódio</em> de Peep&nbsp;&amp;&nbsp;Peak",
+  "hero_lead": "O casal de capivaras em que os apaixonados se reconhecem vai encenar a sua história. Seus nomes e datas viram parte da cena: no bolo, no céu, na areia.",
+  "cta_ig": "Fale conosco no Instagram",
+  "cta_dm": "Enviar mensagem",
+  "stat_views": "visualizações em um único episódio",
+  "stat_seasons": "temporadas de histórias de amor",
+  "stat_from": "preço a partir de",
+  "occasions": [
+   "Aniversário",
+   "Aniversário de namoro",
+   "Pedido de casamento",
+   "Declaração de amor",
+   "Dia dos Namorados",
+   "Casamento",
+   "Fazer as pazes",
+   "Saudade à distância"
+  ],
+  "ex_eyebrow": "Exemplos",
+  "ex_h2": "É assim que fica <em>a sua homenagem</em>",
+  "ex_p": "Vídeos personalizados reais que fizemos para nossos clientes. Toque para assistir.",
+  "ex_watch": "Ver exemplo",
+  "pr_eyebrow": "Preços",
+  "pr_h2": "Escolha a duração",
+  "pr_p": "Cada vídeo é feito à mão para a sua história. Você paga depois que combinamos o roteiro.",
+  "popular": "Popular",
+  "sec": "seg",
+  "tiers": [
+   {
+    "n": "Cartão",
+    "t": "Uma mensagem curta: uma cena com o seu nome na tela."
+   },
+   {
+    "n": "Momento",
+    "t": "Um momento carinhoso da sua história, com uma frase."
+   },
+   {
+    "n": "Cena",
+    "t": "Uma cena completa baseada na sua história."
+   },
+   {
+    "n": "História",
+    "t": "Um pequeno episódio com começo, meio e fim."
+   },
+   {
+    "n": "Filme",
+    "t": "Um minifilme sobre o amor de vocês: várias cenas e cenários."
+   }
+  ],
+  "inc": [
+   "Seus nomes e datas na tela",
+   "Roteiro para a sua ocasião",
+   "Uma revisão incluída",
+   "Normalmente 3–7 dias"
+  ],
+  "id_eyebrow": "Ideias",
+  "id_h2": "O que podemos fazer",
+  "id_p": "Qualquer ideia sua. Veja o que mais pedem.",
+  "ideas": [
+   {
+    "t": "Bolo com nome",
+    "d": "Nome e data escritos com glacê no bolo."
+   },
+   {
+    "t": "Nomes num coração",
+    "d": "Uma frase luminosa de «juntos para sempre»."
+   },
+   {
+    "t": "Declaração no céu",
+    "d": "Um avião escreve suas palavras com nuvens."
+   },
+   {
+    "t": "Nomes na areia",
+    "d": "Um coração numa praia ao pôr do sol."
+   },
+   {
+    "t": "Presente surpresa",
+    "d": "Um anel ou uma joia para ela."
+   },
+   {
+    "t": "Noite sob as estrelas",
+    "d": "Um gazebo, cordões de luz e palavras carinhosas."
+   }
+  ],
+  "meet_eyebrow": "Conheça o casal",
+  "meet_h2": "Peep &amp; Peak: <em>«somos nós»</em>, dizem os casais",
+  "meet_p": "Ele está sempre ao lado dela: cobre ela com uma manta, faz um bolo com vela e dá as estrelas para ela. Os casais mandam os episódios um para o outro dizendo «somos nós».",
+  "meet_he": "<b>Ele</b> usa um pingente de estrela, é carinhoso e sempre tem uma surpresa.",
+  "meet_she": "<b>Ela</b> tem uma margarida e uma estrela na barriguinha, doce e sonhadora.",
+  "meet_star": "<b>A estrela</b> é o símbolo dos dois: «You’re my little star».",
+  "meet_alt": "Peep e Peak na praia",
+  "how_eyebrow": "Como pedir",
+  "how_h2": "Três passos até o presente",
+  "steps": [
+   {
+    "h": "Fale com a gente",
+    "p": "Pelo direct do Instagram. Conte a ocasião e a sua história."
+   },
+   {
+    "h": "Combinamos o roteiro",
+    "p": "Sugerimos a ideia, a duração e o prazo. Você paga depois de combinar."
+   },
+   {
+    "h": "Receba o vídeo",
+    "p": "Enviamos o vídeo pronto no mesmo chat. É só presentear."
+   }
+  ],
+  "how_msg": "<b>O que escrever na mensagem:</b> a ocasião, nomes ou iniciais, a data, a duração do vídeo e algumas palavras sobre a sua história.",
+  "faq_h2": "Perguntas",
+  "faq": [
+   {
+    "q": "Dá para fazer qualquer ideia?",
+    "a": "Sim. Descreva na mensagem e Peep & Peak vão encená-la. Se algo for difícil de mostrar, sugerimos como deixar ainda mais bonito."
+   },
+   {
+    "q": "Que textos dá para colocar?",
+    "a": "Nomes, iniciais, datas e frases curtas. Eles viram parte da cena: no céu, no bolo, na areia, numa almofada."
+   },
+   {
+    "q": "Quanto tempo leva?",
+    "a": "Normalmente 3–7 dias. Um vídeo de 180 segundos leva mais tempo, e informamos o prazo na hora. Se a data estiver muito perto, fale com a gente e faremos o possível."
+   },
+   {
+    "q": "Como pago?",
+    "a": "Depois de combinarmos o roteiro, enviamos uma forma de pagamento prática. Antes disso, você não paga nada."
+   }
+  ],
+  "final_h2": "Surpreenda o seu amor",
+  "final_p": "Fale com a gente, conte a sua história e Peep & Peak vão transformá-la num presente para rever por anos.",
+  "close": "Fechar"
+ },
+ "ru": {
+  "title": "Peep & Peak — именные видео-поздравления с капибарами",
+  "desc": "Именные видео с Peep & Peak, парой капибар: день рождения, годовщина, признание, предложение. Ваши имена прямо в сцене. От $47.",
+  "lang": "Язык",
+  "nav_examples": "Примеры",
+  "nav_prices": "Цены",
+  "nav_how": "Как заказать",
+  "hero_h1": "Ваша история любви — <em>новая серия</em> Peep&nbsp;&amp;&nbsp;Peak",
+  "hero_lead": "Пара капибар, в которой влюблённые узнают себя, разыграет вашу историю. Ваши имена и даты становятся частью сцены: на торте, в небе, на песке.",
+  "cta_ig": "Написать в Instagram",
+  "cta_dm": "Написать в директ",
+  "stat_views": "просмотров у одной серии",
+  "stat_seasons": "сезона историй о любви",
+  "stat_from": "стоимость от",
+  "occasions": [
+   "День рождения",
+   "Годовщина",
+   "Предложение руки и сердца",
+   "Признание в любви",
+   "14 февраля",
+   "Свадьба",
+   "Помириться",
+   "Скучаю на расстоянии"
+  ],
+  "ex_eyebrow": "Примеры",
+  "ex_h2": "Так выглядит <em>ваше поздравление</em>",
+  "ex_p": "Реальные именные видео, которые мы сделали на заказ. Нажмите, чтобы посмотреть.",
+  "ex_watch": "Смотреть пример",
+  "pr_eyebrow": "Цены",
+  "pr_h2": "Выберите длительность",
+  "pr_p": "Каждое видео делаем вручную под вашу историю. Оплата после того, как согласуем сюжет.",
+  "popular": "Популярное",
+  "sec": "сек",
+  "tiers": [
+   {
+    "n": "Открытка",
+    "t": "Короткое поздравление: одна сцена и ваше имя в кадре."
+   },
+   {
+    "n": "Момент",
+    "t": "Один тёплый момент вашей истории с надписью."
+   },
+   {
+    "n": "Сцена",
+    "t": "Полноценная сцена по вашему сюжету."
+   },
+   {
+    "n": "История",
+    "t": "Маленькая серия: начало, развитие и финал."
+   },
+   {
+    "n": "Фильм",
+    "t": "Мини-фильм о вашей любви: несколько сцен и локаций."
+   }
+  ],
+  "inc": [
+   "Ваши имена и даты в кадре",
+   "Сюжет под ваш повод",
+   "Одна правка в подарок",
+   "Обычно 3–7 дней"
+  ],
+  "id_eyebrow": "Идеи",
+  "id_h2": "Что можно сделать",
+  "id_p": "Любую вашу идею. Вот что заказывают чаще всего.",
+  "ideas": [
+   {
+    "t": "Торт с именем",
+    "d": "Имя и дата кремом на праздничном торте."
+   },
+   {
+    "t": "Имена на сердце",
+    "d": "Светящаяся надпись «вместе навсегда»."
+   },
+   {
+    "t": "Признание в небе",
+    "d": "Самолёт пишет облаками ваши слова."
+   },
+   {
+    "t": "Имена на песке",
+    "d": "Сердце на закатном пляже."
+   },
+   {
+    "t": "Подарок-сюрприз",
+    "d": "Кольцо или украшение для неё."
+   },
+   {
+    "t": "Вечер под звёздами",
+    "d": "Беседка, гирлянды и тёплые слова."
+   }
+  ],
+  "meet_eyebrow": "Знакомьтесь",
+  "meet_h2": "Peep &amp; Peak — <em>это мы</em>, говорят о них пары",
+  "meet_p": "Он всегда рядом: укрывает пледом, печёт торт со свечой и дарит ей звёзды. Их серии пересылают друг другу со словами «это мы».",
+  "meet_he": "<b>Он</b> — с кулончиком-звёздочкой, заботливый и всегда с сюрпризом.",
+  "meet_she": "<b>Она</b> — с ромашкой и звёздочкой на животике, нежная и мечтательная.",
+  "meet_star": "<b>Звёздочка</b> — их общий знак: «You’re my little star».",
+  "meet_alt": "Peep и Peak на пляже",
+  "how_eyebrow": "Как заказать",
+  "how_h2": "Три шага до подарка",
+  "steps": [
+   {
+    "h": "Напишите нам",
+    "p": "В директ Instagram. Расскажите повод и вашу историю."
+   },
+   {
+    "h": "Согласуем сюжет",
+    "p": "Предложим идею, длительность и срок. Оплата после согласования."
+   },
+   {
+    "h": "Получите видео",
+    "p": "Пришлём готовое видео в тот же чат. Остаётся подарить."
+   }
+  ],
+  "how_msg": "<b>Что написать в сообщении:</b> повод, имена или инициалы, дату праздника, длительность видео и пару слов о вашей истории.",
+  "faq_h2": "Вопросы",
+  "faq": [
+   {
+    "q": "Можно любую идею?",
+    "a": "Да. Опишите её в сообщении, и Peep & Peak её сыграют. Если что-то сложно показать, предложим, как сделать ещё красивее."
+   },
+   {
+    "q": "Какие надписи можно добавить?",
+    "a": "Имена, инициалы, даты и короткие фразы. Они становятся частью сцены: в небе, на торте, на песке, на подушке."
+   },
+   {
+    "q": "Сколько ждать?",
+    "a": "Обычно 3–7 дней. Видео на 180 секунд — дольше, срок скажем сразу. Если праздник совсем скоро, напишите, постараемся успеть."
+   },
+   {
+    "q": "Как оплатить?",
+    "a": "После того как согласуем сюжет, пришлём удобный способ оплаты. До этого платить ничего не нужно."
+   }
+  ],
+  "final_h2": "Удивите вторую половинку",
+  "final_p": "Напишите нам, расскажите вашу историю, и Peep & Peak превратят её в подарок, который будут пересматривать годами.",
+  "close": "Закрыть"
+ }
+};
+  /* ================================== */
 
   const $ = (s) => document.querySelector(s);
+  const $$ = (s) => [...document.querySelectorAll(s)];
   const ic = (n, c = "") => `<svg class="ico ${c}"><use href="#i-${n}"/></svg>`;
-  const LINKS = {
-    ig: `https://ig.me/m/${CONFIG.instagram}`,
-    profile: `https://instagram.com/${CONFIG.instagram}`,
-  };
-  document.querySelectorAll("[data-link]").forEach((a) => {
-    a.href = LINKS[a.dataset.link];
-    a.target = "_blank";
-    a.rel = "noopener";
-  });
+  const LINKS = { ig: `https://ig.me/m/${CONFIG.instagram}`, profile: `https://instagram.com/${CONFIG.instagram}` };
+  $$("[data-link]").forEach((a) => { a.href = LINKS[a.dataset.link]; a.target = "_blank"; a.rel = "noopener"; });
   $("#year").textContent = new Date().getFullYear();
   $("#from-price").textContent = "$" + Math.min(...CONFIG.tiers.map((t) => t.price));
 
-  // лента кадров
+  // лента кадров (без текста, не зависит от языка)
   const cols = [[], [], []];
   CONFIG.reels.forEach((n, i) => cols[i % 3].push(`<img src="images/frames/${n}.jpg" alt="" loading="${i < 6 ? "eager" : "lazy"}">`));
   $("#reels").innerHTML = cols.map((c, i) => `<div class="reel-col ${i === 1 ? "down" : ""}">${c.join("")}${c.join("")}</div>`).join("");
 
-  // бегущая строка
-  const m = CONFIG.occasions.map((o) => `<span>${o}${ic("star5", "fill")}</span>`).join("");
-  $("#marquee").innerHTML = m + m;
-
-  // цены
-  $("#tiers").innerHTML = CONFIG.tiers.map((t) => `
-    <article class="tier ${t.hit ? "hit" : ""} ${t.premium ? "premium" : ""}">
-      ${t.hit ? '<span class="badge">Популярное</span>' : ""}
-      <span class="dur">${ic("clock")} ${t.sec} сек</span>
-      <h3>${t.name}</h3>
-      <div class="price">$${t.price}</div>
-      <p>${t.text}</p>
-    </article>`).join("");
-
-  // идеи
-  $("#ideas-list").innerHTML = CONFIG.ideas.map((d) => `
-    <article class="idea">
-      <img src="images/frames/${d.img}.jpg" alt="${d.title}" loading="lazy">
-      <div><h3>${d.title}</h3><p>${d.text}</p></div>
-    </article>`).join("");
-
-  // видео с YouTube
+  // видео
   const ytId = (u) => (String(u).match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/) || [])[1];
   const fallback = ["emma-cake", "emma-pillow", "sky-love", "emma-sand"];
   $("#videos").innerHTML = CONFIG.videos.map((u, i) => {
     const id = ytId(u);
-    return `<button type="button" class="video" data-yt="${id}" aria-label="Смотреть пример ${i + 1}">
+    return `<button type="button" class="video" data-yt="${id}" data-n="${i + 1}">
       <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='images/frames/${fallback[i % fallback.length]}.jpg'">
       <span class="play">${ic("play", "fill")}</span>
     </button>`;
   }).join("");
   const modal = $("#modal");
   const close = () => { modal.hidden = true; $("#modal-box").innerHTML = ""; };
-  document.querySelectorAll("[data-yt]").forEach((b) => b.addEventListener("click", () => {
-    $("#modal-box").innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Видео Peep & Peak"></iframe>`;
+  $$("[data-yt]").forEach((b) => b.addEventListener("click", () => {
+    $("#modal-box").innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Peep & Peak"></iframe>`;
     modal.hidden = false;
   }));
   $("#modal-close").addEventListener("click", close);
   modal.addEventListener("click", (e) => { if (e.target === modal) close(); });
   addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) close(); });
+
+  /* ---------- язык ---------- */
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const loadedFonts = new Set();
+  function loadFont(family) {
+    if (!family || loadedFonts.has(family)) return;
+    loadedFonts.add(family);
+    const l = document.createElement("link");
+    l.rel = "stylesheet";
+    l.href = `https://fonts.googleapis.com/css2?family=${family.replace(/ /g, "+")}:wght@400;700;900&display=swap`;
+    document.head.appendChild(l);
+  }
+
+  function render(t) {
+    $$("[data-i18n]").forEach((el) => { el.textContent = t[el.dataset.i18n]; });
+    $$("[data-i18n-html]").forEach((el) => { el.innerHTML = t[el.dataset.i18nHtml]; });
+    $$("[data-i18n-aria]").forEach((el) => { el.setAttribute("aria-label", t[el.dataset.i18nAria]); });
+    $$("[data-i18n-alt]").forEach((el) => { el.alt = t[el.dataset.i18nAlt]; });
+    $$("[data-yt]").forEach((b) => b.setAttribute("aria-label", `${t.ex_watch} ${b.dataset.n}`));
+
+    const m = t.occasions.map((o) => `<span>${esc(o)}${ic("star5", "fill")}</span>`).join("");
+    $("#marquee").innerHTML = m + m;
+
+    $("#tiers").innerHTML = CONFIG.tiers.map((p, i) => `
+      <article class="tier ${p.hit ? "hit" : ""} ${p.premium ? "premium" : ""}">
+        ${p.hit ? `<span class="badge">${esc(t.popular)}</span>` : ""}
+        <span class="dur">${ic("clock")} ${p.sec} ${esc(t.sec)}</span>
+        <h3>${esc(t.tiers[i].n)}</h3>
+        <div class="price">$${p.price}</div>
+        <p>${esc(t.tiers[i].t)}</p>
+      </article>`).join("");
+    $("#includes").innerHTML = t.inc.map((x, i) => `<span>${ic(i === 3 ? "clock" : "check")}${esc(x)}</span>`).join("");
+
+    $("#ideas-list").innerHTML = CONFIG.ideaImages.map((img, i) => `
+      <article class="idea">
+        <img src="images/frames/${img}.jpg" alt="${esc(t.ideas[i].t)}" loading="lazy">
+        <div><h3>${esc(t.ideas[i].t)}</h3><p>${esc(t.ideas[i].d)}</p></div>
+      </article>`).join("");
+
+    $("#steps").innerHTML = t.steps.map((s) => `<div class="step"><h3>${esc(s.h)}</h3><p>${esc(s.p)}</p></div>`).join("");
+    $("#faq-list").innerHTML = t.faq.map((f) => `<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join("");
+  }
+
+  function setLang(code, save) {
+    const lang = LANGS.find((l) => l.code === code) || LANGS[0];
+    const t = I18N[lang.code];
+    document.documentElement.lang = lang.code;
+    document.documentElement.dir = lang.rtl ? "rtl" : "ltr";
+    loadFont(lang.font);
+    document.documentElement.style.setProperty("--font", `"Nunito", ${lang.font ? `"${lang.font}", ` : ""}system-ui, -apple-system, "Segoe UI", sans-serif`);
+    document.title = t.title;
+    $('meta[name="description"]').content = t.desc;
+    render(t);
+    $("#lang-select").value = lang.code;
+    if (save) { try { localStorage.setItem("lang", lang.code); } catch {} }
+  }
+
+  function detectLang() {
+    const supported = LANGS.map((l) => l.code);
+    const fromUrl = new URLSearchParams(location.search).get("lang");
+    if (supported.includes(fromUrl)) return fromUrl;
+    try { const saved = localStorage.getItem("lang"); if (supported.includes(saved)) return saved; } catch {}
+    for (const l of navigator.languages || [navigator.language || ""]) {
+      const base = String(l).toLowerCase().split("-")[0];
+      if (supported.includes(base)) return base;
+    }
+    return CONFIG.defaultLang;
+  }
+
+  $("#lang-select").innerHTML = LANGS.map((l) => `<option value="${l.code}">${l.name}</option>`).join("");
+  $("#lang-select").addEventListener("change", (e) => setLang(e.target.value, true));
+  setLang(detectLang(), false);
 </script>
 </body>
 </html>

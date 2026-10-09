@@ -3,666 +3,238 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Peep &amp; Peak — ваша история любви в исполнении двух капибар</title>
-<meta name="description" content="Именные видео с Peep &amp; Peak, парой капибар из сериала «It's us»: день рождения, годовщина, признание, предложение. Ваши имена прямо в сцене. Видео 30, 60 и 90 секунд.">
-<meta property="og:title" content="Peep &amp; Peak — ваша история любви в исполнении двух капибар">
+<title>Peep &amp; Peak — именные видео-поздравления с капибарами</title>
+<meta name="description" content="Именные видео с Peep &amp; Peak, парой капибар из сериала «It's us»: день рождения, годовщина, признание, предложение. Ваши имена прямо в сцене. От $47.">
+<meta property="og:title" content="Peep &amp; Peak — именные видео-поздравления">
 <meta property="og:image" content="images/frames/emma-pillow.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23b77b4b'/%3E%3Cpath fill='%23fbf1e2' d='M50 16c3 0 5 2 6.5 5.5l6 12.5 13.5 2c3.6.5 5.5 2.3 5.5 5s-1.3 4-3.6 6.3l-9.9 9.6 2.3 13.6c.6 3.6-.6 6-3.3 6.9-2 .6-3.8 0-6.2-1.3L50 70l-12.3 6.6c-2.4 1.3-4.2 1.9-6.2 1.3-2.7-.9-3.9-3.3-3.3-6.9l2.3-13.6-9.9-9.6c-2.3-2.3-3.6-3.9-3.6-6.3s1.9-4.5 5.5-5l13.5-2 6-12.5C45 18 47 16 50 16Z'/%3E%3C/svg%3E">
 <style>
+  /* Тёплая «киношная» палитра под кадры Peep & Peak, округлый Nunito, кнопки в стиле Instagram/Telegram */
   :root {
     --bg: #fbf6ef;
-    --bg-2: #f4eadc;
-    --paper: #fffdf9;
+    --bg-2: #f3e9dc;
+    --card: #ffffff;
     --ink: #2a1c13;
     --ink-2: #4a3628;
-    --muted: #806b5b;
+    --muted: #6b5546;
     --line: #eadccb;
-    --line-2: #dcc8b1;
     --caramel: #b77b4b;
     --caramel-2: #9a6238;
     --honey: #e2a85c;
-    --rose: #e79aa8;
-    --sage: #4e7a5d;
-    --cocoa: #24170f;
-    --ok: #3f7f55;
-    --err: #b9443a;
-    --grad: linear-gradient(120deg, #c88653 0%, #e2a85c 55%, #e9b07a 100%);
+    --rose: #c4566e;
+    --ig: linear-gradient(45deg, #f9ce34 0%, #ee2a7b 45%, #6228d7 100%);
+    --tg: #2aabee;
+    --tg-2: #1d93d2;
     --grad-text: linear-gradient(100deg, #9a6238 0%, #c88653 45%, #e2a85c 100%);
-    --radius: 24px;
-    --max: 1200px;
-    --serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
-    --sans: "Manrope", system-ui, -apple-system, sans-serif;
-    --shadow: 0 30px 60px -30px rgba(74,44,20,.35);
+    --font: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --max: 1120px;
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; background: var(--bg); }
-  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-  body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 100; opacity: .04; mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-  ::selection { background: rgba(226,168,92,.35); }
-  img, svg, video { display: block; max-width: 100%; }
-  img { height: auto; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img, svg { display: block; max-width: 100%; }
   a { color: inherit; }
   [hidden] { display: none !important; }
-  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; position: relative; }
-  section { padding: 120px 0; position: relative; }
-  h1, h2, h3 { margin: 0; line-height: 1.04; letter-spacing: -0.01em; font-weight: 600; }
-  h1, h2 { font-family: var(--serif); font-weight: 500; }
-  h1 { font-size: clamp(46px, 6.4vw, 92px); }
-  h2 { font-size: clamp(38px, 4.8vw, 66px); margin-bottom: 20px; }
-  h3 { font-size: 19px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
-  h1 em, h2 em, .serif-em { font-style: italic; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .06em; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+  section { padding: 88px 0; }
+  h1, h2, h3 { margin: 0; letter-spacing: -0.02em; line-height: 1.1; text-wrap: balance; }
+  h1 { font-size: clamp(36px, 5vw, 64px); font-weight: 900; }
+  h2 { font-size: clamp(28px, 3.6vw, 44px); font-weight: 900; margin-bottom: 14px; }
+  h3 { font-size: 19px; font-weight: 800; }
   p { margin: 0; }
-  .lead { font-size: 19px; color: var(--muted); max-width: 560px; }
-  .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: var(--caramel); margin-bottom: 20px; }
-  .eyebrow::before { content: ""; width: 30px; height: 1px; background: currentColor; opacity: .6; }
-  .section-head { max-width: 760px; margin-bottom: 64px; }
-  .section-head.center { text-align: center; margin-left: auto; margin-right: auto; }
-  .section-head.center .eyebrow::after { content: ""; width: 30px; height: 1px; background: currentColor; opacity: .6; }
-  .section-head p { color: var(--muted); font-size: 18px; }
+  em { font-style: normal; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .eyebrow { display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; color: var(--caramel); margin-bottom: 14px; }
+  .head { max-width: 680px; margin-bottom: 40px; }
+  .head.center { margin-left: auto; margin-right: auto; text-align: center; }
+  .head p { color: var(--muted); font-size: 18px; }
 
-  svg.ico { display: inline-block; width: 1.15em; height: 1.15em; vertical-align: -0.2em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  svg.ico { display: inline-block; width: 1.15em; height: 1.15em; vertical-align: -0.2em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   svg.ico.fill { fill: currentColor; }
-  .icon { width: 54px; height: 54px; border-radius: 16px; display: grid; place-items: center; margin-bottom: 22px; flex: none; background: #f6e7d4; border: 1px solid #ecd6bc; }
-  .icon svg.ico { width: 24px; height: 24px; color: var(--caramel); }
 
-  /* buttons */
-  .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 18px 32px; border-radius: 999px; border: 0; cursor: pointer; overflow: hidden;
-    font: inherit; font-weight: 700; font-size: 15px; letter-spacing: .02em; text-decoration: none; text-align: center; transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s, color .2s; }
-  .btn-primary { background: var(--cocoa); color: #fbf1e2; box-shadow: 0 14px 30px -14px rgba(36,23,15,.6); }
-  .btn-primary::after { content: ""; position: absolute; top: 0; left: -60%; width: 40%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255,235,200,.35), transparent); transform: skewX(-20deg); animation: shine 5s ease-in-out infinite; }
-  @keyframes shine { 0%, 65% { left: -60%; } 100% { left: 130%; } }
-  .btn-primary:hover { transform: translateY(-2px); background: #3a2618; }
-  .btn-gold { background: var(--grad); color: var(--cocoa); box-shadow: 0 14px 30px -14px rgba(183,123,75,.7); }
-  .btn-gold:hover { transform: translateY(-2px); }
-  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line-2); }
-  .btn-ghost:hover { border-color: var(--caramel); background: rgba(183,123,75,.06); }
-  .btn-light { background: #fbf1e2; color: var(--cocoa); }
-  .btn-sm { padding: 11px 22px; font-size: 14px; }
-  .btn:disabled { opacity: .7; cursor: wait; }
+  /* кнопки */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 22px; border-radius: 10px; border: 0; cursor: pointer; font: inherit; font-weight: 800; font-size: 15px; text-decoration: none; text-align: center; transition: transform .15s, filter .15s, background .15s; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:focus-visible { outline: 3px solid var(--honey); outline-offset: 2px; }
+  .btn-ig { background: var(--ig); color: #fff; }
+  .btn-ig:hover { filter: brightness(1.06); }
+  .btn-tg { background: var(--tg); color: #fff; }
+  .btn-tg:hover { background: var(--tg-2); }
+  .btn-light { background: #efefef; color: #111; }
+  .btn-light:hover { background: #e2e2e2; }
+  .btn-sm { padding: 9px 14px; font-size: 14px; }
+  .btns { display: flex; gap: 10px; flex-wrap: wrap; }
 
-  /* nav */
-  header.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 40; border-bottom: 1px solid transparent; transition: background .3s, border-color .3s; }
-  header.nav.scrolled { background: rgba(251,246,239,.82); backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%); border-bottom-color: var(--line); }
-  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 78px; gap: 16px; }
-  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; font-family: var(--serif); font-weight: 600; font-size: 27px; white-space: nowrap; letter-spacing: .01em; }
-  .logo em { font-style: italic; color: var(--caramel); }
-  .logo-mark { width: 38px; height: 38px; flex: none; }
-  .nav-links { display: flex; gap: 34px; align-items: center; }
-  .nav-links a:not(.btn) { text-decoration: none; color: var(--muted); font-weight: 600; font-size: 14px; letter-spacing: .03em; transition: color .2s; }
-  .nav-links a:not(.btn):hover { color: var(--ink); }
+  /* шапка */
+  header.nav { position: sticky; top: 0; z-index: 30; background: rgba(251,246,239,.9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 900; font-size: 22px; white-space: nowrap; }
+  .logo em { -webkit-text-fill-color: var(--caramel); }
+  .logo svg { width: 34px; height: 34px; }
+  .nav-links { display: flex; align-items: center; gap: 26px; }
+  .nav-links > a:not(.btn) { text-decoration: none; color: var(--muted); font-weight: 700; font-size: 15px; }
+  .nav-links > a:not(.btn):hover { color: var(--ink); }
 
-  /* hero */
-  .hero { padding: 132px 0 90px; overflow: hidden; background: radial-gradient(90% 70% at 85% 10%, #f7dcc0 0%, transparent 60%), radial-gradient(70% 60% at 0% 100%, #f6e3cf 0%, transparent 60%), var(--bg); }
-  .bokeh { position: absolute; border-radius: 50%; pointer-events: none; filter: blur(2px); background: radial-gradient(circle, rgba(255,214,150,.55), rgba(255,214,150,0) 70%); animation: drift 14s ease-in-out infinite; }
-  @keyframes drift { 50% { transform: translate(14px, -18px); } }
-  .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
-  .hero h1 { margin: 6px 0 0; }
-  .hero .lead { margin: 26px 0 36px; }
-  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
-  .stats { display: flex; gap: 36px; flex-wrap: wrap; margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); }
-  .stat b { display: block; font-family: var(--serif); font-size: 40px; font-weight: 600; line-height: 1; color: var(--ink); }
+  /* первый экран */
+  .hero { padding: 56px 0 72px; background: radial-gradient(80% 70% at 90% 0%, #f7dcc0 0%, transparent 60%), var(--bg); overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
+  .hero .lead { color: var(--muted); font-size: 19px; margin: 20px 0 28px; max-width: 540px; }
+  .stats { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .stat b { display: block; font-size: 30px; font-weight: 900; line-height: 1; }
   .stat span { font-size: 13px; color: var(--muted); }
-  .reels { position: relative; height: min(78vh, 720px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; overflow: hidden;
-    -webkit-mask-image: linear-gradient(transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(transparent, #000 12%, #000 88%, transparent); }
-  .reel-col { display: flex; flex-direction: column; gap: 14px; animation: up 46s linear infinite; }
-  .reel-col.down { animation-name: down; animation-duration: 52s; }
-  .reel-col:nth-child(3) { animation-duration: 40s; }
-  .reels:hover .reel-col { animation-play-state: paused; }
+  .reels { height: min(70vh, 620px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; overflow: hidden;
+    -webkit-mask-image: linear-gradient(transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(transparent, #000 10%, #000 90%, transparent); }
+  .reel-col { display: flex; flex-direction: column; gap: 12px; animation: up 50s linear infinite; }
+  .reel-col.down { animation-name: down; animation-duration: 56s; }
+  .reel-col:nth-child(3) { animation-duration: 44s; }
+  .reel-col img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; background: var(--bg-2); }
   @keyframes up { to { transform: translateY(-50%); } }
   @keyframes down { from { transform: translateY(-50%); } to { transform: translateY(0); } }
-  .frame { position: relative; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); background: var(--bg-2); flex: none; }
-  .frame img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
-  .frame-tag { position: absolute; left: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; color: #fff; background: rgba(36,23,15,.45); backdrop-filter: blur(6px); }
 
-  /* marquee */
-  .marquee-wrap { overflow: hidden; background: var(--cocoa); color: #fbf1e2; }
-  .marquee { padding: 24px 0; }
-  .marquee-track { display: flex; gap: 48px; width: max-content; animation: marquee 50s linear infinite; font-family: var(--serif); font-style: italic; font-size: 30px; }
-  .marquee-track span { white-space: nowrap; display: inline-flex; align-items: center; gap: 48px; }
-  .marquee-track svg.ico { width: 14px; height: 14px; color: var(--honey); }
+  .marquee { overflow: hidden; background: #fff; border-block: 1px solid var(--line); padding: 16px 0; }
+  .marquee-track { display: flex; gap: 40px; width: max-content; animation: marquee 50s linear infinite; font-weight: 800; font-size: 18px; }
+  .marquee-track span { display: inline-flex; align-items: center; gap: 40px; white-space: nowrap; }
+  .marquee-track svg.ico { width: 12px; height: 12px; color: var(--honey); }
   @keyframes marquee { to { transform: translateX(-50%); } }
 
-  /* meet */
-  .meet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
-  .meet-photos { position: relative; height: 620px; }
-  .meet-photos .frame { position: absolute; }
-  .meet-photos .frame img { aspect-ratio: auto; height: 100%; }
-  .meet-photos .p1 { left: 0; top: 0; width: 64%; height: 82%; }
-  .meet-photos .p2 { right: 0; bottom: 0; width: 50%; height: 56%; border: 8px solid var(--bg); }
-  .meet-badge { position: absolute; left: 44%; top: 50%; z-index: 2; width: 116px; height: 116px; border-radius: 50%; display: grid; place-items: center; text-align: center;
-    background: var(--cocoa); color: #fbf1e2; font-family: var(--serif); font-style: italic; font-size: 26px; line-height: 1; box-shadow: var(--shadow); animation: spin-slow 22s linear infinite; }
-  .meet-badge svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .meet-badge b { animation: spin-slow 22s linear infinite reverse; font-weight: 500; }
-  @keyframes spin-slow { to { transform: rotate(360deg); } }
-  .traits { display: grid; gap: 18px; margin-top: 34px; }
-  .trait { display: flex; gap: 16px; align-items: flex-start; padding: 18px 20px; border-radius: 18px; background: var(--paper); border: 1px solid var(--line); }
-  .trait .dot { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; flex: none; }
-  .trait p { color: var(--muted); font-size: 15px; }
-  .trait b { display: block; color: var(--ink); font-size: 16px; margin-bottom: 2px; }
-
-  /* why */
-  .why { background: var(--bg-2); }
-  .why-quote { font-family: var(--serif); font-weight: 500; font-size: clamp(32px, 4.2vw, 56px); line-height: 1.12; max-width: 1000px; margin: 0 auto 72px; text-align: center; }
-  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-  .card { position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; transition: transform .3s, box-shadow .3s, border-color .3s; }
-  .card:hover { box-shadow: var(--shadow); border-color: var(--line-2); }
-  .card p { color: var(--muted); font-size: 16px; }
-
-  /* ideas */
-  .idea { padding: 0; overflow: hidden; }
-  .idea:hover { transform: translateY(-6px); }
-  .idea .vis { position: relative; aspect-ratio: 4 / 4.2; overflow: hidden; }
-  .idea .vis img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
-  .idea:hover .vis img { transform: scale(1.06); }
-  .idea .vis .overlay { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 16px; text-align: center; font-family: var(--serif); font-style: italic; font-size: 30px; color: #fff6e6;
-    text-shadow: 0 0 18px rgba(255,214,150,.9); background: linear-gradient(transparent, rgba(36,23,15,.45)); }
-  .idea .txt { padding: 24px 26px 28px; }
-  .any-idea { margin-top: 28px; padding: 44px; border-radius: var(--radius); display: flex; gap: 24px; align-items: center; justify-content: space-between; flex-wrap: wrap; background: var(--cocoa); color: #fbf1e2; position: relative; overflow: hidden; }
-  .any-idea::before { content: ""; position: absolute; right: -80px; top: -80px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(226,168,92,.35), transparent 70%); }
-  .any-idea h3 { font-family: var(--serif); font-size: 38px; font-weight: 500; margin-bottom: 8px; }
-  .any-idea p { color: rgba(251,241,226,.72); max-width: 620px; }
-
-  /* occasions */
-  .occasions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 980px; margin: 0 auto; }
-  .occ { display: inline-flex; align-items: center; gap: 12px; padding: 16px 24px; border-radius: 999px; cursor: pointer; background: var(--paper); border: 1px solid var(--line); font: inherit; font-weight: 600; font-size: 16px; color: var(--ink); transition: border-color .2s, transform .2s, box-shadow .2s; }
-  .occ:hover { border-color: var(--caramel); transform: translateY(-2px); box-shadow: 0 12px 24px -16px rgba(74,44,20,.4); }
-  .occ svg.ico { width: 20px; height: 20px; color: var(--caramel); }
-
-  /* examples */
-  .examples { background: var(--cocoa); color: #fbf1e2; }
-  .examples .section-head p { color: rgba(251,241,226,.7); }
-  .examples .eyebrow { color: var(--honey); }
-  .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-  .reel { position: relative; display: block; aspect-ratio: 9 / 14; border-radius: var(--radius); overflow: hidden; text-decoration: none; color: #fff; cursor: pointer; border: 0; padding: 0; font: inherit; background: #000; }
-  .reel:nth-child(even) { margin-top: 48px; }
-  .reel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .3s; opacity: .92; }
-  .reel:hover img { transform: scale(1.06); opacity: 1; }
-  .reel .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(.9); width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,248,236,.92); color: var(--cocoa); transition: transform .3s; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
-  .reel:hover .play { transform: translate(-50%, -50%) scale(1); }
-  .reel .play svg.ico { width: 20px; height: 20px; margin-left: 3px; }
-  .reel .views { position: absolute; left: 14px; top: 14px; display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; background: rgba(36,23,15,.5); backdrop-filter: blur(6px); }
-  .reel .cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 18px; text-align: left; font-family: var(--serif); font-style: italic; font-size: 24px; line-height: 1.1; background: linear-gradient(transparent, rgba(20,12,7,.85)); }
-  .gallery-cta { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 56px; }
-  .examples .btn-ghost { color: #fbf1e2; border-color: rgba(251,241,226,.3); }
-  .examples .btn-ghost:hover { border-color: var(--honey); background: rgba(226,168,92,.1); }
-
-  /* video modal */
-  .modal { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 20px; background: rgba(20,12,7,.82); backdrop-filter: blur(8px); }
-  .modal-box { position: relative; width: min(420px, 100%); aspect-ratio: 9 / 16; max-height: 86vh; border-radius: 24px; overflow: hidden; background: #000; }
+  /* видео-примеры */
+  .videos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .video { position: relative; aspect-ratio: 9 / 16; border-radius: 14px; overflow: hidden; border: 0; padding: 0; cursor: pointer; background: #1a120c; }
+  .video img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease, filter .3s; }
+  .video:hover img { transform: scale(1.04); filter: brightness(.9); }
+  .video .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.92); color: #111; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+  .video .play svg { width: 22px; height: 22px; margin-left: 3px; }
+  .video:focus-visible { outline: 3px solid var(--honey); outline-offset: 3px; }
+  .modal { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 20px; background: rgba(20,12,7,.85); }
+  .modal-box { width: min(400px, 100%); aspect-ratio: 9 / 16; max-height: 86vh; border-radius: 18px; overflow: hidden; background: #000; }
   .modal-box iframe { width: 100%; height: 100%; border: 0; }
-  .modal-close { position: absolute; top: 18px; right: 18px; width: 46px; height: 46px; border-radius: 50%; border: 0; cursor: pointer; background: #fbf1e2; color: var(--cocoa); font-size: 24px; line-height: 1; }
+  .modal-close { position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer; background: #fff; font-size: 24px; line-height: 1; }
 
-  /* pricing */
-  .tg-banner { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; justify-content: space-between; padding: 26px 30px; border-radius: var(--radius); margin-bottom: 40px; background: linear-gradient(120deg, #e7f3fb, #f7ece2); border: 1px solid #d7e6f0; }
-  .tg-banner .tg-ico { width: 52px; height: 52px; border-radius: 50%; background: #2aabee; color: #fff; display: grid; place-items: center; flex: none; }
-  .tg-banner .tg-ico svg.ico { width: 24px; height: 24px; margin-left: -2px; }
-  .tg-banner .tg-text { flex: 1 1 320px; display: flex; gap: 18px; align-items: center; }
-  .tg-banner b { font-family: var(--serif); font-size: 30px; font-weight: 600; display: block; line-height: 1.1; }
-  .tg-banner p { color: var(--muted); }
-  .plan { display: flex; flex-direction: column; padding: 36px 32px; }
-  .plan.hit { background: var(--cocoa); color: #fbf1e2; border-color: var(--cocoa); box-shadow: 0 40px 80px -40px rgba(36,23,15,.7); transform: translateY(-14px); }
-  .plan.hit:hover { transform: translateY(-18px); }
-  .plan.hit .tagline, .plan.hit .note, .plan.hit .old { color: rgba(251,241,226,.6); }
-  .plan.hit li { color: #fbf1e2; border-color: rgba(251,241,226,.12); }
-  .plan.hit ul { border-color: rgba(251,241,226,.15); }
-  .plan.hit .price { background: linear-gradient(100deg, #f6d9a8, #e2a85c); -webkit-background-clip: text; background-clip: text; }
-  .plan .badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); white-space: nowrap; background: var(--grad); color: var(--cocoa); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; padding: 6px 14px; border-radius: 999px; }
-  .plan .dur { font-family: var(--serif); font-size: 44px; font-weight: 500; line-height: 1; }
-  .plan .tagline { color: var(--muted); font-size: 15px; margin-top: 8px; }
-  .plan .price-row { display: flex; align-items: baseline; gap: 12px; margin: 28px 0 4px; }
-  .plan .price { font-family: var(--serif); font-size: 66px; font-weight: 600; line-height: 1; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .plan .old { color: var(--muted); text-decoration: line-through; font-size: 20px; }
-  .plan .note { font-size: 13px; color: var(--muted); }
-  .plan ul { list-style: none; padding: 22px 0 0; margin: 24px 0 30px; flex: 1; border-top: 1px solid var(--line); }
-  .plan li { padding: 7px 0 7px 26px; font-size: 15px; position: relative; }
-  .plan li::before { content: ""; position: absolute; left: 2px; top: 16px; width: 12px; height: 1px; background: var(--honey); }
-  .plan.hit .btn-gold { width: 100%; }
-  .plan .btn { width: 100%; }
-  .addon-card { margin-top: 28px; display: grid; grid-template-columns: 220px 1fr auto; gap: 30px; align-items: center; padding: 0; border-radius: var(--radius); background: var(--paper); border: 1px solid var(--line); overflow: hidden; }
-  .addon-card img { width: 100%; height: 100%; min-height: 180px; object-fit: cover; }
-  .addon-card h3 { font-family: var(--serif); font-size: 34px; font-weight: 500; }
-  .addon-card .p { padding-right: 34px; font-family: var(--serif); font-size: 48px; font-weight: 600; white-space: nowrap; text-align: right; color: var(--caramel); line-height: 1; }
-  .addon-card small { display: block; margin-top: 8px; font-size: 12px; color: var(--muted); font-family: var(--sans); font-weight: 600; }
+  /* цены */
+  .prices { background: #fff; border-block: 1px solid var(--line); }
+  .tiers { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .tier { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 22px 18px; border-radius: 14px; background: var(--bg); border: 1px solid var(--line); }
+  .tier .dur { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 800; color: var(--caramel-2); }
+  .tier h3 { font-size: 20px; }
+  .tier .price { font-size: 38px; font-weight: 900; letter-spacing: -0.03em; line-height: 1; margin: 6px 0 4px; }
+  .tier p { color: var(--muted); font-size: 14px; line-height: 1.45; flex: 1; }
+  .tier.hit { background: #fff6ec; border: 1.5px solid var(--honey); }
+  .tier.premium { background: #2e1e15; color: #fbf1e2; border-color: #2e1e15; }
+  .tier.premium p { color: rgba(251,241,226,.72); }
+  .tier.premium .dur { color: var(--honey); }
+  .badge { position: absolute; top: -11px; left: 18px; font-size: 11px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; background: var(--honey); color: #fff; }
+  .includes { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px; margin-top: 26px; color: var(--ink-2); font-size: 15px; font-weight: 700; }
+  .includes span { display: inline-flex; align-items: center; gap: 8px; }
+  .includes svg.ico { color: var(--caramel); }
 
-  /* steps */
-  .steps { counter-reset: s; }
-  .step::before { counter-increment: s; content: "0" counter(s); display: block; font-family: var(--serif); font-size: 60px; font-weight: 500; line-height: 1; margin-bottom: 18px; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  /* скидки */
+  .deals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .deal { display: flex; gap: 16px; align-items: flex-start; padding: 22px; border-radius: 14px; background: #fff; border: 1px solid var(--line); }
+  .deal .pct { flex: none; min-width: 72px; height: 72px; padding: 0 10px; border-radius: 14px; display: grid; place-items: center; font-weight: 900; font-size: 24px; color: var(--rose); background: #fbe8ec; }
+  .deal h3 { margin-bottom: 4px; }
+  .deal p { color: var(--muted); font-size: 15px; }
+  .deals-note { text-align: center; color: var(--muted); font-size: 14px; margin-top: 18px; }
 
-  /* order wizard */
-  .order { background: var(--bg-2); }
-  .order-wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: start; }
-  .order-aside { position: sticky; top: 110px; }
-  .order-aside .frame img { aspect-ratio: 4 / 5; }
-  .order-aside blockquote { margin: 26px 0 0; font-family: var(--serif); font-style: italic; font-size: 30px; line-height: 1.2; color: var(--ink-2); }
-  .order-aside cite { display: block; margin-top: 10px; font-family: var(--sans); font-style: normal; font-size: 13px; color: var(--muted); }
-  .wizard { padding: 36px; border-radius: 32px; background: var(--paper); border: 1px solid var(--line); box-shadow: var(--shadow); }
-  .wiz-head { margin-bottom: 30px; }
-  .wiz-steps { list-style: none; margin: 0 0 16px; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
-  .wiz-steps li { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; color: var(--muted); }
-  .wiz-steps li.done { cursor: pointer; }
-  .wiz-steps b { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; border: 1px solid var(--line-2); flex: none; }
-  .wiz-steps li.active { color: var(--ink); }
-  .wiz-steps li.active b { background: var(--cocoa); color: #fbf1e2; border-color: var(--cocoa); }
-  .wiz-steps li.done b { border-color: var(--caramel); color: var(--caramel); background: #f6e7d4; }
-  .wiz-bar { height: 3px; background: var(--line); overflow: hidden; border-radius: 3px; }
-  .wiz-bar i { display: block; height: 100%; width: 25%; background: var(--grad); transition: width .4s ease; }
-  form { display: grid; }
-  .step-pane { display: grid; gap: 22px; animation: paneIn .45s ease; }
-  @keyframes paneIn { from { opacity: 0; transform: translateX(16px); } }
-  .pane-title { font-family: var(--serif); font-size: 36px; font-weight: 500; margin: 0; }
-  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .field { display: grid; gap: 8px; min-width: 0; }
-  .field > span, .label { font-size: 13px; font-weight: 800; letter-spacing: .03em; }
-  .field small, .help { font-size: 13px; color: var(--muted); }
-  .opt { color: var(--muted); font-weight: 500; }
-  input[type=text], input[type=tel], input[type=date], input[type=number], textarea { font: inherit; font-size: 16px; color: var(--ink); background: var(--bg); border: 1px solid var(--line-2); border-radius: 14px; padding: 15px 16px; width: 100%; min-width: 0; transition: border-color .2s, box-shadow .2s, background .2s; }
-  input::placeholder, textarea::placeholder { color: #ad9a8a; }
-  input[type=date] { min-height: 54px; }
-  input:focus, textarea:focus { outline: none; border-color: var(--caramel); background: #fff; box-shadow: 0 0 0 4px rgba(183,123,75,.12); }
-  input:disabled { opacity: .5; }
-  textarea { min-height: 110px; resize: vertical; }
-  .invalid { border-color: var(--err) !important; }
-  .err { color: var(--err); font-size: 13px; font-weight: 700; }
-  .err:empty { display: none; }
-  .pill { position: relative; display: block; }
-  .pill input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-  .pill span { display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 14px; cursor: pointer; font-weight: 600; font-size: 15px; background: var(--bg); border: 1px solid var(--line-2); transition: border-color .2s, background .2s, color .2s; }
-  .pill svg.ico { color: var(--caramel); }
-  .pill input:checked + span { border-color: var(--cocoa); background: var(--cocoa); color: #fbf1e2; }
-  .pill input:checked + span svg.ico { color: var(--honey); }
-  .pill input:focus-visible + span { outline: 2px solid var(--caramel); outline-offset: 2px; }
-  .occ-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-  .occ-grid .pill span { width: 100%; height: 100%; padding: 15px 14px; font-size: 14px; line-height: 1.25; }
-  .seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-  .seg .pill span { width: 100%; justify-content: center; padding: 14px 6px; }
-  .durations { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  .dur-opt { position: relative; }
-  .dur-opt input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-  .dur-opt span { display: grid; gap: 4px; text-align: center; padding: 18px 8px; border-radius: 16px; cursor: pointer; background: var(--bg); border: 1px solid var(--line-2); transition: border-color .2s, background .2s; }
-  .dur-opt b { font-family: var(--serif); font-size: 30px; font-weight: 500; line-height: 1; }
-  .dur-opt em { font-style: normal; font-size: 14px; color: var(--caramel); font-weight: 800; }
-  .dur-opt input:checked + span { border-color: var(--cocoa); background: var(--cocoa); color: #fbf1e2; }
-  .dur-opt input:checked + span em { color: var(--honey); }
-  .dur-opt input:focus-visible + span { outline: 2px solid var(--caramel); outline-offset: 2px; }
-  .toggle { display: flex; gap: 14px; align-items: flex-start; cursor: pointer; padding: 18px 20px; border-radius: 16px; background: var(--bg); border: 1px solid var(--line-2); transition: border-color .2s, background .2s; }
-  .toggle.on { border-color: var(--caramel); background: #f8ecdc; }
-  .toggle input { margin-top: 4px; width: 18px; height: 18px; accent-color: #9a6238; flex: none; }
-  .toggle b { display: flex; align-items: center; gap: 8px; font-weight: 800; }
-  .toggle b svg.ico { color: var(--caramel); }
-  .toggle small { color: var(--muted); font-size: 14px; }
-  .toggle a { color: var(--caramel-2); font-weight: 800; }
-  .date-info { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; padding: 10px 14px; border-radius: 12px; }
-  .date-info:empty { display: none; }
-  .date-info.ok { background: #e8f2ea; color: var(--ok); }
-  .date-info.warn { background: #fbecd6; color: #94591b; }
-  .sum-card { margin-top: 6px; border-radius: 20px; padding: 26px; background: var(--cocoa); color: #fbf1e2; }
-  .sum-card h3 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin-bottom: 12px; }
-  .sum-line { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(251,241,226,.12); font-size: 15px; }
-  .sum-line span:first-child { color: rgba(251,241,226,.6); }
-  .sum-line span:last-child { text-align: right; }
-  .sum-line s { color: rgba(251,241,226,.45); margin-right: 6px; }
-  .sum-total { display: flex; justify-content: space-between; align-items: baseline; margin-top: 16px; }
-  .sum-total b { font-family: var(--serif); font-size: 54px; font-weight: 600; line-height: 1; background: linear-gradient(100deg, #f6d9a8, #e2a85c); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .sum-nudge { display: flex; gap: 8px; align-items: flex-start; margin-top: 16px; padding: 12px 14px; border-radius: 12px; background: rgba(226,168,92,.14); color: #f6d9a8; font-size: 14px; font-weight: 600; }
-  .sum-nudge:empty { display: none; }
-  .wiz-nav { display: flex; gap: 10px; justify-content: space-between; margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--line); }
-  .wiz-nav .btn-primary { flex: 1; max-width: 360px; margin-left: auto; }
-  .help.center { text-align: center; margin-top: 14px; }
-  .direct-line { margin-top: 22px; color: var(--muted); font-size: 15px; }
-  .direct-line a { display: inline-flex; align-items: center; gap: 6px; color: var(--caramel-2); font-weight: 800; margin: 0 10px 0 0; text-decoration: none; white-space: nowrap; }
+  /* идеи по 2 в ряд */
+  .ideas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; max-width: 920px; margin: 0 auto; }
+  .idea { display: grid; grid-template-columns: 150px 1fr; gap: 16px; align-items: center; padding: 12px; border-radius: 14px; background: #fff; border: 1px solid var(--line); }
+  .idea img { width: 150px; aspect-ratio: 1; object-fit: cover; border-radius: 10px; }
+  .idea h3 { margin-bottom: 4px; }
+  .idea p { color: var(--muted); font-size: 15px; line-height: 1.45; }
 
-  /* faq */
-  .faq { max-width: 860px; margin: 0 auto; }
-  details { border-bottom: 1px solid var(--line); padding: 26px 0; }
-  summary { cursor: pointer; font-family: var(--serif); font-weight: 500; font-size: 28px; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  /* герои */
+  .meet { background: var(--bg-2); }
+  .meet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .meet-grid > img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 16px; }
+  .traits { display: grid; gap: 10px; margin-top: 20px; }
+  .trait { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; }
+  .trait svg.ico { color: var(--caramel); margin-top: 3px; }
+  .trait b { font-weight: 800; }
+
+  /* как заказать */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; counter-reset: s; }
+  .step { padding: 22px; border-radius: 14px; background: #fff; border: 1px solid var(--line); }
+  .step::before { counter-increment: s; content: counter(s); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--ink); color: #fff; font-weight: 900; margin-bottom: 14px; }
+  .step h3 { margin-bottom: 6px; }
+  .step p { color: var(--muted); font-size: 15px; }
+  .msg { margin-top: 18px; padding: 20px 22px; border-radius: 14px; background: #fff; border: 1px dashed var(--caramel); display: flex; gap: 18px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+  .msg p { font-size: 15px; color: var(--ink-2); min-width: 0; flex: 1 1 360px; }
+  .msg b { color: var(--ink); }
+
+  /* вопросы */
+  .faq { max-width: 780px; margin: 0 auto; }
+  details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+  summary { cursor: pointer; font-weight: 800; font-size: 18px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
   summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; font-family: var(--sans); font-weight: 300; color: var(--caramel); font-size: 30px; line-height: 1; transition: transform .3s; }
+  summary::after { content: "+"; color: var(--caramel); font-size: 26px; line-height: 1; transition: transform .2s; }
   details[open] summary::after { transform: rotate(45deg); }
-  details p { color: var(--muted); margin-top: 14px; max-width: 720px; }
+  details p { color: var(--muted); margin-top: 10px; }
 
-  /* final */
-  .final { position: relative; border-radius: 40px; overflow: hidden; min-height: 560px; display: grid; place-items: center; text-align: center; padding: 80px 28px; color: #fff6e6; }
-  .final > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(1.05); }
-  .final::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(36,23,15,.25), rgba(36,23,15,.72)); }
+  /* финал */
+  .final { position: relative; overflow: hidden; border-radius: 18px; min-height: 420px; display: grid; place-items: center; text-align: center; padding: 56px 24px; color: #fff6e6; }
+  .final > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .final::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(36,23,15,.2), rgba(36,23,15,.75)); }
   .final > div { position: relative; }
-  .final h2 { max-width: 820px; margin: 0 auto 18px; color: #fff6e6; }
-  .final h2 em { background: linear-gradient(100deg, #f6d9a8, #e2a85c); -webkit-background-clip: text; background-clip: text; }
-  .final p { color: rgba(255,246,230,.85); max-width: 560px; margin: 0 auto 36px; font-size: 18px; }
-  .final .hero-ctas { justify-content: center; }
-  .final .btn-ghost { color: #fff6e6; border-color: rgba(255,246,230,.45); }
+  .final h2 { color: #fff6e6; }
+  .final p { color: rgba(255,246,230,.88); max-width: 520px; margin: 0 auto 26px; font-size: 18px; }
+  .final .btns { justify-content: center; }
 
-  footer { padding: 48px 0 56px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
-  .foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-  .foot nav { display: flex; gap: 22px; flex-wrap: wrap; }
-  .foot a { text-decoration: none; }
+  footer { padding: 32px 0 40px; color: var(--muted); font-size: 14px; }
+  .foot { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+  .foot nav { display: flex; gap: 18px; }
+  .foot a { text-decoration: none; font-weight: 700; }
   .foot a:hover { color: var(--caramel); }
 
-  .float-contact { position: fixed; right: 22px; bottom: 22px; z-index: 35; display: grid; gap: 10px; justify-items: end; }
-  .fab { display: flex; align-items: center; gap: 10px; padding: 7px 18px 7px 7px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 14px; background: rgba(255,253,249,.92); backdrop-filter: blur(12px); border: 1px solid var(--line); box-shadow: 0 16px 40px -18px rgba(74,44,20,.5); transition: transform .2s; }
-  .fab:hover { transform: translateY(-2px); }
-  .fab i { color: #fff; font-style: normal; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; }
-  .fab.ig i { background: linear-gradient(45deg, #f9ce34, #ee2a7b 50%, #6228d7); }
-  .fab.tg i { background: #2aabee; }
-  .fab.wa i { background: #25d366; }
-
-  .cookie { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 50; max-width: 580px; margin: 0 auto; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px; box-shadow: var(--shadow); }
-  .cookie p { flex: 1 1 260px; font-size: 14px; color: var(--muted); }
-  .cookie .btns { display: flex; gap: 8px; }
-  .toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 140px); visibility: hidden; z-index: 60; max-width: calc(100% - 32px); text-align: center; background: var(--cocoa); color: #fbf1e2; padding: 14px 22px; border-radius: 14px; font-weight: 700; font-size: 15px; transition: transform .3s ease; }
-  .toast.show { transform: translate(-50%, 0); visibility: visible; }
-
-  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
-  .reveal.in { opacity: 1; transform: none; }
+  .float { position: fixed; right: 18px; bottom: 18px; z-index: 40; display: grid; gap: 10px; }
+  .float a { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; color: #fff; box-shadow: 0 12px 28px -10px rgba(0,0,0,.45); transition: transform .15s; }
+  .float a:hover { transform: scale(1.06); }
+  .float a svg { width: 26px; height: 26px; }
+  .float .ig { background: var(--ig); }
+  .float .tg { background: var(--tg); }
+  .float .tg svg { margin-left: -2px; }
 
   @media (max-width: 1000px) {
-    .hero-grid, .meet-grid, .order-wrap { grid-template-columns: 1fr; }
-    .order-aside { position: static; display: none; }
-    .grid-3 { grid-template-columns: 1fr 1fr; }
-    .grid-4, .gallery { grid-template-columns: repeat(2, 1fr); }
-    .nav-links a:not(.btn) { display: none; }
-    section { padding: 96px 0; }
-    .plan.hit { transform: none; }
-    .plan.hit:hover { transform: translateY(-4px); }
-    .reels { height: 420px; grid-template-columns: repeat(3, 1fr); order: -1; }
-    .meet-photos { height: 520px; max-width: 560px; }
+    .hero-grid, .meet-grid { grid-template-columns: 1fr; }
+    .reels { height: 340px; order: -1; }
+    .tiers { grid-template-columns: repeat(3, 1fr); }
+    .deals, .steps { grid-template-columns: 1fr; }
+    .nav-links > a:not(.btn) { display: none; }
+    section { padding: 64px 0; }
   }
   @media (max-width: 720px) {
     body { font-size: 16px; }
-    .wrap { padding: 0 18px; }
-    section { padding: 80px 0; }
-    .grid-3 { grid-template-columns: 1fr; }
-    .row { grid-template-columns: 1fr; }
-    .section-head { margin-bottom: 44px; }
-    .logo { font-size: 23px; }
-    .logo-mark { width: 32px; height: 32px; }
-    .nav-inner { height: 66px; }
-    .hero { padding: 96px 0 64px; }
-    .hero .lead { font-size: 16px; margin: 18px 0 26px; }
-    .hero-ctas .btn { flex: 1 1 100%; }
-    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 30px; }
-    .stat span { display: block; font-size: 12px; line-height: 1.3; margin-top: 4px; }
-    .stat b { font-size: 32px; }
-    .reels { height: 300px; gap: 10px; margin-bottom: 8px; }
-    .reel-col { gap: 10px; }
-    .frame { border-radius: 14px; }
-    .marquee-track { font-size: 22px; gap: 34px; }
-    .marquee-track span { gap: 34px; }
-    .meet-photos { height: 420px; }
-    .meet-badge { width: 92px; height: 92px; font-size: 21px; }
-    .reel:nth-child(even) { margin-top: 28px; }
-    .reel .cap { font-size: 19px; padding: 30px 12px 12px; }
-    .reel .play { width: 50px; height: 50px; }
-    .addon-card { grid-template-columns: 1fr; gap: 0; }
-    .addon-card > div { padding: 22px 22px 0; }
-    .addon-card .p { text-align: left; padding: 14px 22px 24px; }
-    .addon-card img { max-height: 220px; }
-    .any-idea { padding: 30px 22px; }
-    .any-idea h3 { font-size: 30px; }
-    .tg-banner { padding: 22px; }
-    .tg-banner b { font-size: 24px; }
-    .tg-banner .btn { width: 100%; }
-    .wizard { padding: 22px 16px; border-radius: 24px; margin: 0 -6px; }
-    .wiz-steps span { display: none; }
-    .wiz-steps li { justify-content: center; }
-    .wiz-steps li.active span { display: inline; }
-    .wiz-steps { grid-template-columns: auto auto auto auto; justify-content: space-between; }
-    .occ-grid { grid-template-columns: 1fr 1fr; }
-    .seg .pill span { flex-direction: column; gap: 4px; font-size: 14px; }
-    .pane-title { font-size: 30px; }
-    .wiz-nav { position: sticky; bottom: 0; z-index: 5; background: rgba(255,253,249,.97); backdrop-filter: blur(12px); margin: 22px -16px -22px; padding: 14px 16px; border-radius: 0 0 24px 24px; }
-    .wiz-nav .btn { padding: 15px 18px; }
-    .hide-m { display: none; }
-    .float-contact { display: none; }
-    .final { min-height: 480px; border-radius: 28px; padding: 60px 20px; }
-    summary { font-size: 22px; }
+    .wrap { padding: 0 16px; }
+    .hero { padding: 24px 0 48px; }
+    .hero .lead { font-size: 16px; }
+    .hero .btns .btn { flex: 1 1 100%; }
+    .reels { height: 260px; gap: 8px; }
+    .reel-col { gap: 8px; }
+    .stats { gap: 18px; }
+    .stat b { font-size: 24px; }
+    .videos { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .tiers { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .tier { padding: 18px 14px; }
+    .tier .price { font-size: 30px; }
+    .tier.premium { grid-column: 1 / -1; }
+    .ideas { gap: 10px; }
+    .idea { grid-template-columns: 1fr; gap: 8px; padding: 8px; }
+    .idea img { width: 100%; }
+    .idea h3 { font-size: 15px; }
+    .idea p { font-size: 13px; }
+    .nav-links .btn-sm span { display: none; }
+    .logo { font-size: 19px; }
+    .float { right: 12px; bottom: 12px; }
+    .float a { width: 50px; height: 50px; }
   }
-  @media (max-width: 400px) {
-    .grid-4, .gallery { gap: 10px; }
-    .seg .pill span { font-size: 13px; padding: 12px 4px; }
-    .dur-opt b { font-size: 24px; }
-  }
-
-  /* ================= Instagram-style layer ================= */
-  :root { --ig-blue: #0095f6; --ig-blue-2: #1877f2; --ig-grey: #efefef; --ig-grey-2: #dbdbdb; --ig-text: #262626; --ig-muted: #737373; --radius: 12px;
-    --ig-ring: linear-gradient(45deg, #feda75, #fa7e1e 30%, #d62976 60%, #962fbf 80%, #4f5bd5); --shadow: 0 10px 30px -18px rgba(0,0,0,.25); }
-  .btn { border-radius: 8px; padding: 12px 22px; font-size: 14px; font-weight: 600; letter-spacing: 0; box-shadow: none; }
-  .btn::after { display: none; }
-  .btn-primary, .btn-gold { background: var(--ig-blue); color: #fff; box-shadow: none; }
-  .btn-primary:hover, .btn-gold:hover { background: var(--ig-blue-2); transform: none; }
-  .btn-ghost, .btn-light { background: var(--ig-grey); color: #000; border: 0; }
-  .btn-ghost:hover, .btn-light:hover { background: var(--ig-grey-2); transform: none; }
-  .btn-sm { padding: 8px 16px; }
-  .hero-ctas .btn, .gallery-cta .btn { padding: 13px 24px; }
-  .frame { border-radius: 8px; box-shadow: none; }
-  .card { border-radius: var(--radius); }
-  .card:hover { box-shadow: none; border-color: var(--ig-grey-2); }
-  .icon { border-radius: 50%; background: #fff; border: 1px solid var(--line); }
-  /* marquee: light */
-  .marquee-wrap { background: #fff; color: var(--ink); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .marquee { padding: 18px 0; }
-  .marquee-track { font-size: 24px; }
-  /* meet badge */
-  .meet-badge { background: #fff; color: var(--caramel); border: 1px solid var(--line); box-shadow: var(--shadow); }
-  .meet-photos .p2 { border-width: 6px; }
-  /* any idea: light */
-  .any-idea { background: #fff; color: var(--ink); border: 1px solid var(--line); border-radius: var(--radius); }
-  .any-idea::before { display: none; }
-  .any-idea p { color: var(--muted); }
-  /* stories (occasions) */
-  .occasions { gap: 22px 18px; max-width: 1060px; }
-  .plan .tagline { min-height: 48px; }
-  .story { display: grid; justify-items: center; gap: 8px; width: 96px; padding: 0; border: 0; background: none; cursor: pointer; font: inherit; color: var(--ig-text); }
-  .story .ring { width: 88px; height: 88px; border-radius: 50%; padding: 3px; background: var(--ig-ring); transition: transform .2s; }
-  .story .ring img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid #fff; background: #fff; }
-  .story:hover .ring { transform: scale(1.05); }
-  .story span { font-size: 12px; line-height: 1.25; text-align: center; font-weight: 500; }
-  /* examples: IG grid */
-  .examples { background: #fff; color: var(--ink); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .examples .section-head p { color: var(--muted); }
-  .examples .eyebrow { color: var(--caramel); }
-  .gallery { gap: 4px; }
-  .reel { border-radius: 4px; aspect-ratio: 4 / 5; }
-  .reel:nth-child(even) { margin-top: 0; }
-  .reel img { opacity: 1; }
-  .reel:hover img { transform: none; filter: brightness(.85); }
-  .reel .play { display: grid; width: 52px; height: 52px; }
-  .reel .views { top: auto; bottom: 10px; left: 10px; background: none; backdrop-filter: none; padding: 0; font-size: 14px; font-weight: 600; text-shadow: 0 1px 6px rgba(0,0,0,.5); }
-  .reel .views svg.ico { width: 14px; height: 14px; }
-  .reel .cap { top: 10px; bottom: auto; padding: 0 12px; background: none; font-family: var(--sans); font-style: normal; font-size: 13px; font-weight: 700; letter-spacing: .02em; text-shadow: 0 1px 6px rgba(0,0,0,.55); }
-  .examples .btn-ghost { color: #000; }
-  /* pricing */
-  .tg-banner { border-radius: var(--radius); background: #fff; border: 1px solid var(--line); }
-  .plan.hit { background: #fff; color: var(--ink); border: 1.5px solid var(--ig-blue); box-shadow: 0 20px 40px -30px rgba(0,149,246,.6); }
-  .plan.hit .tagline, .plan.hit .note, .plan.hit .old { color: var(--muted); }
-  .plan.hit li { color: var(--ink); }
-  .plan.hit ul { border-color: var(--line); }
-  .plan.hit .price { background: var(--grad-text); -webkit-background-clip: text; background-clip: text; }
-  .plan .badge { background: var(--ig-blue); color: #fff; border-radius: 6px; letter-spacing: .08em; }
-  .addon-card { border-radius: var(--radius); }
-  /* wizard */
-  .wizard { border-radius: 16px; box-shadow: none; }
-  .wiz-steps li.active b { background: var(--ig-blue); border-color: var(--ig-blue); color: #fff; }
-  .wiz-steps li.done b { background: #e8f4fe; border-color: var(--ig-blue); color: var(--ig-blue); }
-  .wiz-bar i { background: var(--ig-blue); }
-  input[type=text], input[type=tel], input[type=date], input[type=number], textarea { border-radius: 8px; background: #fafafa; border-color: var(--ig-grey-2); }
-  input:focus, textarea:focus { border-color: #a8a8a8; box-shadow: none; background: #fff; }
-  .pill span, .dur-opt span, .toggle { border-radius: 8px; background: #fff; border-color: var(--ig-grey-2); }
-  .pill input:checked + span, .dur-opt input:checked + span { background: #e8f4fe; color: var(--ig-text); border-color: var(--ig-blue); }
-  .pill input:checked + span svg.ico { color: var(--ig-blue); }
-  .dur-opt input:checked + span em { color: var(--ig-blue); }
-  .toggle.on { background: #e8f4fe; border-color: var(--ig-blue); }
-  .toggle input { accent-color: var(--ig-blue); }
-  .sum-card { background: #fafafa; color: var(--ink); border: 1px solid var(--ig-grey-2); border-radius: 12px; }
-  .sum-line { border-color: var(--line); }
-  .sum-line span:first-child { color: var(--muted); }
-  .sum-line s { color: var(--muted); }
-  .sum-total b { background: var(--grad-text); -webkit-background-clip: text; background-clip: text; }
-  .sum-nudge { background: #fff4e5; color: #8a5a1f; }
-  .final { border-radius: 16px; }
-  .final .btn-ghost { background: rgba(255,255,255,.18); color: #fff; backdrop-filter: blur(6px); }
-  .fab { border-radius: 999px; }
-  .toast { border-radius: 8px; background: #262626; color: #fff; }
-  @media (max-width: 720px) {
-    .story { width: 76px; }
-    .story .ring { width: 70px; height: 70px; }
-    .occasions { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; gap: 12px; margin: 0 -18px; padding: 4px 18px 8px; scrollbar-width: none; }
-    .occasions::-webkit-scrollbar { display: none; }
-    .story { flex: none; }
-    .plan .tagline { min-height: 0; }
-    .reel .cap { font-size: 12px; }
-  }
-
-
-  /* ================= v5: читаемые шрифты, тарифы, форма, донаты ================= */
-  :root { --serif: "Nunito", system-ui, sans-serif; --sans: "Nunito", system-ui, sans-serif; --muted: #6b5546; }
-  body { font-size: 17px; line-height: 1.6; }
-  h1, h2 { font-weight: 800; letter-spacing: -0.025em; line-height: 1.08; }
-  h1 { font-size: clamp(38px, 5.2vw, 70px); }
-  h2 { font-size: clamp(30px, 3.8vw, 50px); }
-  h1 em, h2 em, .serif-em { font-style: normal; }
-  .why-quote { font-weight: 800; font-size: clamp(26px, 3.2vw, 42px); letter-spacing: -0.02em; }
-  .marquee-track { font-style: normal; font-weight: 800; font-size: 20px; }
-  .lead, .section-head p { color: var(--muted); }
-  .eyebrow { font-weight: 900; }
-  .any-idea h3, .pane-title, summary { font-weight: 800; letter-spacing: -0.01em; }
-  summary { font-size: 20px; }
-  .stat b { font-weight: 900; }
-  .order-quote, .idea .vis .overlay, .reel .cap { font-style: normal; font-weight: 800; }
-  .order-quote { font-size: 24px; margin-top: 18px; color: var(--ink-2); }
-
-  /* тарифы */
-  .tiers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: stretch; }
-  .tier { position: relative; display: flex; flex-direction: column; padding: 30px 24px; border-radius: 16px; background: #fff; border: 1px solid var(--line); }
-  .tier h3 { font-size: 24px; font-weight: 900; margin: 0 0 6px; }
-  .tier-desc { color: var(--muted); font-size: 15px; min-height: 48px; }
-  .tier-price { font-size: 44px; font-weight: 900; letter-spacing: -0.03em; margin-top: 22px; line-height: 1; }
-  .tier-meta { color: var(--muted); font-size: 13px; margin-top: 8px; }
-  .tier-label { font-size: 11px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 22px 0 10px; }
-  .tier-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .tier-tags span { font-size: 12.5px; font-weight: 700; padding: 5px 10px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); }
-  .tier ul { list-style: none; padding: 0; margin: 22px 0 26px; flex: 1; display: grid; gap: 10px; }
-  .tier li { display: flex; gap: 10px; font-size: 14.5px; line-height: 1.4; }
-  .tier li svg.ico { color: var(--caramel); margin-top: 2px; }
-  .tier .btn { width: 100%; }
-  .tier.popular { background: #fff6ec; border: 1.5px solid var(--honey); box-shadow: 0 20px 40px -30px rgba(183,123,75,.7); }
-  .tier-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 11px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; background: var(--honey); color: #fff; }
-  .tier.premium { background: linear-gradient(170deg, #4a3123, #2e1e15); color: #fbf1e2; border-color: #4a3123; }
-  .tier.premium .tier-desc, .tier.premium .tier-meta, .tier.premium .tier-label { color: rgba(251,241,226,.7); }
-  .tier.premium .tier-tags span { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.14); color: #fbf1e2; }
-  .tier.premium li svg.ico { color: var(--honey); }
-  .tier-kicker { font-size: 11px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; color: var(--honey); margin-bottom: 10px; }
-  .tiers-note { text-align: center; color: var(--muted); font-size: 14px; margin-top: 26px; }
-  .tiers-note a { color: var(--caramel-2); font-weight: 800; }
-
-  /* форма */
-  .order-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 56px; align-items: start; }
-  .order-media { position: sticky; top: 110px; }
-  .order-media .frame img { aspect-ratio: 4 / 5; object-fit: cover; transition: opacity .3s; }
-  .oform { display: grid; gap: 22px; padding: 32px; border-radius: 16px; background: #fff; border: 1px solid var(--line); }
-  .tier-pick { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-  .tp { position: relative; }
-  .tp input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-  .tp span { display: grid; gap: 2px; padding: 12px 12px; border-radius: 10px; cursor: pointer; border: 1px solid var(--ig-grey-2, #dbdbdb); background: #fff; transition: border-color .2s, background .2s; }
-  .tp b { font-size: 14px; font-weight: 800; }
-  .tp em { font-style: normal; font-size: 15px; font-weight: 900; color: var(--caramel-2); }
-  .tp input:checked + span { border-color: var(--ig-blue, #0095f6); background: #e8f4fe; }
-  .tp input:focus-visible + span { outline: 2px solid var(--ig-blue, #0095f6); outline-offset: 2px; }
-  .chips-pick { display: flex; flex-wrap: wrap; gap: 8px; }
-  .chips-pick .pill span { padding: 9px 14px; border-radius: 999px; font-size: 14px; }
-  .file-pick { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px; border-radius: 10px; border: 1.5px dashed var(--line-2); background: #fafafa; cursor: pointer; font-weight: 700; font-size: 14px; color: var(--ink-2); text-align: center; }
-  .file-pick:hover { border-color: var(--caramel); }
-  .file-pick input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-  .file-pick:focus-within { outline: 2px solid var(--ig-blue, #0095f6); outline-offset: 2px; }
-  .btn-wide { width: 100%; padding: 16px 22px; font-size: 15px; }
-  .oform .help { font-size: 13px; color: var(--muted); text-align: center; }
-  .oform .direct-line { margin: 0; text-align: center; font-size: 14px; }
-  .field > span, .label { font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
-  .field > span .opt { text-transform: none; letter-spacing: 0; font-weight: 600; }
-
-  /* донаты */
-  .support { background: #fff3f1; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .donate-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 760px; margin: 0 auto; }
-  .donate { display: grid; gap: 4px; padding: 18px 20px; border-radius: 12px; background: #fff; border: 1px solid var(--line); text-decoration: none; transition: border-color .2s, transform .2s; }
-  .donate:hover { border-color: var(--rose); transform: translateY(-2px); }
-  .d-top { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
-  .d-top b { font-size: 17px; font-weight: 900; }
-  .d-top em { font-style: normal; font-weight: 900; color: #c4566e; }
-  .d-perk { font-size: 14px; color: var(--muted); }
-  .donate-sub { text-align: center; font-weight: 900; font-size: 22px; margin: 48px 0 20px; }
-  .donate-big { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 900px; margin: 0 auto; }
-  .donate-card { display: flex; flex-direction: column; padding: 26px 22px; border-radius: 14px; background: #fff; border: 1px solid var(--line); }
-  .d-price { font-size: 34px; font-weight: 900; letter-spacing: -0.02em; }
-  .donate-card h3 { color: #c4566e; font-weight: 900; margin: 2px 0 14px; }
-  .donate-card ul { list-style: none; padding: 0; margin: 0 0 20px; display: grid; gap: 8px; flex: 1; }
-  .donate-card li { display: flex; gap: 8px; font-size: 14px; color: var(--muted); }
-  .donate-card li svg.ico { color: var(--rose); margin-top: 2px; }
-
-  @media (max-width: 1100px) { .tiers { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 1000px) {
-    .order-grid { grid-template-columns: 1fr; }
-    .order-media { display: none; }
-  }
-  @media (max-width: 720px) {
-    .tiers { grid-template-columns: 1fr; }
-    .tier-desc { min-height: 0; }
-    .oform { padding: 22px 16px; margin: 0 -4px; }
-    .tier-pick { grid-template-columns: 1fr 1fr; }
-    .donate-grid, .donate-big { grid-template-columns: 1fr; }
-    summary { font-size: 18px; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation: none !important; transition: none !important; }
-    .reveal { opacity: 1; transform: none; }
-  }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 </style>
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="capy" viewBox="0 0 200 170">
-      <ellipse cx="100" cy="158" rx="78" ry="8" fill="#000" opacity=".08"/>
-      <path d="M30 120 C 22 80, 50 52, 92 50 L 128 48 C 160 46, 186 66, 186 98 C 186 132, 160 152, 120 152 L 66 152 C 44 152, 34 140, 30 120 Z" fill="#b5835a"/>
-      <rect x="54" y="132" width="16" height="24" rx="8" fill="#9c6e48"/>
-      <rect x="140" y="132" width="16" height="24" rx="8" fill="#9c6e48"/>
-      <ellipse cx="134" cy="54" rx="9" ry="7" fill="#9c6e48"/>
-      <path d="M110 60 C 116 30, 150 22, 172 34 C 192 44, 196 70, 186 86 C 176 100, 146 98, 128 92 C 112 86, 106 74, 110 60 Z" fill="#c08f65"/>
-      <ellipse cx="128" cy="34" rx="8" ry="7" fill="#9c6e48"/>
-      <circle cx="152" cy="52" r="5" fill="#2b2420"/>
-      <circle cx="153.5" cy="50.5" r="1.6" fill="#fff"/>
-      <ellipse cx="184" cy="66" rx="7" ry="5" fill="#7d5636"/>
-      <path d="M170 82 q 6 4 12 0" stroke="#7d5636" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      <ellipse cx="146" cy="68" rx="8" ry="5" fill="#e8a5a5" opacity=".6"/>
-    </symbol>
-    <symbol id="bow" viewBox="0 0 40 24">
-      <path d="M20 12 L4 2 Q0 12 4 22 Z M20 12 L36 2 Q40 12 36 22 Z" fill="#f08aa3"/>
-      <circle cx="20" cy="12" r="5" fill="#d96f8a"/>
-    </symbol>
-    <symbol id="heart" viewBox="0 0 32 30">
-      <path d="M16 29 C 6 21, 0 15, 0 8.5 C 0 3.5, 4 0, 8.5 0 C 12 0, 14.5 2, 16 4.5 C 17.5 2, 20 0, 23.5 0 C 28 0, 32 3.5, 32 8.5 C 32 15, 26 21, 16 29 Z" fill="#f08aa3"/>
-    </symbol>
-    <symbol id="star" viewBox="0 0 20 20">
-      <path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="#ffe8b0"/>
-    </symbol>
-    <!-- пара: Peep слева, Peak справа с бантиком -->
-    <symbol id="couple" viewBox="0 0 420 200">
-      <use href="#capy" x="10" y="20" width="200" height="170"/>
-      <g transform="translate(410 26) scale(-1 1)">
-        <use href="#capy" x="0" y="0" width="185" height="157"/>
-        <use href="#bow" x="112" y="16" width="34" height="20"/>
-      </g>
-    </symbol>
-    <symbol id="i-star4" viewBox="0 0 24 24"><path d="M12 1.5C12.7 8 16 11.3 22.5 12 16 12.7 12.7 16 12 22.5 11.3 16 8 12.7 1.5 12 8 11.3 11.3 8 12 1.5Z"/></symbol>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
     <symbol id="i-star5" viewBox="0 0 24 24"><path d="M12 2.5c.6 0 1 .4 1.4 1.1l2.2 4.6 5 .7c.8.1 1.3.6 1.3 1.2s-.3 1-.9 1.5l-3.6 3.5.9 5c.1.8-.1 1.4-.8 1.6-.4.1-.9 0-1.4-.3L12 19l-4.4 2.4c-.5.3-1 .4-1.4.3-.7-.2-.9-.8-.8-1.6l.9-5-3.6-3.5c-.6-.5-.9-.9-.9-1.5s.5-1.1 1.3-1.2l5-.7 2.2-4.6c.4-.7.8-1.1 1.4-1.1Z"/></symbol>
-    <symbol id="i-image" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></symbol>
-    <!-- иконки (стиль Lucide) -->
-    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
     <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/></symbol>
@@ -673,330 +245,172 @@
     <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
     <symbol id="i-feather" viewBox="0 0 24 24"><path d="M12.67 19a2 2 0 0 0 1.416-.588l6.154-6.172a6 6 0 0 0-8.49-8.49L5.586 9.914A2 2 0 0 0 5 11.328V18a1 1 0 0 0 1 1z"/><path d="M16 8 2 22"/><path d="M17.5 15H9"/></symbol>
-    <symbol id="i-film" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></symbol>
-    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
-    <symbol id="i-type" viewBox="0 0 24 24"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></symbol>
-    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
-    <symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></symbol>
-    <symbol id="i-smartphone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
     <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3l14 9-14 9z"/></symbol>
-    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
-    <symbol id="i-lightbulb" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></symbol>
-    <symbol id="i-message" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
     <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
     <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
-    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1.2-.5-2.3-1.6-2.8-2.8l.8-1-1-2Z"/></symbol>
     <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
-  </defs>
-</svg>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></symbol>
+    <symbol id="i-percent" viewBox="0 0 24 24"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-film" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></symbol>
+</defs></svg>
 
-<header class="nav" id="nav">
+<header class="nav">
   <div class="wrap nav-inner">
     <a href="#top" class="logo" aria-label="Peep &amp; Peak">
-      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c88653"/><stop offset="1" stop-color="#e2a85c"/></linearGradient></defs><circle cx="20" cy="20" r="20" fill="url(#lg)"/><path fill="#fbf1e2" d="M20 8.5c1.1 0 1.9.7 2.5 2l2.3 4.7 5.1.8c1.4.2 2.1.9 2.1 1.9s-.5 1.6-1.4 2.4l-3.7 3.6.9 5.1c.2 1.4-.2 2.3-1.3 2.6-.7.2-1.4 0-2.3-.5L20 28.6l-4.6 2.5c-.9.5-1.6.7-2.3.5-1-.3-1.5-1.2-1.3-2.6l.9-5.1-3.7-3.6c-.9-.8-1.4-1.4-1.4-2.4s.7-1.7 2.1-1.9l5.1-.8 2.3-4.7c.6-1.3 1.4-2 2.5-2Z"/></svg>
+      <svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c88653"/><stop offset="1" stop-color="#e2a85c"/></linearGradient></defs><circle cx="20" cy="20" r="20" fill="url(#lg)"/><path fill="#fbf1e2" d="M20 8.5c1.1 0 1.9.7 2.5 2l2.3 4.7 5.1.8c1.4.2 2.1.9 2.1 1.9s-.5 1.6-1.4 2.4l-3.7 3.6.9 5.1c.2 1.4-.2 2.3-1.3 2.6-.7.2-1.4 0-2.3-.5L20 28.6l-4.6 2.5c-.9.5-1.6.7-2.3.5-1-.3-1.5-1.2-1.3-2.6l.9-5.1-3.7-3.6c-.9-.8-1.4-1.4-1.4-2.4s.7-1.7 2.1-1.9l5.1-.8 2.3-4.7c.6-1.3 1.4-2 2.5-2Z"/></svg>
       <span>Peep <em>&amp;</em> Peak</span>
     </a>
     <nav class="nav-links">
-      <a href="#meet">Герои</a>
-      <a href="#ideas">Идеи</a>
       <a href="#examples">Примеры</a>
-      <a href="#pricing">Цены</a>
-      <a href="#support">Поддержать</a>
-      <a href="#order" class="btn btn-primary btn-sm">Заказать</a>
+      <a href="#prices">Цены</a>
+      <a href="#deals">Скидки</a>
+      <a href="#how">Как заказать</a>
+      <a class="btn btn-ig btn-sm" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg><span>Заказать</span></a>
     </nav>
   </div>
 </header>
 
 <main id="top">
 
-  <!-- ================= HERO ================= -->
   <section class="hero">
-    <span class="bokeh" style="width:180px;height:180px;left:6%;top:18%"></span>
-    <span class="bokeh" style="width:90px;height:90px;left:42%;top:12%;animation-delay:-4s"></span>
-    <span class="bokeh" style="width:240px;height:240px;left:30%;bottom:-60px;animation-delay:-8s;opacity:.6"></span>
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow reveal">Сериал «It's us» · 3 сезона</span>
-        <h1 class="reveal">Ваша история любви — <em>новая серия</em> Peep&nbsp;&amp;&nbsp;Peak</h1>
-        <p class="lead reveal">Пара капибар, в которой тысячи влюблённых узнают себя, разыграет вашу историю: с вашими именами, датами и самыми тёплыми моментами прямо внутри сцены.</p>
-        <div class="hero-ctas reveal">
-          <a href="#order" class="btn btn-primary">Заказать видео</a>
-          <a href="#examples" class="btn btn-ghost"><svg class="ico fill"><use href="#i-play"/></svg> Смотреть примеры</a>
+        <span class="eyebrow">Сериал «It's us» · 3 сезона</span>
+        <h1>Ваша история любви — <em>новая серия</em> Peep&nbsp;&amp;&nbsp;Peak</h1>
+        <p class="lead">Пара капибар, в которой влюблённые узнают себя, разыграет вашу историю. Ваши имена и даты становятся частью сцены: на торте, в небе, на песке.</p>
+        <div class="btns">
+          <a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg> Написать в Instagram</a>
+          <a class="btn btn-tg" data-link="tg"><svg class="ico"><use href="#i-send"/></svg> Написать в Telegram</a>
         </div>
-        <div class="stats reveal">
+        <div class="stats">
           <div class="stat"><b>152K</b><span>просмотров у одной серии</span></div>
           <div class="stat"><b>3</b><span>сезона историй о любви</span></div>
-          <div class="stat"><b id="from-chip">$47</b><span>цена видео от</span></div>
+          <div class="stat"><b id="from-price">$47</b><span>видео от</span></div>
         </div>
       </div>
-      <div class="reels reveal" id="reels" aria-label="Кадры из видео Peep &amp; Peak"></div>
+      <div class="reels" id="reels" aria-hidden="true"></div>
     </div>
   </section>
 
-  <div class="marquee-wrap" aria-hidden="true">
-    <div class="marquee"><div class="marquee-track" id="marquee"></div></div>
-  </div>
+  <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
 
-  <!-- ================= MEET ================= -->
-  <section id="meet">
-    <div class="wrap meet-grid">
-      <div class="meet-photos reveal">
-        <div class="frame p1"><img src="images/frames/beach.jpg" alt="Peep и Peak на пляже" loading="lazy"></div>
-        <div class="frame p2"><img src="images/frames/kiss.jpg" alt="Peep и Peak целуются" loading="lazy"></div>
-        <div class="meet-badge">
-          <svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="circ" d="M60 60 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0"/></defs><text font-family="Manrope, sans-serif" font-size="9.5" font-weight="700" letter-spacing="3.2" fill="#e2a85c"><textPath href="#circ">IT'S US · PEEP &amp; PEAK · IT'S US ·</textPath></text></svg>
-          <b>it's us</b>
-        </div>
-      </div>
-      <div>
-        <span class="eyebrow reveal">Знакомьтесь</span>
-        <h2 class="reveal">Он и она. <em>Это мы</em> — говорят о них пары</h2>
-        <p class="lead reveal">Peep &amp; Peak — пара, где он всегда рядом: укрывает пледом, печёт торт со свечой и дарит ей звёзды. Поэтому их серии пересылают друг другу со словами «это мы».</p>
-        <div class="traits">
-          <div class="trait reveal"><span class="dot" style="background:#e3eee6;color:var(--sage)"><svg class="ico"><use href="#i-heart"/></svg></span><div><b>Он — с кулончиком-звёздочкой</b><p>Заботливый, немного неуклюжий и всегда с сюрпризом в лапках.</p></div></div>
-          <div class="trait reveal"><span class="dot" style="background:#fbe6ea;color:#c46a7c"><svg class="ico"><use href="#i-sparkles"/></svg></span><div><b>Она — с ромашкой и звёздочкой на животике</b><p>Нежная, мечтательная и самая любимая звёздочка на свете.</p></div></div>
-          <div class="trait reveal"><span class="dot" style="background:#f6e7d4;color:var(--caramel)"><svg class="ico fill"><use href="#i-star5"/></svg></span><div><b>Звёздочка — их общий знак</b><p>У него на кулоне, у неё на животике: «You're my little star». В вашем видео она тоже будет.</p></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= WHY ================= -->
-  <section class="why">
+  <section id="examples">
     <div class="wrap">
-      <p class="why-quote reveal">Цветы завянут через неделю. А&nbsp;это видео будут <em class="serif-em">пересматривать годами</em> и показывать всем друзьям</p>
-      <div class="grid-3">
-        <div class="card reveal"><div class="icon"><svg class="ico"><use href="#i-target"/></svg></div><h3>Не шаблон, а ваша история</h3><p>Имена, даты и ваши моменты не наклеены сверху, а вплетены в сцену: на торте, в небе, на песке.</p></div>
-        <div class="card reveal"><div class="icon"><svg class="ico"><use href="#i-smile"/></svg></div><h3>Реакция, которую вы запомните</h3><p>Персонажи, которых он или она уже любит, вдруг поздравляют лично. Это трогает до слёз.</p></div>
-        <div class="card reveal"><div class="icon"><svg class="ico"><use href="#i-smartphone"/></svg></div><h3>Удобно дарить где угодно</h3><p>Вертикальное видео: отправить в мессенджер, выложить в сторис или показать на празднике.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= IDEAS ================= -->
-  <section id="ideas">
-    <div class="wrap">
-      <div class="section-head center reveal">
-        <span class="eyebrow">Любая идея в кадре</span>
-        <h2>Если вы можете это <em>представить</em> — Peep&nbsp;&amp;&nbsp;Peak это сыграют</h2>
-        <p>Вот что заказывают чаще всего. Но это только начало: можно всё, что подскажет ваша история.</p>
-      </div>
-      <div class="grid-3" id="ideas-grid"></div>
-      <div class="any-idea reveal">
-        <div>
-          <h3>Не нашли свою идею?</h3>
-          <p>Опишите любую — Peep &amp; Peak сыграют то, что важно именно вам двоим. Это опция «Своя история», её можно добавить к любому видео.</p>
-        </div>
-        <a href="#order" class="btn btn-gold" data-own-idea>Хочу свою историю</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= OCCASIONS ================= -->
-  <section id="occasions" style="padding-top:0">
-    <div class="wrap">
-      <div class="section-head center reveal">
-        <span class="eyebrow">Поводы</span>
-        <h2>Для какого <em>момента</em> делаем?</h2>
-        <p>Нажмите на повод — и он сразу появится в заявке.</p>
-      </div>
-      <div class="occasions reveal" id="occasion-buttons"></div>
-    </div>
-  </section>
-
-  <!-- ================= EXAMPLES ================= -->
-  <section id="examples" class="examples">
-    <div class="wrap">
-      <div class="section-head reveal">
+      <div class="head">
         <span class="eyebrow">Примеры</span>
-        <h2>Примеры <em>поздравлений</em></h2>
-        <p>Так выглядят именные видео, которые мы делаем на заказ. Нажмите, чтобы посмотреть.</p>
+        <h2>Так выглядит <em>ваше поздравление</em></h2>
+        <p>Реальные именные видео, которые мы сделали на заказ. Нажмите, чтобы посмотреть.</p>
       </div>
-      <div class="gallery" id="gallery"></div>
-      <div class="gallery-cta reveal">
-        <a href="#" class="btn btn-light" data-link="profile"><svg class="ico"><use href="#i-instagram"/></svg> Все серии в Instagram</a>
-        <a href="#" class="btn btn-ghost" data-link="dm"><svg class="ico"><use href="#i-message"/></svg> Написать в директ</a>
-      </div>
+      <div class="videos" id="videos"></div>
     </div>
   </section>
 
-  <!-- ================= PRICING ================= -->
-  <section id="pricing">
+  <section id="prices" class="prices">
     <div class="wrap">
-      <div class="section-head center reveal">
+      <div class="head center">
         <span class="eyebrow">Цены</span>
-        <h2>Ваша история. <em>Их мир.</em></h2>
-        <p>Ваши моменты, шутки, понятные только вам двоим, и любимые истории — в исполнении Peep &amp; Peak. Каждое видео создаётся вручную, только для вас.</p>
+        <h2>Выберите длительность</h2>
+        <p>Каждое видео делаем вручную под вашу историю. Оплата после того, как согласуем сюжет.</p>
       </div>
-      <div class="tiers" id="plans"></div>
-      <p class="tiers-note reveal">Оплата — только после того, как мы согласуем с вами сюжет и сроки.</p>
-    </div>
-  </section>
-
-  <!-- ================= HOW ================= -->
-  <section id="how" style="padding-top:0">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Как заказать</span>
-        <h2>Четыре шага до самого <em>тёплого</em> подарка</h2>
-      </div>
-      <div class="grid-4 steps">
-        <div class="card step reveal"><h3>Заявка</h3><p>Выберите видео, расскажите вашу историю и оставьте контакт. Пара минут.</p></div>
-        <div class="card step reveal"><h3>Обсуждаем</h3><p>Пишем вам в выбранный мессенджер, уточняем сюжет, детали и сроки.</p></div>
-        <div class="card step reveal"><h3>Создаём</h3><p>Peep &amp; Peak оживают в вашей истории. Показываем результат перед финалом.</p></div>
-        <div class="card step reveal"><h3>Дарите</h3><p>Получаете готовое видео в высоком качестве и смотрите на реакцию.</p></div>
+      <div class="tiers" id="tiers"></div>
+      <div class="includes">
+        <span><svg class="ico"><use href="#i-check"/></svg>Ваши имена и даты в кадре</span>
+        <span><svg class="ico"><use href="#i-check"/></svg>Сюжет под ваш повод</span>
+        <span><svg class="ico"><use href="#i-check"/></svg>Одна правка в подарок</span>
+        <span><svg class="ico"><use href="#i-clock"/></svg>Обычно 3–7 дней</span>
       </div>
     </div>
   </section>
 
-  <!-- ================= ORDER ================= -->
-  <section id="order" class="order">
+  <section id="deals">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Заявка</span>
-        <h2>Расскажите <em>вашу историю</em></h2>
-        <p>Мы ответим с идеей сюжета и сроками. Оплата — только после согласования.</p>
+      <div class="head center">
+        <span class="eyebrow">Скидки</span>
+        <h2>Как сэкономить</h2>
       </div>
-      <div class="order-grid">
-        <div class="order-media reveal">
-          <div class="frame"><img id="order-img" src="images/frames/emma-pillow.jpg" alt="Peep и Peak" loading="lazy"></div>
-          <p class="order-quote">«You're my little star»</p>
+      <div class="deals">
+        <div class="deal"><span class="pct">−10%</span><div><h3>Заранее</h3><p>Напишите нам за 14 дней до праздника или раньше.</p></div></div>
+        <div class="deal"><span class="pct">−15%</span><div><h3>Второе видео</h3><p>На каждое следующее видео, если заказывали у нас раньше.</p></div></div>
+        <div class="deal"><span class="pct">−20%</span><div><h3>Покажите реакцию</h3><p>Пришлите видео, как ваша половинка смотрит поздравление, и получите скидку на следующий заказ.</p></div></div>
+      </div>
+      <p class="deals-note">Скидки не суммируются. Напишите, какая вам подходит, и мы учтём её в цене.</p>
+    </div>
+  </section>
+
+  <section id="ideas" style="padding-top:0">
+    <div class="wrap">
+      <div class="head center">
+        <span class="eyebrow">Идеи</span>
+        <h2>Что можно сделать</h2>
+        <p>Любую вашу идею. Вот что заказывают чаще всего.</p>
+      </div>
+      <div class="ideas" id="ideas-list"></div>
+    </div>
+  </section>
+
+  <section class="meet">
+    <div class="wrap meet-grid">
+      <img src="images/frames/beach.jpg" alt="Peep и Peak на пляже" loading="lazy">
+      <div>
+        <span class="eyebrow">Знакомьтесь</span>
+        <h2>Peep &amp; Peak — <em>это мы</em>, говорят о них пары</h2>
+        <p style="color:var(--muted)">Он всегда рядом: укрывает пледом, печёт торт со свечой и дарит ей звёзды. Их серии пересылают друг другу со словами «это мы».</p>
+        <div class="traits">
+          <div class="trait"><svg class="ico"><use href="#i-heart"/></svg><span><b>Он</b> — с кулончиком-звёздочкой, заботливый и всегда с сюрпризом.</span></div>
+          <div class="trait"><svg class="ico"><use href="#i-sparkles"/></svg><span><b>Она</b> — с ромашкой и звёздочкой на животике, нежная и мечтательная.</span></div>
+          <div class="trait"><svg class="ico fill"><use href="#i-star5"/></svg><span><b>Звёздочка</b> — их общий знак: «You're my little star».</span></div>
         </div>
-
-        <form id="order-form" class="oform reveal" novalidate>
-          <div class="field">
-            <span class="label">Ваше видео</span>
-            <div class="tier-pick" id="tier-pick"></div>
-            <small id="tier-meta"></small>
-          </div>
-
-          <div class="field">
-            <span class="label">Какой повод?</span>
-            <div class="chips-pick" id="occasion-pills"></div>
-            <div class="err" data-err="occasion"></div>
-          </div>
-          <label class="field" id="f-occasion-other" hidden>
-            <span>Напишите ваш повод</span>
-            <input type="text" name="occasionOther" placeholder="Например: годовщина первого свидания">
-            <div class="err" data-err="occasionOther"></div>
-          </label>
-          <div class="row">
-            <label class="field" id="f-age" hidden>
-              <span>Сколько исполняется? <span class="opt">(по желанию)</span></span>
-              <input type="number" name="age" min="1" max="120" inputmode="numeric" placeholder="Например: 25">
-            </label>
-            <label class="field" id="f-together" hidden>
-              <span>Сколько вы вместе? <span class="opt">(по желанию)</span></span>
-              <input type="text" name="together" placeholder="3 года / 6 месяцев / 10 лет брака">
-            </label>
-          </div>
-
-          <label class="field">
-            <span>Расскажите вашу историю</span>
-            <textarea name="story" placeholder="Как вы познакомились, путешествие, день, который не забыть… Что должно быть в видео?"></textarea>
-            <div class="err" data-err="story"></div>
-          </label>
-
-          <div class="row">
-            <label class="field">
-              <span>Кого поздравляем</span>
-              <input type="text" name="toName" placeholder="Имя или инициалы: Аня / А." maxlength="40">
-              <div class="err" data-err="toName"></div>
-            </label>
-            <label class="field">
-              <span>От кого <span class="opt">(по желанию)</span></span>
-              <input type="text" name="fromName" placeholder="Ваше имя" maxlength="40">
-            </label>
-          </div>
-
-          <div class="row">
-            <label class="field">
-              <span>К какой дате нужно видео?</span>
-              <input type="date" name="date" id="date-input">
-              <div class="date-info" id="date-info"></div>
-              <div class="err" data-err="date"></div>
-            </label>
-            <label class="field">
-              <span>Надпись в видео <span class="opt">(по желанию)</span></span>
-              <input type="text" name="caption" id="caption" maxlength="40" placeholder="А ♥ М / 3 года вместе">
-              <small><span id="caption-count">0</span>/40</small>
-            </label>
-          </div>
-
-          <div class="field">
-            <span>Фото <span class="opt">(по желанию)</span></span>
-            <label class="file-pick">
-              <input type="file" name="photo" id="photo-input" accept="image/jpeg,image/png,image/webp">
-              <svg class="ico"><use href="#i-image"/></svg><span id="photo-name">Выберите фото для видео</span>
-            </label>
-            <small>JPG, PNG или WEBP до 10 МБ. Фото вас двоих, питомца, места — всё, что поможет сделать историю вашей.</small>
-            <div class="err" data-err="photo"></div>
-          </div>
-
-          <div class="field">
-            <span class="label">Куда вам написать?</span>
-            <div class="seg">
-              <label class="pill"><input type="radio" name="contactMethod" value="instagram"><span><svg class="ico"><use href="#i-instagram"/></svg> Instagram</span></label>
-              <label class="pill"><input type="radio" name="contactMethod" value="telegram"><span><svg class="ico"><use href="#i-send"/></svg> Telegram</span></label>
-              <label class="pill"><input type="radio" name="contactMethod" value="whatsapp"><span><svg class="ico"><use href="#i-whatsapp"/></svg> WhatsApp</span></label>
-            </div>
-            <input type="text" name="contact" id="contact-input" placeholder="Сначала выберите мессенджер" disabled autocomplete="off" aria-label="Ваш ник или номер">
-            <div class="err" data-err="contact"></div>
-          </div>
-
-          <button class="btn btn-primary btn-wide" type="submit" id="submit-btn">Отправить заявку</button>
-          <p class="help" id="form-hint">Мы ответим с индивидуальным предложением и сроками. Оплата — только после вашего согласия. Фото используем только для вашего видео.</p>
-          <p class="direct-line">Удобнее написать самим? <span id="direct-links"></span></p>
-        </form>
       </div>
     </div>
   </section>
 
-  <!-- ================= SUPPORT ================= -->
-  <section id="support" class="support">
+  <section id="how">
     <div class="wrap">
-      <div class="section-head center reveal">
-        <span class="eyebrow">Поддержать</span>
-        <h2>Помогите Peep &amp; Peak <em>снимать новые серии</em></h2>
-        <p>Каждая серия — это недели работы. Если вам откликаются наши герои, вы можете поддержать проект. Все средства идут на новые эпизоды.</p>
+      <div class="head center">
+        <span class="eyebrow">Как заказать</span>
+        <h2>Три шага до подарка</h2>
       </div>
-      <div class="donate-grid" id="donate-small"></div>
-      <p class="donate-sub reveal">Хотите сделать что-то большее?</p>
-      <div class="donate-big" id="donate-big"></div>
-      <p class="tiers-note reveal">Хотите поддержать иначе или стать партнёром? Напишите нам в <a href="#" data-link="dm">директ</a>.</p>
+      <div class="steps">
+        <div class="step"><h3>Напишите нам</h3><p>В Instagram или Telegram. Расскажите повод и вашу историю.</p></div>
+        <div class="step"><h3>Согласуем сюжет</h3><p>Предложим идею, длительность и срок. Оплата после согласования.</p></div>
+        <div class="step"><h3>Получите видео</h3><p>Пришлём готовое видео в тот же чат. Остаётся подарить.</p></div>
+      </div>
+      <div class="msg">
+        <p><b>Что написать в сообщении:</b> повод, имена или инициалы, дату праздника, длительность видео и пару слов о вашей истории.</p>
+        <div class="btns">
+          <a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg> Instagram</a>
+          <a class="btn btn-tg" data-link="tg"><svg class="ico"><use href="#i-send"/></svg> Telegram</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ================= FAQ ================= -->
-  <section id="faq">
+  <section id="faq" style="padding-top:0">
     <div class="wrap">
-      <div class="section-head center reveal">
-        <span class="eyebrow">Вопросы</span>
-        <h2>Часто спрашивают</h2>
-      </div>
-      <div class="faq reveal">
-        <details><summary>Можно реализовать вообще любую идею?</summary><p>Да. Расскажите вашу историю в заявке — Peep &amp; Peak её сыграют. Если что-то сложно показать, предложим, как сделать ещё красивее. Для больших идей есть «Премиум-история».</p></details>
-        <details><summary>Какие надписи можно добавить?</summary><p>Имена, инициалы, даты и короткие фразы до 40 символов. Они становятся частью сцены: в небе, на торте, на песке, на шарах.</p></details>
-        <details><summary>Сколько времени занимает создание?</summary><p>Обычно 3–7 рабочих дней, премиум-истории — дольше, сроки обсуждаем индивидуально. Укажите дату в заявке, и мы сразу скажем, успеваем ли.</p></details>
-        <details><summary>Зачем фото?</summary><p>По желанию. Фото помогает перенести в видео ваши детали: место, питомца, любимые вещи. Используем его только для вашего видео.</p></details>
-        <details><summary>Как я получу видео?</summary><p>Пришлём готовое видео в высоком качестве в мессенджер, который вы выбрали в заявке.</p></details>
-        <details><summary>Как оплатить?</summary><p>После согласования сюжета и сроков пришлём вам удобный способ оплаты. До этого платить ничего не нужно.</p></details>
+      <div class="head center"><h2>Вопросы</h2></div>
+      <div class="faq">
+        <details><summary>Можно любую идею?</summary><p>Да. Опишите её в сообщении, и Peep &amp; Peak её сыграют. Если что-то сложно показать, предложим, как сделать ещё красивее.</p></details>
+        <details><summary>Какие надписи можно добавить?</summary><p>Имена, инициалы, даты и короткие фразы. Они становятся частью сцены: в небе, на торте, на песке, на подушке.</p></details>
+        <details><summary>Сколько ждать?</summary><p>Обычно 3–7 дней. Видео на 180 секунд — дольше, срок скажем сразу. Если праздник совсем скоро, напишите, постараемся успеть.</p></details>
+        <details><summary>Как оплатить?</summary><p>После того как согласуем сюжет, пришлём удобный способ оплаты. До этого платить ничего не нужно.</p></details>
       </div>
     </div>
   </section>
 
-
-  <!-- ================= FINAL CTA ================= -->
   <section style="padding-top:0">
     <div class="wrap">
-      <div class="final reveal">
-        <img src="images/frames/beach.jpg" alt="" loading="lazy">
+      <div class="final">
+        <img src="images/frames/emma-pillow.jpg" alt="" loading="lazy">
         <div>
-          <h2>Удивите вторую половинку <em>так, как никто до вас</em></h2>
-          <p>Самый тёплый подарок не купить в магазине. Его можно только придумать — вместе с Peep &amp; Peak.</p>
-          <div class="hero-ctas">
-            <a href="#order" class="btn btn-gold">Заказать видео</a>
-            <a href="#" class="btn btn-ghost" data-link="dm"><svg class="ico"><use href="#i-message"/></svg> Написать в директ</a>
+          <h2>Удивите вторую половинку</h2>
+          <p>Напишите нам, расскажите вашу историю, и Peep &amp; Peak превратят её в подарок, который будут пересматривать годами.</p>
+          <div class="btns">
+            <a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg> Написать в Instagram</a>
+            <a class="btn btn-tg" data-link="tg"><svg class="ico"><use href="#i-send"/></svg> Написать в Telegram</a>
           </div>
         </div>
       </div>
@@ -1007,453 +421,117 @@
 
 <footer>
   <div class="wrap foot">
-    <span>© <span id="year"></span> Peep &amp; Peak. Видео созданы с помощью ИИ. You're my little star.</span>
+    <span>© <span id="year">2026</span> Peep &amp; Peak. You're my little star.</span>
     <nav>
-      <a href="#" data-link="profile">Instagram</a>
-      <a href="#" data-link="channel">Telegram-канал</a>
+      <a data-link="profile">Instagram</a>
+      <a data-link="tg">Telegram</a>
     </nav>
   </div>
 </footer>
 
-<div class="float-contact" id="float-contact"></div>
+<div class="float">
+  <a class="ig" data-link="ig" aria-label="Написать в Instagram"><svg class="ico"><use href="#i-instagram"/></svg></a>
+  <a class="tg" data-link="tg" aria-label="Написать в Telegram"><svg class="ico"><use href="#i-send"/></svg></a>
+</div>
 
-<div class="modal" id="video-modal" hidden>
+<div class="modal" id="modal" hidden>
   <button class="modal-close" id="modal-close" aria-label="Закрыть">×</button>
   <div class="modal-box" id="modal-box"></div>
 </div>
 
-<div class="cookie" id="cookie" hidden>
-  <p>Мы используем cookies и счётчики аналитики, чтобы понимать, откуда приходят гости, и делать сайт лучше.</p>
-  <div class="btns">
-    <button class="btn btn-ghost btn-sm" id="cookie-no" type="button">Только нужные</button>
-    <button class="btn btn-primary btn-sm" id="cookie-yes" type="button">Принять</button>
-  </div>
-</div>
-
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-
 <script>
-  /* ===================== НАСТРОЙКИ: меняйте здесь ===================== */
+  /* ============ НАСТРОЙКИ: меняйте здесь ============ */
   const CONFIG = {
-    instagram: "peepandpeak",          // ник в Instagram без @
-    telegram: "",                      // ваш личный ник в Telegram без @ (для кнопки «написать»)
-    whatsapp: "",                      // номер WhatsApp цифрами с кодом страны, например "15551234567"
-    telegramChannel: "https://t.me/peepandpeak",
-    leadEndpoint: "/api/lead",         // Cloudflare Worker → Telegram (см. worker/README.md)
-    // Аналитика: впишите ID, и счётчик включится после согласия с cookies.
-    metaPixelId: "",
-    yandexMetrikaId: "",
-    googleAnalyticsId: "",
-    currency: "USD",
-    urgentDays: 3,                     // если до даты меньше стольких дней — «срочный заказ»
-    readyTime: "готово за 3–7 рабочих дней",
-    // Тарифы. price — цена; from: true — «от»; style: "popular" | "premium"
-    plans: [
-      { id: "moment", name: "Момент", desc: "Один ваш тёплый момент в исполнении Peep & Peak.", price: 89, duration: "≈30 сек",
-        perfect: ["Милый момент для двоих", "Ваша шутка", "Маленький сюрприз", "Простой повод"],
-        features: ["Одна сцена по деталям вашей истории", "Ваши имена или инициалы в кадре", "Одна правка", "Видео в высоком качестве"] },
-      { id: "scene", name: "Сцена", desc: "Ваша история целиком — в одной красивой сцене.", price: 149, duration: "≈60 сек",
-        perfect: ["Любимое свидание", "День рождения", "Особое место", "Тёплое послание"],
-        features: ["Полноценная сцена по вашему сюжету", "Имена, дата и надпись в кадре", "Одна правка", "Видео в высоком качестве"] },
-      { id: "story", name: "История", desc: "Ваша история как настоящая маленькая серия Peep & Peak.", price: 199, duration: "≈90 сек", style: "popular",
-        perfect: ["Годовщина", "Предложение", "Любовь на расстоянии", "Дата, которую не забыть"],
-        features: ["Сюжет с началом, серединой и финалом", "До 3 сцен", "Ваши детали во всём видео", "Две правки", "Видео в высоком качестве"] },
-      { id: "premium", name: "Премиум-история", desc: "Ваш мир — в кинематографичной истории Peep & Peak.", price: 499, from: true, duration: "до 3 мин", style: "premium", ready: "сроки обсуждаем индивидуально",
-        perfect: ["Путешествия", "Большое свидание", "Предложение с планом", "Вся ваша история любви"],
-        features: ["Сценарий вместе с вами", "Несколько локаций, образов и сцен", "Показ на каждом этапе", "Правки по договорённости", "Финальная версия в максимальном качестве"] },
+    instagram: "peepandpeak",   // ник в Instagram
+    telegram: "peeppeak",       // ник в Telegram для личных сообщений
+    // Цены: sec — длительность, price — цена в $, hit/premium — выделение карточки
+    tiers: [
+      { sec: 10,  name: "Открытка", price: 47,  text: "Короткое поздравление: одна сцена и ваше имя в кадре." },
+      { sec: 20,  name: "Момент",   price: 69,  text: "Один тёплый момент вашей истории с надписью." },
+      { sec: 40,  name: "Сцена",    price: 129, text: "Полноценная сцена по вашему сюжету.", hit: true },
+      { sec: 60,  name: "История",  price: 199, text: "Маленькая серия: начало, развитие и финал." },
+      { sec: 180, name: "Фильм",    price: 499, text: "Мини-фильм о вашей любви: несколько сцен и локаций.", premium: true },
     ],
-    occasions: [
-      { id: "birthday",    img: "emma-cake",     icon: "cake",     title: "День рождения", extra: "age" },
-      { id: "anniversary", img: "emma-pillow",     icon: "infinity", title: "Годовщина отношений", extra: "together" },
-      { id: "wedding",     img: "sofa",     icon: "rings",    title: "Годовщина свадьбы", extra: "together" },
-      { id: "proposal",    img: "jewelry",  icon: "gem",      title: "Предложение руки и сердца" },
-      { id: "confession",  img: "sky-love",    icon: "mail",     title: "Признание в любви" },
-      { id: "valentine",   img: "emma-sand",   icon: "heart",    title: "14 февраля" },
-      { id: "sorry",       img: "blanket",  icon: "feather",  title: "Помириться" },
-      { id: "miss",        img: "star-sky", icon: "moon",     title: "Скучаю / на расстоянии" },
-      { id: "other",       img: "clouds",   icon: "sparkles", title: "Другой повод", extra: "other" },
-    ],
-    // Донаты. url — ссылка на оплату (Tribute / PayPal / Boosty). Если пусто — ведёт в Telegram-канал.
-    donateUrl: "",
-    donate: [
-      { name: "Друг", price: 9.99, perk: "Значок «Друг Peep & Peak» в нашем канале" },
-      { name: "Лучший друг", price: 29.99, perk: "Ваше имя в благодарностях в конце серии" },
-      { name: "Звёздочка", price: 59.99, perk: "+ эксклюзивные обои с Peep & Peak" },
-      { name: "Герой", price: 99.99, perk: "+ видео-спасибо от Peep & Peak с вашим именем" },
-    ],
-    donateBig: [
-      { name: "Продюсер серии", price: 250, perks: ["Всё из «Героя»", "Ваше имя в титрах серии"] },
-      { name: "Крёстный родитель", price: 500, perks: ["Всё из «Продюсера»", "Персональное видео с Peep & Peak для вас"] },
-      { name: "Семья Peep & Peak", price: 1000, perks: ["Всё из «Крёстного родителя»", "Вы — герой одной из серий"] },
-    ],
-    // Примеры: img — обложка; youtube — ссылка (откроется прямо на сайте); url — ссылка в Instagram
-    examples: [
-      { title: "С днём рождения, Emma!", img: "images/frames/emma-cake.jpg", youtube: "", url: "" },
-      { title: "Emma + Liam forever", img: "images/frames/emma-pillow.jpg", youtube: "", url: "" },
-      { title: "I love you, Pik", img: "images/frames/sky-love.jpg", youtube: "", url: "" },
-      { title: "Имена на песке", img: "images/frames/emma-sand.jpg", youtube: "", url: "" },
+    // Видео-примеры с YouTube
+    videos: [
+      "https://youtube.com/shorts/dCV7vGV43Cg",
+      "https://youtube.com/shorts/vRxWtBrTIzU",
+      "https://youtube.com/shorts/buBhIAuzPDg",
+      "https://youtube.com/shorts/bsfbB4PPT0o",
     ],
     ideas: [
-      { img: "images/frames/sky-love.jpg", overlay: "", title: "Признание в небе", text: "Самолёт пишет облаками ваши слова — и имя любимого человека." },
-      { img: "images/frames/emma-cake.jpg", overlay: "", title: "Торт с именем и датой", text: "Праздничный торт со свечами, а на нём имя и дата кремом." },
-      { img: "images/frames/emma-sand.jpg", overlay: "", title: "Имена на песке", text: "Сердце на закатном пляже и ваши имена внутри." },
-      { img: "images/frames/emma-pillow.jpg", overlay: "", title: "Ваши имена на сердце", text: "Светящаяся надпись с вашими именами — «вместе навсегда»." },
-      { img: "images/frames/jewelry.jpg", overlay: "", title: "Подарок-сюрприз", text: "Кольцо, украшение или ваш настоящий подарок — Peep выберет его для неё." },
-      { img: "images/frames/gazebo.jpg", overlay: "3 года вместе", title: "Вечер под звёздами", text: "Беседка, гирлянды, чай на двоих и тёплые слова в день вашей годовщины." },
+      { img: "emma-cake",   title: "Торт с именем",      text: "Имя и дата кремом на праздничном торте." },
+      { img: "emma-pillow", title: "Имена на сердце",    text: "Светящаяся надпись «вместе навсегда»." },
+      { img: "sky-love",    title: "Признание в небе",   text: "Самолёт пишет облаками ваши слова." },
+      { img: "emma-sand",   title: "Имена на песке",     text: "Сердце на закатном пляже." },
+      { img: "jewelry",     title: "Подарок-сюрприз",    text: "Кольцо или украшение для неё." },
+      { img: "gazebo",      title: "Вечер под звёздами", text: "Беседка, гирлянды и тёплые слова." },
     ],
-    reels: ["emma-pillow", "fries", "emma-cake", "star-sky", "sky-love", "beach", "emma-sand", "pool-girl", "blanket", "cake", "sofa", "jewelry", "kiss", "laptop", "sunset", "heart", "gazebo", "bed", "clouds", "pool-close"],
+    occasions: ["День рождения", "Годовщина", "Предложение руки и сердца", "Признание в любви", "14 февраля", "Свадьба", "Помириться", "Скучаю на расстоянии"],
+    reels: ["emma-pillow", "fries", "emma-cake", "star-sky", "sky-love", "beach", "emma-sand", "pool-girl", "blanket", "cake", "sofa", "jewelry", "kiss", "laptop", "sunset", "heart", "gazebo", "bed"],
   };
-  /* ==================================================================== */
+  /* =================================================== */
 
-  const $ = (s, r = document) => r.querySelector(s);
-  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-  const money = (n) => "$" + (Number.isInteger(n) ? n : n.toFixed(2));
+  const $ = (s) => document.querySelector(s);
   const ic = (n, c = "") => `<svg class="ico ${c}"><use href="#i-${n}"/></svg>`;
-  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-
   const LINKS = {
+    ig: `https://ig.me/m/${CONFIG.instagram}`,
     profile: `https://instagram.com/${CONFIG.instagram}`,
-    dm: `https://ig.me/m/${CONFIG.instagram}`,
-    channel: CONFIG.telegramChannel || `https://instagram.com/${CONFIG.instagram}`,
-    tg: CONFIG.telegram ? `https://t.me/${CONFIG.telegram}` : "",
-    wa: CONFIG.whatsapp ? `https://wa.me/${CONFIG.whatsapp}` : "",
-    donate: CONFIG.donateUrl || CONFIG.telegramChannel,
+    tg: `https://t.me/${CONFIG.telegram}`,
   };
+  document.querySelectorAll("[data-link]").forEach((a) => {
+    a.href = LINKS[a.dataset.link];
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
   $("#year").textContent = new Date().getFullYear();
+  $("#from-price").textContent = "$" + Math.min(...CONFIG.tiers.map((t) => t.price));
 
-  /* ---------- контакты ---------- */
-  const directs = [
-    { cls: "ig", icon: "instagram", label: "Директ Instagram", href: LINKS.dm },
-    LINKS.tg && { cls: "tg", icon: "send", label: "Telegram", href: LINKS.tg },
-    LINKS.wa && { cls: "wa", icon: "whatsapp", label: "WhatsApp", href: LINKS.wa },
-  ].filter(Boolean);
-  $("#float-contact").innerHTML = directs.map((d) =>
-    `<a class="fab ${d.cls}" href="${d.href}" target="_blank" rel="noopener"><i>${ic(d.icon)}</i>${d.label}</a>`).join("");
-  $("#direct-links").innerHTML = directs.map((d) =>
-    `<a href="${d.href}" target="_blank" rel="noopener">${ic(d.icon)} ${d.label}</a>`).join("");
+  // лента кадров
+  const cols = [[], [], []];
+  CONFIG.reels.forEach((n, i) => cols[i % 3].push(`<img src="images/frames/${n}.jpg" alt="" loading="${i < 6 ? "eager" : "lazy"}">`));
+  $("#reels").innerHTML = cols.map((c, i) => `<div class="reel-col ${i === 1 ? "down" : ""}">${c.join("")}${c.join("")}</div>`).join("");
 
-  /* ---------- первый экран: лента кадров ---------- */
-  (() => {
-    const cols = [[], [], []];
-    CONFIG.reels.forEach((n, i) => cols[i % 3].push(`images/frames/${n}.jpg`));
-    $("#reels").innerHTML = cols.map((c, i) => {
-      const items = c.map((src) => `<div class="frame"><img src="${src}" alt="" loading="${i ? "lazy" : "eager"}"></div>`).join("");
-      return `<div class="reel-col ${i === 1 ? "down" : ""}">${items}${items}</div>`;
-    }).join("");
-  })();
-  const minPrice = Math.min(...CONFIG.plans.map((p) => p.price));
-  $("#from-chip").textContent = money(minPrice);
+  // бегущая строка
+  const m = CONFIG.occasions.map((o) => `<span>${o}${ic("star5", "fill")}</span>`).join("");
+  $("#marquee").innerHTML = m + m;
 
-  /* ---------- бегущая строка, идеи, поводы ---------- */
-  const mItems = CONFIG.occasions.filter((o) => o.id !== "other").map((o) => `<span>${o.title}${ic("star5", "fill")}</span>`).join("");
-  $("#marquee").innerHTML = mItems + mItems;
-  $("#ideas-grid").innerHTML = CONFIG.ideas.map((d) => `
-    <article class="card idea reveal">
-      <div class="vis"><img src="${d.img}" alt="${esc(d.title)}" loading="lazy">${d.overlay ? `<div class="overlay">${esc(d.overlay)}</div>` : ""}</div>
-      <div class="txt"><h3>${d.title}</h3><p>${d.text}</p></div>
+  // цены
+  $("#tiers").innerHTML = CONFIG.tiers.map((t) => `
+    <article class="tier ${t.hit ? "hit" : ""} ${t.premium ? "premium" : ""}">
+      ${t.hit ? '<span class="badge">Популярное</span>' : ""}
+      <span class="dur">${ic("clock")} ${t.sec} сек</span>
+      <h3>${t.name}</h3>
+      <div class="price">$${t.price}</div>
+      <p>${t.text}</p>
     </article>`).join("");
-  $("#occasion-buttons").innerHTML = CONFIG.occasions.map((o) =>
-    `<button type="button" class="story" data-occ="${o.id}"><span class="ring"><img src="images/frames/${o.img}.jpg" alt="" loading="lazy"></span><span>${o.title}</span></button>`).join("");
 
-  /* ---------- примеры + видео-окно ---------- */
-  const ytId = (u) => { const m = String(u).match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/); return m ? m[1] : ""; };
-  $("#gallery").innerHTML = CONFIG.examples.map((e) => {
-    const yt = ytId(e.youtube);
-    const inner = `<img src="${e.img}" alt="${esc(e.title)}" loading="lazy"><span class="play">${ic("play", "fill")}</span><span class="cap">${e.title}</span>`;
-    return yt ? `<button type="button" class="reel reveal" data-yt="${yt}" aria-label="Смотреть: ${esc(e.title)}">${inner}</button>`
-              : `<a class="reel reveal" href="${e.url || LINKS.profile}" target="_blank" rel="noopener">${inner}</a>`;
+  // идеи
+  $("#ideas-list").innerHTML = CONFIG.ideas.map((d) => `
+    <article class="idea">
+      <img src="images/frames/${d.img}.jpg" alt="${d.title}" loading="lazy">
+      <div><h3>${d.title}</h3><p>${d.text}</p></div>
+    </article>`).join("");
+
+  // видео с YouTube
+  const ytId = (u) => (String(u).match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/) || [])[1];
+  const fallback = ["emma-cake", "emma-pillow", "sky-love", "emma-sand"];
+  $("#videos").innerHTML = CONFIG.videos.map((u, i) => {
+    const id = ytId(u);
+    return `<button type="button" class="video" data-yt="${id}" aria-label="Смотреть пример ${i + 1}">
+      <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='images/frames/${fallback[i % fallback.length]}.jpg'">
+      <span class="play">${ic("play", "fill")}</span>
+    </button>`;
   }).join("");
-  const modal = $("#video-modal");
-  const closeModal = () => { modal.hidden = true; $("#modal-box").innerHTML = ""; };
-  $$("[data-yt]").forEach((b) => b.addEventListener("click", () => {
+  const modal = $("#modal");
+  const close = () => { modal.hidden = true; $("#modal-box").innerHTML = ""; };
+  document.querySelectorAll("[data-yt]").forEach((b) => b.addEventListener("click", () => {
     $("#modal-box").innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Видео Peep & Peak"></iframe>`;
     modal.hidden = false;
   }));
-  $("#modal-close").addEventListener("click", closeModal);
-  modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
-  addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) closeModal(); });
-
-  /* ---------- тарифы ---------- */
-  const priceLabel = (p) => (p.from ? "от " : "") + money(p.price);
-  $("#plans").innerHTML = CONFIG.plans.map((p) => `
-    <article class="tier reveal ${p.style || ""}">
-      ${p.style === "popular" ? '<span class="tier-badge">Чаще всего выбирают</span>' : ""}
-      ${p.style === "premium" ? '<span class="tier-kicker">Индивидуальное производство</span>' : ""}
-      <h3>${p.name}</h3>
-      <p class="tier-desc">${p.desc}</p>
-      <div class="tier-price">${priceLabel(p)}</div>
-      <p class="tier-meta">${p.duration} · ${p.ready || CONFIG.readyTime}</p>
-      <p class="tier-label">Идеально подходит для</p>
-      <div class="tier-tags">${p.perfect.map((t) => `<span>${t}</span>`).join("")}</div>
-      <ul>${p.features.map((f) => `<li>${ic(p.style === "premium" ? "sparkles" : "check")}${f}</li>`).join("")}</ul>
-      <a href="#order" class="btn ${p.style ? "btn-primary" : "btn-ghost"}" data-pick-plan="${p.id}">${p.style === "premium" ? "Рассказать нам историю" : "Выбрать «" + p.name + "»"}</a>
-    </article>`).join("");
-
-  /* ---------- донаты ---------- */
-  $("#donate-small").innerHTML = CONFIG.donate.map((d) => `
-    <a class="donate reveal" href="${LINKS.donate}" target="_blank" rel="noopener">
-      <span class="d-top"><b>${d.name}</b><em>${money(d.price)}</em></span>
-      <span class="d-perk">${d.perk}</span>
-    </a>`).join("");
-  $("#donate-big").innerHTML = CONFIG.donateBig.map((d) => `
-    <article class="donate-card reveal">
-      <div class="d-price">${money(d.price)}</div>
-      <h3>${d.name}</h3>
-      <ul>${d.perks.map((x) => `<li>${ic("heart")}${x}</li>`).join("")}</ul>
-      <a class="btn btn-ghost" href="${LINKS.donate}" target="_blank" rel="noopener">Поддержать</a>
-    </article>`).join("");
-
-  /* ---------- ссылки ---------- */
-  $$("[data-link]").forEach((a) => { a.href = LINKS[a.dataset.link]; a.target = "_blank"; a.rel = "noopener"; });
-
-  /* ---------- форма заказа ---------- */
-  const form = $("#order-form");
-  const F = (name) => form.elements[name];
-  const occById = (id) => CONFIG.occasions.find((o) => o.id === id);
-  const planById = (id) => CONFIG.plans.find((p) => p.id === id);
-  $("#tier-pick").innerHTML = CONFIG.plans.map((p) => `
-    <label class="tp"><input type="radio" name="plan" value="${p.id}" ${p.style === "popular" ? "checked" : ""}><span><b>${p.name}</b><em>${priceLabel(p)}</em></span></label>`).join("");
-  $("#occasion-pills").innerHTML = CONFIG.occasions.map((o) =>
-    `<label class="pill"><input type="radio" name="occasion" value="${o.id}"><span>${ic(o.icon)} ${o.title}</span></label>`).join("");
-
-  function update() {
-    const p = planById(F("plan").value) || CONFIG.plans[0];
-    $("#tier-meta").textContent = `${p.duration} · ${p.ready || CONFIG.readyTime}`;
-    $("#submit-btn").textContent = `Отправить заявку — ${priceLabel(p)}`;
-    const o = occById(F("occasion").value);
-    $("#f-age").hidden = !(o && o.extra === "age");
-    $("#f-together").hidden = !(o && o.extra === "together");
-    $("#f-occasion-other").hidden = !(o && o.extra === "other");
-    if (o) $("#order-img").src = `images/frames/${o.img}.jpg`;
-  }
-  form.addEventListener("change", update);
-  $$("[data-pick-plan]").forEach((b) => b.addEventListener("click", () => {
-    form.querySelector(`input[name=plan][value="${b.dataset.pickPlan}"]`).checked = true;
-    update();
-  }));
-  $$("[data-occ]").forEach((b) => b.addEventListener("click", () => {
-    form.querySelector(`input[name=occasion][value="${b.dataset.occ}"]`).checked = true;
-    clearErr("occasion");
-    update();
-    $("#order").scrollIntoView({ behavior: "smooth" });
-  }));
-
-  // дата
-  const pad = (n) => String(n).padStart(2, "0");
-  const now = new Date();
-  F("date").min = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
-  function daysUntil(v) {
-    if (!v) return null;
-    const [y, m, d] = v.split("-").map(Number);
-    const t = new Date(); t.setHours(0, 0, 0, 0);
-    return Math.round((new Date(y, m - 1, d) - t) / 86400000);
-  }
-  const plural = (n, a, b, c) => { const m10 = n % 10, m100 = n % 100; return m10 === 1 && m100 !== 11 ? a : m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14) ? b : c; };
-  const daysWord = (n) => `${n} ${plural(n, "день", "дня", "дней")}`;
-  function onDate() {
-    const info = $("#date-info");
-    const n = daysUntil(F("date").value);
-    info.className = "date-info";
-    info.textContent = "";
-    if (n === null || n < 0) return;
-    if (n < CONFIG.urgentDays) {
-      info.classList.add("warn");
-      info.innerHTML = ic("zap") + " " + (n === 0 ? "Это сегодня! Лучше сразу напишите нам в директ" : `Через ${daysWord(n)}: срочный заказ, уточним сроки`);
-    } else {
-      info.classList.add("ok");
-      info.innerHTML = ic("check") + ` Через ${daysWord(n)}`;
-    }
-  }
-  F("date").addEventListener("input", onDate);
-  F("date").addEventListener("change", onDate);
-  $("#caption").addEventListener("input", (e) => ($("#caption-count").textContent = e.target.value.length));
-
-  // фото
-  const MAX_PHOTO = 10 * 1024 * 1024;
-  $("#photo-input").addEventListener("change", (e) => {
-    const f = e.target.files[0];
-    clearErr("photo");
-    $("#photo-name").textContent = f ? f.name : "Выберите фото для видео";
-    if (f && f.size > MAX_PHOTO) showErr("photo", "Фото больше 10 МБ — выберите поменьше");
-  });
-
-  // контакт
-  const METHODS = {
-    instagram: { label: "Instagram", ph: "@ваш_instagram", type: "text", mode: "text",
-      test: (v) => /^@?[A-Za-z0-9._]{1,30}$/.test(v), err: "Введите ник в Instagram, например @anna.max" },
-    telegram: { label: "Telegram", ph: "@ваш_telegram", type: "text", mode: "text",
-      test: (v) => /^@?[A-Za-z0-9_]{5,32}$/.test(v), err: "Введите ник в Telegram (от 5 символов), например @anna_max" },
-    whatsapp: { label: "WhatsApp", ph: "+1 555 123 4567", type: "tel", mode: "tel",
-      test: (v) => /^\+?[\d\s\-()]{7,20}$/.test(v) && v.replace(/\D/g, "").length >= 7, err: "Введите номер WhatsApp с кодом страны, например +1 555 123 4567" },
-  };
-  const contactInput = $("#contact-input");
-  $$("input[name=contactMethod]").forEach((r) => r.addEventListener("change", () => {
-    const m = METHODS[r.value];
-    contactInput.disabled = false;
-    contactInput.type = m.type;
-    contactInput.inputMode = m.mode;
-    contactInput.placeholder = m.ph;
-    clearErr("contact");
-    contactInput.focus();
-  }));
-
-  // ошибки
-  const fieldInput = (name) => { const el = F(name); return el && el.tagName && el.type !== "radio" ? el : null; };
-  function showErr(name, msg) {
-    const box = $(`[data-err="${name}"]`); if (box) box.textContent = msg;
-    const input = fieldInput(name); if (input) input.classList.add("invalid");
-  }
-  function clearErr(name) {
-    const box = $(`[data-err="${name}"]`); if (box) box.textContent = "";
-    const input = fieldInput(name); if (input) input.classList.remove("invalid");
-  }
-  form.addEventListener("input", (e) => e.target.name && clearErr(e.target.name));
-  form.addEventListener("change", (e) => e.target.name && clearErr(e.target.name === "contactMethod" ? "contact" : e.target.name));
-
-  function validate() {
-    const errs = [];
-    const add = (n, m) => { showErr(n, m); errs.push(n); };
-    const o = occById(F("occasion").value);
-    if (!o) add("occasion", "Выберите повод");
-    else if (o.extra === "other" && !F("occasionOther").value.trim()) add("occasionOther", "Напишите, какой у вас повод");
-    if (F("story").value.trim().length < 10) add("story", "Расскажите историю хотя бы в паре предложений");
-    if (!F("toName").value.trim()) add("toName", "Напишите имя или инициалы");
-    const n = daysUntil(F("date").value);
-    if (n === null) add("date", "Укажите дату, к которой нужно видео");
-    else if (n < 0) add("date", "Эта дата уже прошла");
-    const photo = $("#photo-input").files[0];
-    if (photo && photo.size > MAX_PHOTO) add("photo", "Фото больше 10 МБ — выберите поменьше");
-    const m = METHODS[F("contactMethod").value];
-    if (!m) add("contact", "Выберите мессенджер для связи");
-    else if (!m.test(contactInput.value.trim())) add("contact", m.err);
-    if (errs.length) $(`[data-err="${errs[0]}"]`).closest(".field").scrollIntoView({ behavior: "smooth", block: "center" });
-    return !errs.length;
-  }
-
-  function buildText() {
-    const p = planById(F("plan").value);
-    const o = occById(F("occasion").value);
-    const occ = o.extra === "other" ? F("occasionOther").value.trim() : o.title;
-    const extra = o.extra === "age" && F("age").value ? ` (исполняется ${F("age").value})`
-      : o.extra === "together" && F("together").value.trim() ? ` (вместе: ${F("together").value.trim()})` : "";
-    const [y, mo, d] = F("date").value.split("-").map(Number);
-    const n = daysUntil(F("date").value);
-    const dateStr = new Date(y, mo - 1, d).toLocaleDateString("ru-RU", { day: "numeric", month: "long", year: "numeric" });
-    const m = METHODS[F("contactMethod").value];
-    const contact = contactInput.value.trim();
-    const handle = F("contactMethod").value === "whatsapp" ? contact : "@" + contact.replace(/^@/, "");
-    const v = (k) => F(k).value.trim();
-    return [
-      `🎬 Видео: ${p.name} (${p.duration}) — ${priceLabel(p)}`,
-      `🎉 Повод: ${occ}${extra}`,
-      `📅 Дата: ${dateStr} (через ${daysWord(n)})${n < CONFIG.urgentDays ? " ⚡ СРОЧНО" : ""}`,
-      `👤 Кого поздравляем: ${v("toName")}`,
-      v("fromName") ? `✍️ От кого: ${v("fromName")}` : null,
-      v("caption") ? `🔤 Надпись: ${v("caption")}` : null,
-      `📝 История: ${v("story")}`,
-      $("#photo-input").files[0] ? "🖼 Фото: приложено" : null,
-      "",
-      `📲 Связь: ${m.label} ${handle}`,
-    ].filter((l) => l !== null).join("\n");
-  }
-
-  function toast(msg) {
-    const t = $("#toast");
-    t.textContent = msg;
-    t.classList.add("show");
-    clearTimeout(toast._t);
-    toast._t = setTimeout(() => t.classList.remove("show"), 5000);
-  }
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    if (!validate()) { toast("Проверьте выделенные поля"); return; }
-    const text = buildText();
-    const total = planById(F("plan").value).price;
-    const btn = $("#submit-btn");
-    if (CONFIG.leadEndpoint) {
-      btn.disabled = true;
-      btn.textContent = "Отправляем…";
-      try {
-        const fd = new FormData();
-        fd.append("text", text);
-        const photo = $("#photo-input").files[0];
-        if (photo) fd.append("photo", photo);
-        const r = await fetch(CONFIG.leadEndpoint, { method: "POST", body: fd });
-        if (!r.ok || !(await r.json()).ok) throw new Error("lead");
-        form.reset();
-        contactInput.disabled = true;
-        contactInput.placeholder = "Сначала выберите мессенджер";
-        $("#photo-name").textContent = "Выберите фото для видео";
-        $("#caption-count").textContent = "0";
-        onDate();
-        trackLead(total);
-        toast("Заявка отправлена! Скоро напишем вам");
-        return;
-      } catch {
-        toast("Не получилось отправить — открываем директ Instagram");
-      } finally {
-        btn.disabled = false;
-        update();
-      }
-    }
-    try {
-      await navigator.clipboard.writeText("Здравствуйте! Хочу заказать видео с Peep & Peak\n\n" + text);
-      toast("Заявка скопирована: вставьте её в открывшийся директ");
-      trackLead(total);
-    } catch {
-      prompt("Скопируйте текст заявки и отправьте нам в директ:", text);
-    }
-    window.open(LINKS.dm, "_blank", "noopener");
-  });
-  update();
-
-  /* ---------- аналитика (после согласия) ---------- */
-  function loadAnalytics() {
-    const add = (src) => { const el = document.createElement("script"); el.async = true; el.src = src; document.head.appendChild(el); };
-    if (CONFIG.metaPixelId) {
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window,document);
-      add("https://connect.facebook.net/en_US/fbevents.js");
-      fbq("init", CONFIG.metaPixelId);
-      fbq("track", "PageView");
-    }
-    if (CONFIG.yandexMetrikaId) {
-      window.ym = window.ym || function(){ (ym.a = ym.a || []).push(arguments); }; ym.l = +new Date();
-      add("https://mc.yandex.ru/metrika/tag.js");
-      ym(CONFIG.yandexMetrikaId, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
-    }
-    if (CONFIG.googleAnalyticsId) {
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function(){ dataLayer.push(arguments); };
-      add(`https://www.googletagmanager.com/gtag/js?id=${CONFIG.googleAnalyticsId}`);
-      gtag("js", new Date());
-      gtag("config", CONFIG.googleAnalyticsId);
-    }
-  }
-  function trackLead(value) {
-    if (window.fbq) fbq("track", "Lead", { value, currency: CONFIG.currency });
-    if (window.ym) ym(CONFIG.yandexMetrikaId, "reachGoal", "lead");
-    if (window.gtag) gtag("event", "generate_lead", { value, currency: CONFIG.currency });
-  }
-  const hasAnalytics = CONFIG.metaPixelId || CONFIG.yandexMetrikaId || CONFIG.googleAnalyticsId;
-  let consent = null;
-  try { consent = localStorage.getItem("cookie-consent"); } catch {}
-  const setConsent = (v) => {
-    try { localStorage.setItem("cookie-consent", v); } catch {}
-    $("#cookie").hidden = true;
-    if (v === "yes") loadAnalytics();
-  };
-  if (consent === "yes") loadAnalytics();
-  else if (!consent && hasAnalytics) $("#cookie").hidden = false;
-  $("#cookie-yes").addEventListener("click", () => setConsent("yes"));
-  $("#cookie-no").addEventListener("click", () => setConsent("no"));
-
-  /* ---------- появление и шапка ---------- */
-  const io = new IntersectionObserver((entries) => entries.forEach((en) => {
-    if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
-  }), { threshold: 0.1 });
-  $$(".reveal").forEach((el) => io.observe(el));
-  addEventListener("scroll", () => $("#nav").classList.toggle("scrolled", scrollY > 8), { passive: true });
+  $("#modal-close").addEventListener("click", close);
+  modal.addEventListener("click", (e) => { if (e.target === modal) close(); });
+  addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) close(); });
 </script>
 </body>
 </html>

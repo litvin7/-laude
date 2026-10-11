@@ -4,7 +4,7 @@
 (function () {
   const SITE = {
     instagram: "peepandpeak",
-    telegramChannel: "https://t.me/peepandpeak",
+    telegramChannel: "https://t.me/peeppeak",
     youtube: "https://www.youtube.com/@peepandpeak",
     tiktok: "https://www.tiktok.com/@peepandpeak",
     defaultLang: "en",

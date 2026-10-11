@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peep · AI video studio</title>
+<meta name="description" content="AI video production: ads, cinematic stories, music videos, brand characters and social content.">
+<meta property="og:image" content="../images/frames/beach.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%23fcc419' stroke='%23e0a20c' d='M20 3.2c1.3 0 2.2.8 2.9 2.3l3 6.1 6.7 1c1.7.2 2.6 1.1 2.6 2.3s-.6 2-1.7 3l-4.9 4.7 1.2 6.7c.3 1.7-.3 2.8-1.6 3.2-.9.3-1.7 0-2.8-.6L20 29.5l-6 3.2c-1.1.6-1.9.9-2.8.6-1.3-.4-1.9-1.5-1.6-3.2l1.2-6.7-4.9-4.7c-1.1-1-1.7-1.8-1.7-3s.9-2.1 2.6-2.3l6.7-1 3-6.1c.7-1.5 1.6-2.3 2.9-2.3Z'/%3E%3C/svg%3E">
+<style>
+  /* Киностудия: тёмный зал, янтарный свет, кадры с «шторками» как в кино. */
+  :root {
+    --bg: #0f0d0b;
+    --bg-2: #17130f;
+    --card: #1c1712;
+    --line: rgba(255,236,210,.1);
+    --ink: #f6ece0;
+    --muted: #b9a993;
+    --amber: #f0a74b;
+    --amber-2: #ffcf87;
+    --ig: linear-gradient(45deg, #f9ce34 0%, #ee2a7b 45%, #6228d7 100%);
+    --font-base: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font: var(--font-base);
+    --max: 1120px;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 100; opacity: .06;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; }
+  [hidden] { display: none !important; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+  section { padding: 90px 0; }
+  h1, h2, h3 { margin: 0; line-height: 1.08; letter-spacing: -0.02em; text-wrap: balance; }
+  h1 { font-size: clamp(36px, 4.8vw, 62px); font-weight: 900; }
+  h2 { font-size: clamp(28px, 3.6vw, 46px); font-weight: 900; margin-bottom: 14px; }
+  h3 { font-size: 19px; font-weight: 800; }
+  p { margin: 0; }
+  em { font-style: normal; color: var(--amber); }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; color: var(--amber); margin-bottom: 16px; }
+  .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #ff4d3d; box-shadow: 0 0 10px #ff4d3d; animation: rec 1.6s ease-in-out infinite; }
+  @keyframes rec { 50% { opacity: .3; } }
+  .head { max-width: 680px; margin-bottom: 40px; }
+  .head p { color: var(--muted); font-size: 18px; }
+  svg.ico { display: inline-block; width: 1.15em; height: 1.15em; vertical-align: -0.2em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  svg.ico.fill { fill: currentColor; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 22px; border-radius: 10px; font-weight: 800; font-size: 15px; text-decoration: none; transition: transform .15s, filter .15s, background .15s; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:focus-visible, .lang-select:focus-visible, .video:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+  .btn-ig { background: var(--ig); color: #fff; }
+  .btn-ig:hover { filter: brightness(1.08); }
+  .btn-ghost { border: 1px solid var(--line); color: var(--ink); background: rgba(255,255,255,.03); }
+  .btn-ghost:hover { border-color: var(--amber); }
+  .btns { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  header.nav { position: sticky; top: 0; z-index: 30; background: rgba(15,13,11,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 66px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 900; font-size: 20px; white-space: nowrap; }
+  .logo svg { width: 30px; height: 30px; }
+  .logo small { font-weight: 700; color: var(--muted); font-size: 14px; }
+  .nav-links { display: flex; align-items: center; gap: 24px; }
+  .nav-links > a { text-decoration: none; color: var(--muted); font-weight: 700; font-size: 15px; }
+  .nav-links > a:hover { color: var(--ink); }
+  .lang { position: relative; display: inline-flex; align-items: center; }
+  .lang svg.ico { position: absolute; inset-inline-start: 10px; width: 16px; height: 16px; color: var(--muted); pointer-events: none; }
+  .lang-select { appearance: none; -webkit-appearance: none; font: inherit; font-size: 14px; font-weight: 800; color: var(--ink); background: rgba(255,255,255,.05); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px 7px 32px; cursor: pointer; }
+  .lang-select option { color: #111; }
+  [dir="rtl"] .lang-select { padding: 7px 32px 7px 14px; }
+
+  /* hero */
+  .hero { padding: 70px 0 80px; background: radial-gradient(60% 60% at 80% 30%, rgba(240,167,75,.18), transparent 70%); }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center; }
+  .hero .lead { color: var(--muted); font-size: 19px; margin: 20px 0 30px; max-width: 520px; }
+  .screen { direction: ltr; position: relative; border-radius: 6px; overflow: hidden; background: #000; box-shadow: 0 40px 80px -30px rgba(0,0,0,.9), 0 0 0 1px var(--line); }
+  .screen img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 36%; transform: scale(1.04); animation: kb 18s ease-in-out infinite alternate; }
+  @keyframes kb { to { transform: scale(1.12) translate(-2%, 1%); } }
+  .screen::before, .screen::after { content: ""; position: absolute; left: 0; right: 0; height: 11%; background: #000; z-index: 2; }
+  .screen::before { top: 0; } .screen::after { bottom: 0; }
+  .hud { position: absolute; z-index: 3; left: 14px; right: 14px; display: flex; justify-content: space-between; font-size: 12px; font-weight: 800; letter-spacing: .1em; color: rgba(255,255,255,.85); font-variant-numeric: tabular-nums; }
+  .hud.t { top: 3%; } .hud.b { bottom: 3%; }
+  .hud .rec { color: #ff4d3d; }
+  .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 34px; max-width: 520px; }
+  .stat b { display: block; font-size: 30px; font-weight: 900; line-height: 1; color: var(--amber-2); }
+  .stat span { display: block; margin-top: 6px; font-size: 13px; line-height: 1.35; color: var(--muted); }
+
+  .genres { border-block: 1px solid var(--line); background: var(--bg-2); overflow: hidden; padding: 16px 0; }
+  .genres-track { display: flex; gap: 36px; width: max-content; animation: mq 46s linear infinite; font-weight: 900; font-size: 18px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); direction: ltr; }
+  .genres-track span { display: inline-flex; align-items: center; gap: 36px; white-space: nowrap; }
+  .genres-track span::after { content: "✦"; color: var(--amber); }
+  @keyframes mq { to { transform: translateX(-50%); } }
+
+  /* работы */
+  .work-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .video { position: relative; aspect-ratio: 9 / 16; border: 0; padding: 0; border-radius: 10px; overflow: hidden; cursor: pointer; background: #000; }
+  .video img { width: 100%; height: 100%; object-fit: cover; opacity: .9; transition: transform .5s, opacity .3s; }
+  .video:hover img { transform: scale(1.04); opacity: 1; }
+  .video .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.92); color: #111; }
+  .video .play svg { width: 22px; height: 22px; margin-left: 3px; }
+  .stills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 12px; }
+  .stills img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 8px; filter: saturate(1.05); }
+  .work-note { color: var(--muted); font-size: 14px; margin-top: 14px; }
+
+  /* услуги */
+  .services { background: var(--bg-2); border-block: 1px solid var(--line); }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .svc { padding: 26px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); transition: border-color .2s, transform .2s; }
+  .svc:hover { border-color: rgba(240,167,75,.5); transform: translateY(-2px); }
+  .svc .ic { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 16px; color: var(--amber); background: rgba(240,167,75,.12); }
+  .svc .ic svg { width: 22px; height: 22px; }
+  .svc h3 { margin-bottom: 6px; }
+  .svc p { color: var(--muted); font-size: 15px; }
+
+  /* почему ИИ */
+  .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .why div { padding: 26px; border-radius: 14px; border: 1px solid var(--line); background: linear-gradient(160deg, rgba(240,167,75,.08), transparent 60%); }
+  .why .ic { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; margin-bottom: 16px; color: #17120e; background: var(--amber-2); }
+  .why .ic svg { width: 22px; height: 22px; }
+  .why h3 { margin-bottom: 6px; }
+  .why p { color: var(--muted); font-size: 15px; }
+
+  /* процесс */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: s; }
+  .step { position: relative; padding: 24px 22px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); }
+  .step::before { counter-increment: s; content: "0" counter(s); display: block; font-size: 13px; font-weight: 900; letter-spacing: .14em; color: var(--amber); margin-bottom: 12px; }
+  .step h3 { margin-bottom: 6px; }
+  .step p { color: var(--muted); font-size: 15px; }
+  .price-note { margin-top: 16px; padding: 22px 24px; border-radius: 14px; border: 1px dashed rgba(240,167,75,.5); display: flex; gap: 18px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+  .price-note p { color: var(--ink); font-size: 16px; flex: 1 1 360px; min-width: 0; }
+
+  .final { position: relative; overflow: hidden; border-radius: 16px; min-height: 420px; display: grid; place-items: center; text-align: center; padding: 56px 24px; }
+  .final > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(4px) saturate(1.15); transform: scale(1.08); }
+  .final::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,8,6,.6), rgba(10,8,6,.88)); z-index: 1; }
+  .final > div { position: relative; z-index: 2; }
+  .final p { color: var(--muted); max-width: 520px; margin: 0 auto 26px; font-size: 18px; }
+  .final .btns { justify-content: center; }
+
+  footer { padding: 34px 0 44px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); margin-top: 90px; }
+  .foot { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .foot nav { display: flex; gap: 16px; flex-wrap: wrap; }
+  .foot a { text-decoration: none; font-weight: 700; }
+  .foot a:hover { color: var(--amber); }
+
+  .float { position: fixed; right: 18px; bottom: 18px; z-index: 40; width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: var(--ig); box-shadow: 0 12px 28px -10px rgba(0,0,0,.6); }
+  .float svg { width: 26px; height: 26px; }
+  [dir="rtl"] .float { right: auto; left: 18px; }
+
+  .modal { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 20px; background: rgba(0,0,0,.88); }
+  .modal-box { width: min(400px, 100%); aspect-ratio: 9 / 16; max-height: 86vh; border-radius: 16px; overflow: hidden; background: #000; }
+  .modal-box iframe { width: 100%; height: 100%; border: 0; }
+  .modal-close { position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer; background: #fff; color: #111; font-size: 24px; line-height: 1; }
+
+  @media (max-width: 1000px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .grid-3, .why { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .nav-links > a { display: none; }
+    section { padding: 64px 0; }
+  }
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 16px; }
+    .hero { padding: 30px 0 56px; }
+    .hero .lead { font-size: 16px; }
+    .hero .btns .btn { flex: 1 1 100%; }
+    .grid-3, .why, .steps { grid-template-columns: 1fr; }
+    .work-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .stills { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .logo small { display: none; }
+    .stats { gap: 14px; }
+    .stat b { font-size: 24px; }
+    .stat span { font-size: 12px; }
+    .svc, .why div { display: grid; grid-template-columns: 46px 1fr; column-gap: 16px; padding: 20px; }
+    .svc .ic, .why .ic { grid-row: span 2; margin: 0; }
+    .step { padding: 20px; }
+    footer { margin-top: 60px; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></symbol>
+<symbol id="i-clapper" viewBox="0 0 24 24"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></symbol>
+<symbol id="i-coins" viewBox="0 0 24 24"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+<symbol id="i-infinity" viewBox="0 0 24 24"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z"/></symbol>
+<symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+<symbol id="i-megaphone" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
+<symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3l14 9-14 9z"/></symbol>
+<symbol id="i-smartphone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></symbol>
+<symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+</defs></svg>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="../" class="logo" aria-label="Peep &amp; Peak"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lgv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd84d"/><stop offset="1" stop-color="#f5b40f"/></linearGradient></defs><path fill="url(#lgv)" stroke="#e0a20c" stroke-width="1" d="M20 3.2c1.3 0 2.2.8 2.9 2.3l3 6.1 6.7 1c1.7.2 2.6 1.1 2.6 2.3s-.6 2-1.7 3l-4.9 4.7 1.2 6.7c.3 1.7-.3 2.8-1.6 3.2-.9.3-1.7 0-2.8-.6L20 29.5l-6 3.2c-1.1.6-1.9.9-2.8.6-1.3-.4-1.9-1.5-1.6-3.2l1.2-6.7-4.9-4.7c-1.1-1-1.7-1.8-1.7-3s.9-2.1 2.6-2.3l6.7-1 3-6.1c.7-1.5 1.6-2.3 2.9-2.3Z"/></svg><span>Peep <small>· AI studio</small></span></a>
+    <nav class="nav-links">
+      <a href="#work" data-i18n="nav_work">Work</a>
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#process" data-i18n="nav_process">How we work</a>
+      <label class="lang"><svg class="ico"><use href="#i-globe"/></svg><select class="lang-select" data-i18n-aria="lang"></select></label>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow" data-i18n="eyebrow">Peep · AI video studio</span>
+        <h1 data-i18n-html="h1">Any video you can imagine, <em>made with AI</em></h1>
+        <p class="lead" data-i18n="lead"></p>
+        <div class="btns">
+          <a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg><span data-i18n="cta">Discuss your project</span></a>
+          <a class="btn btn-ghost" href="#work"><svg class="ico fill"><use href="#i-play"/></svg><span data-i18n="cta2">See our work</span></a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>152K</b><span data-i18n="s1"></span></div>
+          <div class="stat"><b>∞</b><span data-i18n="s2"></span></div>
+          <div class="stat"><b>0</b><span data-i18n="s3"></span></div>
+        </div>
+      </div>
+      <div class="screen" aria-hidden="true">
+        <img src="../images/frames/beach.jpg" alt="">
+        <div class="hud t"><span><span class="rec">●</span> REC</span><span id="tc">00:00:12:04</span></div>
+        <div class="hud b"><span>16:9 · 24 FPS</span><span>PEEP STUDIO</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="genres" aria-hidden="true"><div class="genres-track" id="genres"></div></div>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-i18n="work_eyebrow">Work</span>
+        <h2 data-i18n-html="work_h2"></h2>
+        <p data-i18n="work_p"></p>
+      </div>
+      <div class="work-grid" id="videos"></div>
+      <div class="stills">
+        <img src="../images/frames/kiss.jpg" alt="" loading="lazy">
+        <img src="../images/frames/gazebo.jpg" alt="" loading="lazy">
+        <img src="../images/frames/sunset.jpg" alt="" loading="lazy">
+        <img src="../images/frames/pool-close.jpg" alt="" loading="lazy">
+      </div>
+      <p class="work-note" data-i18n="work_note"></p>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-i18n="svc_eyebrow">Services</span>
+        <h2 data-i18n="svc_h2"></h2>
+        <p data-i18n="svc_p"></p>
+      </div>
+      <div class="grid-3" id="svc"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-i18n="why_eyebrow">Why AI</span>
+        <h2 data-i18n="why_h2"></h2>
+      </div>
+      <div class="why" id="why"></div>
+    </div>
+  </section>
+
+  <section id="process" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-i18n="proc_eyebrow">How we work</span>
+        <h2 data-i18n="proc_h2"></h2>
+      </div>
+      <div class="steps" id="steps"></div>
+      <div class="price-note">
+        <p data-i18n-html="price_note"></p>
+        <a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg><span data-i18n="cta_quote">Get a quote</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="final">
+        <img src="../images/frames/cake.jpg" alt="" loading="lazy">
+        <div>
+          <h2 data-i18n="final_h2"></h2>
+          <p data-i18n="final_p"></p>
+          <div class="btns"><a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg><span data-i18n="cta">Discuss your project</span></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span data-year>2026</span> Peep &amp; Peak</span>
+    <nav>
+      <a href="../" data-i18n="home">All projects</a>
+      <a data-link="yt">YouTube</a><a data-link="tt">TikTok</a><a data-link="profile">Instagram</a><a data-link="tg">Telegram</a>
+    </nav>
+  </div>
+</footer>
+
+<a class="float" data-link="ig" data-i18n-aria="cta" aria-label="Instagram"><svg class="ico"><use href="#i-instagram"/></svg></a>
+<div class="modal" id="modal" hidden>
+  <button class="modal-close" id="modal-close" data-i18n-aria="close" aria-label="Close">×</button>
+  <div class="modal-box" id="modal-box"></div>
+</div>
+
+<script>
+  window.I18N = {"en":{"title":"Peep · AI video studio","desc":"AI video production by Peep: ads, cinematic stories, music videos, brand characters and social content.","lang":"Language","nav_work":"Work","nav_services":"Services","nav_process":"How we work","eyebrow":"Peep · AI video studio","h1":"Any video you can imagine, <em>made with AI</em>","lead":"Ads, cinematic stories, music videos and characters for your brand. No film crew, no locations — just your idea and a finished video.","cta":"Discuss your project","cta2":"See our work","s1":"views on one of our Reels","s2":"styles: from cartoon to cinema","s3":"film crews, actors or locations","genres":["Advertising","Cinematic","Music videos","Brand characters","Product videos","Reels & TikTok","Trailers","Animation","Greetings"],"work_eyebrow":"Work","work_h2":"Our own characters, <em>made entirely with AI</em>","work_p":"Peep & Peak started as our own series: these capybaras exist only thanks to AI. We bring the same craft to your project.","work_note":"Tap a video to play it. More work is on our Instagram and YouTube.","svc_eyebrow":"Services","svc_h2":"What Peep can make","svc_p":"From a 10-second ad to a full story with characters. We handle the script, visuals, voice and music.","services":[{"h":"Advertising videos","p":"Ads for your product or service for Reels, TikTok, YouTube and websites."},{"h":"Cinematic stories","p":"Short films and trailers with a movie look: atmosphere, light and camera moves."},{"h":"Brand characters","p":"A mascot or hero for your brand that stays the same from video to video."},{"h":"Product videos","p":"Your product in any setting — no studio and no photo shoot."},{"h":"Music videos","p":"Clips and visualizers for tracks: from dreamy to epic."},{"h":"Social content","p":"Series of short videos for Reels, Shorts and TikTok in one consistent style."}],"why_eyebrow":"Why AI","why_h2":"Faster, more affordable, without limits","why":[{"h":"Fast","p":"Days instead of months: no castings, shoots or travel."},{"h":"Affordable","p":"You pay for the result, not for a crew, equipment and locations."},{"h":"No limits","p":"Space, the ocean floor or a fairy-tale world — any scene is possible."}],"proc_eyebrow":"How we work","proc_h2":"From idea to finished video in 4 steps","steps":[{"h":"Message us","p":"Tell us about the task on Instagram: what you need, where it will run and by when."},{"h":"Script & style","p":"We suggest a concept, a script and visual references."},{"h":"Production","p":"We generate, edit and add voice and music."},{"h":"Edits & delivery","p":"We polish the details and deliver in any format: 9:16, 16:9 or 1:1."}],"price_note":"<b>The price depends on the task.</b> Describe your idea and we'll reply with options and a quote before we start.","cta_quote":"Get a quote","final_h2":"Have an idea? Let's turn it into a video","final_p":"Message Peep on Instagram — we'll reply and suggest how to bring it to life.","home":"All projects","close":"Close","watch":"Play video"},"zh":{"title":"Peep · AI 视频工作室","desc":"Peep 的 AI 视频制作：广告、电影感故事、音乐 MV、品牌角色与社交媒体内容。","lang":"语言","nav_work":"作品","nav_services":"服务","nav_process":"合作流程","eyebrow":"Peep · AI 视频工作室","h1":"您能想到的任何视频，<em>都能用 AI 做出来</em>","lead":"广告、电影感故事、音乐 MV，以及专属于您品牌的角色。无需摄制组，无需场地——只要您的创意，就能拿到成片。","cta":"聊聊您的项目","cta2":"查看作品","s1":"我们单条 Reels 的播放量","s2":"种风格：从卡通到电影","s3":"摄制组、演员或场地","genres":["广告","电影感","音乐 MV","品牌角色","产品视频","Reels 和 TikTok","预告片","动画","祝福视频"],"work_eyebrow":"作品","work_h2":"我们自己的角色，<em>完全由 AI 打造</em>","work_p":"Peep & Peak 最初是我们自己的系列：这对水豚只因 AI 而存在。我们会用同样的匠心打磨您的项目。","work_note":"点击视频即可播放。更多作品请见我们的 Instagram 和 YouTube。","svc_eyebrow":"服务","svc_h2":"Peep 能做什么","svc_p":"从 10 秒广告到有角色的完整故事。脚本、画面、配音和音乐，我们一手包办。","services":[{"h":"广告视频","p":"为您的产品或服务制作广告，适用于 Reels、TikTok、YouTube 和网站。"},{"h":"电影感故事","p":"大片质感的短片和预告片：氛围、光影与运镜。"},{"h":"品牌角色","p":"为您的品牌打造吉祥物或主角，每支视频中形象始终如一。"},{"h":"产品视频","p":"让您的产品置身任何场景——无需影棚，也无需拍摄。"},{"h":"音乐 MV","p":"为歌曲制作 MV 和可视化视频：从梦幻到史诗。"},{"h":"社交媒体内容","p":"为 Reels、Shorts 和 TikTok 打造风格统一的系列短视频。"}],"why_eyebrow":"为什么选择 AI","why_h2":"更快、更省、无限可能","why":[{"h":"快速","p":"几天而非几个月：无需选角、拍摄或出差。"},{"h":"实惠","p":"您为成果付费，而不是为团队、设备和场地买单。"},{"h":"无限可能","p":"太空、海底或童话世界——任何场景都能实现。"}],"proc_eyebrow":"合作流程","proc_h2":"从创意到成片，只需 4 步","steps":[{"h":"给我们发消息","p":"在 Instagram 上告诉我们：需要什么、在哪里投放、何时要。"},{"h":"脚本与风格","p":"我们提供创意概念、脚本和视觉参考。"},{"h":"制作","p":"我们负责生成、剪辑，并加入配音和音乐。"},{"h":"修改与交付","p":"打磨细节，以任意格式交付：9:16、16:9 或 1:1。"}],"price_note":"<b>价格取决于具体需求。</b>描述您的创意，开工前我们会回复方案和报价。","cta_quote":"获取报价","final_h2":"有创意？让我们把它变成视频","final_p":"在 Instagram 上给 Peep 发消息——我们会回复您，并告诉您如何将它实现。","home":"全部项目","close":"关闭","watch":"播放视频"},"hi":{"title":"Peep · AI वीडियो स्टूडियो","desc":"Peep का AI वीडियो प्रोडक्शन: विज्ञापन, सिनेमैटिक कहानियाँ, म्यूज़िक वीडियो, ब्रांड कैरेक्टर और सोशल मीडिया कंटेंट।","lang":"भाषा","nav_work":"हमारा काम","nav_services":"सेवाएँ","nav_process":"हम कैसे काम करते हैं","eyebrow":"Peep · AI वीडियो स्टूडियो","h1":"आपकी कल्पना का हर वीडियो, <em>AI से तैयार</em>","lead":"आपके ब्रांड के लिए विज्ञापन, सिनेमैटिक कहानियाँ, म्यूज़िक वीडियो और कैरेक्टर। न फ़िल्म क्रू, न लोकेशन — बस आपका आइडिया और तैयार वीडियो।","cta":"अपने प्रोजेक्ट पर बात करें","cta2":"हमारा काम देखें","s1":"व्यूज़, हमारे एक Reels वीडियो पर","s2":"स्टाइल: कार्टून से सिनेमा तक","s3":"फ़िल्म क्रू, एक्टर या लोकेशन","genres":["विज्ञापन","सिनेमैटिक","म्यूज़िक वीडियो","ब्रांड कैरेक्टर","प्रोडक्ट वीडियो","Reels और TikTok","ट्रेलर","एनिमेशन","शुभकामनाएँ"],"work_eyebrow":"हमारा काम","work_h2":"हमारे अपने कैरेक्टर, <em>पूरी तरह AI से बने</em>","work_p":"Peep & Peak हमारी अपनी सीरीज़ के रूप में शुरू हुए: कैपीबारा की यह जोड़ी सिर्फ़ AI की बदौलत मौजूद है। यही हुनर हम आपके प्रोजेक्ट में लाते हैं।","work_note":"वीडियो चलाने के लिए उस पर टैप करें। और काम हमारे Instagram और YouTube पर देखें।","svc_eyebrow":"सेवाएँ","svc_h2":"Peep क्या-क्या बना सकता है","svc_p":"10 सेकंड के विज्ञापन से लेकर कैरेक्टर वाली पूरी कहानी तक। स्क्रिप्ट, विज़ुअल, आवाज़ और म्यूज़िक — सब हमारी ज़िम्मेदारी।","services":[{"h":"विज्ञापन वीडियो","p":"Reels, TikTok, YouTube और वेबसाइट के लिए आपके प्रोडक्ट या सेवा के विज्ञापन।"},{"h":"सिनेमैटिक कहानियाँ","p":"फ़िल्मी लुक वाली शॉर्ट फ़िल्में और ट्रेलर: माहौल, रोशनी और कैमरा मूवमेंट।"},{"h":"ब्रांड कैरेक्टर","p":"आपके ब्रांड का मैस्कॉट या हीरो, जो हर वीडियो में एक जैसा दिखे।"},{"h":"प्रोडक्ट वीडियो","p":"आपका प्रोडक्ट किसी भी माहौल में — न स्टूडियो, न फ़ोटोशूट।"},{"h":"म्यूज़िक वीडियो","p":"गानों के लिए क्लिप और विज़ुअलाइज़र: सपनीले से लेकर भव्य तक।"},{"h":"सोशल मीडिया कंटेंट","p":"Reels, Shorts और TikTok के लिए एक ही स्टाइल में छोटे वीडियो की सीरीज़।"}],"why_eyebrow":"AI क्यों","why_h2":"तेज़, किफ़ायती और बिना किसी सीमा के","why":[{"h":"तेज़","p":"महीनों नहीं, दिनों में: न कास्टिंग, न शूटिंग, न यात्रा।"},{"h":"किफ़ायती","p":"आप नतीजे के लिए भुगतान करते हैं, क्रू, उपकरण और लोकेशन के लिए नहीं।"},{"h":"कोई सीमा नहीं","p":"अंतरिक्ष, समुद्र की गहराई या परियों की दुनिया — हर सीन मुमकिन है।"}],"proc_eyebrow":"हम कैसे काम करते हैं","proc_h2":"आइडिया से तैयार वीडियो तक, सिर्फ़ 4 कदम","steps":[{"h":"हमें मैसेज करें","p":"Instagram पर हमें बताएँ: क्या चाहिए, वीडियो कहाँ चलेगा और कब तक।"},{"h":"स्क्रिप्ट और स्टाइल","p":"हम कॉन्सेप्ट, स्क्रिप्ट और विज़ुअल रेफ़रेंस सुझाते हैं।"},{"h":"प्रोडक्शन","p":"हम जनरेट और एडिट करते हैं, फिर आवाज़ और म्यूज़िक जोड़ते हैं।"},{"h":"बदलाव और डिलीवरी","p":"हम बारीकियाँ निखारते हैं और किसी भी फ़ॉर्मेट में देते हैं: 9:16, 16:9 या 1:1।"}],"price_note":"<b>कीमत काम पर निर्भर करती है।</b> अपना आइडिया बताएँ — काम शुरू होने से पहले हम विकल्पों और कोटेशन के साथ जवाब देंगे।","cta_quote":"कीमत जानें","final_h2":"कोई आइडिया है? चलिए उसे वीडियो में बदलें","final_p":"Instagram पर Peep को मैसेज करें — हम जवाब देंगे और बताएँगे कि इसे कैसे साकार करें।","home":"सभी प्रोजेक्ट","close":"बंद करें","watch":"वीडियो चलाएँ"},"es":{"title":"Peep · Estudio de video con IA","desc":"Producción de video con IA de Peep: anuncios, historias cinematográficas, videoclips, personajes de marca y contenido para redes sociales.","lang":"Idioma","nav_work":"Trabajos","nav_services":"Servicios","nav_process":"Cómo trabajamos","eyebrow":"Peep · Estudio de video con IA","h1":"Cualquier video que imagines, <em>hecho con IA</em>","lead":"Anuncios, historias cinematográficas, videoclips y personajes para tu marca. Sin equipo de filmación ni locaciones: solo tu idea y un video terminado.","cta":"Cuéntanos tu proyecto","cta2":"Ver trabajos","s1":"vistas en uno de nuestros Reels","s2":"estilos: de la animación al cine","s3":"equipos de filmación, actores o locaciones","genres":["Publicidad","Cinematográfico","Videoclips","Personajes de marca","Videos de producto","Reels y TikTok","Tráileres","Animación","Felicitaciones"],"work_eyebrow":"Trabajos","work_h2":"Nuestros propios personajes, <em>creados por completo con IA</em>","work_p":"Peep & Peak nació como nuestra propia serie: estos capibaras existen solo gracias a la IA. Ponemos ese mismo oficio en tu proyecto.","work_note":"Toca un video para reproducirlo. Encuentra más trabajos en nuestro Instagram y YouTube.","svc_eyebrow":"Servicios","svc_h2":"Lo que Peep puede crear","svc_p":"Desde un anuncio de 10 segundos hasta una historia completa con personajes. Nos encargamos del guion, la imagen, la voz y la música.","services":[{"h":"Videos publicitarios","p":"Anuncios de tu producto o servicio para Reels, TikTok, YouTube y sitios web."},{"h":"Historias cinematográficas","p":"Cortometrajes y tráileres con look de película: atmósfera, luz y movimientos de cámara."},{"h":"Personajes de marca","p":"Una mascota o un protagonista para tu marca que se mantiene igual de un video a otro."},{"h":"Videos de producto","p":"Tu producto en cualquier escenario, sin estudio ni sesión de fotos."},{"h":"Videoclips","p":"Clips y visualizadores para tus canciones: de lo onírico a lo épico."},{"h":"Contenido para redes","p":"Series de videos cortos para Reels, Shorts y TikTok con un estilo uniforme."}],"why_eyebrow":"Por qué IA","why_h2":"Más rápido, más accesible y sin límites","why":[{"h":"Rápido","p":"Días en lugar de meses: sin castings, rodajes ni viajes."},{"h":"Accesible","p":"Pagas por el resultado, no por personal, equipo técnico ni locaciones."},{"h":"Sin límites","p":"El espacio, el fondo del mar o un mundo de cuento: cualquier escena es posible."}],"proc_eyebrow":"Cómo trabajamos","proc_h2":"De la idea al video terminado en 4 pasos","steps":[{"h":"Escríbenos","p":"Cuéntanos por Instagram qué necesitas, dónde se publicará y para cuándo."},{"h":"Guion y estilo","p":"Te proponemos un concepto, un guion y referencias visuales."},{"h":"Producción","p":"Generamos, editamos y agregamos voz y música."},{"h":"Ajustes y entrega","p":"Pulimos los detalles y entregamos en cualquier formato: 9:16, 16:9 o 1:1."}],"price_note":"<b>El precio depende del proyecto.</b> Cuéntanos tu idea y te responderemos con opciones y una cotización antes de empezar.","cta_quote":"Pedir cotización","final_h2":"¿Tienes una idea? Convirtámosla en video","final_p":"Escríbele a Peep por Instagram: te responderemos y te propondremos cómo hacerla realidad.","home":"Todos los proyectos","close":"Cerrar","watch":"Ver video"},"fr":{"title":"Peep · Studio vidéo IA","desc":"Production vidéo par IA signée Peep : publicités, récits cinématographiques, clips musicaux, personnages de marque et contenus pour les réseaux sociaux.","lang":"Langue","nav_work":"Réalisations","nav_services":"Services","nav_process":"Notre méthode","eyebrow":"Peep · Studio vidéo IA","h1":"Toutes les vidéos que vous imaginez, <em>créées avec l’IA</em>","lead":"Publicités, récits cinématographiques, clips et personnages pour votre marque. Ni équipe de tournage, ni décors : juste votre idée et une vidéo prête à diffuser.","cta":"Parlons de votre projet","cta2":"Voir nos réalisations","s1":"vues sur l’un de nos Reels","s2":"styles : du dessin animé au cinéma","s3":"équipe de tournage, acteur ou décor","genres":["Publicité","Cinéma","Clips musicaux","Personnages de marque","Vidéos produit","Reels et TikTok","Bandes-annonces","Animation","Vœux"],"work_eyebrow":"Réalisations","work_h2":"Nos propres personnages, <em>entièrement créés par l’IA</em>","work_p":"Peep & Peak est né comme notre propre série : ces capybaras n’existent que grâce à l’IA. Nous mettons le même savoir-faire au service de votre projet.","work_note":"Touchez une vidéo pour la lancer. Retrouvez d’autres réalisations sur notre Instagram et notre chaîne YouTube.","svc_eyebrow":"Services","svc_h2":"Ce que Peep peut créer","svc_p":"D’une pub de 10 secondes à une histoire complète avec ses personnages. Scénario, visuels, voix et musique : on s’occupe de tout.","services":[{"h":"Vidéos publicitaires","p":"Des pubs pour votre produit ou service, pensées pour Reels, TikTok, YouTube et votre site."},{"h":"Récits cinématographiques","p":"Courts métrages et bandes-annonces au rendu ciné : ambiance, lumière et mouvements de caméra."},{"h":"Personnages de marque","p":"Une mascotte ou un héros pour votre marque, identique d’une vidéo à l’autre."},{"h":"Vidéos produit","p":"Votre produit dans n’importe quel décor, sans studio ni shooting photo."},{"h":"Clips musicaux","p":"Clips et visualizers pour vos morceaux : du plus onirique au plus épique."},{"h":"Contenus pour les réseaux","p":"Des séries de vidéos courtes pour Reels, Shorts et TikTok, dans un style cohérent."}],"why_eyebrow":"Pourquoi l’IA","why_h2":"Plus rapide, plus abordable, sans limites","why":[{"h":"Rapide","p":"Des jours au lieu de mois : pas de casting, de tournage ni de déplacements."},{"h":"Abordable","p":"Vous payez le résultat, pas une équipe, du matériel et des lieux de tournage."},{"h":"Sans limites","p":"L’espace, les fonds marins ou un monde féerique : toutes les scènes sont possibles."}],"proc_eyebrow":"Notre méthode","proc_h2":"De l’idée à la vidéo finale en 4 étapes","steps":[{"h":"Écrivez-nous","p":"Décrivez votre besoin sur Instagram : ce qu’il vous faut, où la vidéo sera diffusée et pour quand."},{"h":"Scénario et style","p":"Nous proposons un concept, un scénario et des références visuelles."},{"h":"Production","p":"Nous générons, montons, puis ajoutons voix et musique."},{"h":"Retouches et livraison","p":"Nous peaufinons les détails et livrons dans tous les formats : 9:16, 16:9 ou 1:1."}],"price_note":"<b>Le prix dépend du projet.</b> Décrivez votre idée : nous vous répondrons avec des options et un devis avant de commencer.","cta_quote":"Demander un devis","final_h2":"Une idée ? Transformons-la en vidéo","final_p":"Écrivez à Peep sur Instagram : nous vous répondrons et vous proposerons comment lui donner vie.","home":"Tous les projets","close":"Fermer","watch":"Lire la vidéo"},"ar":{"title":"Peep · استوديو فيديو بالذكاء الاصطناعي","desc":"إنتاج فيديو بالذكاء الاصطناعي من Peep: إعلانات، وقصص سينمائية، وفيديوهات موسيقية، وشخصيات للعلامات التجارية، ومحتوى لمنصات التواصل الاجتماعي.","lang":"اللغة","nav_work":"أعمالنا","nav_services":"الخدمات","nav_process":"طريقة عملنا","eyebrow":"Peep · استوديو فيديو بالذكاء الاصطناعي","h1":"أي فيديو تتخيله، <em>نصنعه بالذكاء الاصطناعي</em>","lead":"إعلانات وقصص سينمائية وفيديوهات موسيقية وشخصيات لعلامتك التجارية. بلا فريق تصوير ولا مواقع — فقط فكرتك وفيديو جاهز.","cta":"ناقش مشروعك معنا","cta2":"شاهد أعمالنا","s1":"مشاهدة لأحد مقاطع Reels لدينا","s2":"أسلوب: من الكرتون إلى السينما","s3":"فرق تصوير أو ممثلون أو مواقع","genres":["إعلانات","سينمائي","فيديوهات موسيقية","شخصيات العلامات","فيديوهات المنتجات","Reels و TikTok","مقاطع تشويقية","رسوم متحركة","تهانٍ"],"work_eyebrow":"أعمالنا","work_h2":"شخصياتنا الخاصة، <em>مصنوعة بالكامل بالذكاء الاصطناعي</em>","work_p":"بدأت Peep & Peak كسلسلة خاصة بنا: هذا الثنائي من الكابيبارا لا وجود له إلا بفضل الذكاء الاصطناعي. ونضع الإتقان نفسه في مشروعك.","work_note":"اضغط على أي فيديو لتشغيله. شاهد المزيد من أعمالنا على حسابنا في Instagram وقناتنا على YouTube.","svc_eyebrow":"الخدمات","svc_h2":"ما الذي يمكن أن يصنعه Peep","svc_p":"من إعلان مدته 10 ثوانٍ إلى قصة كاملة بشخصياتها. نتولى السيناريو والصورة والصوت والموسيقى.","services":[{"h":"فيديوهات إعلانية","p":"إعلانات لمنتجك أو خدمتك على Reels و TikTok و YouTube والمواقع الإلكترونية."},{"h":"قصص سينمائية","p":"أفلام قصيرة ومقاطع تشويقية بطابع سينمائي: أجواء وإضاءة وحركة كاميرا."},{"h":"شخصيات العلامات التجارية","p":"تميمة أو بطل لعلامتك التجارية يحافظ على شكله من فيديو إلى آخر."},{"h":"فيديوهات المنتجات","p":"منتجك في أي مكان تريده — بلا استوديو ولا جلسة تصوير."},{"h":"فيديوهات موسيقية","p":"كليبات ومؤثرات بصرية للأغاني: من الحالمة إلى الملحمية."},{"h":"محتوى التواصل الاجتماعي","p":"سلاسل من الفيديوهات القصيرة لـ Reels و Shorts و TikTok بأسلوب موحّد."}],"why_eyebrow":"لماذا الذكاء الاصطناعي","why_h2":"أسرع، وأوفر، وبلا حدود","why":[{"h":"سريع","p":"أيام بدلًا من شهور: بلا اختيار ممثلين ولا تصوير ولا سفر."},{"h":"اقتصادي","p":"تدفع مقابل النتيجة، لا مقابل فريق ومعدات ومواقع تصوير."},{"h":"بلا حدود","p":"الفضاء أو قاع المحيط أو عالم خيالي — كل مشهد ممكن."}],"proc_eyebrow":"طريقة عملنا","proc_h2":"من الفكرة إلى الفيديو الجاهز في 4 خطوات","steps":[{"h":"راسلنا","p":"أخبرنا على Instagram بما تحتاجه، وأين سيُعرض الفيديو، ومتى تريده."},{"h":"السيناريو والأسلوب","p":"نقترح عليك فكرة وسيناريو ومراجع بصرية."},{"h":"الإنتاج","p":"نولّد المشاهد ونحرّرها ونضيف الصوت والموسيقى."},{"h":"التعديلات والتسليم","p":"نصقل التفاصيل ونسلّمك الفيديو بأي صيغة: 9:16 أو 16:9 أو 1:1."}],"price_note":"<b>يعتمد السعر على طبيعة المهمة.</b> صف لنا فكرتك وسنرد عليك بخيارات وعرض سعر قبل البدء.","cta_quote":"اطلب عرض سعر","final_h2":"لديك فكرة؟ لنحوّلها إلى فيديو","final_p":"راسل Peep على Instagram — سنرد عليك ونقترح كيف نحوّل فكرتك إلى واقع.","home":"كل المشاريع","close":"إغلاق","watch":"تشغيل الفيديو"},"bn":{"title":"Peep · AI ভিডিও স্টুডিও","desc":"Peep-এর AI ভিডিও প্রোডাকশন: বিজ্ঞাপন, সিনেম্যাটিক গল্প, মিউজিক ভিডিও, ব্র্যান্ড ক্যারেক্টার আর সোশ্যাল মিডিয়ার কনটেন্ট।","lang":"ভাষা","nav_work":"আমাদের কাজ","nav_services":"সেবা","nav_process":"কীভাবে কাজ করি","eyebrow":"Peep · AI ভিডিও স্টুডিও","h1":"আপনার কল্পনার যেকোনো ভিডিও, <em>AI দিয়ে তৈরি</em>","lead":"আপনার ব্র্যান্ডের জন্য বিজ্ঞাপন, সিনেম্যাটিক গল্প, মিউজিক ভিডিও আর ক্যারেক্টার। শুটিং টিম বা লোকেশন লাগবে না — শুধু আপনার আইডিয়া, আর হাতে তৈরি ভিডিও।","cta":"প্রজেক্ট নিয়ে কথা বলুন","cta2":"আমাদের কাজ দেখুন","s1":"ভিউ, আমাদের একটি Reels-এ","s2":"স্টাইল: কার্টুন থেকে সিনেমা","s3":"শুটিং টিম, অভিনেতা বা লোকেশন","genres":["বিজ্ঞাপন","সিনেম্যাটিক","মিউজিক ভিডিও","ব্র্যান্ড ক্যারেক্টার","প্রোডাক্ট ভিডিও","Reels ও TikTok","ট্রেলার","অ্যানিমেশন","শুভেচ্ছা"],"work_eyebrow":"আমাদের কাজ","work_h2":"আমাদের নিজস্ব ক্যারেক্টার, <em>পুরোপুরি AI দিয়ে তৈরি</em>","work_p":"Peep & Peak শুরু হয়েছিল আমাদের নিজস্ব সিরিজ হিসেবে: এই ক্যাপিবারা জুটির অস্তিত্ব শুধু AI-এর কল্যাণেই। সেই একই দক্ষতা আমরা আপনার প্রজেক্টে নিয়ে আসি।","work_note":"ভিডিও চালাতে ট্যাপ করুন। আরও কাজ দেখুন আমাদের Instagram ও YouTube-এ।","svc_eyebrow":"সেবা","svc_h2":"Peep কী কী বানাতে পারে","svc_p":"১০ সেকেন্ডের বিজ্ঞাপন থেকে ক্যারেক্টারসহ পূর্ণাঙ্গ গল্প। স্ক্রিপ্ট, ভিজ্যুয়াল, ভয়েস আর মিউজিক — সবই আমাদের দায়িত্ব।","services":[{"h":"বিজ্ঞাপনী ভিডিও","p":"Reels, TikTok, YouTube আর ওয়েবসাইটের জন্য আপনার পণ্য বা সেবার বিজ্ঞাপন।"},{"h":"সিনেম্যাটিক গল্প","p":"সিনেমার লুকে শর্ট ফিল্ম আর ট্রেলার: আবহ, আলো আর ক্যামেরার মুভমেন্ট।"},{"h":"ব্র্যান্ড ক্যারেক্টার","p":"আপনার ব্র্যান্ডের মাসকট বা নায়ক, যে প্রতিটি ভিডিওতে একই রকম থাকে।"},{"h":"প্রোডাক্ট ভিডিও","p":"যেকোনো পরিবেশে আপনার পণ্য — স্টুডিও বা ফটোশুট ছাড়াই।"},{"h":"মিউজিক ভিডিও","p":"গানের জন্য ক্লিপ আর ভিজ্যুয়ালাইজার: স্বপ্নিল থেকে মহাকাব্যিক।"},{"h":"সোশ্যাল মিডিয়া কনটেন্ট","p":"Reels, Shorts আর TikTok-এর জন্য একই স্টাইলে ছোট ভিডিওর সিরিজ।"}],"why_eyebrow":"কেন AI","why_h2":"আরও দ্রুত, আরও সাশ্রয়ী, সীমাহীন","why":[{"h":"দ্রুত","p":"মাস নয়, দিনেই: কাস্টিং, শুটিং বা যাতায়াতের ঝামেলা নেই।"},{"h":"সাশ্রয়ী","p":"আপনি টাকা দেন ফলাফলের জন্য, টিম, যন্ত্রপাতি আর লোকেশনের জন্য নয়।"},{"h":"সীমাহীন","p":"মহাকাশ, সমুদ্রের তলদেশ বা রূপকথার জগৎ — যেকোনো দৃশ্যই সম্ভব।"}],"proc_eyebrow":"কীভাবে কাজ করি","proc_h2":"আইডিয়া থেকে তৈরি ভিডিও, মাত্র ৪ ধাপে","steps":[{"h":"আমাদের মেসেজ করুন","p":"Instagram-এ জানান: কী দরকার, ভিডিও কোথায় চলবে আর কবের মধ্যে চাই।"},{"h":"স্ক্রিপ্ট ও স্টাইল","p":"আমরা কনসেপ্ট, স্ক্রিপ্ট আর ভিজ্যুয়াল রেফারেন্স প্রস্তাব করি।"},{"h":"প্রোডাকশন","p":"আমরা জেনারেট ও এডিট করি, তারপর ভয়েস আর মিউজিক যোগ করি।"},{"h":"সংশোধন ও ডেলিভারি","p":"খুঁটিনাটি নিখুঁত করে যেকোনো ফরম্যাটে দিই: 9:16, 16:9 বা 1:1।"}],"price_note":"<b>দাম নির্ভর করে কাজের ধরনের ওপর।</b> আপনার আইডিয়া জানান — কাজ শুরুর আগেই আমরা বিকল্প আর খরচের হিসাবসহ উত্তর দেব।","cta_quote":"দাম জানুন","final_h2":"আইডিয়া আছে? চলুন সেটাকে ভিডিওতে রূপ দিই","final_p":"Instagram-এ Peep-কে মেসেজ করুন — আমরা উত্তর দেব আর জানাব কীভাবে এটাকে বাস্তবে রূপ দেওয়া যায়।","home":"সব প্রজেক্ট","close":"বন্ধ করুন","watch":"ভিডিও চালান"},"pt":{"title":"Peep · Estúdio de vídeo com IA","desc":"Peep produz vídeos com IA: anúncios, histórias cinematográficas, clipes musicais, personagens de marca e conteúdo para redes sociais.","lang":"Idioma","nav_work":"Trabalhos","nav_services":"Serviços","nav_process":"Como trabalhamos","eyebrow":"Peep · Estúdio de vídeo com IA","h1":"Qualquer vídeo que você imaginar, <em>feito com IA</em>","lead":"Anúncios, histórias cinematográficas, clipes e personagens para a sua marca. Sem equipe de filmagem nem locações — só a sua ideia e um vídeo pronto.","cta":"Fale do seu projeto","cta2":"Ver trabalhos","s1":"visualizações em um dos nossos Reels","s2":"estilos: do desenho animado ao cinema","s3":"equipes de filmagem, atores ou locações","genres":["Publicidade","Cinematográfico","Clipes","Personagens de marca","Vídeos de produto","Reels e TikTok","Trailers","Animação","Felicitações"],"work_eyebrow":"Trabalhos","work_h2":"Nossos próprios personagens, <em>criados inteiramente com IA</em>","work_p":"Peep & Peak começou como uma série nossa: essas capivaras só existem graças à IA. Levamos a mesma maestria para o seu projeto.","work_note":"Toque em um vídeo para assistir. Veja mais trabalhos no nosso Instagram e YouTube.","svc_eyebrow":"Serviços","svc_h2":"O que Peep pode criar","svc_p":"De um anúncio de 10 segundos a uma história completa com personagens. Cuidamos do roteiro, do visual, da voz e da música.","services":[{"h":"Vídeos publicitários","p":"Anúncios do seu produto ou serviço para Reels, TikTok, YouTube e sites."},{"h":"Histórias cinematográficas","p":"Curtas e trailers com cara de cinema: atmosfera, luz e movimentos de câmera."},{"h":"Personagens de marca","p":"Um mascote ou herói para a sua marca, sempre igual de um vídeo para o outro."},{"h":"Vídeos de produto","p":"Seu produto em qualquer cenário — sem estúdio e sem ensaio fotográfico."},{"h":"Clipes musicais","p":"Clipes e visualizers para músicas: do sonhador ao épico."},{"h":"Conteúdo para redes sociais","p":"Séries de vídeos curtos para Reels, Shorts e TikTok com um estilo consistente."}],"why_eyebrow":"Por que IA","why_h2":"Mais rápido, mais acessível, sem limites","why":[{"h":"Rápido","p":"Dias em vez de meses: sem casting, gravações nem viagens."},{"h":"Acessível","p":"Você paga pelo resultado, não por equipe, equipamentos e locações."},{"h":"Sem limites","p":"O espaço, o fundo do mar ou um mundo de conto de fadas — qualquer cena é possível."}],"proc_eyebrow":"Como trabalhamos","proc_h2":"Da ideia ao vídeo pronto em 4 etapas","steps":[{"h":"Mande uma mensagem","p":"Conte no Instagram o que você precisa, onde o vídeo vai rodar e para quando."},{"h":"Roteiro e estilo","p":"Propomos um conceito, um roteiro e referências visuais."},{"h":"Produção","p":"Geramos, editamos e adicionamos voz e música."},{"h":"Ajustes e entrega","p":"Refinamos os detalhes e entregamos em qualquer formato: 9:16, 16:9 ou 1:1."}],"price_note":"<b>O preço depende do projeto.</b> Descreva sua ideia e responderemos com opções e um orçamento antes de começar.","cta_quote":"Pedir orçamento","final_h2":"Tem uma ideia? Vamos transformá-la em vídeo","final_p":"Mande uma mensagem para Peep no Instagram — vamos responder e sugerir como tirar sua ideia do papel.","home":"Todos os projetos","close":"Fechar","watch":"Assistir ao vídeo"},"ru":{"title":"Peep · ИИ-видеостудия","desc":"ИИ-видео на заказ от Peep: реклама, кино-истории, клипы, персонажи для брендов и контент для соцсетей.","lang":"Язык","nav_work":"Работы","nav_services":"Услуги","nav_process":"Как работаем","eyebrow":"Peep · ИИ-видеостудия","h1":"Любой ролик, который вы придумаете, <em>снятый с ИИ</em>","lead":"Реклама, кино-истории, клипы и персонажи для вашего бренда. Без съёмочной группы и локаций — только ваша идея и готовое видео.","cta":"Обсудить проект","cta2":"Смотреть работы","s1":"просмотров у одного нашего Reels","s2":"стилей: от мультфильма до кино","s3":"съёмочных групп, актёров и локаций","genres":["Реклама","Кино","Клипы","Персонажи брендов","Видео товаров","Reels и TikTok","Трейлеры","Анимация","Поздравления"],"work_eyebrow":"Работы","work_h2":"Наши персонажи, <em>полностью созданные ИИ</em>","work_p":"Peep & Peak начинались как наш собственный сериал: эти капибары существуют только благодаря ИИ. С тем же мастерством берёмся за ваш проект.","work_note":"Нажмите на видео, чтобы посмотреть. Больше работ — в нашем Instagram и на YouTube.","svc_eyebrow":"Услуги","svc_h2":"Что умеет Peep","svc_p":"От 10-секундной рекламы до целой истории с персонажами. Сценарий, картинка, голос и музыка — на нас.","services":[{"h":"Рекламные ролики","p":"Реклама вашего товара или услуги для Reels, TikTok, YouTube и сайта."},{"h":"Кино-истории","p":"Короткие фильмы и трейлеры с киношной картинкой: атмосфера, свет, движение камеры."},{"h":"Персонажи брендов","p":"Маскот или герой вашего бренда, который выглядит одинаково из ролика в ролик."},{"h":"Видео товаров","p":"Ваш продукт в любой обстановке — без студии и фотосессии."},{"h":"Клипы","p":"Клипы и визуализации к трекам: от нежных до эпичных."},{"h":"Контент для соцсетей","p":"Серии коротких видео для Reels, Shorts и TikTok в едином стиле."}],"why_eyebrow":"Почему ИИ","why_h2":"Быстрее, доступнее и без ограничений","why":[{"h":"Быстро","p":"Дни вместо месяцев: без кастингов, съёмок и выездов."},{"h":"Доступно","p":"Вы платите за результат, а не за команду, технику и локации."},{"h":"Без ограничений","p":"Космос, дно океана или сказочный мир — возможна любая сцена."}],"proc_eyebrow":"Как работаем","proc_h2":"От идеи до готового ролика за 4 шага","steps":[{"h":"Пишете нам","p":"Расскажите о задаче в Instagram: что нужно, где будет крутиться и к какому сроку."},{"h":"Сценарий и стиль","p":"Предлагаем концепцию, сценарий и визуальные референсы."},{"h":"Производство","p":"Генерируем, монтируем, добавляем голос и музыку."},{"h":"Правки и сдача","p":"Доводим детали и отдаём в любом формате: 9:16, 16:9 или 1:1."}],"price_note":"<b>Цена зависит от задачи.</b> Опишите идею — ответим с вариантами и стоимостью до начала работы.","cta_quote":"Узнать стоимость","final_h2":"Есть идея? Превратим её в видео","final_p":"Напишите Peep в Instagram — ответим и подскажем, как это воплотить.","home":"Все проекты","close":"Закрыть","watch":"Смотреть видео"}};
+  const VIDEOS = ["dCV7vGV43Cg", "vRxWtBrTIzU", "buBhIAuzPDg", "bsfbB4PPT0o"];
+  const FALLBACK = ["emma-cake", "emma-pillow", "sky-love", "emma-sand"];
+  const SVC_ICONS = ["megaphone", "clapper", "user", "box", "music", "smartphone"];
+  const WHY_ICONS = ["zap", "coins", "infinity"];
+  const ic = (n, c = "") => `<svg class="ico ${c}"><use href="#i-${n}"/></svg>`;
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const $ = (s) => document.querySelector(s);
+
+  $("#videos").innerHTML = VIDEOS.map((id, i) => `<button type="button" class="video" data-yt="${id}" data-n="${i + 1}">
+      <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='../images/frames/${FALLBACK[i]}.jpg'">
+      <span class="play">${ic("play", "fill")}</span></button>`).join("");
+  const modal = $("#modal");
+  const close = () => { modal.hidden = true; $("#modal-box").innerHTML = ""; };
+  document.querySelectorAll("[data-yt]").forEach((b) => b.addEventListener("click", () => {
+    $("#modal-box").innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Peep"></iframe>`;
+    modal.hidden = false;
+  }));
+  $("#modal-close").addEventListener("click", close);
+  modal.addEventListener("click", (e) => { if (e.target === modal) close(); });
+  addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) close(); });
+
+  // таймкод в «видоискателе»
+  let f = 12 * 24 + 4;
+  setInterval(() => { f++; const s = Math.floor(f / 24), fr = f % 24, p = (n) => String(n).padStart(2, "0"); $("#tc").textContent = `00:${p(Math.floor(s / 60))}:${p(s % 60)}:${p(fr)}`; }, 1000 / 24);
+
+  window.onLang = (t) => {
+    const g = t.genres.map((x) => `<span>${esc(x)}</span>`).join("");
+    $("#genres").innerHTML = g + g;
+    $("#svc").innerHTML = t.services.map((s, i) => `<article class="svc"><span class="ic">${ic(SVC_ICONS[i])}</span><h3>${esc(s.h)}</h3><p>${esc(s.p)}</p></article>`).join("");
+    $("#why").innerHTML = t.why.map((w, i) => `<div><span class="ic">${ic(WHY_ICONS[i])}</span><h3>${esc(w.h)}</h3><p>${esc(w.p)}</p></div>`).join("");
+    $("#steps").innerHTML = t.steps.map((s) => `<div class="step"><h3>${esc(s.h)}</h3><p>${esc(s.p)}</p></div>`).join("");
+    document.querySelectorAll("[data-yt]").forEach((b) => b.setAttribute("aria-label", `${t.watch} ${b.dataset.n}`));
+  };
+</script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

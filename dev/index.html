@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peep · bots, websites &amp; automation</title>
+<meta name="description" content="Telegram bots, websites, process automation and DeFi multi-account bots. Built by Peep.">
+<meta property="og:image" content="../images/frames/beach.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%23fcc419' stroke='%23e0a20c' d='M20 3.2c1.3 0 2.2.8 2.9 2.3l3 6.1 6.7 1c1.7.2 2.6 1.1 2.6 2.3s-.6 2-1.7 3l-4.9 4.7 1.2 6.7c.3 1.7-.3 2.8-1.6 3.2-.9.3-1.7 0-2.8-.6L20 29.5l-6 3.2c-1.1.6-1.9.9-2.8.6-1.3-.4-1.9-1.5-1.6-3.2l1.2-6.7-4.9-4.7c-1.1-1-1.7-1.8-1.7-3s.9-2.1 2.6-2.3l6.7-1 3-6.1c.7-1.5 1.6-2.3 2.9-2.3Z'/%3E%3C/svg%3E">
+<style>
+  /* Разработка: светлая «бумага» в точку, синий акцент, тёмный терминал как витрина. */
+  :root {
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --ink: #0e1726;
+    --muted: #5b6577;
+    --line: #e2e7ef;
+    --blue: #2f6fd6;
+    --blue-soft: #e8f0fc;
+    --term: #0d1117;
+    --green: #3fb950;
+    --amber: #e3b341;
+    --ig: linear-gradient(45deg, #f9ce34 0%, #ee2a7b 45%, #6228d7 100%);
+    --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+    --font-base: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font: var(--font-base);
+    --max: 1120px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+  section { padding: 90px 0; }
+  h1, h2, h3 { margin: 0; line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance; }
+  h1 { font-size: clamp(34px, 4.4vw, 56px); font-weight: 900; }
+  h2 { font-size: clamp(28px, 3.4vw, 44px); font-weight: 900; margin-bottom: 14px; }
+  h3 { font-size: 20px; font-weight: 900; }
+  p { margin: 0; }
+  em { font-style: normal; color: var(--blue); }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--blue); margin-bottom: 16px; }
+  .eyebrow::before { content: "//"; opacity: .55; }
+  .head { max-width: 680px; margin-bottom: 40px; }
+  .head p { color: var(--muted); font-size: 18px; }
+  svg.ico { display: inline-block; width: 1.15em; height: 1.15em; vertical-align: -0.2em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 22px; border-radius: 10px; font-weight: 800; font-size: 15px; text-decoration: none; transition: transform .15s, filter .15s, border-color .15s; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:focus-visible, .lang-select:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+  .btn-ig { background: var(--ig); color: #fff; }
+  .btn-ig:hover { filter: brightness(1.08); }
+  .btn-ghost { border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--blue); }
+  .btns { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  header.nav { position: sticky; top: 0; z-index: 30; background: rgba(245,247,251,.85); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 66px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 900; font-size: 20px; white-space: nowrap; }
+  .logo svg { width: 30px; height: 30px; }
+  .logo small { font-family: var(--mono); font-weight: 700; color: var(--muted); font-size: 13px; }
+  .nav-links { display: flex; align-items: center; gap: 24px; }
+  .nav-links > a { text-decoration: none; color: var(--muted); font-weight: 700; font-size: 15px; }
+  .nav-links > a:hover { color: var(--ink); }
+  .lang { position: relative; display: inline-flex; align-items: center; }
+  .lang svg.ico { position: absolute; inset-inline-start: 10px; width: 16px; height: 16px; color: var(--muted); pointer-events: none; }
+  .lang-select { appearance: none; -webkit-appearance: none; font: inherit; font-size: 14px; font-weight: 800; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px 7px 32px; cursor: pointer; }
+  [dir="rtl"] .lang-select { padding: 7px 32px 7px 14px; }
+
+  /* hero */
+  .hero { padding: 64px 0 80px; background: radial-gradient(#d6deeb 1px, transparent 1.2px) 0 0 / 22px 22px; border-bottom: 1px solid var(--line); }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+  .hero .lead { color: var(--muted); font-size: 19px; margin: 20px 0 30px; max-width: 520px; }
+  .stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
+  .stack span { font-family: var(--mono); font-size: 12.5px; font-weight: 700; padding: 5px 10px; border-radius: 6px; background: var(--card); border: 1px solid var(--line); color: var(--muted); }
+
+  .term { border-radius: 14px; overflow: hidden; background: var(--term); color: #c9d1d9; box-shadow: 0 40px 70px -35px rgba(14,23,38,.55), 0 0 0 1px rgba(14,23,38,.08); font-family: var(--mono); font-size: 14px; line-height: 1.75; direction: ltr; text-align: left; }
+  .term-bar { display: flex; align-items: center; gap: 7px; padding: 12px 14px; background: #161b22; border-bottom: 1px solid #21262d; }
+  .term-bar i { width: 11px; height: 11px; border-radius: 50%; background: #ff5f56; }
+  .term-bar i:nth-child(2) { background: #ffbd2e; } .term-bar i:nth-child(3) { background: #27c93f; }
+  .term-bar span { margin-left: 8px; font-size: 12px; color: #8b949e; }
+  .term-body { padding: 18px 18px 22px; min-height: 290px; white-space: pre-wrap; word-break: break-word; }
+  .term-body .p { color: #79c0ff; } .term-body .ok { color: var(--green); } .term-body .ar { color: var(--amber); } .term-body .dim { color: #8b949e; }
+  .cursor { display: inline-block; width: 8px; height: 1.1em; vertical-align: -0.2em; background: #c9d1d9; animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* услуги */
+  .svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .svc { position: relative; padding: 30px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); transition: border-color .2s, transform .2s, box-shadow .2s; }
+  .svc:hover { border-color: #bcd0f0; transform: translateY(-2px); box-shadow: 0 20px 40px -30px rgba(47,111,214,.5); }
+  .svc .ic { width: 50px; height: 50px; border-radius: 13px; display: grid; place-items: center; margin-bottom: 18px; color: var(--blue); background: var(--blue-soft); }
+  .svc .ic svg { width: 24px; height: 24px; }
+  .svc h3 { margin-bottom: 8px; }
+  .svc p { color: var(--muted); font-size: 16px; }
+  .svc ul { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
+  .svc li { font-size: 13px; font-weight: 800; padding: 5px 11px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); }
+  .svc.dark { background: var(--term); border-color: var(--term); color: #e6edf3; }
+  .svc.dark .ic { background: rgba(121,192,255,.12); color: #79c0ff; }
+  .svc.dark p { color: #9aa6b2; }
+  .svc.dark li { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); }
+  .svc.dark:hover { border-color: #30363d; }
+
+  /* «этот сайт — пример» */
+  .proof { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center; padding: 36px; border-radius: 18px; background: var(--blue); color: #fff; overflow: hidden; position: relative; }
+  .proof::after { content: ""; position: absolute; inset: 0; background: radial-gradient(#ffffff22 1px, transparent 1.2px) 0 0 / 18px 18px; pointer-events: none; }
+  .proof > * { position: relative; z-index: 1; }
+  .proof h2 { font-size: clamp(26px, 3vw, 38px); }
+  .proof p { opacity: .9; font-size: 17px; }
+  .proof .btn { margin-top: 22px; background: #fff; color: var(--blue); }
+  [dir="rtl"] .proof .btn svg { transform: scaleX(-1); }
+  .facts { display: grid; gap: 10px; }
+  .facts div { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 12px; background: rgba(255,255,255,.12); font-weight: 800; }
+  .facts svg.ico { width: 22px; height: 22px; }
+
+  /* процесс */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: s; }
+  .step { padding: 24px 22px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); }
+  .step::before { counter-increment: s; content: "0" counter(s); display: block; font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--blue); margin-bottom: 12px; }
+  .step h3 { font-size: 18px; margin-bottom: 6px; }
+  .step p { color: var(--muted); font-size: 15px; }
+  .price-note { margin-top: 16px; padding: 22px 24px; border-radius: 14px; border: 1px dashed #b6c8e8; background: var(--card); display: flex; gap: 18px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+  .price-note p { font-size: 16px; flex: 1 1 360px; min-width: 0; }
+
+  .final { border-radius: 18px; background: var(--term); color: #e6edf3; text-align: center; padding: 64px 24px; position: relative; overflow: hidden; }
+  .final::before { content: ""; position: absolute; inset: 0; background: radial-gradient(50% 70% at 50% 0%, rgba(47,111,214,.35), transparent 70%); }
+  .final > * { position: relative; }
+  .final .code { font-family: var(--mono); font-size: 14px; color: #79c0ff; margin-bottom: 14px; direction: ltr; }
+  .final p { color: #9aa6b2; max-width: 520px; margin: 0 auto 26px; font-size: 18px; }
+  .final .btns { justify-content: center; }
+
+  footer { padding: 34px 0 44px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); margin-top: 90px; }
+  .foot { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .foot nav { display: flex; gap: 16px; flex-wrap: wrap; }
+  .foot a { text-decoration: none; font-weight: 700; }
+  .foot a:hover { color: var(--blue); }
+
+  .float { position: fixed; right: 18px; bottom: 18px; z-index: 40; width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: var(--ig); box-shadow: 0 12px 28px -10px rgba(14,23,38,.5); }
+  .float svg { width: 26px; height: 26px; }
+  [dir="rtl"] .float { right: auto; left: 18px; }
+
+  @media (max-width: 1000px) {
+    .hero-grid, .proof { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .nav-links > a { display: none; }
+    section { padding: 64px 0; }
+  }
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 16px; }
+    .hero { padding: 30px 0 56px; }
+    .hero .lead { font-size: 16px; }
+    .hero .btns .btn { flex: 1 1 100%; }
+    .svc-grid, .steps { grid-template-columns: 1fr; }
+    .svc { padding: 24px; }
+    .proof { padding: 26px 22px; }
+    .term { font-size: 12.5px; }
+    .term-body { min-height: 250px; }
+    .logo small { display: none; }
+    footer { margin-top: 60px; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+<symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+<symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+<symbol id="i-layout" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+<symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
+<symbol id="i-workflow" viewBox="0 0 24 24"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></symbol>
+<symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+</defs></svg>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="../" class="logo" aria-label="Peep &amp; Peak"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lgd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd84d"/><stop offset="1" stop-color="#f5b40f"/></linearGradient></defs><path fill="url(#lgd)" stroke="#e0a20c" stroke-width="1" d="M20 3.2c1.3 0 2.2.8 2.9 2.3l3 6.1 6.7 1c1.7.2 2.6 1.1 2.6 2.3s-.6 2-1.7 3l-4.9 4.7 1.2 6.7c.3 1.7-.3 2.8-1.6 3.2-.9.3-1.7 0-2.8-.6L20 29.5l-6 3.2c-1.1.6-1.9.9-2.8.6-1.3-.4-1.9-1.5-1.6-3.2l1.2-6.7-4.9-4.7c-1.1-1-1.7-1.8-1.7-3s.9-2.1 2.6-2.3l6.7-1 3-6.1c.7-1.5 1.6-2.3 2.9-2.3Z"/></svg><span>Peep <small>/dev</small></span></a>
+    <nav class="nav-links">
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#process" data-i18n="nav_process">How we work</a>
+      <label class="lang"><svg class="ico"><use href="#i-globe"/></svg><select class="lang-select" data-i18n-aria="lang"></select></label>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow" data-i18n="eyebrow">Peep · development</span>
+        <h1 data-i18n-html="h1">Bots, websites and automation that <em>work for you</em></h1>
+        <p class="lead" data-i18n="lead"></p>
+        <div class="btns">
+          <a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg><span data-i18n="cta">Discuss your project</span></a>
+          <a class="btn btn-ghost" href="#services"><svg class="ico"><use href="#i-code"/></svg><span data-i18n="cta2">What we build</span></a>
+        </div>
+        <div class="stack" aria-label="Stack">
+          <span>Python</span><span>Node.js</span><span>Telegram Bot API</span><span>Mini Apps</span><span>Web3 · EVM</span><span>REST · Webhooks</span><span>Google Sheets</span><span>AI · LLM</span>
+        </div>
+      </div>
+      <div class="term" aria-hidden="true">
+        <div class="term-bar"><i></i><i></i><i></i><span>peep@bots: ~</span></div>
+        <div class="term-body" id="term"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-i18n="svc_eyebrow">Services</span>
+        <h2 data-i18n="svc_h2"></h2>
+        <p data-i18n="svc_p"></p>
+      </div>
+      <div class="svc-grid" id="svc"></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="proof">
+        <div>
+          <h2 data-i18n="proof_h2"></h2>
+          <p data-i18n="proof_p"></p>
+          <a class="btn" href="../"><svg class="ico"><use href="#i-arrow-right"/></svg><span data-i18n="home">All projects</span></a>
+        </div>
+        <div class="facts">
+          <div><svg class="ico"><use href="#i-globe"/></svg><span data-i18n="f1"></span></div>
+          <div><svg class="ico"><use href="#i-zap"/></svg><span data-i18n="f2"></span></div>
+          <div><svg class="ico"><use href="#i-shield"/></svg><span data-i18n="f3"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-i18n="proc_eyebrow">How we work</span>
+        <h2 data-i18n="proc_h2"></h2>
+      </div>
+      <div class="steps" id="steps"></div>
+      <div class="price-note">
+        <p data-i18n-html="price_note"></p>
+        <a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg><span data-i18n="cta_quote">Get a quote</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="final">
+        <div class="code">$ peep automate --your-routine</div>
+        <h2 data-i18n="final_h2"></h2>
+        <p data-i18n="final_p"></p>
+        <div class="btns"><a class="btn btn-ig" data-link="ig"><svg class="ico"><use href="#i-instagram"/></svg><span data-i18n="cta">Discuss your project</span></a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span data-year>2026</span> Peep &amp; Peak</span>
+    <nav>
+      <a href="../" data-i18n="home">All projects</a>
+      <a data-link="yt">YouTube</a><a data-link="tt">TikTok</a><a data-link="profile">Instagram</a><a data-link="tg">Telegram</a>
+    </nav>
+  </div>
+</footer>
+
+<a class="float" data-link="ig" data-i18n-aria="cta" aria-label="Instagram"><svg class="ico"><use href="#i-instagram"/></svg></a>
+
+<script>
+  window.I18N = {"en":{"title":"Peep · bots, websites & automation","desc":"Telegram bots, websites, process automation and DeFi multi-account bots. Built by Peep.","lang":"Language","nav_services":"Services","nav_process":"How we work","eyebrow":"Peep · development","h1":"Bots, websites and automation that <em>work for you</em>","lead":"We build Telegram bots, websites and automations — from a simple order bot to systems that manage dozens of accounts and take actions in them.","cta":"Discuss your project","cta2":"What we build","svc_eyebrow":"Services","svc_h2":"What Peep builds","svc_p":"Tasks of any size: from a single bot to automating a whole business process.","services":[{"h":"Telegram bots","p":"Bots that take orders and payments, book appointments, answer customers and send notifications.","tags":["Orders & payments","Bookings","Support","Mini Apps","AI assistants"]},{"h":"Websites","p":"Landing pages, link-in-bio pages and multilingual sites that load fast and need no expensive hosting.","tags":["Landing pages","Link-in-bio","Multilingual","Free hosting"]},{"h":"Process automation","p":"We hand routine work to bots: reports, spreadsheets, CRM, notifications and connections between services.","tags":["Google Sheets","CRM","Reports","Data parsing","Integrations"]},{"h":"DeFi & multi-accounts","p":"Bots that manage multiple accounts and wallets and take actions in them on a schedule or on triggers. Your keys and access stay with you.","tags":["Multi-accounts","Wallets","Schedules & triggers","Monitoring","Alerts"]}],"proof_h2":"You're looking at an example","proof_p":"This site was built by Peep: it speaks 9 languages, picks yours automatically and is hosted for free.","f1":"9 languages","f2":"Automatic language detection","f3":"Free hosting, no monthly fees","proc_eyebrow":"How we work","proc_h2":"Simple and transparent","steps":[{"h":"Message us","p":"Describe the task on Instagram in a few words."},{"h":"Plan & price","p":"We suggest a solution and agree on a fixed price and timeline."},{"h":"Build & demo","p":"We build it and show you a working version along the way."},{"h":"Launch & support","p":"We launch, hand over all access and help after launch."}],"price_note":"<b>The price depends on the task</b> and is fixed before work starts. Send a short description and we'll reply with options.","cta_quote":"Get a quote","final_h2":"Got a routine task? Let's give it to a bot","final_p":"Message Peep on Instagram — we'll work out what can be automated.","home":"All projects"},"zh":{"title":"Peep · 机器人、网站与自动化","desc":"Telegram 机器人、网站、流程自动化及 DeFi 多账号机器人。由 Peep 打造。","lang":"语言","nav_services":"服务","nav_process":"合作流程","eyebrow":"Peep · 开发","h1":"<em>替你干活</em>的机器人、网站与自动化","lead":"我们开发 Telegram 机器人、网站和自动化方案——从简单的接单机器人，到能同时管理数十个账号并自动执行操作的系统。","cta":"聊聊你的项目","cta2":"我们做什么","svc_eyebrow":"服务","svc_h2":"Peep 能做什么","svc_p":"大小需求都能接：从单个机器人到整套业务流程的自动化。","services":[{"h":"Telegram 机器人","p":"接单收款、预约登记、回复客户、推送通知，统统交给机器人。","tags":["订单与支付","预约","客服","Mini Apps","AI 助手"]},{"h":"网站","p":"落地页、个人链接页和多语言网站，加载飞快，无需昂贵的托管费用。","tags":["落地页","个人链接页","多语言","免费托管"]},{"h":"流程自动化","p":"把重复性工作交给机器人：报表、表格、CRM、通知以及各服务之间的对接。","tags":["Google 表格","CRM","报表","数据抓取","系统集成"]},{"h":"DeFi 与多账号","p":"机器人可管理多个账号和钱包，按计划或触发条件自动执行操作。密钥和权限始终掌握在你手中。","tags":["多账号","钱包","定时与触发","监控","提醒"]}],"proof_h2":"你正在看的就是案例","proof_p":"本网站由 Peep 打造：支持 9 种语言，自动识别你的语言，并且免费托管。","f1":"9 种语言","f2":"自动识别语言","f3":"免费托管，无月费","proc_eyebrow":"合作流程","proc_h2":"简单透明","steps":[{"h":"联系我们","p":"在 Instagram 上用几句话描述你的需求。"},{"h":"方案与报价","p":"我们提出解决方案，并约定固定的价格和工期。"},{"h":"开发与演示","p":"边开发边向你展示可运行的版本。"},{"h":"上线与支持","p":"我们负责上线，移交全部权限，上线后继续提供支持。"}],"price_note":"<b>价格视需求而定</b>，并在开工前确定。发一段简短描述给我们，我们会回复几种可选方案。","cta_quote":"获取报价","final_h2":"有重复性工作？交给机器人吧","final_p":"在 Instagram 上联系 Peep，一起看看哪些环节可以自动化。","home":"全部项目"},"hi":{"title":"Peep · बॉट, वेबसाइट और ऑटोमेशन","desc":"Telegram बॉट, वेबसाइट, प्रोसेस ऑटोमेशन और DeFi मल्टी-अकाउंट बॉट। Peep द्वारा निर्मित।","lang":"भाषा","nav_services":"सेवाएँ","nav_process":"हम कैसे काम करते हैं","eyebrow":"Peep · डेवलपमेंट","h1":"बॉट, वेबसाइट और ऑटोमेशन जो <em>आपके लिए काम करें</em>","lead":"हम Telegram बॉट, वेबसाइट और ऑटोमेशन बनाते हैं — ऑर्डर लेने वाले सरल बॉट से लेकर ऐसे सिस्टम तक जो दर्जनों अकाउंट संभालते हैं और उनमें ख़ुद काम करते हैं।","cta":"अपने प्रोजेक्ट पर बात करें","cta2":"हम क्या बनाते हैं","svc_eyebrow":"सेवाएँ","svc_h2":"Peep क्या बनाता है","svc_p":"हर आकार का काम: एक बॉट से लेकर पूरी बिज़नेस प्रक्रिया के ऑटोमेशन तक।","services":[{"h":"Telegram बॉट","p":"ऐसे बॉट जो ऑर्डर और पेमेंट लेते हैं, अपॉइंटमेंट बुक करते हैं, ग्राहकों को जवाब देते हैं और नोटिफ़िकेशन भेजते हैं।","tags":["ऑर्डर और पेमेंट","बुकिंग","सपोर्ट","Mini Apps","AI असिस्टेंट"]},{"h":"वेबसाइट","p":"लैंडिंग पेज, लिंक-इन-बायो पेज और बहुभाषी साइटें, जो तेज़ी से खुलती हैं और महँगी होस्टिंग नहीं माँगतीं।","tags":["लैंडिंग पेज","लिंक-इन-बायो","बहुभाषी","फ़्री होस्टिंग"]},{"h":"प्रोसेस ऑटोमेशन","p":"हम रोज़मर्रा का काम बॉट को सौंप देते हैं: रिपोर्ट, स्प्रेडशीट, CRM, नोटिफ़िकेशन और सेवाओं के बीच कनेक्शन।","tags":["Google Sheets","CRM","रिपोर्ट","डेटा पार्सिंग","इंटीग्रेशन"]},{"h":"DeFi और मल्टी-अकाउंट","p":"ऐसे बॉट जो कई अकाउंट और वॉलेट संभालते हैं और शेड्यूल या ट्रिगर पर उनमें काम करते हैं। आपकी कीज़ और एक्सेस आपके ही पास रहते हैं।","tags":["मल्टी-अकाउंट","वॉलेट","शेड्यूल और ट्रिगर","मॉनिटरिंग","अलर्ट"]}],"proof_h2":"आप एक उदाहरण देख रहे हैं","proof_p":"यह साइट Peep ने बनाई है: यह 9 भाषाओं में बात करती है, आपकी भाषा अपने-आप पहचान लेती है और मुफ़्त होस्टिंग पर चलती है।","f1":"9 भाषाएँ","f2":"भाषा की ऑटोमैटिक पहचान","f3":"फ़्री होस्टिंग, कोई मासिक शुल्क नहीं","proc_eyebrow":"हम कैसे काम करते हैं","proc_h2":"सरल और पारदर्शी","steps":[{"h":"हमें मैसेज करें","p":"Instagram पर कुछ शब्दों में अपना काम बताएँ।"},{"h":"प्लान और कीमत","p":"हम समाधान सुझाते हैं और तय कीमत व समय-सीमा पर सहमति बनाते हैं।"},{"h":"डेवलपमेंट और डेमो","p":"हम इसे बनाते हैं और बीच-बीच में चालू वर्ज़न दिखाते रहते हैं।"},{"h":"लॉन्च और सपोर्ट","p":"हम लॉन्च करते हैं, सारे एक्सेस सौंपते हैं और लॉन्च के बाद भी मदद करते हैं।"}],"price_note":"<b>कीमत काम पर निर्भर करती है</b> और काम शुरू होने से पहले तय हो जाती है। छोटा-सा विवरण भेजें, हम विकल्पों के साथ जवाब देंगे।","cta_quote":"कीमत जानें","final_h2":"कोई रूटीन काम है? उसे बॉट को सौंप दें","final_p":"Instagram पर Peep को मैसेज करें — हम देखेंगे कि क्या-क्या ऑटोमेट हो सकता है।","home":"सभी प्रोजेक्ट"},"es":{"title":"Peep · bots, sitios web y automatización","desc":"Bots de Telegram, sitios web, automatización de procesos y bots DeFi multicuenta. Hecho por Peep.","lang":"Idioma","nav_services":"Servicios","nav_process":"Cómo trabajamos","eyebrow":"Peep · desarrollo","h1":"Bots, sitios web y automatización que <em>trabajan por ti</em>","lead":"Creamos bots de Telegram, sitios web y automatizaciones: desde un bot sencillo para pedidos hasta sistemas que gestionan decenas de cuentas y realizan acciones en ellas.","cta":"Cuéntanos tu proyecto","cta2":"Qué hacemos","svc_eyebrow":"Servicios","svc_h2":"Lo que hace Peep","svc_p":"Proyectos de cualquier tamaño: desde un solo bot hasta automatizar todo un proceso de negocio.","services":[{"h":"Bots de Telegram","p":"Bots que reciben pedidos y pagos, agendan citas, responden a tus clientes y envían notificaciones.","tags":["Pedidos y pagos","Reservas","Soporte","Mini Apps","Asistentes con IA"]},{"h":"Sitios web","p":"Landing pages, páginas link-in-bio y sitios multilingües que cargan rápido y no requieren hosting caro.","tags":["Landing pages","Link-in-bio","Multilingües","Hosting gratis"]},{"h":"Automatización de procesos","p":"Dejamos la rutina en manos de bots: reportes, hojas de cálculo, CRM, notificaciones y conexiones entre servicios.","tags":["Google Sheets","CRM","Reportes","Extracción de datos","Integraciones"]},{"h":"DeFi y multicuentas","p":"Bots que gestionan varias cuentas y billeteras y ejecutan acciones en ellas de forma programada o ante eventos. Tus claves y accesos siguen siendo tuyos.","tags":["Multicuentas","Billeteras","Horarios y disparadores","Monitoreo","Alertas"]}],"proof_h2":"Estás viendo un ejemplo","proof_p":"Este sitio lo hizo Peep: habla 9 idiomas, detecta el tuyo automáticamente y está alojado gratis.","f1":"9 idiomas","f2":"Detección automática de idioma","f3":"Hosting gratis, sin mensualidades","proc_eyebrow":"Cómo trabajamos","proc_h2":"Simple y transparente","steps":[{"h":"Escríbenos","p":"Describe tu proyecto en Instagram en pocas palabras."},{"h":"Plan y precio","p":"Te proponemos una solución y acordamos un precio y un plazo fijos."},{"h":"Desarrollo y demo","p":"Lo construimos y te mostramos una versión funcional sobre la marcha."},{"h":"Lanzamiento y soporte","p":"Lanzamos, te entregamos todos los accesos y te apoyamos después del lanzamiento."}],"price_note":"<b>El precio depende del proyecto</b> y se fija antes de empezar. Envíanos una breve descripción y te responderemos con opciones.","cta_quote":"Pide una cotización","final_h2":"¿Tienes tareas repetitivas? Dáselas a un bot","final_p":"Escríbele a Peep por Instagram y veremos qué se puede automatizar.","home":"Todos los proyectos"},"fr":{"title":"Peep · bots, sites web et automatisation","desc":"Bots Telegram, sites web, automatisation des processus et bots DeFi multicomptes. Conçus par Peep.","lang":"Langue","nav_services":"Services","nav_process":"Notre méthode","eyebrow":"Peep · développement","h1":"Des bots, des sites et des automatisations qui <em>travaillent pour vous</em>","lead":"Nous créons des bots Telegram, des sites web et des automatisations — du simple bot de commande aux systèmes qui gèrent des dizaines de comptes et y agissent pour vous.","cta":"Parlons de votre projet","cta2":"Ce que nous créons","svc_eyebrow":"Services","svc_h2":"Ce que Peep crée","svc_p":"Des projets de toute taille : d’un seul bot à l’automatisation d’un processus métier complet.","services":[{"h":"Bots Telegram","p":"Des bots qui prennent commandes et paiements, gèrent les rendez-vous, répondent aux clients et envoient des notifications.","tags":["Commandes et paiements","Réservations","Support","Mini Apps","Assistants IA"]},{"h":"Sites web","p":"Landing pages, pages link-in-bio et sites multilingues, rapides à charger et sans hébergement coûteux.","tags":["Landing pages","Link-in-bio","Multilingue","Hébergement gratuit"]},{"h":"Automatisation des processus","p":"Nous confions les tâches répétitives à des bots : rapports, tableurs, CRM, notifications et connexions entre services.","tags":["Google Sheets","CRM","Rapports","Extraction de données","Intégrations"]},{"h":"DeFi et multicomptes","p":"Des bots qui gèrent plusieurs comptes et portefeuilles et y exécutent des actions selon un planning ou des déclencheurs. Vos clés et vos accès restent entre vos mains.","tags":["Multicomptes","Portefeuilles","Planning et déclencheurs","Monitoring","Alertes"]}],"proof_h2":"Vous avez un exemple sous les yeux","proof_p":"Ce site a été conçu par Peep : il parle 9 langues, détecte automatiquement la vôtre et est hébergé gratuitement.","f1":"9 langues","f2":"Détection automatique de la langue","f3":"Hébergement gratuit, sans abonnement","proc_eyebrow":"Notre méthode","proc_h2":"Simple et transparent","steps":[{"h":"Écrivez-nous","p":"Décrivez votre besoin en quelques mots sur Instagram."},{"h":"Plan et prix","p":"Nous proposons une solution et fixons ensemble un prix et des délais fermes."},{"h":"Développement et démo","p":"Nous développons et vous montrons une version fonctionnelle en cours de route."},{"h":"Lancement et suivi","p":"Nous lançons, vous remettons tous les accès et restons à vos côtés après."}],"price_note":"<b>Le prix dépend du projet</b> et il est fixé avant le début du travail. Envoyez-nous une courte description : nous vous répondrons avec des options.","cta_quote":"Demander un devis","final_h2":"Une tâche répétitive ? Confions-la à un bot","final_p":"Écrivez à Peep sur Instagram — nous verrons ensemble ce qui peut être automatisé.","home":"Tous les projets"},"ar":{"title":"Peep · بوتات ومواقع وأتمتة","desc":"بوتات Telegram ومواقع إلكترونية وأتمتة العمليات وبوتات DeFi متعددة الحسابات. من تطوير Peep.","lang":"اللغة","nav_services":"الخدمات","nav_process":"كيف نعمل","eyebrow":"Peep · تطوير","h1":"بوتات ومواقع وأتمتة <em>تعمل من أجلك</em>","lead":"نطوّر بوتات Telegram والمواقع الإلكترونية وحلول الأتمتة — من بوت بسيط لاستقبال الطلبات إلى أنظمة تدير عشرات الحسابات وتنفّذ فيها المهام.","cta":"ناقش مشروعك معنا","cta2":"ماذا نبني","svc_eyebrow":"الخدمات","svc_h2":"ما يبنيه Peep","svc_p":"مهام بأي حجم: من بوت واحد إلى أتمتة عملية تجارية كاملة.","services":[{"h":"بوتات Telegram","p":"بوتات تستقبل الطلبات والمدفوعات، وتحجز المواعيد، وتردّ على العملاء، وترسل الإشعارات.","tags":["الطلبات والدفع","الحجوزات","الدعم","Mini Apps","مساعدون أذكياء"]},{"h":"المواقع الإلكترونية","p":"صفحات هبوط وصفحات روابط للبايو ومواقع متعددة اللغات، سريعة التحميل ولا تحتاج إلى استضافة مكلفة.","tags":["صفحات هبوط","رابط البايو","متعدد اللغات","استضافة مجانية"]},{"h":"أتمتة العمليات","p":"نُسند المهام الروتينية إلى البوتات: التقارير والجداول وأنظمة CRM والإشعارات والربط بين الخدمات.","tags":["Google Sheets","CRM","التقارير","استخراج البيانات","التكاملات"]},{"h":"DeFi وتعدد الحسابات","p":"بوتات تدير عدة حسابات ومحافظ وتنفّذ فيها الإجراءات وفق جدول زمني أو عند وقوع أحداث محددة. تبقى مفاتيحك وصلاحيات الوصول بين يديك.","tags":["حسابات متعددة","المحافظ","جدولة ومحفّزات","المراقبة","التنبيهات"]}],"proof_h2":"أنت تشاهد مثالًا حيًّا","proof_p":"صمّم Peep هذا الموقع: يتحدث 9 لغات، ويتعرّف على لغتك تلقائيًا، ويعمل على استضافة مجانية.","f1":"9 لغات","f2":"اكتشاف تلقائي للغة","f3":"استضافة مجانية بلا رسوم شهرية","proc_eyebrow":"كيف نعمل","proc_h2":"ببساطة وشفافية","steps":[{"h":"راسلنا","p":"صِف مهمتك على Instagram في بضع كلمات."},{"h":"الخطة والسعر","p":"نقترح الحل ونتفق معك على سعر ثابت وموعد تسليم محدد."},{"h":"التطوير والعرض","p":"نبني المشروع ونعرض عليك نسخة عاملة أولًا بأول."},{"h":"الإطلاق والدعم","p":"نطلق المشروع، ونسلّمك جميع الصلاحيات، ونساندك بعد الإطلاق."}],"price_note":"<b>يعتمد السعر على المهمة</b> ويُحدَّد قبل بدء العمل. أرسل وصفًا قصيرًا وسنرد عليك بالخيارات المتاحة.","cta_quote":"اطلب عرض سعر","final_h2":"لديك مهام روتينية؟ لنُسندها إلى بوت","final_p":"راسل Peep على Instagram — وسنحدد معًا ما يمكن أتمتته.","home":"كل المشاريع"},"bn":{"title":"Peep · বট, ওয়েবসাইট ও অটোমেশন","desc":"Telegram বট, ওয়েবসাইট, প্রসেস অটোমেশন এবং DeFi মাল্টি-অ্যাকাউন্ট বট। তৈরি করে Peep।","lang":"ভাষা","nav_services":"সেবাসমূহ","nav_process":"আমরা কীভাবে কাজ করি","eyebrow":"Peep · ডেভেলপমেন্ট","h1":"বট, ওয়েবসাইট ও অটোমেশন, যা <em>আপনার হয়ে কাজ করে</em>","lead":"আমরা Telegram বট, ওয়েবসাইট ও অটোমেশন তৈরি করি — অর্ডার নেওয়ার সহজ বট থেকে শুরু করে এমন সিস্টেম পর্যন্ত, যা ডজন ডজন অ্যাকাউন্ট সামলায় এবং সেগুলোতে নিজেই কাজ করে।","cta":"প্রজেক্ট নিয়ে কথা বলুন","cta2":"আমরা কী তৈরি করি","svc_eyebrow":"সেবাসমূহ","svc_h2":"Peep কী তৈরি করে","svc_p":"যেকোনো আকারের কাজ: একটি বট থেকে পুরো ব্যবসায়িক প্রক্রিয়ার অটোমেশন পর্যন্ত।","services":[{"h":"Telegram বট","p":"এমন বট, যা অর্ডার ও পেমেন্ট নেয়, অ্যাপয়েন্টমেন্ট বুক করে, গ্রাহকদের উত্তর দেয় এবং নোটিফিকেশন পাঠায়।","tags":["অর্ডার ও পেমেন্ট","বুকিং","সাপোর্ট","Mini Apps","AI অ্যাসিস্ট্যান্ট"]},{"h":"ওয়েবসাইট","p":"ল্যান্ডিং পেজ, লিংক-ইন-বায়ো পেজ এবং বহুভাষিক সাইট, যা দ্রুত লোড হয় আর দামি হোস্টিং লাগে না।","tags":["ল্যান্ডিং পেজ","লিংক-ইন-বায়ো","বহুভাষিক","ফ্রি হোস্টিং"]},{"h":"প্রসেস অটোমেশন","p":"রুটিন কাজ আমরা বটের হাতে তুলে দিই: রিপোর্ট, স্প্রেডশিট, CRM, নোটিফিকেশন এবং বিভিন্ন সার্ভিসের মধ্যে সংযোগ।","tags":["Google Sheets","CRM","রিপোর্ট","ডেটা পার্সিং","ইন্টিগ্রেশন"]},{"h":"DeFi ও মাল্টি-অ্যাকাউন্ট","p":"এমন বট, যা একাধিক অ্যাকাউন্ট ও ওয়ালেট পরিচালনা করে এবং নির্ধারিত সময়ে বা ট্রিগারে সেগুলোতে কাজ করে। আপনার প্রাইভেট কি ও অ্যাক্সেস আপনার হাতেই থাকে।","tags":["মাল্টি-অ্যাকাউন্ট","ওয়ালেট","শিডিউল ও ট্রিগার","মনিটরিং","অ্যালার্ট"]}],"proof_h2":"আপনি একটি উদাহরণই দেখছেন","proof_p":"এই সাইটটি Peep-এর তৈরি: এটি ৯টি ভাষায় কথা বলে, আপনার ভাষা নিজেই চিনে নেয় এবং ফ্রি হোস্টিংয়ে চলে।","f1":"৯টি ভাষা","f2":"স্বয়ংক্রিয় ভাষা শনাক্তকরণ","f3":"ফ্রি হোস্টিং, কোনো মাসিক ফি নেই","proc_eyebrow":"আমরা কীভাবে কাজ করি","proc_h2":"সহজ ও স্বচ্ছ","steps":[{"h":"আমাদের মেসেজ করুন","p":"Instagram-এ কয়েক কথায় আপনার কাজটি জানান।"},{"h":"পরিকল্পনা ও দাম","p":"আমরা সমাধান প্রস্তাব করি এবং নির্দিষ্ট দাম ও সময়সীমা ঠিক করি।"},{"h":"ডেভেলপমেন্ট ও ডেমো","p":"আমরা তৈরি করি এবং কাজের ফাঁকে ফাঁকে চালু ভার্সন দেখাই।"},{"h":"লঞ্চ ও সাপোর্ট","p":"আমরা লঞ্চ করি, সব অ্যাক্সেস বুঝিয়ে দিই এবং লঞ্চের পরেও সাহায্য করি।"}],"price_note":"<b>দাম নির্ভর করে কাজের ওপর</b> এবং কাজ শুরুর আগেই তা নির্ধারিত হয়। সংক্ষেপে বিবরণ পাঠান — আমরা কয়েকটি বিকল্পসহ উত্তর দেব।","cta_quote":"দাম জানুন","final_h2":"রুটিন কাজ আছে? চলুন সেটা বটকে দিয়ে দিই","final_p":"Instagram-এ Peep-কে মেসেজ করুন — আমরা দেখব কী কী অটোমেট করা যায়।","home":"সব প্রজেক্ট"},"pt":{"title":"Peep · bots, sites e automação","desc":"Bots para Telegram, sites, automação de processos e bots DeFi multicontas. Criado por Peep.","lang":"Idioma","nav_services":"Serviços","nav_process":"Como trabalhamos","eyebrow":"Peep · desenvolvimento","h1":"Bots, sites e automações que <em>trabalham por você</em>","lead":"Criamos bots para Telegram, sites e automações — de um bot simples de pedidos a sistemas que gerenciam dezenas de contas e executam ações nelas.","cta":"Fale sobre seu projeto","cta2":"O que fazemos","svc_eyebrow":"Serviços","svc_h2":"O que o Peep cria","svc_p":"Projetos de qualquer tamanho: de um único bot à automação de um processo de negócio inteiro.","services":[{"h":"Bots para Telegram","p":"Bots que recebem pedidos e pagamentos, agendam horários, atendem clientes e enviam notificações.","tags":["Pedidos e pagamentos","Agendamentos","Atendimento","Mini Apps","Assistentes de IA"]},{"h":"Sites","p":"Landing pages, páginas de link na bio e sites multilíngues que carregam rápido e dispensam hospedagem cara.","tags":["Landing pages","Link na bio","Multilíngue","Hospedagem grátis"]},{"h":"Automação de processos","p":"Passamos o trabalho repetitivo para bots: relatórios, planilhas, CRM, notificações e integrações entre serviços.","tags":["Planilhas Google","CRM","Relatórios","Extração de dados","Integrações"]},{"h":"DeFi e multicontas","p":"Bots que gerenciam várias contas e carteiras e executam ações nelas por agendamento ou gatilhos. Suas chaves e acessos continuam com você.","tags":["Multicontas","Carteiras","Agendamentos e gatilhos","Monitoramento","Alertas"]}],"proof_h2":"Você está vendo um exemplo","proof_p":"Este site foi feito pelo Peep: fala 9 idiomas, detecta o seu automaticamente e está hospedado de graça.","f1":"9 idiomas","f2":"Detecção automática de idioma","f3":"Hospedagem grátis, sem mensalidade","proc_eyebrow":"Como trabalhamos","proc_h2":"Simples e transparente","steps":[{"h":"Mande uma mensagem","p":"Descreva a tarefa no Instagram em poucas palavras."},{"h":"Plano e preço","p":"Sugerimos uma solução e combinamos preço e prazo fixos."},{"h":"Desenvolvimento e demo","p":"Desenvolvemos e mostramos uma versão funcional ao longo do caminho."},{"h":"Lançamento e suporte","p":"Lançamos, entregamos todos os acessos e damos suporte depois do lançamento."}],"price_note":"<b>O preço depende da tarefa</b> e é fixado antes de começarmos. Envie uma breve descrição e responderemos com opções.","cta_quote":"Peça um orçamento","final_h2":"Tem uma tarefa repetitiva? Vamos passá-la para um bot","final_p":"Mande uma mensagem para o Peep no Instagram — vamos ver o que dá para automatizar.","home":"Todos os projetos"},"ru":{"title":"Peep · боты, сайты и автоматизация","desc":"Telegram-боты, сайты, автоматизация процессов и DeFi-боты с мульти-аккаунтами. Делает Peep.","lang":"Язык","nav_services":"Услуги","nav_process":"Как работаем","eyebrow":"Peep · разработка","h1":"Боты, сайты и автоматизация, которые <em>работают за вас</em>","lead":"Делаем Telegram-ботов, сайты и автоматизации — от простого бота для заказов до систем, которые ведут десятки аккаунтов и выполняют в них действия.","cta":"Обсудить проект","cta2":"Что мы делаем","svc_eyebrow":"Услуги","svc_h2":"Что делает Peep","svc_p":"Задачи любого размера: от одного бота до автоматизации целого бизнес-процесса.","services":[{"h":"Telegram-боты","p":"Боты, которые принимают заказы и оплату, записывают клиентов, отвечают на вопросы и присылают уведомления.","tags":["Заказы и оплата","Запись","Поддержка","Mini Apps","ИИ-ассистенты"]},{"h":"Сайты","p":"Лендинги, визитки и мультиязычные сайты, которые быстро грузятся и не требуют дорогого хостинга.","tags":["Лендинги","Визитки","Много языков","Бесплатный хостинг"]},{"h":"Автоматизация процессов","p":"Отдаём рутину ботам: отчёты, таблицы, CRM, уведомления и связки между сервисами.","tags":["Google Таблицы","CRM","Отчёты","Парсинг","Интеграции"]},{"h":"DeFi и мульти-аккаунты","p":"Боты, которые ведут несколько аккаунтов и кошельков и выполняют в них действия по расписанию или по событиям. Ключи и доступы остаются у вас.","tags":["Мульти-аккаунты","Кошельки","Расписания и триггеры","Мониторинг","Оповещения"]}],"proof_h2":"Вы смотрите на пример","proof_p":"Этот сайт сделал Peep: он говорит на 9 языках, сам определяет ваш и работает на бесплатном хостинге.","f1":"9 языков","f2":"Автоопределение языка","f3":"Бесплатный хостинг, без абонплаты","proc_eyebrow":"Как работаем","proc_h2":"Просто и прозрачно","steps":[{"h":"Пишете нам","p":"Опишите задачу в Instagram в паре слов."},{"h":"План и цена","p":"Предлагаем решение, фиксируем цену и сроки."},{"h":"Разработка и демо","p":"Делаем и показываем рабочую версию по ходу."},{"h":"Запуск и поддержка","p":"Запускаем, передаём все доступы и помогаем после запуска."}],"price_note":"<b>Цена зависит от задачи</b> и фиксируется до начала работы. Пришлите короткое описание — ответим с вариантами.","cta_quote":"Узнать стоимость","final_h2":"Есть рутина? Отдадим её боту","final_p":"Напишите Peep в Instagram — разберёмся, что можно автоматизировать.","home":"Все проекты"}};
+  const SVC_ICONS = ["bot", "layout", "workflow", "wallet"];
+  const ic = (n) => `<svg class="ico"><use href="#i-${n}"/></svg>`;
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const $ = (s) => document.querySelector(s);
+
+  window.onLang = (t) => {
+    $("#svc").innerHTML = t.services.map((s, i) => `<article class="svc${i === 3 ? " dark" : ""}"><span class="ic">${ic(SVC_ICONS[i])}</span><h3>${esc(s.h)}</h3><p>${esc(s.p)}</p><ul>${s.tags.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></article>`).join("");
+    $("#steps").innerHTML = t.steps.map((s) => `<div class="step"><h3>${esc(s.h)}</h3><p>${esc(s.p)}</p></div>`).join("");
+  };
+
+  // терминал: строки печатаются по очереди, потом всё по кругу
+  const LOG = [
+    ["p", "$ peep run orders-bot"],
+    ["ok", "✓ telegram bot online"],
+    ["ok", "✓ google sheets connected"],
+    ["ar", "→ new order #1042 · paid"],
+    ["ar", "→ owner notified in 0.4s"],
+    ["dim", ""],
+    ["p", "$ peep run wallets --accounts 12"],
+    ["ok", "✓ 12 accounts synced"],
+    ["ar", "→ scheduled actions done: 12/12"],
+    ["ok", "✓ report sent · next run 09:00"],
+  ];
+  const term = $("#term");
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function render(lines, partial) {
+    term.innerHTML = lines.map(([c, s]) => `<div class="${c}">${esc(s) || "&nbsp;"}</div>`).join("") + (partial != null ? `<div class="p">${esc(partial)}<span class="cursor"></span></div>` : `<span class="cursor"></span>`);
+  }
+  if (still) render(LOG);
+  else {
+    let i = 0, ch = 0;
+    (function tick() {
+      if (i >= LOG.length) { render(LOG); i = 0; ch = 0; return setTimeout(tick, 3200); }
+      const [c, s] = LOG[i];
+      if (c === "p" && ch < s.length) { ch++; render(LOG.slice(0, i), s.slice(0, ch)); return setTimeout(tick, 45); }
+      i++; ch = 0; render(LOG.slice(0, i)); setTimeout(tick, c === "p" ? 380 : 520);
+    })();
+  }
+</script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

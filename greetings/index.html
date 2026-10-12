@@ -29,6 +29,17 @@
     --grad-text: linear-gradient(100deg, #9a6238 0%, #c88653 45%, #e2a85c 100%);
     --font: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
     --max: 1120px;
+    --lm-btn-bg: #fff;
+    --lm-btn-ink: var(--ink);
+    --lm-btn-line: var(--line);
+    --lm-btn-hover: var(--honey);
+    --lm-ink: var(--ink);
+    --lm-muted: var(--muted);
+    --lm-hover: #faf3ea;
+    --lm-accent: var(--caramel-2);
+    --lm-accent-bg: #f5e8d8;
+    --lm-focus: var(--honey);
+    --lm-shadow: 0 24px 50px -18px rgba(74,44,20,.4), 0 0 0 1px var(--line);
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -1786,5 +1797,6 @@
   $("#lang-select").addEventListener("change", (e) => setLang(e.target.value, true));
   setLang(detectLang(), false);
 </script>
+<script src="../assets/lang-menu.js"></script>
 </body>
 </html>

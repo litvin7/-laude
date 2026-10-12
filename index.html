@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2f6fd6">
 <title>Peep &amp; Peak</title>
 <meta name="description" content="Peep &amp; Peak: personalized capybara greetings, AI video production, bots, websites and automation.">
 <meta property="og:title" content="Peep &amp; Peak">
@@ -12,9 +13,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%23fcc419' stroke='%23e0a20c' d='M20 3.2c1.3 0 2.2.8 2.9 2.3l3 6.1 6.7 1c1.7.2 2.6 1.1 2.6 2.3s-.6 2-1.7 3l-4.9 4.7 1.2 6.7c.3 1.7-.3 2.8-1.6 3.2-.9.3-1.7 0-2.8-.6L20 29.5l-6 3.2c-1.1.6-1.9.9-2.8.6-1.3-.4-1.9-1.5-1.6-3.2l1.2-6.7-4.9-4.7c-1.1-1-1.7-1.8-1.7-3s.9-2.1 2.6-2.3l6.7-1 3-6.1c.7-1.5 1.6-2.3 2.9-2.3Z'/%3E%3C/svg%3E">
 <style>
-  /* Визитка: один столбец, как ссылка в шапке профиля. Тёплая палитра бренда, три большие карточки-кнопки, соцсети внизу. */
+  /* Визитка: один столбец, как ссылка в шапке профиля. Синий фон в точку (как блок-пример на /dev/), белые карточки-кнопки, соцсети без рамок с белым свечением. */
   :root {
-    --bg: #fbf6ef;
+    --bg: #2f6fd6;
     --card: #ffffff;
     --ink: #2a1c13;
     --muted: #6b5546;
@@ -27,8 +28,9 @@
   }
   * { box-sizing: border-box; }
   html, body { min-height: 100%; }
-  body { margin: 0; color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased;
-    background: radial-gradient(70% 50% at 50% 0%, #f7dcc0 0%, transparent 70%), radial-gradient(60% 40% at 100% 100%, #f6e3cf 0%, transparent 70%), var(--bg); }
+  html { background: var(--bg); }
+  body { margin: 0; color: #fff; font-family: var(--font); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased;
+    background: radial-gradient(#ffffff22 1px, transparent 1.2px) 0 0 / 18px 18px, radial-gradient(70% 40% at 50% 0%, rgba(255,255,255,.16), transparent 70%), var(--bg); }
   img, svg { display: block; max-width: 100%; }
   a { color: inherit; text-decoration: none; }
   svg.ico { width: 1.2em; height: 1.2em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
@@ -37,52 +39,54 @@
   .page { max-width: 560px; margin: 0 auto; padding: 18px 16px 40px; }
   .top { display: flex; justify-content: flex-end; }
   .lang { position: relative; display: inline-flex; align-items: center; }
-  .lang svg.ico { position: absolute; inset-inline-start: 10px; width: 16px; height: 16px; color: var(--muted); pointer-events: none; }
-  .lang-select { appearance: none; -webkit-appearance: none; font: inherit; font-size: 14px; font-weight: 800; color: var(--ink); background: rgba(255,255,255,.8); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px 7px 32px; cursor: pointer; }
+  .lang svg.ico { position: absolute; inset-inline-start: 10px; width: 16px; height: 16px; color: #fff; pointer-events: none; }
+  .lang-select { appearance: none; -webkit-appearance: none; font: inherit; font-size: 14px; font-weight: 800; color: #fff; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 7px 14px 7px 32px; cursor: pointer; }
+  .lang-select option { color: #111; }
   [dir="rtl"] .lang-select { padding: 7px 32px 7px 14px; }
-  .lang-select:focus-visible, .card:focus-visible, .dm:focus-visible, .social a:focus-visible { outline: 3px solid var(--honey); outline-offset: 3px; }
+  .lang-select:focus-visible, .card:focus-visible, .dm:focus-visible, .social a:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 
   .profile { text-align: center; margin: 14px 0 26px; }
   .avatar { position: relative; width: 116px; height: 116px; margin: 0 auto 16px; }
-  .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 14px 30px -14px rgba(74,44,20,.55); }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 16px 34px -14px rgba(8,28,80,.7); }
   .avatar .star { position: absolute; right: -4px; bottom: 2px; width: 38px; height: 38px; filter: drop-shadow(0 4px 6px rgba(0,0,0,.18)); }
   h1 { margin: 0; font-size: 32px; font-weight: 900; letter-spacing: -0.02em; }
-  h1 em { font-style: normal; color: var(--caramel); }
-  .handle { display: inline-block; margin-top: 2px; font-weight: 800; font-size: 15px; color: var(--caramel); }
-  .bio { margin: 8px auto 0; max-width: 400px; color: var(--muted); font-size: 16px; }
+  h1 em { font-style: normal; color: #ffd84d; }
+  .handle { display: inline-block; margin-top: 2px; font-weight: 800; font-size: 15px; color: rgba(255,255,255,.85); }
+  .bio { margin: 8px auto 0; max-width: 400px; color: rgba(255,255,255,.85); font-size: 16px; }
 
   .cards { display: grid; gap: 12px; }
-  .card { display: grid; grid-template-columns: 76px 1fr auto; gap: 14px; align-items: center; padding: 10px 16px 10px 10px; border-radius: 18px; background: var(--card); border: 1px solid var(--line);
-    box-shadow: 0 10px 24px -20px rgba(74,44,20,.6); transition: transform .15s, box-shadow .15s, border-color .15s; }
-  .card:hover { transform: translateY(-2px); border-color: var(--honey); box-shadow: 0 16px 30px -20px rgba(74,44,20,.7); }
+  .card { display: grid; grid-template-columns: 76px 1fr auto; gap: 14px; align-items: center; padding: 10px 16px 10px 10px; border-radius: 18px; background: var(--card); color: var(--ink);
+    box-shadow: 0 16px 32px -20px rgba(8,28,80,.75); transition: transform .15s, box-shadow .15s; }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 22px 38px -20px rgba(8,28,80,.85); }
   .card img { width: 76px; height: 76px; border-radius: 12px; object-fit: cover; }
   .card .k { display: block; font-size: 11px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; color: var(--caramel); margin-bottom: 2px; }
   .card b { display: block; font-size: 18px; font-weight: 900; line-height: 1.2; }
   .card span.s { display: block; color: var(--muted); font-size: 14px; line-height: 1.35; margin-top: 3px; }
   .card .go { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: #f6ece0; color: var(--caramel); }
   [dir="rtl"] .card .go svg { transform: scaleX(-1); }
-  .card.video { background: #17120e; color: #f6ece0; border-color: #17120e; }
+  .card.video { background: #17120e; color: #f6ece0; }
   .card.video .k { color: var(--honey); }
   .card.video span.s { color: rgba(246,236,224,.7); }
   .card.video .go { background: rgba(255,255,255,.08); color: var(--honey); }
   .card.dev .k { color: #2f6fd6; }
   .card.dev .go { background: #e8f0fc; color: #2f6fd6; }
 
-  .dm { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 18px; padding: 15px 20px; border-radius: 14px; background: var(--ig); color: #fff; font-weight: 900; font-size: 16px; transition: filter .15s, transform .15s; }
+  .dm { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 18px; padding: 15px 20px; border-radius: 14px; background: var(--ig); color: #fff; font-weight: 900; font-size: 16px; box-shadow: 0 16px 30px -16px rgba(8,28,80,.8); transition: filter .15s, transform .15s; }
   .dm:hover { filter: brightness(1.06); transform: translateY(-1px); }
 
-  .social-h { text-align: center; margin: 30px 0 12px; font-size: 12px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+  .social-h { text-align: center; margin: 30px 0 12px; font-size: 12px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.8); }
   .social { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-  .social a { display: grid; justify-items: center; gap: 6px; padding: 14px 6px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); font-size: 13px; font-weight: 800; transition: transform .15s, border-color .15s; }
-  .social a:hover { transform: translateY(-2px); border-color: var(--honey); }
-  .social .ic { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; color: #fff; }
-  .social .ic svg { width: 22px; height: 22px; }
+  .social a { display: grid; justify-items: center; gap: 10px; padding: 6px 4px; border-radius: 14px; color: #fff; font-size: 13px; font-weight: 800; transition: transform .15s; }
+  .social a:hover { transform: translateY(-3px); }
+  .social .ic { width: 54px; height: 54px; border-radius: 16px; display: grid; place-items: center; color: #fff; box-shadow: 0 8px 26px rgba(255,255,255,.38), 0 0 0 1px rgba(255,255,255,.12); transition: box-shadow .15s; }
+  .social a:hover .ic { box-shadow: 0 10px 32px rgba(255,255,255,.55), 0 0 0 1px rgba(255,255,255,.2); }
+  .social .ic svg { width: 26px; height: 26px; }
   .yt .ic { background: #ff0033; }
   .tt .ic { background: #111; }
   .ig .ic { background: var(--ig); }
   .tg .ic { background: #2aabee; }
 
-  footer { margin-top: 30px; text-align: center; font-size: 13px; color: var(--muted); }
+  footer { margin-top: 34px; text-align: center; font-size: 13px; color: rgba(255,255,255,.75); }
   @media (max-width: 380px) { .card { grid-template-columns: 64px 1fr auto; } .card img { width: 64px; height: 64px; } .card b { font-size: 16px; } }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>

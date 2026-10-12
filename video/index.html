@@ -13,7 +13,7 @@
 <style>
   /* Киностудия: тёмный зал, янтарный свет, кадры с «шторками» как в кино. */
   :root {
-    --bg: #0f0d0b;
+    --bg: #0a0a0a;
     --bg-2: #17130f;
     --card: #1c1712;
     --line: rgba(255,236,210,.1);
@@ -39,7 +39,7 @@
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body { margin: 0; background: radial-gradient(rgba(255,255,255,.18) 1.3px, transparent 1.6px) 0 0 / 18px 18px, var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
   body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 100; opacity: .06;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
   img, svg { display: block; max-width: 100%; }
@@ -70,7 +70,7 @@
   .btn-ghost:hover { border-color: var(--amber); }
   .btns { display: flex; gap: 10px; flex-wrap: wrap; }
 
-  header.nav { position: sticky; top: 0; z-index: 30; background: rgba(15,13,11,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  header.nav { position: sticky; top: 0; z-index: 30; background: rgba(10,10,10,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
   .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 66px; }
   .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 900; font-size: 20px; white-space: nowrap; }
   .logo svg { width: 30px; height: 30px; }
@@ -118,7 +118,7 @@
   .work-note { color: var(--muted); font-size: 14px; margin-top: 14px; }
 
   /* услуги */
-  .services { background: var(--bg-2); border-block: 1px solid var(--line); }
+  .services { border-block: 1px solid var(--line); }
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
   .svc { padding: 26px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); transition: border-color .2s, transform .2s; }
   .svc:hover { border-color: rgba(240,167,75,.5); transform: translateY(-2px); }

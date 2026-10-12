@@ -69,7 +69,11 @@
   .card span.s { display: block; color: var(--muted); font-size: 14px; line-height: 1.35; margin-top: 3px; }
   .card .go { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: #f6ece0; color: var(--caramel); }
   [dir="rtl"] .card .go svg { transform: scaleX(-1); }
-  .card.video { background: #17120e; color: #f6ece0; }
+  /* карточки в точку, как фон визитки: подарки белые с розовыми точками, студия чёрная с белыми */
+  .card.gift { background: radial-gradient(rgba(236,72,153,.45) 1.3px, transparent 1.6px) 0 0 / 16px 16px, #fff; }
+  .card.gift .k { color: #e0457b; }
+  .card.gift .go { background: #fde7ef; color: #e0457b; }
+  .card.video { background: radial-gradient(rgba(255,255,255,.17) 1.2px, transparent 1.5px) 0 0 / 16px 16px, #111; color: #f6ece0; }
   .card.video .k { color: var(--honey); }
   .card.video span.s { color: rgba(246,236,224,.7); }
   .card.video .go { background: rgba(255,255,255,.08); color: var(--honey); }
@@ -122,7 +126,7 @@
   </header>
 
   <main class="cards">
-    <a class="card" href="greetings/">
+    <a class="card gift" href="greetings/">
       <img src="images/frames/emma-pillow.jpg" alt="" width="76" height="76">
       <span><span class="k" data-i18n="c1k">Gifts</span><b data-i18n="c1t">Peep &amp; Peak greetings</b><span class="s" data-i18n="c1s">Personalized capybara videos for your loved one</span></span>
       <span class="go"><svg class="ico"><use href="#i-arrow-right"/></svg></span>
